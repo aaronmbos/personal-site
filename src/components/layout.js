@@ -24,8 +24,8 @@ export default function Layout({ children }) {
         />
       </Head>
       <div className="flex flex-col h-screen">
-        <nav className="fixed min-w-full border-b-2 border-grey-400 h-16">
-          <div className="min-w-full md:w-auto min-h-full flex items-stretch mx-auto px-1 sm:px-6 lg:px-14">
+        <nav className="fixed min-w-full border-b-2 border-grey-400 h-20">
+          <div className="min-w-full md:w-auto min-h-full flex items-stretch mx-auto px-1 sm:px-12 lg:px-20">
             <Link href="/">
               <div className="hover:text-gray-500 cursor-pointer text-xl font-mono font-semibold flex items-center flex-none px-2">
                 &lt;Aaron &#47;&gt;
@@ -44,7 +44,7 @@ export default function Layout({ children }) {
             </div>
           </div>
         </nav>
-        <main className="flex-grow">{children}</main>
+        <main className="pt-32 flex-grow">{children}</main>
         <footer className="p-6 text-center bg-gray-50">
           <p className="my-2">Aaron Bos | {new Date().getFullYear()}</p>
           <p>
