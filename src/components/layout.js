@@ -26,7 +26,7 @@ export default function Layout({ children }) {
       </Head>
       <div className="flex flex-col h-screen">
         <Nav navLinks={ navLinks } />
-        <main className="pt-28 flex-grow">{children}</main>
+        <main className="pt-28 max-w-screen-lg mx-auto px-10 md:px-32 flex-grow">{children}</main>
         <Footer socialLinks={socialLinks} />
       </div>
     </>
