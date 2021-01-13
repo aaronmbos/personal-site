@@ -16,11 +16,11 @@ export default function Home({ recentPosts }) {
           <Intro />
           <RecentPosts recentPosts={recentPosts} />
         </section>
-        <div className="mx-3 mb-6">
-        <Link href="">
-          <a className="hover:underline text-blue-600">See all posts</a>
-        </Link>
-      </div>
+        <div className="mx-3 mb-10">
+          <Link href="/posts">
+            <a className="hover:underline text-blue-600">See all posts</a>
+          </Link>
+        </div>
       </Layout>
     </>
   );

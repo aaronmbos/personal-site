@@ -15,7 +15,7 @@ export default function Intro() {
           I'm a <span className="font-semibold">software engineer</span> by day so you'll mostly see posts, some technical and some not-so-technical, relating to my interests in <span className="font-semibold">software</span> and <span className="font-semibold">technology</span>. 
         </p>
         <p className="mb-1">
-        If anything I write about interests you, connect with me via social to let me know! I hope you enjoy my posts as much as I enjoy writing them.
+          If anything I write about interests you, connect with me via social to let me know! I hope you enjoy my posts as much as I enjoy writing them.
         </p>
       </div>
     </>
