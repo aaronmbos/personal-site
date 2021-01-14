@@ -1,11 +1,24 @@
 import { getAllPosts, getPostByUrlId } from "../../lib/posts";
 import Layout from "../../components/layout";
+import { parseMarkdownToHtml } from "../../lib/markdown-parser";
+import PostHeader from "../../components/post-header";
+import PostBody from "../../components/post-body";
+import PostFooter from "../../components/post-footer";
+import Head from "next/head";
 
 export default function Post({ post }) {
   return (
     <Layout>
-      <h3>{post.title}</h3>
-      <h4>{post.description}</h4>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <PostHeader
+        title={post.title}
+        description={post.description}
+        date={post.date}
+      />
+      <PostBody content={post.content} />
+      <PostFooter />
     </Layout>
   ) 
 }
@@ -13,7 +26,7 @@ export default function Post({ post }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts();
   const paths = posts.map((post) => ({
-    params: { id: post.url_id },
+    params: { id: post.slug },
   }))
 
   return { paths, fallback: false };
@@ -21,7 +34,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPostByUrlId(params.id);
-
+  const parsedContent = await parseMarkdownToHtml(post.content);
+  post.content = parsedContent;
   return {
     props: {
       post,

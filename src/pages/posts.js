@@ -7,11 +7,11 @@ export default function Posts({ posts }) {
   return (
     <>
       <Head>
-        <title>Aaron's Blog Posts</title>
+        <title>Aaron Bos - Blog Posts</title>
       </Head>
       <Layout>
         <section className="mb-10">
-          <h3 className="pt-6 text-xl font-semibold pb-3">All Blog Posts</h3>
+          <h1 className="pt-6 text-xl font-semibold pb-3">All Blog Posts</h1>
           <hr />
           {posts.map((post) => {
             return <PostPreview key={post.id} {...post} />;

@@ -9,7 +9,7 @@ export default function Home({ recentPosts }) {
   return (
     <>
       <Head>
-        <title>Aaron's Blog</title>
+        <title>Aaron Bos</title>
       </Head>
       <Layout>
         <section>
