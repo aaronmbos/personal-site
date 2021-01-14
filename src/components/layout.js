@@ -32,7 +32,7 @@ export default function Layout({ children }) {
       </Head>
       <div className="flex flex-col h-screen">
         <Nav navLinks={navLinks} />
-        <main className="w-full pt-28 max-w-screen-lg mx-auto px-10 md:px-28 flex-grow">
+        <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 flex-grow">
           {children}
         </main>
         <Footer socialLinks={socialLinks} />

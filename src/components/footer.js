@@ -1,6 +1,6 @@
 export default function Footer({ socialLinks }) {
   return (
-    <footer className="p-6 text-center bg-gray-50">
+    <footer id="footer" className="p-6 text-center bg-gray-100">
       <p className="my-2">Aaron Bos | {new Date().getFullYear()}</p>
       <p>
         {socialLinks.map((icon) => {
