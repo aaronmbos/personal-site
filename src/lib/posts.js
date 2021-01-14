@@ -35,6 +35,7 @@ function convertRawPosts(rawPosts) {
 }
 
 function formatDate(rawDate) {
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date(rawDate);
-  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getUTCDate()}`;
+  return date.toLocaleDateString(undefined, options);
 }
