@@ -6,7 +6,7 @@ export default function PostPreview({ url_id, title, description, date, metadata
     <>
       <div className="py-6 px-3">
         <Link href={`/posts/${url_id}`}>
-          <a className="text-blue-700 cursor-pointer hover:underline font-semibold text-lg">{title}</a>
+          <a className="text-blue-600 cursor-pointer hover:underline font-semibold text-lg">{title}</a>
         </Link>
         <div className="my-2 italic text-gray-600">{description}</div>
         <div className="mb-2 text-gray-500">Published: {date}</div>

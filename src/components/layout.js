@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 
 const navLinks = [
   { text: "Posts", route: "/posts" },
-  { text: "About", route: "/about-me" },
+  { text: "About", route: "/about" },
 ];
 
 const socialLinks = [
