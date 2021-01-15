@@ -27,7 +27,7 @@ export default function About() {
             I’ve worked on a wide variety of applications and domains, but they’ve all been heavily entrenched in the <span className="font-semibold">.NET</span> ecosystem. I’ve written code in <span className="font-semibold">C#</span> (and VB.NET) using <span className="font-semibold">Web API, MVC</span>, and yes, even Web Forms. I’ve worked with <span className="font-semibold">MS SQL, Postgres</span>, and even a bit with mainframes. I’ve helped my teams make the transition from full .NET Framework to the green fields of <span className="font-semibold">.NET Core</span>.
           </p>
           <p className="my-4">
-            If you’d like to get in touch, feel free to reach out via any of the social platforms that I have linked to in the footer. I’d love to hear from you! 
+            If you’d like to get in touch, connect with me via the social links at the bottom of the page. I’d love to hear from you! 
           </p>
           <p className="my-4">
             Happy reading!
