@@ -4,6 +4,7 @@ import Intro from "../components/intro";
 import RecentPosts from "../components/recent-posts";
 import { getRecentPosts } from "../lib/posts";
 import Link from "next/link"
+import AllPostsLink from "../components/all-posts-link";
 
 export default function Home({ recentPosts }) {
   return (
@@ -16,11 +17,7 @@ export default function Home({ recentPosts }) {
           <Intro />
           <RecentPosts recentPosts={recentPosts} />
         </section>
-        <div className="mx-3 mb-10">
-          <Link href="/posts">
-            <a className="hover:underline text-blue-600">See all posts</a>
-          </Link>
-        </div>
+        <AllPostsLink text="See All Posts" />
       </Layout>
     </>
   );

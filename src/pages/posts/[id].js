@@ -5,6 +5,7 @@ import PostHeader from "../../components/post-header";
 import PostBody from "../../components/post-body";
 import PostFooter from "../../components/post-footer";
 import Head from "next/head";
+import AllPostsLink from "../../components/all-posts-link";
 
 export default function Post({ post }) {
   return (
@@ -19,6 +20,7 @@ export default function Post({ post }) {
       />
       <PostBody content={post.content} />
       <PostFooter />
+      <AllPostsLink text="See More Posts" />
     </Layout>
   ) 
 }
