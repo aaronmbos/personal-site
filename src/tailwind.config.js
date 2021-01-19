@@ -1,3 +1,5 @@
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
   // configure with path to all pages & components to tree-shake production builds
   purge: ['./pages/**/*.js', './components/**/*.js'],
@@ -8,5 +10,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    typography
+  ],
 }
