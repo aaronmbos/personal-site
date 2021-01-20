@@ -25,6 +25,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
