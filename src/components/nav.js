@@ -25,7 +25,7 @@ export default function Nav({ navLinks }) {
                 Menu open: "hidden", Menu closed: "block"
               --> */}
               <svg id="iconClosed" className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke="black" aria-hidden="true">
-                <path strokeLineCap="round" strokeLineJoine="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
               {/* <!-- Icon when menu is open. -->
               <!--
@@ -34,25 +34,24 @@ export default function Nav({ navLinks }) {
                 Menu open: "block", Menu closed: "hidden"
               --> */}
               <svg id="iconOpen" className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke="black" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
-                <a className="hover:text-gray-600 cursor-pointer text-lg font-mono font-semibold flex items-center flex-none px-2">
+                <a className="hover:text-blue-700 text-blue-500 cursor-pointer text-xl font-mono font-semibold flex items-center flex-none px-2">
                   &lt;Aaron Bos &#47;&gt;
                 </a>
               </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                 {navLinks.map((link) => {
                   return (
                     <Link key={link.route} href={link.route}>
-                      <a className="hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">
+                      <a className="bg-blue-100 text-blue-500 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium">
                         {link.text}
                       </a>
                     </Link>
@@ -63,17 +62,12 @@ export default function Nav({ navLinks }) {
           </div>
         </div>
       </div>
-      {/* <!--
-        Mobile menu, toggle classes based on menu state.
-
-        Menu open: "block", Menu closed: "hidden"
-      --> */}
       <div id="mobileMenu" className="hidden sm:hidden">
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navLinks.map((link) => {
             return (
               <Link key={link.route} href={link.route}>
-                <a className="hover:bg-gray-50 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">
+                <a className="hover:bg-blue-100 text-blue-500 hover:text-blue-700 block px-3 py-2 rounded-md text-base font-medium">
                   {link.text}
                 </a>
               </Link>

@@ -18,7 +18,7 @@ export async function getAllPosts() {
 
 export async function getPostByUrlId(urlId) {
   const posts = await getAllPosts();
-  const post = posts.find((post) => post.url_id === urlId);
+  const post = posts.find((post) => post.slug === urlId);
 
   return {
     ...post
