@@ -7,3 +7,7 @@
 https://aaronbos.dev
 
 I have some features and improvements I'd like to make, but they will come in time. Planning to post a roadmap here once I get settled into a consistent blogging rhythm.
+
+#### Posts
+- [Hello World](https://aaronbos.dev/posts/hello-world)
+- [JWTs: A Peek Under the Hood](https://aaronbos.dev/posts/jwt-under-the-hood)
