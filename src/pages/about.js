@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import AllPostsLink from "../components/all-posts-link";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -11,6 +12,15 @@ export default function About() {
         <section>
           <h1 className="mb-4 font-semibold text-2xl">About Me</h1>
           <hr />
+          <div className="mt-4 text-center">
+            <Image
+              className=""
+              src="/static/headshot.jpg"
+              alt="Aaron's picture"
+              height="200"
+              width="200"
+            />
+          </div>
           <p className="my-4">
             I am a <span className="font-semibold">software engineer</span> from the Midwest. I received my Bachelor’s degree in Business Administration from the University of Nebraska-Lincoln in 2015 as well as my Associates Degree in Computer Information Technology from Southeast Community College in 2018.
           </p>
