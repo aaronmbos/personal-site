@@ -11,6 +11,9 @@ export default function Post({ post }) {
   return (
     <Layout>
       <Head>
+        <meta property="og:title" key="title" content={post.title} />
+        <meta property="og:url" key="url" content={`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${post.slug}`} />
+        <meta property="og:description" key="description" content={post.description} />
         <title>{post.title}</title>
       </Head>
       <PostHeader

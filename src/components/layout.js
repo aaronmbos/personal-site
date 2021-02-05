@@ -30,10 +30,10 @@ export default function Layout({ children }) {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         />
-        <meta property="og:title" content="Aaron Bos" />
+        <meta property="og:title" key="title" content="Aaron Bos" />
         <meta property="og:site_name" content="Aaron Bos' Blog" />
-        <meta property="og:url" content="https://aaronbos.dev" />
-        <meta property="og:description" content="Blogging about software and technology from a software engineer's perspective." />
+        <meta property="og:url" key="url" content={`${process.env.NEXT_PUBLIC_ORIGIN}`} />
+        <meta property="og:description" key="description" content="Blogging about software and technology from a software engineer's perspective." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`} />
       </Head>
