@@ -6,16 +6,20 @@ import PostBody from "../../components/post-body";
 import PostFooter from "../../components/post-footer";
 import Head from "next/head";
 import AllPostsLink from "../../components/all-posts-link";
+import MetaSocial from "../../components/meta-social";
 
 export default function Post({ post }) {
   return (
     <Layout>
       <Head>
-        <meta property="og:title" key="title" content={post.title} />
-        <meta property="og:url" key="url" content={`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${post.slug}`} />
-        <meta property="og:description" key="description" content={post.description} />
         <title>{post.title}</title>
       </Head>
+      <MetaSocial
+        title={post.title}
+        url={`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${post.slug}`}
+        description={post.description}
+        image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
+      />
       <PostHeader
         title={post.title}
         description={post.description}

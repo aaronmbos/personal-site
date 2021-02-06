@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
+import MetaSocial from "../components/meta-social";
 
 const navLinks = [
   { text: "Posts", route: "/posts" },
@@ -30,13 +31,13 @@ export default function Layout({ children }) {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         />
-        <meta property="og:title" key="title" content="Aaron Bos" />
-        <meta property="og:site_name" content="Aaron Bos' Blog" />
-        <meta property="og:url" key="url" content={`${process.env.NEXT_PUBLIC_ORIGIN}`} />
-        <meta property="og:description" key="description" content="Blogging about software and technology from a software engineer's perspective." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`} />
       </Head>
+      <MetaSocial
+        title="Aaron Bos' Blog"
+        url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
+        description="Blogging about software and technology from a software engineer's perspective."
+        image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
+      />
       <div className="flex flex-col h-screen">
         <Nav navLinks={navLinks} />
         <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 flex-grow">
