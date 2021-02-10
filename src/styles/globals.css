@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'MonoLisa';
+  font-family: 'IBM Plex Mono';
   font-weight: 400;
-  src: url(../public/fonts/MonoLisa-Regular.woff) format('woff'),
-  url(../public/fonts/MonoLisa-Regular.woff2) format('woff2');
+  src: url(../public/fonts/IBMPlexMono-Regular.woff) format('woff'),
+  url(../public/fonts/IBMPlexMono-Regular.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'MonoLisa';
-  font-weight: 800;
-  src: url(../public/fonts/MonoLisa-Bold.woff) format('woff'),
-  url(../public/fonts/MonoLisa-Bold.woff2) format('woff2');
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  src: url(../public/fonts/IBMPlexMono-SemiBold.woff) format('woff'),
+  url(../public/fonts/IBMPlexMono-SemiBold.woff2) format('woff2');
 }
