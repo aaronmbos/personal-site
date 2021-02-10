@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'MonoLisa';
+  font-weight: 400;
+  src: url(../public/fonts/MonoLisa-Regular.woff) format(woff)
+  url(../public/fonts/MonoLisa-Regular.woff2) format(woff2)
+}
+
+@font-face {
+  font-family: 'MonoLisa';
+  font-weight: 800;
+  src: url(../public/fonts/MonoLisa-Bold.woff) format(woff)
+  url(../public/fonts/MonoLisa-Bold.woff2) format(woff2)
+}

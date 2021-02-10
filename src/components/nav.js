@@ -28,12 +28,12 @@ export default function Nav({ navLinks }) {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
-                <a className="hover:text-blue-700 text-blue-500 cursor-pointer text-xl font-mono font-semibold flex items-center flex-none px-2">
-                  &lt;Aaron Bos &#47;&gt;
+                <a className="hover:text-blue-700 text-blue-500 cursor-pointer text-2xl font-mono font-bold flex items-center flex-none px-2">
+                  &lt;Aaron Bos&#47;&gt;
                 </a>
               </Link>
             </div>
-            <div className="hidden sm:block sm:ml-6">
+            <div className="hidden sm:block sm:ml-10">
               <div className="flex space-x-4">
                 {navLinks.map((link) => {
                   return (
