@@ -3,7 +3,6 @@ import Layout from "../components/layout";
 import Intro from "../components/intro";
 import RecentPosts from "../components/recent-posts";
 import { getRecentPosts } from "../lib/posts";
-import Link from "next/link"
 import AllPostsLink from "../components/all-posts-link";
 
 export default function Home({ recentPosts }) {
