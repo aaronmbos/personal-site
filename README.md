@@ -12,3 +12,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [JWTs: A Peek Under the Hood](https://aaronbos.dev/posts/jwt-under-the-hood)
 - [Behind the Scenes of Making my Blog](https://aaronbos.dev/posts/blog-behind-the-scenes)
 - [Querying JSON Data in PostgreSQL](https://aaronbos.dev/posts/query-postgresql-json)
+- [EF Core and Client Evaluation](https://aaronbos.dev/posts/efcore-client-evaluation)
