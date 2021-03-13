@@ -5,7 +5,7 @@ export default function NavBody({ navLinks }) {
     <div className="hidden sm:block sm:ml-10">
       <div className="flex space-x-4">
         {navLinks.map((link) => {
-          return <NavLink route={link.route} text={link.text} />;
+          return <NavLink key={link.route} route={link.route} text={link.text} />;
         })}
       </div>
     </div>
