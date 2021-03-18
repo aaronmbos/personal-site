@@ -1,12 +1,20 @@
-import TagHolder from './tag-holder';
-import Link from 'next/link';
+import TagHolder from "./tag-holder";
+import Link from "next/link";
 
-export default function PostPreview({ slug, title, description, date, metadata }) {
+export default function PostPreview({
+  slug,
+  title,
+  description,
+  date,
+  metadata,
+}) {
   return (
     <>
       <div className="py-6 px-3">
         <Link href={`/posts/${slug}`}>
-          <a className="text-blue-600 cursor-pointer hover:underline font-semibold text-lg">{title}</a>
+          <a className="text-blue-600 cursor-pointer hover:underline font-semibold text-lg">
+            {title}
+          </a>
         </Link>
         <div className="my-2 italic text-gray-600">{description}</div>
         <div className="mb-2 text-gray-500">Published: {date}</div>

@@ -29,14 +29,14 @@ export default function Post({ post }) {
       <PostFooter />
       <AllPostsLink text="See More Posts" />
     </Layout>
-  ) 
+  );
 }
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
   const paths = posts.map((post) => ({
     params: { id: post.slug },
-  }))
+  }));
 
   return { paths, fallback: false };
 }

@@ -1,6 +1,6 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-export default function MetaSocial({title, url, description, image}) {
+export default function MetaSocial({ title, url, description, image }) {
   return (
     <Head>
       <meta property="og:title" content={title} key="title" />

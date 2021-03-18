@@ -21,7 +21,7 @@ export async function getPostByUrlId(urlId) {
   const post = posts.find((post) => post.slug === urlId);
 
   return {
-    ...post
+    ...post,
   };
 }
 
@@ -35,7 +35,12 @@ function convertRawPosts(rawPosts) {
 }
 
 function formatDate(rawDate) {
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  var options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   const date = new Date(rawDate);
   return date.toLocaleDateString(undefined, options);
 }
