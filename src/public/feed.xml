@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Aaron Bos]]></title>
+        <description><![CDATA[Aaron Bos]]></description>
+        <link>https://aaronbos.dev</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 24 Mar 2021 04:38:24 GMT</lastBuildDate>
+        <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Updating JSON Data in PostgreSQL]]></title>
+            <description><![CDATA[If you're storing JSON data in Postgres, you'll eventually need to update it. In this post, we'll talk about a couple of functions that can be used to update JSON data.]]></description>
+            <link>https://aaronbos.dev/posts/update-json-postgresql</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/update-json-postgresql</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[postgres]]></category>
+            <category><![CDATA[database]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sat, 20 Mar 2021 22:23:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[EF Core and Client Evaluation]]></title>
+            <description><![CDATA[Entity Framework Core is an amazing tool for interacting with databases of all kinds, but it doesn't come without potential pitfalls that can impact performance if you're not careful.]]></description>
+            <link>https://aaronbos.dev/posts/efcore-client-evaluation</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/efcore-client-evaluation</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[database]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[efcore]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 08 Mar 2021 03:45:27 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Querying JSON Data in PostgreSQL]]></title>
+            <description><![CDATA[Storing JSON provides flexibility, but can add complexity. Let's take a look at how we can store and query this data in PostgreSQL.]]></description>
+            <link>https://aaronbos.dev/posts/query-postgresql-json</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/query-postgresql-json</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[json]]></category>
+            <category><![CDATA[postgres]]></category>
+            <category><![CDATA[database]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sat, 13 Feb 2021 05:06:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Behind the Scenes of Making my Blog]]></title>
+            <description><![CDATA[The number of options for setting up a blog can be overwhelming. Let's take a look at what worked well for my goals and expectations. ]]></description>
+            <link>https://aaronbos.dev/posts/blog-behind-the-scenes</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/blog-behind-the-scenes</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[web]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 05 Feb 2021 04:49:44 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[JWTs: A Peek Under the Hood]]></title>
+            <description><![CDATA[JWTs are used heavily in front and back end development. Let's open the hood to see how they're put together.]]></description>
+            <link>https://aaronbos.dev/posts/jwt-under-the-hood</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/jwt-under-the-hood</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[web]]></category>
+            <category><![CDATA[json]]></category>
+            <category><![CDATA[introduction]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 27 Jan 2021 03:41:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hello, World!]]></title>
+            <description><![CDATA[The proverbial "hello, world" blog post introducing myself to the interwebs.]]></description>
+            <link>https://aaronbos.dev/posts/hello-world</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/hello-world</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[beginnings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 21 Jan 2021 01:18:37 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
