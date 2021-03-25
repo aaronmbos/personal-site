@@ -1,16 +1,16 @@
 export default function PostFooter() {
   return (
     <div className="my-8 font-medium">
-      Thanks for taking the time to read my blog post! If you want to get in
-      touch, connect with me on Twitter (
+      Thanks for taking the time to read my blog post! If you would like to stay
+      up to date on my posts, feel free to subscribe to my RSS feed&nbsp;
       <a
         className="text-blue-600 hover:underline"
-        href="https://twitter.com/AaronMBos"
+        href="https://aaronbos.dev/feed.xml"
         target="_blank"
       >
-        @AaronMBos
+        here
       </a>
-      ).
+      .
     </div>
   );
 }
