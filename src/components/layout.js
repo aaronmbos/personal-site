@@ -20,6 +20,7 @@ const socialLinks = [
     url: "https://stackoverflow.com/users/8548471/a-a-ron",
   },
   { iconClass: "fa fa-envelope", url: "mailto:aaron.bos@icloud.com" },
+  { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
 ];
 
 export default function Layout({ children }) {
