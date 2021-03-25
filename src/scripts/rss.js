@@ -11,6 +11,7 @@ async function generateRssFeed() {
     title: "Aaron Bos",
     site_url: `${process.env.NEXT_PUBLIC_ORIGIN_RSS}`,
     feed_url: `${process.env.NEXT_PUBLIC_ORIGIN_RSS}/feed.xml`,
+    image_url: `${process.env.NEXT_PUBLIC_ORIGIN_RSS}/static/card-logo.png`,
   });
 
   const res = await fetch(`${postsUri}?_limit=-1&_sort=published_at:desc`);
