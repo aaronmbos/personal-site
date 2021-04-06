@@ -9,8 +9,17 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 25 Mar 2021 03:25:43 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Apr 2021 01:42:00 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Selenian. A Minimal Dark Theme for Visual Studio Code.]]></title>
+            <description><![CDATA[There are many great themes available for Visual Studio Code, but I'm definitely the type of person who enjoys tailoring my development environment to my specific needs. So I created my own theme called Selenian.]]></description>
+            <link>https://aaronbos.dev/posts/selenian-vs-code-theme</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/selenian-vs-code-theme</guid>
+            <category><![CDATA[dev]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 06 Apr 2021 01:39:32 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Updating JSON Data in PostgreSQL]]></title>
             <description><![CDATA[If you're storing JSON data in Postgres, you'll eventually need to update it. In this post, we'll talk about a couple of functions that can be used to update JSON data.]]></description>
