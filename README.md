@@ -15,3 +15,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [EF Core and Client Evaluation](https://aaronbos.dev/posts/efcore-client-evaluation)
 - [Updating JSON Data in PostgreSQL](https://aaronbos.dev/posts/update-json-postgresql)
 - [Selenian. A Minimal Dark Theme for Visual Studio Code.](https://aaronbos.dev/posts/selenian-vs-code-theme)
+- [Creating Your Own Framework for Learning](https://aaronbos.dev/posts/learning-framework)
