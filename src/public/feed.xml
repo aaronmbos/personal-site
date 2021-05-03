@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 16 Apr 2021 03:49:44 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 03 May 2021 04:04:29 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Asynchronous Programming in C# - Part 1]]></title>
+            <description><![CDATA[Writing code is hard. Writing asynchronous code is even harder. Luckily C# provides us with the `async` and `await` keywords to make asynchronous programming a little easier. This is the first of a series of posts in which I'll be going over writing asynchronous code in C# as well as a bit into the internals of how it works under the hood.]]></description>
+            <link>https://aaronbos.dev/posts/async-csharp-pt1</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/async-csharp-pt1</guid>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[dev]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 03 May 2021 03:58:47 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Creating Your Own Framework for Learning]]></title>
             <description><![CDATA[As software engineers, we are constantly learning in order to grow and stay relevant. I've found that trying to learn something new without a plan is difficult. This is why I created a framework for learning, which is what I'll be covering in this post.]]></description>
