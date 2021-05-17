@@ -17,3 +17,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Selenian. A Minimal Dark Theme for Visual Studio Code.](https://aaronbos.dev/posts/selenian-vs-code-theme)
 - [Creating Your Own Framework for Learning](https://aaronbos.dev/posts/learning-framework)
 - [Asynchronous Programming in C# - Part 1](https://aaronbos.dev/posts/async-csharp-pt1)
+- [Using Async and Await in C#](https://aaronbos.dev/posts/async-await-csharp)
