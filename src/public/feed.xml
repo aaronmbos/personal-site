@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 05 Jun 2021 04:05:01 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Jun 2021 04:02:56 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[How Podcasts Helped Me Grow as a Developer]]></title>
+            <description><![CDATA[Podcasts have become very popular over the years and you can almost guarantee that there is a podcast available for any of your personal interests. In this post, I'll describe how I believe podcasts have helped me grow as a developer. We'll also take a look at some of my favorite podcasts and discuss a little bit of what they're about and why I enjoy them so much.]]></description>
+            <link>https://aaronbos.dev/posts/software-podcast-dev-growth</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/software-podcast-dev-growth</guid>
+            <category><![CDATA[growth]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 23 Jun 2021 04:02:26 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Asynchronous C#: Below the Surface]]></title>
             <description><![CDATA[In my last two posts, we've covered C#'s async programming model and also using async/await for asynchronous execution. In the final post of this series on async programming in C#, we're going to take a look behind the scenes at all the work the compiler does for us to make code execute asynchronously. Let's dive in!]]></description>

@@ -19,3 +19,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Asynchronous Programming in C# - Part 1](https://aaronbos.dev/posts/async-csharp-pt1)
 - [Using Async and Await in C#](https://aaronbos.dev/posts/async-await-csharp)
 - [Asynchronous C#: Below the Surface](https://aaronbos.dev/posts/async-csharp-below-surface)
+- [How Podcasts Helped Me Grow as a Developer](https://aaronbos.dev/posts/software-podcast-dev-growth)
