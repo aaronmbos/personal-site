@@ -29,9 +29,16 @@ export default function Layout({ children }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link
-          rel="stylesheet"
+          rel="preload"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          />
+        </noscript>
       </Head>
       <MetaSocial
         title="Aaron Bos' Blog"
