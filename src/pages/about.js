@@ -63,7 +63,7 @@ export default function About() {
           <span className="font-semibold">MS SQL, Postgres</span>, and even a
           bit with mainframes. Recently I've enjoyed working on teams making the
           transition from full .NET Framework to the green fields of{" "}
-          <span className="font-semibold">.NET Core (soon .NET 5)</span>. I
+          <span className="font-semibold">.NET Core (soon .NET 5, 6 and beyond)</span>. I
           pride myself in writing code that is{" "}
           <span className="font-semibold">readable</span> and{" "}
           <span className="font-semibold">testable</span>. I also believe that
