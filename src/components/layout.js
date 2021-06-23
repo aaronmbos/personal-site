@@ -29,6 +29,7 @@ export default function Layout({ children }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link
+          as="style"
           rel="preload"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
           onload="this.onload=null;this.rel='stylesheet'"
