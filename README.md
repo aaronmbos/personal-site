@@ -8,6 +8,7 @@ https://aaronbos.dev
 I have some features and improvements I'd like to make, but they will come in time. Planning to post a roadmap here once I get settled into a consistent blogging rhythm.
 
 #### Posts
+
 - [Hello World](https://aaronbos.dev/posts/hello-world)
 - [JWTs: A Peek Under the Hood](https://aaronbos.dev/posts/jwt-under-the-hood)
 - [Behind the Scenes of Making my Blog](https://aaronbos.dev/posts/blog-behind-the-scenes)
@@ -20,3 +21,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Using Async and Await in C#](https://aaronbos.dev/posts/async-await-csharp)
 - [Asynchronous C#: Below the Surface](https://aaronbos.dev/posts/async-csharp-below-surface)
 - [How Podcasts Helped Me Grow as a Developer](https://aaronbos.dev/posts/software-podcast-dev-growth)
+- [Introduction to SQL Indexes](https://aaronbos.dev/posts/sql-index-introduction)

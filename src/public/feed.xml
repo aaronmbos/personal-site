@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 23 Jun 2021 04:02:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Jul 2021 01:51:57 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Introduction to SQL Indexes]]></title>
+            <description><![CDATA[For most of my career I've known the general purpose of an SQL (read S-Q-L) index, but I've never taken the time to dig a little deeper to understand more until recently. In this post we'll be taking a look at SQL indexes from a high level, as well as how they can be used effectively (and not so effectively) to impact the performance of SQL operations.]]></description>
+            <link>https://aaronbos.dev/posts/sql-index-introduction</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-index-introduction</guid>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[sql]]></category>
+            <category><![CDATA[database]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 19 Jul 2021 01:49:29 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[How Podcasts Helped Me Grow as a Developer]]></title>
             <description><![CDATA[Podcasts have become very popular over the years and you can almost guarantee that there is a podcast available for any of your personal interests. In this post, I'll describe how I believe podcasts have helped me grow as a developer. We'll also take a look at some of my favorite podcasts and discuss a little bit of what they're about and why I enjoy them so much.]]></description>
