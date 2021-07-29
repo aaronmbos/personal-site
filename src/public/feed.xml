@@ -9,8 +9,22 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 19 Jul 2021 01:51:57 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 29 Jul 2021 00:49:02 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Scraping HTML with Selenium and C#]]></title>
+            <description><![CDATA[In this post, we'll be going over how we can use Selenium WebDriver and C# to scrape HTML from websites. I recently started working on a personal project that I plan to use for gathering English Premier League player statistics for my fantasy team. I had a fun time getting Selenium set up and working so I thought I'd share. Enjoy! 😁]]></description>
+            <link>https://aaronbos.dev/posts/selenium-csharp-scraping</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/selenium-csharp-scraping</guid>
+            <category><![CDATA[web]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[selenium]]></category>
+            <category><![CDATA[scraping]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 29 Jul 2021 00:47:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Introduction to SQL Indexes]]></title>
             <description><![CDATA[For most of my career I've known the general purpose of an SQL (read S-Q-L) index, but I've never taken the time to dig a little deeper to understand more until recently. In this post we'll be taking a look at SQL indexes from a high level, as well as how they can be used effectively (and not so effectively) to impact the performance of SQL operations.]]></description>

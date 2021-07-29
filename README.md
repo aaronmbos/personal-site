@@ -22,3 +22,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Asynchronous C#: Below the Surface](https://aaronbos.dev/posts/async-csharp-below-surface)
 - [How Podcasts Helped Me Grow as a Developer](https://aaronbos.dev/posts/software-podcast-dev-growth)
 - [Introduction to SQL Indexes](https://aaronbos.dev/posts/sql-index-introduction)
+- [Scraping HTML with Selenium and C#](https://aaronbos.dev/posts/selenium-csharp-scraping)
