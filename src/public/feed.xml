@@ -9,11 +9,22 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 29 Jul 2021 00:49:02 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Aug 2021 00:29:22 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[Parsing Image Metadata with C# and ImageSharp]]></title>
+            <description><![CDATA[Recently I've been using C# and ImageSharp to work with images in code. In this post we'll be taking a look at how we can read and write IPTC Metadata properties for a given image.]]></description>
+            <link>https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 16 Aug 2021 00:26:08 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Scraping HTML with Selenium and C#]]></title>
-            <description><![CDATA[In this post, we'll be going over how we can use Selenium WebDriver and C# to scrape HTML from websites. I recently started working on a personal project that I plan to use for gathering English Premier League player statistics for my fantasy team. I had a fun time getting Selenium set up and working so I thought I'd share. Enjoy! 😁]]></description>
+            <description><![CDATA[In this post, we'll be going over how we can use Selenium WebDriver and C# to scrape HTML from websites. I recently started working on a personal project that I plan to use for gathering English Premier League player statistics for my fantasy team. I had a fun time getting Selenium set up and working so I thought I'd share.]]></description>
             <link>https://aaronbos.dev/posts/selenium-csharp-scraping</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/selenium-csharp-scraping</guid>
             <category><![CDATA[web]]></category>
