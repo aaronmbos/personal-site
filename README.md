@@ -25,3 +25,4 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Introduction to SQL Indexes](https://aaronbos.dev/posts/sql-index-introduction)
 - [Scraping HTML with Selenium and C#](https://aaronbos.dev/posts/selenium-csharp-scraping)
 - [Parsing Image Metadata with C# and ImageSharp](https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp)
+- [How To Uninstall tSQLt From SQL Server](https://aaronbos.dev/posts/uninstall-tsqlt-sqlserver)
