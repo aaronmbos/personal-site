@@ -10,6 +10,7 @@ I have some features and improvements I'd like to make, but they will come in ti
 
 ### Posts
 
+- [Rebase Git Branches Interactively](https://aaronbos.dev/posts/git-rebase-interactive)
 - [How to Use C#'s Parallel.ForEach](https://aaronbos.dev/posts/parallel-foreach-csharp)
 - [How To Uninstall tSQLt From SQL Server](https://aaronbos.dev/posts/uninstall-tsqlt-sqlserver)
 - [Parsing Image Metadata with C# and ImageSharp](https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp)

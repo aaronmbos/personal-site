@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 16 Sep 2021 02:41:30 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Oct 2021 02:00:59 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Rebase Git Branches Interactively]]></title>
+            <description><![CDATA[Git's rebase functionality could be one of the most polarizing features of the ubiquitous version control system. Some have horror stories of rebasing branches, while others use it whenever possible. In this post, we'll be touching on the interactive rebase feature which can reduce a lot of the anxiety around rebasing Git branches.]]></description>
+            <link>https://aaronbos.dev/posts/git-rebase-interactive</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/git-rebase-interactive</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[git]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 01 Oct 2021 02:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[How to Use C#'s Parallel.ForEach]]></title>
             <description><![CDATA[There are certain operations performed in code that lend themselves to being executed in parallel. Some might even call these tasks "embarrassingly parallel". In this post we'll be going over how we can use C#'s Parallel.ForEach to iterate over collections in parallel.]]></description>
