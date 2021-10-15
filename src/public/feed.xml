@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Oct 2021 02:00:59 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Oct 2021 02:27:00 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Introduction to HTTP OPTIONS Method]]></title>
+            <description><![CDATA[If you've ever looked at the Network tab in the Browser Dev Tools, you may have noticed a lot of OPTIONS requests being sent to the server. Oftentimes these requests are not being made from our code, but made by the browser. In this post, we'll be covering the purpose that the HTTP OPTIONS method serves in our web applications.]]></description>
+            <link>https://aaronbos.dev/posts/http-options-introduction</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/http-options-introduction</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[web]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 15 Oct 2021 02:24:03 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Rebase Git Branches Interactively]]></title>
             <description><![CDATA[Git's rebase functionality could be one of the most polarizing features of the ubiquitous version control system. Some have horror stories of rebasing branches, while others use it whenever possible. In this post, we'll be touching on the interactive rebase feature which can reduce a lot of the anxiety around rebasing Git branches.]]></description>
