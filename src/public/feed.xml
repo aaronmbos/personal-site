@@ -9,8 +9,21 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 15 Oct 2021 02:27:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Oct 2021 03:52:50 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Running SQL Server on Linux with Docker]]></title>
+            <description><![CDATA[Since its creation SQL Server has been synonymous with Microsoft and Windows, but this all changed with SQL Server 2016. SQL Server is no longer just a database for Windows and in this post, we'll be going over the steps to get Microsoft SQL Server running on Linux in a Docker container using Docker Compose.]]></description>
+            <link>https://aaronbos.dev/posts/sql-server-linux-docker-compose</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-server-linux-docker-compose</guid>
+            <category><![CDATA[sql]]></category>
+            <category><![CDATA[database]]></category>
+            <category><![CDATA[linux]]></category>
+            <category><![CDATA[docker]]></category>
+            <category><![CDATA[containers]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 29 Oct 2021 03:52:13 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Introduction to HTTP OPTIONS Method]]></title>
             <description><![CDATA[If you've ever looked at the Network tab in the Browser Dev Tools, you may have noticed a lot of OPTIONS requests being sent to the server. Oftentimes these requests are not being made from our code, but made by the browser. In this post, we'll be covering the purpose that the HTTP OPTIONS method serves in our web applications.]]></description>

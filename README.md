@@ -10,6 +10,7 @@ I have some features and improvements I'd like to make, but they will come in ti
 
 ### Posts
 
+- [Running SQL Server on Linux with Docker](https://aaronbos.dev/posts/sql-server-linux-docker-compose)
 - [Introduction to HTTP OPTIONS Method](https://aaronbos.dev/posts/http-options-introduction)
 - [Rebase Git Branches Interactively](https://aaronbos.dev/posts/git-rebase-interactive)
 - [How to Use C#'s Parallel.ForEach](https://aaronbos.dev/posts/parallel-foreach-csharp)
