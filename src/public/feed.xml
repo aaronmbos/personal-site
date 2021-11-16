@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 29 Oct 2021 03:52:50 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 16 Nov 2021 05:59:43 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Formatting C# Code with EditorConfig]]></title>
+            <description><![CDATA[Code style and formatting can be polarizing, to say the least. One way to remove subjectivity about code style preferences within a codebase is to enforce specific rules. In this post we're going to talk about how using the EditorConfig file standard can help provide consistent styles throughout a codebase.]]></description>
+            <link>https://aaronbos.dev/posts/csharp-dotnet-editorconfig</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/csharp-dotnet-editorconfig</guid>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[dev]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 16 Nov 2021 05:58:28 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Running SQL Server on Linux with Docker]]></title>
             <description><![CDATA[Since its creation SQL Server has been synonymous with Microsoft and Windows, but this all changed with SQL Server 2016. SQL Server is no longer just a database for Windows and in this post, we'll be going over the steps to get Microsoft SQL Server running on Linux in a Docker container using Docker Compose.]]></description>
