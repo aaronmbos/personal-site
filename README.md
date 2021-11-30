@@ -10,6 +10,7 @@ I have some features and improvements I'd like to make, but they will come in ti
 
 ### Posts
 
+- [Working With Null in C#](https://aaronbos.dev/posts/handling-null-references)
 - [Formatting C# Code with EditorConfig](https://aaronbos.dev/posts/csharp-dotnet-editorconfig)
 - [Running SQL Server on Linux with Docker](https://aaronbos.dev/posts/sql-server-linux-docker-compose)
 - [Introduction to HTTP OPTIONS Method](https://aaronbos.dev/posts/http-options-introduction)

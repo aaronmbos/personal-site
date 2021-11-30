@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 16 Nov 2021 05:59:43 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Nov 2021 02:36:03 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Working With Null in C#]]></title>
+            <description><![CDATA[As software developers, we are bound to encounter scenarios where our code behaves in unexpected ways. Some of those unexpected behaviors could be caused by null object references. In this post, we're going to take a look at the different language constructs that C# provides for working with null. My goal is to provide information that leads to more tidy code and fewer bugs.]]></description>
+            <link>https://aaronbos.dev/posts/handling-null-references</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/handling-null-references</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 30 Nov 2021 02:35:19 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Formatting C# Code with EditorConfig]]></title>
             <description><![CDATA[Code style and formatting can be polarizing, to say the least. One way to remove subjectivity about code style preferences within a codebase is to enforce specific rules. In this post we're going to talk about how using the EditorConfig file standard can help provide consistent styles throughout a codebase.]]></description>
