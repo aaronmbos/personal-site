@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'MonoLisa';
+  font-family: 'JetBrainsMono';
   font-weight: 400;
-  src: url(../public/fonts/MonoLisa-Regular.woff2) format('woff2');
+  src: url(../public/fonts/JetBrainsMono-Regular.woff2) format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'MonoLisa';
+  font-family: 'JetBrainsMono';
   font-weight: 800;
-  src: url(../public/fonts/MonoLisa-Bold.woff2) format('woff2');
+  src: url(../public/fonts/JetBrainsMono-Bold.woff2) format('woff2');
   font-display: swap;
 }
