@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 30 Nov 2021 02:36:03 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 Dec 2021 03:37:01 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning When to Cut the Thread]]></title>
+            <description><![CDATA[As software engineers, we frequently tackle complex problems in code. The source of a problem's complexity may be from the problem itself, from the code's architecture, or from something else entirely. In this post, we're going to compare writing code to pulling on a loose thread from a piece of clothing. There comes a time when writing software that we need to know when to "cut the thread" or we'll risk the whole thing unraveling.]]></description>
+            <link>https://aaronbos.dev/posts/learn-to-cut-thread</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/learn-to-cut-thread</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[growth]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 15 Dec 2021 03:35:30 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Working With Null in C#]]></title>
             <description><![CDATA[As software developers, we are bound to encounter scenarios where our code behaves in unexpected ways. Some of those unexpected behaviors could be caused by null object references. In this post, we're going to take a look at the different language constructs that C# provides for working with null. My goal is to provide information that leads to more tidy code and fewer bugs.]]></description>
