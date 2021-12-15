@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           as="style"
           rel="preload"
           href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-          onload="this.onload=null;this.rel='stylesheet'"
+          onload="this.onLoad=null;this.rel='stylesheet'"
         />
         <noscript>
           <link
