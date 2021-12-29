@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Dec 2021 13:24:59 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Dec 2021 04:47:05 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[What I've Learned in a Year of Blogging]]></title>
+            <description><![CDATA[In January 2021 I created this blog without any expectations of what would come of it. I had a plan but wasn't sure I'd be able to execute it. In this post, I'll take a moment to reflect and look back at this year going over what I've learned, what went well, and what didn't go so well, as well as take a look ahead at next year to see how I can improve.]]></description>
+            <link>https://aaronbos.dev/posts/2021-year-review</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/2021-year-review</guid>
+            <category><![CDATA[review]]></category>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[growth]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 29 Dec 2021 04:40:42 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Learning When to Cut the Thread]]></title>
             <description><![CDATA[As software engineers, we frequently tackle complex problems in code. The source of a problem's complexity may be from the problem itself, from the code's architecture, or from something else entirely. In this post, we're going to compare writing code to pulling on a loose thread from a piece of clothing. There comes a time when writing software that we need to know when to "cut the thread" or we'll risk the whole thing unraveling.]]></description>

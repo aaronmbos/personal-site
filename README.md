@@ -10,6 +10,7 @@ I have some features and improvements I'd like to make, but they will come in ti
 
 ### Posts
 
+- [What I've Learned in a Year of Blogging](https://aaronbos.dev/posts/2021-year-review)
 - [Learning When to Cut the Thread](https://aaronbos.dev/posts/learn-to-cut-thread)
 - [Working With Null in C#](https://aaronbos.dev/posts/handling-null-references)
 - [Formatting C# Code with EditorConfig](https://aaronbos.dev/posts/csharp-dotnet-editorconfig)
