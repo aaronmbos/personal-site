@@ -2,14 +2,9 @@
 
 [https://aaronbos.dev](https://aaronbos.dev)
 
-~~⚠️ Currently in development. My goal is to have v1.0 ready to go by the end of January 2021.~~
+## Posts
 
-## v1.0 is out there! 🚀
-
-I have some features and improvements I'd like to make, but they will come in time. Planning to post a roadmap here once I get settled into a consistent blogging rhythm.
-
-### Posts
-
+- [Know Your Tools: Oh My Zsh and Git](https://aaronbos.dev/posts/ohmyzsh-git)
 - [What I've Learned in a Year of Blogging](https://aaronbos.dev/posts/2021-year-review)
 - [Learning When to Cut the Thread](https://aaronbos.dev/posts/learn-to-cut-thread)
 - [Working With Null in C#](https://aaronbos.dev/posts/handling-null-references)
@@ -34,3 +29,14 @@ I have some features and improvements I'd like to make, but they will come in ti
 - [Behind the Scenes of Making my Blog](https://aaronbos.dev/posts/blog-behind-the-scenes)
 - [JWTs: A Peek Under the Hood](https://aaronbos.dev/posts/jwt-under-the-hood)
 - [Hello World](https://aaronbos.dev/posts/hello-world)
+
+## Feature Roadmap
+
+### 2022
+
+| Quarter | Feature | Status |
+| --- | --- | --- |
+| Q1 | Implement dark mode. | In Progress |
+| Q2 | Share directly to Twitter from a blog post. | Not Started |
+| Q3 | React to posts with emojis. | Not Started |
+| Q4 | Search blog posts based on tag, title, and content. | Not Started |
