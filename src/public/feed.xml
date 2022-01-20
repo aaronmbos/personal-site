@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 07 Jan 2022 01:28:18 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jan 2022 04:04:27 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning T-SQL Window Functions]]></title>
+            <description><![CDATA[Being able to query and manipulate data effectively is a valuable skill for any software engineer to have in their toolbelt. In this post, we're going to take a look at Window Functions and the functionality they provide. Although this post is going to focus on using window functions with T-SQL, it's important to note that window functions are part of the ANSI SQL standard and are available in other SQL database implementations.]]></description>
+            <link>https://aaronbos.dev/posts/learn-tsql-window-functions</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/learn-tsql-window-functions</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[database]]></category>
+            <category><![CDATA[sql]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 20 Jan 2022 04:02:54 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Know Your Tools: Oh My Zsh and Git]]></title>
             <description><![CDATA[As developers, we are exposed to many tools. How we learn and use those tools can make a big difference in our productivity and happiness. In this post, we'll be looking at the git plugin for Oh My Zsh and how it can be leveraged to increase our productivity using Git in the terminal.]]></description>

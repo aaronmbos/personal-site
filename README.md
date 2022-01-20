@@ -4,6 +4,7 @@
 
 ## Posts
 
+- [Learning T-SQL Window Functions](https://aaronbos.dev/posts/learn-tsql-window-functions)
 - [Know Your Tools: Oh My Zsh and Git](https://aaronbos.dev/posts/ohmyzsh-git)
 - [What I've Learned in a Year of Blogging](https://aaronbos.dev/posts/2021-year-review)
 - [Learning When to Cut the Thread](https://aaronbos.dev/posts/learn-to-cut-thread)
