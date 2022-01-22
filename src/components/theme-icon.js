@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function ThemeIcon() {
   const themeIcons = {
@@ -9,30 +10,26 @@ export default function ThemeIcon() {
 
   const { theme, setTheme } = useTheme();
 
+  const [iconState, setIconState] = useState(
+    theme === "light" ? themeIcons.light : themeIcons.dark
+  );
+
   return (
     <button
       onClick={() => {
         setTheme(theme === "light" ? "dark" : "light");
-        document
-          .querySelector("#theme-icon")
-          .setAttribute(
-            "d",
-            theme === "light" ? themeIcons.dark : themeIcons.light
-          );
+        setIconState(theme === "light" ? themeIcons.dark : themeIcons.light);
       }}
       aria-label="Toggle Dark Mode"
       type="button"
-      class="w-9 h-9 bg-blue-50 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-500 transition-all"
+      className="w-9 h-9 bg-blue-50 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-500 transition-all"
     >
       <svg
-        className="w-4 h-4 fill-stone-800 dark:fill-white cursor-pointer"
+        className="w-4 h-4 fill-stone-800 dark:fill-white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
-        <path
-          id="theme-icon"
-          d={theme === "light" ? themeIcons.light : themeIcons.dark}
-        ></path>
+        <path id="theme-icon" d={iconState}></path>
       </svg>
     </button>
   );

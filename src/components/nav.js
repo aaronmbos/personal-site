@@ -4,7 +4,7 @@ import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
 
-export default function Nav({ navLinks, isDarkTheme, onThemeChange }) {
+export default function Nav({ navLinks }) {
   const [menuState, setMenuState] = useState(false);
 
   return (
@@ -17,11 +17,7 @@ export default function Nav({ navLinks, isDarkTheme, onThemeChange }) {
           />
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <NavLogo />
-            <NavBody
-              isDarkTheme={isDarkTheme}
-              onThemeChange={onThemeChange}
-              navLinks={navLinks}
-            />
+            <NavBody navLinks={navLinks} />
           </div>
         </div>
       </div>

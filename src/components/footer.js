@@ -2,7 +2,7 @@ export default function Footer({ socialLinks }) {
   return (
     <footer
       id="footer"
-      className="text-blue-500 font-bold p-6 text-center bg-blue-50 dark:bg-slate-800 dark:text-white"
+      className="text-blue-500 font-bold p-6 text-center dark:bg-stone-800 dark:text-white"
     >
       <p className="my-2">Aaron Bos | {new Date().getFullYear()}</p>
       <p>
@@ -10,7 +10,7 @@ export default function Footer({ socialLinks }) {
           return (
             <a
               key={icon.url}
-              className="text-blue-500 hover:text-blue-700 m-3 text-2xl md:m-5"
+              className="dark:text-blue-300 dark:hover:text-blue-500 text-blue-500 hover:text-blue-700 m-3 text-2xl md:m-5"
               href={icon.url}
               target="_blank"
             >
