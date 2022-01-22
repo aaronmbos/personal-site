@@ -2,8 +2,6 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import MetaSocial from "../components/meta-social";
-import { useEffect, useState } from "react";
-import Script from "next/script";
 
 export default function Layout({ children }) {
   const navLinks = [
@@ -26,15 +24,6 @@ export default function Layout({ children }) {
     { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
   ];
 
-  const handleThemeChange = () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    if (isDark) {
-      localStorage.theme = "dark";
-    } else {
-      localStorage.theme = "light";
-    }
-  };
-
   return (
     <>
       <Head>
@@ -52,7 +41,6 @@ export default function Layout({ children }) {
           />
         </noscript>
       </Head>
-      <Script strategy="beforeInteractive" id="theme-script" src="../test.js" />
       <MetaSocial
         title="Aaron Bos' Blog"
         url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
@@ -60,14 +48,7 @@ export default function Layout({ children }) {
         image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
       />
       <div className="flex flex-col dark:bg-stone-800 dark:text-white">
-        <Nav
-          isDarkTheme={
-            typeof window !== "undefined" &&
-            document.documentElement.classList.contains("dark")
-          }
-          onThemeChange={handleThemeChange}
-          navLinks={navLinks}
-        />
+        <Nav navLinks={navLinks} />
         <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 grow dark:bg-stone-800 dark:text-white">
           {children}
         </main>
