@@ -2,17 +2,15 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 export default function ThemeIcon() {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   // Make sure we have the theme
   useEffect(() => setMounted(true), []);
 
   return (
     <button
-      onClick={() => {
-        setTheme(theme === "light" ? "dark" : "light");
-      }}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle Dark Mode"
       type="button"
       className="w-9 h-9 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-400 transition-all"
