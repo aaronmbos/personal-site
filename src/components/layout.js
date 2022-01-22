@@ -2,28 +2,39 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import MetaSocial from "../components/meta-social";
-
-const navLinks = [
-  { text: "Posts", route: "/posts" },
-  { text: "About", route: "/about" },
-];
-
-const socialLinks = [
-  { iconClass: "fab fa-twitter", url: "https://twitter.com/AaronMBos" },
-  {
-    iconClass: "fab fa-linkedin-in",
-    url: "https://www.linkedin.com/in/aaron-bos-057a5666/",
-  },
-  { iconClass: "fab fa-github", url: "https://github.com/aaronmbos" },
-  {
-    iconClass: "fab fa-stack-overflow",
-    url: "https://stackoverflow.com/users/8548471/a-a-ron",
-  },
-  { iconClass: "fa fa-envelope", url: "mailto:aaron.bos@icloud.com" },
-  { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
-];
+import { useEffect, useState } from "react";
+import Script from "next/script";
 
 export default function Layout({ children }) {
+  const navLinks = [
+    { text: "Posts", route: "/posts" },
+    { text: "About", route: "/about" },
+  ];
+
+  const socialLinks = [
+    { iconClass: "fab fa-twitter", url: "https://twitter.com/AaronMBos" },
+    {
+      iconClass: "fab fa-linkedin-in",
+      url: "https://www.linkedin.com/in/aaron-bos-057a5666/",
+    },
+    { iconClass: "fab fa-github", url: "https://github.com/aaronmbos" },
+    {
+      iconClass: "fab fa-stack-overflow",
+      url: "https://stackoverflow.com/users/8548471/a-a-ron",
+    },
+    { iconClass: "fa fa-envelope", url: "mailto:aaron.bos@icloud.com" },
+    { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
+  ];
+
+  const handleThemeChange = () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    if (isDark) {
+      localStorage.theme = "dark";
+    } else {
+      localStorage.theme = "light";
+    }
+  };
+
   return (
     <>
       <Head>
@@ -41,6 +52,7 @@ export default function Layout({ children }) {
           />
         </noscript>
       </Head>
+      <Script strategy="beforeInteractive" id="theme-script" src="../test.js" />
       <MetaSocial
         title="Aaron Bos' Blog"
         url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
@@ -48,7 +60,14 @@ export default function Layout({ children }) {
         image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
       />
       <div className="flex flex-col dark:bg-stone-800 dark:text-white">
-        <Nav navLinks={navLinks} />
+        <Nav
+          isDarkTheme={
+            typeof window !== "undefined" &&
+            document.documentElement.classList.contains("dark")
+          }
+          onThemeChange={handleThemeChange}
+          navLinks={navLinks}
+        />
         <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 grow dark:bg-stone-800 dark:text-white">
           {children}
         </main>

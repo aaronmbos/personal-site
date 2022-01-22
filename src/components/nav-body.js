@@ -1,28 +1,18 @@
 import NavLink from "./nav-link";
+import ThemeIcon from "./theme-icon";
 
-export default function NavBody({ navLinks }) {
+export default function NavBody({ navLinks, isDarkTheme, onThemeChange }) {
   return (
-    <div className="hidden sm:block sm:ml-10">
-      <div className="flex space-x-4">
+    <div className="flex-1 justify-between hidden sm:flex sm:ml-10">
+      <div className="flex flex-none space-x-4">
         {navLinks.map((link) => {
           return (
             <NavLink key={link.route} route={link.route} text={link.text} />
           );
         })}
-        <div className="flex">
-          <select
-            onChange={(e) =>
-              e.target.value == "Dark"
-                ? document.documentElement.classList.add("dark")
-                : document.documentElement.classList.remove("dark")
-            }
-            className="ml-auto align-self-end dark:text-blue-300 dark:bg-stone-900 bg-blue-50 rounded-md text-blue-500 px-2"
-          >
-            <option>Light</option>
-            <option>Dark</option>
-            <option>System</option>
-          </select>
-        </div>
+      </div>
+      <div className="flex-0 self-stretch">
+        <ThemeIcon onThemeChange={onThemeChange} isDarkTheme={isDarkTheme} />
       </div>
     </div>
   );
