@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ThemeIcon() {
   const themeIcons = {
@@ -9,6 +9,10 @@ export default function ThemeIcon() {
   };
 
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Make sure we have the theme
+  useEffect(() => setMounted(true), []);
 
   const [iconState, setIconState] = useState(
     theme === "light" ? themeIcons.light : themeIcons.dark
@@ -22,15 +26,17 @@ export default function ThemeIcon() {
       }}
       aria-label="Toggle Dark Mode"
       type="button"
-      className="w-9 h-9 bg-blue-50 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-500 transition-all"
+      className="w-9 h-9 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-400 transition-all"
     >
-      <svg
-        className="w-4 h-4 fill-stone-800 dark:fill-white"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path id="theme-icon" d={iconState}></path>
-      </svg>
+      {mounted && (
+        <svg
+          className="w-5 h-5 fill-stone-800 dark:fill-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path id="theme-icon" d={iconState}></path>
+        </svg>
+      )}
     </button>
   );
 }
