@@ -47,7 +47,7 @@ export default function Layout({ children }) {
         description="Blogging about software and technology from a software engineer's perspective."
         image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
       />
-      <div className="flex flex-col dark:bg-stone-800 dark:text-white">
+      <div className="flex flex-col bg-gray-50 dark:bg-stone-800 dark:text-white">
         <Nav navLinks={navLinks} />
         <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 grow dark:bg-stone-800 dark:text-white">
           {children}

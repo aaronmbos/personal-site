@@ -19,9 +19,7 @@ export default function PostPreview({
         <div className="my-2 italic dark:text-gray-300 text-gray-600">
           {description}
         </div>
-        <div className="mb-2 text-gray-500 dark:text-gray-100">
-          Published: {date}
-        </div>
+        <div className="mb-2 text-gray-500 dark:text-gray-100">{date}</div>
         {metadata.length > 0 && <TagHolder tags={metadata} />}
       </div>
       <hr />

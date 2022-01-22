@@ -2,8 +2,10 @@ export default function PostHeader({ title, description, date }) {
   return (
     <>
       <h1 className="mb-2 font-semibold text-3xl">{title}</h1>
-      <h2 className="mb-2 text-lg italic">{description}</h2>
-      <p className="mb-2 text-gray-600">Published: {date}</p>
+      <h2 className="mb-2 text-md italic">{description}</h2>
+      <p className="mb-4 text-sm text-gray-600 dark:text-gray-100">
+        Aaron Bos | {date}
+      </p>
       <hr />
     </>
   );
