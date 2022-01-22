@@ -1,6 +1,6 @@
 export default function NavHamburger({ isMenuOpen, handleClick }) {
   return (
-    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+    <div className="flex items-center sm:hidden">
       <button
         onClick={handleClick}
         className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset dark:focus:ring-stone-800 focus:ring-white"
