@@ -5,6 +5,7 @@ import MetaSocial from "../components/meta-social";
 
 export default function Layout({ children }) {
   const navLinks = [
+    { text: "Home", route: "/" },
     { text: "Posts", route: "/posts" },
     { text: "About", route: "/about" },
   ];
