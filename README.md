@@ -37,7 +37,7 @@
 
 | Quarter | Feature | Status |
 | --- | --- | --- |
-| Q1 | Implement dark mode. | In Progress |
+| Q1 | Implement dark mode. | Done ([PR](https://github.com/aaronmbos/personal-site/pull/1)) |
 | Q2 | Share directly to Twitter from a blog post. | Not Started |
 | Q3 | React to posts with emojis. | Not Started |
 | Q4 | Search blog posts based on tag, title, and content. | Not Started |
