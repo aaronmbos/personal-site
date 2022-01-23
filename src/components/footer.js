@@ -1,13 +1,15 @@
 export default function Footer({ socialLinks }) {
   return (
-    <footer id="footer" className="text-blue-800 p-6 text-center bg-blue-50">
-      <p className="my-2">Aaron Bos | {new Date().getFullYear()}</p>
+    <footer
+      id="footer"
+      className="text-blue-500 text-sm p-6 text-center dark:bg-stone-800 dark:text-white"
+    >
       <p>
         {socialLinks.map((icon) => {
           return (
             <a
               key={icon.url}
-              className="text-blue-500 hover:text-blue-700 m-3 text-2xl md:m-5"
+              className="dark:text-blue-300 dark:hover:text-blue-500 text-blue-500 hover:text-blue-700 m-3 text-2xl md:m-5"
               href={icon.url}
               target="_blank"
             >

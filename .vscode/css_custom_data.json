@@ -9,6 +9,16 @@
           "url": "https://tailwindcss.com/docs/functions-and-directives/#tailwind"
         }
       ]
+    },
+    {
+      "name": "@apply",
+      "description": "Use @apply to inline any existing utility classes into your own custom CSS.",
+      "references": [
+        {
+          "name": "Tailwind’s “Functions & Directives” documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+        }
+      ]
     }
   ]
 }

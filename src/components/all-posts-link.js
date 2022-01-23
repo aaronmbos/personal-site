@@ -4,7 +4,7 @@ export default function AllPostsLink({ text }) {
   return (
     <div className="mb-10">
       <Link href="/posts">
-        <a className="hover:underline text-blue-600">{text}</a>
+        <a className="underline dark:text-white text-black">{text}</a>
       </Link>
     </div>
   );

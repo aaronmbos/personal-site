@@ -4,7 +4,7 @@ export default function PostFooter() {
       Thanks for taking the time to read my blog post! If you would like to stay
       up to date on my posts, feel free to subscribe to my RSS feed&nbsp;
       <a
-        className="text-blue-600 hover:underline"
+        className="dark:text-white text-black underline"
         href="https://aaronbos.dev/feed.xml"
         target="_blank"
       >
