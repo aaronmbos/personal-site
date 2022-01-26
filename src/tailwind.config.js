@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      mono: ["JetBrainsMono", "ui-monospace"],
+      mono: ["Recursive", "ui-monospace"],
     },
   },
   plugins: [typography],
