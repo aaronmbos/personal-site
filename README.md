@@ -4,6 +4,7 @@
 
 ## Posts
 
+- [Working With JSON in Postgres 14](https://aaronbos.dev/posts/postgres-14-json)
 - [Learning T-SQL Window Functions](https://aaronbos.dev/posts/learn-tsql-window-functions)
 - [Know Your Tools: Oh My Zsh and Git](https://aaronbos.dev/posts/ohmyzsh-git)
 - [What I've Learned in a Year of Blogging](https://aaronbos.dev/posts/2021-year-review)
