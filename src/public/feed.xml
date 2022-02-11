@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 28 Jan 2022 03:35:23 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Feb 2022 04:44:19 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning TypeScript: Narrowing Types]]></title>
+            <description><![CDATA[Often times the TypeScript compiler knows more about our own code than we do. However, there are occasions when that's not the case, which is where type narrowing comes in. In this post, we'll take a look at the different options available for narrowing types in our TypeScript code.]]></description>
+            <link>https://aaronbos.dev/posts/typescript-narrowing</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-narrowing</guid>
+            <category><![CDATA[web]]></category>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[typescript]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 11 Feb 2022 04:41:30 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Working With JSON in Postgres 14]]></title>
             <description><![CDATA[Postgres has had native JSON support for almost 10 years (since version 9.2). In September 2021 Postgres 14 was released and it included some great features that improve our experience greatly when working with JSON data. In this post, we'll be diving into the new JSON features in Postgres 14 to see how we can leverage them in our day-to-day.]]></description>

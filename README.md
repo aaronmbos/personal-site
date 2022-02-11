@@ -4,6 +4,7 @@
 
 ## Posts
 
+- [Learning TypeScript: Narrowing Types](https://aaronbos.dev/posts/typescript-narrowing)
 - [Working With JSON in Postgres 14](https://aaronbos.dev/posts/postgres-14-json)
 - [Learning T-SQL Window Functions](https://aaronbos.dev/posts/learn-tsql-window-functions)
 - [Know Your Tools: Oh My Zsh and Git](https://aaronbos.dev/posts/ohmyzsh-git)
