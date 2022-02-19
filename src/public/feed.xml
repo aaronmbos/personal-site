@@ -9,9 +9,26 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
+<<<<<<< Updated upstream
         <lastBuildDate>Fri, 11 Feb 2022 04:44:19 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
+=======
+        <lastBuildDate>Sat, 19 Feb 2022 12:41:51 GMT</lastBuildDate>
+        <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning TypeScript: Conditional Types]]></title>
+            <description><![CDATA[Conditional Types in TypeScript may not be a language feature used day to day by most developers, but as I was reading the TypeScript Handbook I found the concept interesting and decided to dig a little deeper. In this post, we'll take a high-level look at the concept of conditional types and how they can be leveraged in our code.]]></description>
+            <link>https://aaronbos.dev/posts/typescript-conditional-types</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-conditional-types</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[typescript]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sat, 19 Feb 2022 12:40:17 GMT</pubDate>
+        </item>
+        <item>
+>>>>>>> Stashed changes
             <title><![CDATA[Learning TypeScript: Narrowing Types]]></title>
             <description><![CDATA[Often times the TypeScript compiler knows more about our own code than we do. However, there are occasions when that's not the case, which is where type narrowing comes in. In this post, we'll take a look at the different options available for narrowing types in our TypeScript code.]]></description>
             <link>https://aaronbos.dev/posts/typescript-narrowing</link>
@@ -19,6 +36,10 @@
             <category><![CDATA[web]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
+<<<<<<< Updated upstream
+=======
+            <category><![CDATA[dev]]></category>
+>>>>>>> Stashed changes
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
             <pubDate>Fri, 11 Feb 2022 04:41:30 GMT</pubDate>
         </item>
