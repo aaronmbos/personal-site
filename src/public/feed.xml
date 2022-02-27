@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 19 Feb 2022 12:41:51 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 27 Feb 2022 04:22:21 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[What is SQL Index Fragmentation?]]></title>
+            <description><![CDATA[SQL indexes are an important part of every database, but they don't come without requiring some regular maintenance. In this post, we'll be looking at SQL index fragmentation in the context of Microsoft's SQL Server and how it can affect our database performance.]]></description>
+            <link>https://aaronbos.dev/posts/sql-server-index-fragmentation</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-server-index-fragmentation</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[database]]></category>
+            <category><![CDATA[sql]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sun, 27 Feb 2022 04:15:08 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Learning TypeScript: Conditional Types]]></title>
             <description><![CDATA[Conditional Types in TypeScript may not be a language feature used day to day by most developers, but as I was reading the TypeScript Handbook I found the concept interesting and decided to dig a little deeper. In this post, we'll take a high-level look at the concept of conditional types and how they can be leveraged in our code.]]></description>

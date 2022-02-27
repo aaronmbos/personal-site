@@ -4,6 +4,7 @@
 
 ## Posts
 
+- [What is SQL Index Fragmentation?](https://aaronbos.dev/posts/sql-server-index-fragmentation)
 - [Learning TypeScript: Conditional Types](https://aaronbos.dev/posts/typescript-conditional-types)
 - [Learning TypeScript: Narrowing Types](https://aaronbos.dev/posts/typescript-narrowing)
 - [Working With JSON in Postgres 14](https://aaronbos.dev/posts/postgres-14-json)
