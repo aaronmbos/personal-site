@@ -40,7 +40,8 @@ function formatDate(rawDate) {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "America/Chicago"
   };
   const date = new Date(rawDate);
-  return date.toLocaleDateString(undefined, options);
+  return date.toLocaleDateString("en-US", options);
 }
