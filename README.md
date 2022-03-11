@@ -1,5 +1,7 @@
 # ![Blog Card Image](https://aaronbos.dev/static/card-logo.png)
 
+![Vercel Deploy Status](https://img.shields.io/github/deployments/aaronmbos/personal-site/production?label=Vercel&logo=vercel&logoColor=white)
+
 [https://aaronbos.dev](https://aaronbos.dev)
 
 ## Posts
