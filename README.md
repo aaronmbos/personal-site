@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Learning TypeScript: Literal Types](https://aaronbos.dev/posts/typescript-literal-types)
 - [Reasons to Use C# Record Types](https://aaronbos.dev/posts/csharp-record-types)
 - [What is SQL Index Fragmentation?](https://aaronbos.dev/posts/sql-server-index-fragmentation)
 - [Learning TypeScript: Conditional Types](https://aaronbos.dev/posts/typescript-conditional-types)
