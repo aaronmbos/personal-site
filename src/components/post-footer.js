@@ -7,6 +7,7 @@ export default function PostFooter({ url }) {
       <a
         className="dark:text-white text-black underline"
         href={`https://twitter.com/intent/tweet?url=${encodeURI(url)}`}
+        target="_blank"
       >
         Twitter
       </a>
