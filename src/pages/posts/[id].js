@@ -8,6 +8,10 @@ import Head from "next/head";
 import AllPostsLink from "../../components/all-posts-link";
 import MetaSocial from "../../components/meta-social";
 
+function getPostUrl(slug) {
+  return `${process.env.NEXT_PUBLIC_ORIGIN}/posts/${slug}`;
+}
+
 export default function Post({ post }) {
   return (
     <Layout>
@@ -16,7 +20,7 @@ export default function Post({ post }) {
       </Head>
       <MetaSocial
         title={post.title}
-        url={`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${post.slug}`}
+        url={getPostUrl(post.slug)}
         description={post.description}
         image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
       />
@@ -26,7 +30,7 @@ export default function Post({ post }) {
         date={post.date}
       />
       <PostBody content={post.content} />
-      <PostFooter />
+      <PostFooter url={getPostUrl(post.slug)} />
       <AllPostsLink text="See More Posts" />
     </Layout>
   );

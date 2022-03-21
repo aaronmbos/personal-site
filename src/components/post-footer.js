@@ -1,8 +1,17 @@
-export default function PostFooter() {
+export default function PostFooter({ url }) {
   return (
     <div className="my-8 font-medium">
-      Thanks for taking the time to read my blog post! If you would like to stay
-      up to date on my posts, feel free to subscribe to my RSS feed&nbsp;
+      Thanks for taking the time to read this blog post! <br />
+      <br />
+      If you think others would enjoy it, please share it on&nbsp;
+      <a
+        className="dark:text-white text-black underline"
+        href={`https://twitter.com/intent/tweet?url=${encodeURI(url)}`}
+      >
+        Twitter
+      </a>
+      . Interested in staying up to date on my posts as they're publised? Feel
+      free to subscribe to the RSS feed&nbsp;
       <a
         className="dark:text-white text-black underline"
         href="https://aaronbos.dev/feed.xml"
