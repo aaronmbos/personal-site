@@ -46,6 +46,7 @@
 | Quarter | Feature | Status |
 | --- | --- | --- |
 | Q1 | Implement dark mode. | Done ([PR](https://github.com/aaronmbos/personal-site/pull/1)) |
-| Q2 | Share directly to Twitter from a blog post. | Not Started |
+| Q2 | Share directly to Twitter from a blog post. | Done ([PR](https://github.com/aaronmbos/personal-site/pull/2)) |
+| Q2 | TypeScript Migration | Not Started |
 | Q3 | React to posts with emojis. | Not Started |
 | Q4 | Search blog posts based on tag, title, and content. | Not Started |
