@@ -26,7 +26,9 @@ export default function Post({ post }) {
         date={post.date}
       />
       <PostBody content={post.content} />
-      <PostFooter />
+      <PostFooter
+        url={`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${post.slug}`}
+      />
       <AllPostsLink text="See More Posts" />
     </Layout>
   );
