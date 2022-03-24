@@ -1,4 +1,3 @@
-import { withCoalescedInvoke } from "next/dist/lib/coalesced-function";
 import fetch from "node-fetch";
 const postsUri = `${process.env.STRAPI_BASE_URI}/posts`;
 

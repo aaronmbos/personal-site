@@ -10,7 +10,7 @@ interface Props {
   recentPosts: Post[]
 }
 
-export default function Home({ recentPosts }: GetStaticProps<Props>) {
+export default function Home({ recentPosts }: Props) {
   return (
     <>
       <Head>
@@ -27,7 +27,7 @@ export default function Home({ recentPosts }: GetStaticProps<Props>) {
   );
 }
 
-export async function getStaticProps() : Promise<GetStaticProps<Props>> {
+export const getStaticProps : GetStaticProps<Props> = async () => {
   const recentPosts = await getRecentPosts();
   return {
     props: { recentPosts }
