@@ -2,12 +2,12 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Intro from "../components/intro";
 import RecentPosts from "../components/recent-posts";
-import { getRecentPosts, Post } from "../lib/posts";
+import { getRecentPosts, BlogPost } from "../lib/posts";
 import AllPostsLink from "../components/all-posts-link";
 import { GetStaticProps } from "next";
 
 interface Props {
-  recentPosts: Post[]
+  recentPosts: BlogPost[]
 }
 
 export default function Home({ recentPosts }: Props) {
@@ -27,7 +27,7 @@ export default function Home({ recentPosts }: Props) {
   );
 }
 
-export const getStaticProps : GetStaticProps<Props> = async () => {
+export const getStaticProps : GetStaticProps = async () => {
   const recentPosts = await getRecentPosts();
   return {
     props: { recentPosts }
