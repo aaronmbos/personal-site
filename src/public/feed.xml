@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 19 Mar 2022 13:41:14 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Mar 2022 00:30:50 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning TypeScript: Utility Types]]></title>
+            <description><![CDATA[One of the things that I've enjoyed the most while learning TypeScript is the language's flexibility when working with types. I think that **Utility Types** are great examples of that flexibility. In this post, we'll be looking at the main kinds of utility types available and also how we can use them to improve our code.]]></description>
+            <link>https://aaronbos.dev/posts/typescript-utility-types</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-utility-types</guid>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[typescript]]></category>
+            <category><![CDATA[dev]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 31 Mar 2022 00:27:58 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Learning TypeScript: Literal Types]]></title>
             <description><![CDATA[In this post, we'll be looking at literal types, what they are, and how we can potentially use them in our code day to day. Coming from a language like C# where there isn't really an equivalent to literal types I find them to be quite interesting and I hope you will too. Let's dive in!
