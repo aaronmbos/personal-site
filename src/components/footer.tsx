@@ -1,4 +1,24 @@
-export default function Footer({ socialLinks }) {
+interface SocialLink {
+  iconClass: string,
+  url: string
+}
+
+const socialLinks: SocialLink[] = [
+  { iconClass: "fab fa-twitter", url: "https://twitter.com/AaronMBos" },
+  {
+    iconClass: "fab fa-linkedin-in",
+    url: "https://www.linkedin.com/in/aaron-bos-057a5666/",
+  },
+  { iconClass: "fab fa-github", url: "https://github.com/aaronmbos" },
+  {
+    iconClass: "fab fa-stack-overflow",
+    url: "https://stackoverflow.com/users/8548471/a-a-ron",
+  },
+  { iconClass: "fa fa-envelope", url: "mailto:aaron.bos@icloud.com" },
+  { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
+];
+
+export default function Footer() {
   return (
     <footer
       id="footer"

@@ -1,6 +1,12 @@
 import NavMobileLink from "./nav-mobile-link";
+import { NavigationLink } from "./nav";
 
-export default function NavMobileMenu({ isMenuOpen, navLinks }) {
+interface Props {
+  isMenuOpen: boolean,
+  navLinks: NavigationLink[]
+}
+
+export default function NavMobileMenu({ isMenuOpen, navLinks }: Props) {
   return (
     <div
       id="mobileMenu"

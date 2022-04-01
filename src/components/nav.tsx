@@ -4,7 +4,18 @@ import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
 
-export default function Nav({ navLinks }) {
+export interface NavigationLink {
+  text: string,
+  route: string
+}
+
+const navLinks: NavigationLink[] = [
+  { text: "Home", route: "/" },
+  { text: "Posts", route: "/posts" },
+  { text: "About", route: "/about" },
+];
+
+export default function Nav() {
   const [menuState, setMenuState] = useState(false);
 
   return (

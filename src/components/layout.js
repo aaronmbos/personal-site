@@ -10,21 +10,6 @@ export default function Layout({ children }) {
     { text: "About", route: "/about" },
   ];
 
-  const socialLinks = [
-    { iconClass: "fab fa-twitter", url: "https://twitter.com/AaronMBos" },
-    {
-      iconClass: "fab fa-linkedin-in",
-      url: "https://www.linkedin.com/in/aaron-bos-057a5666/",
-    },
-    { iconClass: "fab fa-github", url: "https://github.com/aaronmbos" },
-    {
-      iconClass: "fab fa-stack-overflow",
-      url: "https://stackoverflow.com/users/8548471/a-a-ron",
-    },
-    { iconClass: "fa fa-envelope", url: "mailto:aaron.bos@icloud.com" },
-    { iconClass: "fas fa-rss", url: "https://aaronbos.dev/feed.xml" },
-  ];
-
   return (
     <>
       <Head>
@@ -71,7 +56,7 @@ export default function Layout({ children }) {
         <main className="w-full pt-8 max-w-screen-lg mx-auto px-10 md:px-28 grow dark:bg-stone-800 dark:text-white">
           {children}
         </main>
-        <Footer socialLinks={socialLinks} />
+        <Footer />
       </div>
     </>
   );
