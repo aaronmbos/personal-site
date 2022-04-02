@@ -1,6 +1,15 @@
 import Tag from "./tag";
 
-export default function TagHolder({ tags }) {
+interface PostTag {
+  id: number;
+  tag: string;
+}
+
+interface Props {
+  tags: PostTag[];
+}
+
+export default function TagHolder({ tags }: Props) {
   return (
     <div className="flex flex-wrap">
       {tags.map((tag) => {
