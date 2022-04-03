@@ -1,4 +1,3 @@
-import { NavigationLink } from "./nav";
 import Link from "next/link";
 
 interface Props {
