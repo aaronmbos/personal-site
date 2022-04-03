@@ -28,13 +28,15 @@ export async function getAllPosts() : Promise<BlogPost[]> {
   return convertRawPosts(rawPosts);
 }
 
-export async function getPostByUrlId(urlId: string | undefined) {
+export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
   const posts = await getAllPosts();
   const post = posts.find((post: BlogPost) => post.slug === urlId);
 
-  return {
-    ...post,
-  };
+  if (!post) {
+    throw new Error("No post found with given urlId");
+  }
+
+  return post;
 }
 
 function convertRawPosts(rawPosts: Array<BlogPost>) {
