@@ -1,7 +1,7 @@
 interface Props {
-  title: string,
-  description: string,
-  date: string
+  title: string;
+  description: string;
+  date: string;
 }
 
 export default function PostHeader({ title, description, date }: Props) {

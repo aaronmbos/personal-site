@@ -1,6 +1,6 @@
 interface Props {
-  isMenuOpen: boolean,
-  handleClick: () => void
+  isMenuOpen: boolean;
+  handleClick: () => void;
 }
 
 export default function NavHamburger({ isMenuOpen, handleClick }: Props) {

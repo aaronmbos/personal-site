@@ -3,7 +3,7 @@ import NavLink from "./nav-link";
 import ThemeIcon from "./theme-icon";
 
 interface Props {
-  navLinks: NavigationLink[]
+  navLinks: NavigationLink[];
 }
 
 export default function NavBody({ navLinks }: Props) {

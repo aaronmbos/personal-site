@@ -1,10 +1,10 @@
 import Head from "next/head";
 
 interface Props {
-  title: string,
-  url: string,
-  description: string,
-  image: string
+  title: string;
+  url: string;
+  description: string;
+  image: string;
 }
 
 export default function MetaSocial({ title, url, description, image }: Props) {

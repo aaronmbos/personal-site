@@ -1,6 +1,6 @@
 interface SocialLink {
-  iconClass: string,
-  url: string
+  iconClass: string;
+  url: string;
 }
 
 const socialLinks: SocialLink[] = [

@@ -1,5 +1,5 @@
 interface Props {
-  url: string
+  url: string;
 }
 
 export default function PostFooter({ url }: Props) {

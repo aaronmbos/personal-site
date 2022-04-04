@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 interface Props {
-  route: string,
-  text: string
+  route: string;
+  text: string;
 }
 
 export default function NavMobileLink({ route, text }: Props) {

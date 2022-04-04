@@ -2,8 +2,8 @@ import NavMobileLink from "./nav-mobile-link";
 import { NavigationLink } from "./nav";
 
 interface Props {
-  isMenuOpen: boolean,
-  navLinks: NavigationLink[]
+  isMenuOpen: boolean;
+  navLinks: NavigationLink[];
 }
 
 export default function NavMobileMenu({ isMenuOpen, navLinks }: Props) {

@@ -2,7 +2,7 @@ import PostPreview from "./post-preview";
 import { BlogPost } from "../lib/posts";
 
 interface Props {
-  recentPosts: Pick<BlogPost, "id" | "slug" | "description" | "date" | "metadata" | "title">[]
+  recentPosts: Pick<BlogPost, "id" | "slug" | "description" | "date" | "metadata" | "title">[];
 }
 
 export default function RecentPosts({ recentPosts }: Props) {

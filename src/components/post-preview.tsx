@@ -3,11 +3,11 @@ import Link from "next/link";
 import { PostMetadata } from "../lib/posts";
 
 interface Props {
-  slug: string,
-  title: string,
-  description: string,
-  date: string,
-  metadata: PostMetadata[]
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  metadata: PostMetadata[];
 }
 
 export default function PostPreview({

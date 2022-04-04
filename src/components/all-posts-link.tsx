@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface Props {
-  text: string
+  text: string;
 }
 
 export default function AllPostsLink({ text }: Props) {

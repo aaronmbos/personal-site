@@ -5,8 +5,8 @@ import NavBody from "./nav-body";
 import { useState } from "react";
 
 export interface NavigationLink {
-  text: string,
-  route: string
+  text: string;
+  route: string;
 }
 
 const navLinks: NavigationLink[] = [

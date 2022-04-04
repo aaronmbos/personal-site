@@ -1,5 +1,5 @@
 interface Props {
-  content: string
+  content: string;
 }
 
 export default function PostBody({ content }: Props) {
