@@ -1,5 +1,15 @@
 import TagHolder from "./tag-holder";
 import Link from "next/link";
+import { PostMetadata } from "../lib/posts";
+
+interface Props {
+  id: number,
+  slug: string,
+  title: string,
+  description: string,
+  date: string,
+  metadata: PostMetadata[]
+}
 
 export default function PostPreview({
   slug,
@@ -7,7 +17,7 @@ export default function PostPreview({
   description,
   date,
   metadata,
-}) {
+}: Props) {
   return (
     <>
       <div className="py-6 px-3">

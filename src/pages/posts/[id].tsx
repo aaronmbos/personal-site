@@ -1,4 +1,4 @@
-import { getAllPosts, getPostByUrlId } from "../../lib/posts";
+import { getAllPosts, getPostByUrlId, BlogPost } from "../../lib/posts";
 import Layout from "../../components/layout";
 import { parseMarkdownToHtml } from "../../lib/markdown-parser";
 import PostHeader from "../../components/post-header";
@@ -7,12 +7,17 @@ import PostFooter from "../../components/post-footer";
 import Head from "next/head";
 import AllPostsLink from "../../components/all-posts-link";
 import MetaSocial from "../../components/meta-social";
+import { GetStaticProps } from "next";
 
-function getPostUrl(slug) {
+interface Props {
+  post: BlogPost
+}
+
+function getPostUrl(slug: string) {
   return `${process.env.NEXT_PUBLIC_ORIGIN}/posts/${slug}`;
 }
 
-export default function Post({ post }) {
+export default function Post({ post }: Props) {
   return (
     <Layout>
       <Head>
@@ -45,8 +50,8 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-  const post = await getPostByUrlId(params.id);
+export const getStaticProps : GetStaticProps = async ({ params }) => {
+  const post = await getPostByUrlId(params?.id as string);
   const parsedContent = await parseMarkdownToHtml(post.content);
   post.content = parsedContent;
   return {

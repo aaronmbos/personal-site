@@ -1,6 +1,13 @@
 import Head from "next/head";
 
-export default function MetaSocial({ title, url, description, image }) {
+interface Props {
+  title: string,
+  url: string,
+  description: string,
+  image: string
+}
+
+export default function MetaSocial({ title, url, description, image }: Props) {
   return (
     <Head>
       <meta property="og:title" content={title} key="title" />

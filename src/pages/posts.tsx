@@ -1,9 +1,14 @@
 import Layout from "../components/layout";
 import PostPreview from "../components/post-preview";
-import { getAllPosts } from "../lib/posts";
+import { getAllPosts, BlogPost } from "../lib/posts";
 import Head from "next/head";
+import { GetStaticProps } from "next";
 
-export default function Posts({ posts }) {
+interface Props {
+  posts: BlogPost[]
+}
+
+export default function Posts({ posts } : Props) {
   return (
     <>
       <Head>
@@ -22,7 +27,7 @@ export default function Posts({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps : GetStaticProps = async () =>  {
   const posts = await getAllPosts();
   return {
     props: {

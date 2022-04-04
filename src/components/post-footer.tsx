@@ -1,4 +1,8 @@
-export default function PostFooter({ url }) {
+interface Props {
+  url: string
+}
+
+export default function PostFooter({ url }: Props) {
   return (
     <div className="my-8 font-medium">
       Thanks for taking the time to read this blog post! <br />
