@@ -1,4 +1,10 @@
-export default function PostHeader({ title, description, date }) {
+interface Props {
+  title: string,
+  description: string,
+  date: string
+}
+
+export default function PostHeader({ title, description, date }: Props) {
   return (
     <>
       <h1 className="mb-2 font-semibold text-3xl">{title}</h1>

@@ -1,6 +1,11 @@
 import fetch from "node-fetch";
 const postsUri = `${process.env.STRAPI_BASE_URI}/posts`;
 
+export interface PostMetadata {
+  id: number,
+  tag: string
+}
+
 export interface BlogPost 
 { 
   id: number,
@@ -10,7 +15,7 @@ export interface BlogPost
   published_at: string,
   date: string,
   description: string,
-  metadata: string
+  metadata: PostMetadata[]
 }
 
 export async function getRecentPosts() : Promise<BlogPost[]> {

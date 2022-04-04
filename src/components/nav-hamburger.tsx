@@ -1,4 +1,9 @@
-export default function NavHamburger({ isMenuOpen, handleClick }) {
+interface Props {
+  isMenuOpen: boolean,
+  handleClick: () => void
+}
+
+export default function NavHamburger({ isMenuOpen, handleClick }: Props) {
   return (
     <div className="flex items-center sm:hidden">
       <button

@@ -1,12 +1,8 @@
 import Tag from "./tag";
-
-interface PostTag {
-  id: number;
-  tag: string;
-}
+import { PostMetadata } from "../lib/posts";
 
 interface Props {
-  tags: PostTag[];
+  tags: PostMetadata[];
 }
 
 export default function TagHolder({ tags }: Props) {
