@@ -3,7 +3,6 @@ import Link from "next/link";
 import { PostMetadata } from "../lib/posts";
 
 interface Props {
-  id: number,
   slug: string,
   title: string,
   description: string,
