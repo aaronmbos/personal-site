@@ -9,11 +9,24 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 31 Mar 2022 00:30:50 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Apr 2022 00:34:59 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[When to Use React.useRef]]></title>
+            <description><![CDATA[The introduction of hooks a couple of years ago (version 16.8) introduced a massive paradigm shift in the world of React. Hooks allow developers to "hook" into state and component lifecycles without the use of classes! In this post, we're going to look at the useRef hook, how it works, and why we should use it.]]></description>
+            <link>https://aaronbos.dev/posts/using-react-useref-hook</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/using-react-useref-hook</guid>
+            <category><![CDATA[web]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[javascript]]></category>
+            <category><![CDATA[typescript]]></category>
+            <category><![CDATA[react]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 11 Apr 2022 00:33:55 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Learning TypeScript: Utility Types]]></title>
-            <description><![CDATA[One of the things that I've enjoyed the most while learning TypeScript is the language's flexibility when working with types. I think that **Utility Types** are great examples of that flexibility. In this post, we'll be looking at the main kinds of utility types available and also how we can use them to improve our code.]]></description>
+            <description><![CDATA[One of the things that I've enjoyed the most while learning TypeScript is the language's flexibility when working with types. I think that Utility Types are great examples of that flexibility. In this post, we'll be looking at the main kinds of utility types available and also how we can use them to improve our code.]]></description>
             <link>https://aaronbos.dev/posts/typescript-utility-types</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-utility-types</guid>
             <category><![CDATA[learning]]></category>
