@@ -23,14 +23,11 @@ export default function About() {
         </div>
         <p className="my-4">
           I am a <span className="font-semibold">software engineer</span> from
-          the Midwest. I received my Bachelor’s degree in Business
-          Administration from the University of Nebraska-Lincoln in 2015 as well
-          as my Associates Degree in Computer Information Technology from
-          Southeast Community College in 2018.
-        </p>
-        <p className="my-4">
-          While in college I met my wife Lauren. We’ve been married since 2015
-          and have three amazing young children and two Yorkies.
+          the midwest United States. While in college I met my wife Lauren.
+          We’ve been married since 2015 and have three amazing young children
+          and two Yorkies. I'm currently working at a company called Opendorse
+          that focuses on building software to help athletes monetize, protect,
+          and build their Name, Image and, Likeness (NIL).
         </p>
         <p className="my-4">
           I’ve been a part of software teams since my first job as an intern
