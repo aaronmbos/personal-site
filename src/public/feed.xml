@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  version="2.0"
+>
     <channel>
         <title><![CDATA[Aaron Bos]]></title>
         <description><![CDATA[Aaron Bos]]></description>
@@ -9,13 +15,35 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 20 Apr 2022 01:04:10 GMT</lastBuildDate>
-        <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Fri, 29 Apr 2022 03:27:13 GMT</lastBuildDate>
+        <atom:link
+      href="https://aaronbos.dev/feed.xml"
+      rel="self"
+      type="application/rss+xml"
+    />
+        <item>
+            <title><![CDATA[Writing C# in Neovim]]></title>
+            <description
+      ><![CDATA[In this post, we'll be looking at how to set up our development environment to effectively write C# in Neovim. We'll also be looking a little more in-depth specifically at the tooling in Neovim that makes this all possible.]]></description>
+            <link>https://aaronbos.dev/posts/csharp-dotnet-neovim</link>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/csharp-dotnet-neovim</guid>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[neovim]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 29 Apr 2022 03:26:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Function Overloading in TypeScript]]></title>
-            <description><![CDATA[While learning about TypeScript I came across function overloading. The way it works in TypeScript seemed different than what I was used to in languages like C# and Java. In this post, we'll be learning about overloading functions in TypeScript and potential alternatives that are better suited to certain situations.]]></description>
+            <description
+      ><![CDATA[While learning about TypeScript I came across function overloading. The way it works in TypeScript seemed different than what I was used to in languages like C# and Java. In this post, we'll be learning about overloading functions in TypeScript and potential alternatives that are better suited to certain situations.]]></description>
             <link>https://aaronbos.dev/posts/function-overload-typescript</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/function-overload-typescript</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/function-overload-typescript</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
@@ -24,9 +52,12 @@
         </item>
         <item>
             <title><![CDATA[When to Use React.useRef]]></title>
-            <description><![CDATA[The introduction of hooks a couple of years ago (version 16.8) introduced a massive paradigm shift in the world of React. Hooks allow developers to "hook" into state and component lifecycles without the use of classes! In this post, we're going to look at the useRef hook, how it works, and why we should use it.]]></description>
+            <description
+      ><![CDATA[The introduction of hooks a couple of years ago (version 16.8) introduced a massive paradigm shift in the world of React. Hooks allow developers to "hook" into state and component lifecycles without the use of classes! In this post, we're going to look at the useRef hook, how it works, and why we should use it.]]></description>
             <link>https://aaronbos.dev/posts/using-react-useref-hook</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/using-react-useref-hook</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/using-react-useref-hook</guid>
             <category><![CDATA[web]]></category>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[javascript]]></category>
@@ -37,9 +68,12 @@
         </item>
         <item>
             <title><![CDATA[Learning TypeScript: Utility Types]]></title>
-            <description><![CDATA[One of the things that I've enjoyed the most while learning TypeScript is the language's flexibility when working with types. I think that Utility Types are great examples of that flexibility. In this post, we'll be looking at the main kinds of utility types available and also how we can use them to improve our code.]]></description>
+            <description
+      ><![CDATA[One of the things that I've enjoyed the most while learning TypeScript is the language's flexibility when working with types. I think that Utility Types are great examples of that flexibility. In this post, we'll be looking at the main kinds of utility types available and also how we can use them to improve our code.]]></description>
             <link>https://aaronbos.dev/posts/typescript-utility-types</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-utility-types</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/typescript-utility-types</guid>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
             <category><![CDATA[dev]]></category>
@@ -48,10 +82,13 @@
         </item>
         <item>
             <title><![CDATA[Learning TypeScript: Literal Types]]></title>
-            <description><![CDATA[In this post, we'll be looking at literal types, what they are, and how we can potentially use them in our code day to day. Coming from a language like C# where there isn't really an equivalent to literal types I find them to be quite interesting and I hope you will too. Let's dive in!
+            <description
+      ><![CDATA[In this post, we'll be looking at literal types, what they are, and how we can potentially use them in our code day to day. Coming from a language like C# where there isn't really an equivalent to literal types I find them to be quite interesting and I hope you will too. Let's dive in!
 ]]></description>
             <link>https://aaronbos.dev/posts/typescript-literal-types</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-literal-types</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/typescript-literal-types</guid>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
             <category><![CDATA[dev]]></category>
@@ -60,10 +97,13 @@
         </item>
         <item>
             <title><![CDATA[Reasons to Use C# Record Types]]></title>
-            <description><![CDATA[Prior to C# 9 classes were the defacto option for creating reference types in C#, but now we have records. In this post, we'll be going over a few details about C# records and also the benefits that I believe they can provide over using classes (in some scenarios).
+            <description
+      ><![CDATA[Prior to C# 9 classes were the defacto option for creating reference types in C#, but now we have records. In this post, we'll be going over a few details about C# records and also the benefits that I believe they can provide over using classes (in some scenarios).
 ]]></description>
             <link>https://aaronbos.dev/posts/csharp-record-types</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/csharp-record-types</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/csharp-record-types</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[csharp]]></category>
@@ -72,9 +112,13 @@
         </item>
         <item>
             <title><![CDATA[What is SQL Index Fragmentation?]]></title>
-            <description><![CDATA[SQL indexes are an important part of every database, but they don't come without requiring some regular maintenance. In this post, we'll be looking at SQL index fragmentation in the context of Microsoft's SQL Server and how it can affect our database performance.]]></description>
-            <link>https://aaronbos.dev/posts/sql-server-index-fragmentation</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-server-index-fragmentation</guid>
+            <description
+      ><![CDATA[SQL indexes are an important part of every database, but they don't come without requiring some regular maintenance. In this post, we'll be looking at SQL index fragmentation in the context of Microsoft's SQL Server and how it can affect our database performance.]]></description>
+            <link
+      >https://aaronbos.dev/posts/sql-server-index-fragmentation</link>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/sql-server-index-fragmentation</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[database]]></category>
             <category><![CDATA[sql]]></category>
@@ -84,9 +128,12 @@
         </item>
         <item>
             <title><![CDATA[Learning TypeScript: Conditional Types]]></title>
-            <description><![CDATA[Conditional Types in TypeScript may not be a language feature used day to day by most developers, but as I was reading the TypeScript Handbook I found the concept interesting and decided to dig a little deeper. In this post, we'll take a high-level look at the concept of conditional types and how they can be leveraged in our code.]]></description>
+            <description
+      ><![CDATA[Conditional Types in TypeScript may not be a language feature used day to day by most developers, but as I was reading the TypeScript Handbook I found the concept interesting and decided to dig a little deeper. In this post, we'll take a high-level look at the concept of conditional types and how they can be leveraged in our code.]]></description>
             <link>https://aaronbos.dev/posts/typescript-conditional-types</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-conditional-types</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/typescript-conditional-types</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
@@ -95,9 +142,12 @@
         </item>
         <item>
             <title><![CDATA[Learning TypeScript: Narrowing Types]]></title>
-            <description><![CDATA[Often times the TypeScript compiler knows more about our own code than we do. However, there are occasions when that's not the case, which is where type narrowing comes in. In this post, we'll take a look at the different options available for narrowing types in our TypeScript code.]]></description>
+            <description
+      ><![CDATA[Often times the TypeScript compiler knows more about our own code than we do. However, there are occasions when that's not the case, which is where type narrowing comes in. In this post, we'll take a look at the different options available for narrowing types in our TypeScript code.]]></description>
             <link>https://aaronbos.dev/posts/typescript-narrowing</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-narrowing</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/typescript-narrowing</guid>
             <category><![CDATA[web]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[typescript]]></category>
@@ -107,9 +157,12 @@
         </item>
         <item>
             <title><![CDATA[Working With JSON in Postgres 14]]></title>
-            <description><![CDATA[Postgres has had native JSON support for almost 10 years (since version 9.2). In September 2021 Postgres 14 was released and it included some great features that improve our experience greatly when working with JSON data. In this post, we'll be diving into the new JSON features in Postgres 14 to see how we can leverage them in our day-to-day.]]></description>
+            <description
+      ><![CDATA[Postgres has had native JSON support for almost 10 years (since version 9.2). In September 2021 Postgres 14 was released and it included some great features that improve our experience greatly when working with JSON data. In this post, we'll be diving into the new JSON features in Postgres 14 to see how we can leverage them in our day-to-day.]]></description>
             <link>https://aaronbos.dev/posts/postgres-14-json</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/postgres-14-json</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/postgres-14-json</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[json]]></category>
             <category><![CDATA[postgres]]></category>
@@ -120,9 +173,12 @@
         </item>
         <item>
             <title><![CDATA[Learning T-SQL Window Functions]]></title>
-            <description><![CDATA[Being able to query and manipulate data effectively is a valuable skill for any software engineer to have in their toolbelt. In this post, we're going to take a look at Window Functions and the functionality they provide. Although this post is going to focus on using window functions with T-SQL, it's important to note that window functions are part of the ANSI SQL standard and are available in other SQL database implementations.]]></description>
+            <description
+      ><![CDATA[Being able to query and manipulate data effectively is a valuable skill for any software engineer to have in their toolbelt. In this post, we're going to take a look at Window Functions and the functionality they provide. Although this post is going to focus on using window functions with T-SQL, it's important to note that window functions are part of the ANSI SQL standard and are available in other SQL database implementations.]]></description>
             <link>https://aaronbos.dev/posts/learn-tsql-window-functions</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/learn-tsql-window-functions</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/learn-tsql-window-functions</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[database]]></category>
             <category><![CDATA[sql]]></category>
@@ -131,9 +187,12 @@
         </item>
         <item>
             <title><![CDATA[Know Your Tools: Oh My Zsh and Git]]></title>
-            <description><![CDATA[As developers, we are exposed to many tools. How we learn and use those tools can make a big difference in our productivity and happiness. In this post, we'll be looking at the git plugin for Oh My Zsh and how it can be leveraged to increase our productivity using Git in the terminal.]]></description>
+            <description
+      ><![CDATA[As developers, we are exposed to many tools. How we learn and use those tools can make a big difference in our productivity and happiness. In this post, we'll be looking at the git plugin for Oh My Zsh and how it can be leveraged to increase our productivity using Git in the terminal.]]></description>
             <link>https://aaronbos.dev/posts/ohmyzsh-git</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/ohmyzsh-git</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/ohmyzsh-git</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[git]]></category>
@@ -143,9 +202,12 @@
         </item>
         <item>
             <title><![CDATA[What I've Learned in a Year of Blogging]]></title>
-            <description><![CDATA[In January 2021 I created this blog without any expectations of what would come of it. I had a plan but wasn't sure I'd be able to execute it. In this post, I'll take a moment to reflect and look back at this year going over what I've learned, what went well, and what didn't go so well, as well as take a look ahead at next year to see how I can improve.]]></description>
+            <description
+      ><![CDATA[In January 2021 I created this blog without any expectations of what would come of it. I had a plan but wasn't sure I'd be able to execute it. In this post, I'll take a moment to reflect and look back at this year going over what I've learned, what went well, and what didn't go so well, as well as take a look ahead at next year to see how I can improve.]]></description>
             <link>https://aaronbos.dev/posts/2021-year-review</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/2021-year-review</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/2021-year-review</guid>
             <category><![CDATA[review]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[growth]]></category>
@@ -154,9 +216,12 @@
         </item>
         <item>
             <title><![CDATA[Learning When to Cut the Thread]]></title>
-            <description><![CDATA[As software engineers, we frequently tackle complex problems in code. The source of a problem's complexity may be from the problem itself, from the code's architecture, or from something else entirely. In this post, we're going to compare writing code to pulling on a loose thread from a piece of clothing. There comes a time when writing software that we need to know when to "cut the thread" or we'll risk the whole thing unraveling.]]></description>
+            <description
+      ><![CDATA[As software engineers, we frequently tackle complex problems in code. The source of a problem's complexity may be from the problem itself, from the code's architecture, or from something else entirely. In this post, we're going to compare writing code to pulling on a loose thread from a piece of clothing. There comes a time when writing software that we need to know when to "cut the thread" or we'll risk the whole thing unraveling.]]></description>
             <link>https://aaronbos.dev/posts/learn-to-cut-thread</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/learn-to-cut-thread</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/learn-to-cut-thread</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[growth]]></category>
@@ -165,9 +230,12 @@
         </item>
         <item>
             <title><![CDATA[Working With Null in C#]]></title>
-            <description><![CDATA[As software developers, we are bound to encounter scenarios where our code behaves in unexpected ways. Some of those unexpected behaviors could be caused by null object references. In this post, we're going to take a look at the different language constructs that C# provides for working with null. My goal is to provide information that leads to more tidy code and fewer bugs.]]></description>
+            <description
+      ><![CDATA[As software developers, we are bound to encounter scenarios where our code behaves in unexpected ways. Some of those unexpected behaviors could be caused by null object references. In this post, we're going to take a look at the different language constructs that C# provides for working with null. My goal is to provide information that leads to more tidy code and fewer bugs.]]></description>
             <link>https://aaronbos.dev/posts/handling-null-references</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/handling-null-references</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/handling-null-references</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[dotnet]]></category>
@@ -177,9 +245,12 @@
         </item>
         <item>
             <title><![CDATA[Formatting C# Code with EditorConfig]]></title>
-            <description><![CDATA[Code style and formatting can be polarizing, to say the least. One way to remove subjectivity about code style preferences within a codebase is to enforce specific rules. In this post we're going to talk about how using the EditorConfig file standard can help provide consistent styles throughout a codebase.]]></description>
+            <description
+      ><![CDATA[Code style and formatting can be polarizing, to say the least. One way to remove subjectivity about code style preferences within a codebase is to enforce specific rules. In this post we're going to talk about how using the EditorConfig file standard can help provide consistent styles throughout a codebase.]]></description>
             <link>https://aaronbos.dev/posts/csharp-dotnet-editorconfig</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/csharp-dotnet-editorconfig</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/csharp-dotnet-editorconfig</guid>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[csharp]]></category>
             <category><![CDATA[dev]]></category>
@@ -188,9 +259,13 @@
         </item>
         <item>
             <title><![CDATA[Running SQL Server on Linux with Docker]]></title>
-            <description><![CDATA[Since its creation SQL Server has been synonymous with Microsoft and Windows, but this all changed with SQL Server 2016. SQL Server is no longer just a database for Windows and in this post, we'll be going over the steps to get Microsoft SQL Server running on Linux in a Docker container using Docker Compose.]]></description>
-            <link>https://aaronbos.dev/posts/sql-server-linux-docker-compose</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-server-linux-docker-compose</guid>
+            <description
+      ><![CDATA[Since its creation SQL Server has been synonymous with Microsoft and Windows, but this all changed with SQL Server 2016. SQL Server is no longer just a database for Windows and in this post, we'll be going over the steps to get Microsoft SQL Server running on Linux in a Docker container using Docker Compose.]]></description>
+            <link
+      >https://aaronbos.dev/posts/sql-server-linux-docker-compose</link>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/sql-server-linux-docker-compose</guid>
             <category><![CDATA[sql]]></category>
             <category><![CDATA[database]]></category>
             <category><![CDATA[linux]]></category>
@@ -201,9 +276,12 @@
         </item>
         <item>
             <title><![CDATA[Introduction to HTTP OPTIONS Method]]></title>
-            <description><![CDATA[If you've ever looked at the Network tab in the Browser Dev Tools, you may have noticed a lot of OPTIONS requests being sent to the server. Oftentimes these requests are not being made from our code, but made by the browser. In this post, we'll be covering the purpose that the HTTP OPTIONS method serves in our web applications.]]></description>
+            <description
+      ><![CDATA[If you've ever looked at the Network tab in the Browser Dev Tools, you may have noticed a lot of OPTIONS requests being sent to the server. Oftentimes these requests are not being made from our code, but made by the browser. In this post, we'll be covering the purpose that the HTTP OPTIONS method serves in our web applications.]]></description>
             <link>https://aaronbos.dev/posts/http-options-introduction</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/http-options-introduction</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/http-options-introduction</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[web]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
@@ -211,9 +289,12 @@
         </item>
         <item>
             <title><![CDATA[Rebase Git Branches Interactively]]></title>
-            <description><![CDATA[Git's rebase functionality could be one of the most polarizing features of the ubiquitous version control system. Some have horror stories of rebasing branches, while others use it whenever possible. In this post, we'll be touching on the interactive rebase feature which can reduce a lot of the anxiety around rebasing Git branches.]]></description>
+            <description
+      ><![CDATA[Git's rebase functionality could be one of the most polarizing features of the ubiquitous version control system. Some have horror stories of rebasing branches, while others use it whenever possible. In this post, we'll be touching on the interactive rebase feature which can reduce a lot of the anxiety around rebasing Git branches.]]></description>
             <link>https://aaronbos.dev/posts/git-rebase-interactive</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/git-rebase-interactive</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/git-rebase-interactive</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[git]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
@@ -221,9 +302,12 @@
         </item>
         <item>
             <title><![CDATA[How to Use C#'s Parallel.ForEach]]></title>
-            <description><![CDATA[There are certain operations performed in code that lend themselves to being executed in parallel. Some might even call these tasks "embarrassingly parallel". In this post we'll be going over how we can use C#'s Parallel.ForEach to iterate over collections in parallel.]]></description>
+            <description
+      ><![CDATA[There are certain operations performed in code that lend themselves to being executed in parallel. Some might even call these tasks "embarrassingly parallel". In this post we'll be going over how we can use C#'s Parallel.ForEach to iterate over collections in parallel.]]></description>
             <link>https://aaronbos.dev/posts/parallel-foreach-csharp</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/parallel-foreach-csharp</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/parallel-foreach-csharp</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[introduction]]></category>
             <category><![CDATA[dotnet]]></category>
@@ -234,9 +318,12 @@
         </item>
         <item>
             <title><![CDATA[How To Uninstall tSQLt From SQL Server]]></title>
-            <description><![CDATA[If you've used the SQL unit testing framework tSQLt before you may have come across the need to uninstall it from a database. There are a couple of ways you could go about this, but we'll look at the quickest method.]]></description>
+            <description
+      ><![CDATA[If you've used the SQL unit testing framework tSQLt before you may have come across the need to uninstall it from a database. There are a couple of ways you could go about this, but we'll look at the quickest method.]]></description>
             <link>https://aaronbos.dev/posts/uninstall-tsqlt-sqlserver</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/uninstall-tsqlt-sqlserver</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/uninstall-tsqlt-sqlserver</guid>
             <category><![CDATA[sql]]></category>
             <category><![CDATA[database]]></category>
             <category><![CDATA[dev]]></category>
@@ -244,10 +331,15 @@
             <pubDate>Sat, 28 Aug 2021 03:06:57 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Parsing Image Metadata with C# and ImageSharp]]></title>
-            <description><![CDATA[Recently I've been using C# and ImageSharp to work with images in code. In this post we'll be taking a look at how we can read and write IPTC Metadata properties for a given image.]]></description>
-            <link>https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</guid>
+            <title
+      ><![CDATA[Parsing Image Metadata with C# and ImageSharp]]></title>
+            <description
+      ><![CDATA[Recently I've been using C# and ImageSharp to work with images in code. In this post we'll be taking a look at how we can read and write IPTC Metadata properties for a given image.]]></description>
+            <link
+      >https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</link>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/iptc-metadata-csharp-imagesharp</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[csharp]]></category>
@@ -256,9 +348,12 @@
         </item>
         <item>
             <title><![CDATA[Scraping HTML with Selenium and C#]]></title>
-            <description><![CDATA[In this post, we'll be going over how we can use Selenium WebDriver and C# to scrape HTML from websites. I recently started working on a personal project that I plan to use for gathering English Premier League player statistics for my fantasy team. I had a fun time getting Selenium set up and working so I thought I'd share.]]></description>
+            <description
+      ><![CDATA[In this post, we'll be going over how we can use Selenium WebDriver and C# to scrape HTML from websites. I recently started working on a personal project that I plan to use for gathering English Premier League player statistics for my fantasy team. I had a fun time getting Selenium set up and working so I thought I'd share.]]></description>
             <link>https://aaronbos.dev/posts/selenium-csharp-scraping</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/selenium-csharp-scraping</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/selenium-csharp-scraping</guid>
             <category><![CDATA[web]]></category>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[dotnet]]></category>
@@ -270,9 +365,12 @@
         </item>
         <item>
             <title><![CDATA[Introduction to SQL Indexes]]></title>
-            <description><![CDATA[For most of my career I've known the general purpose of an SQL (read S-Q-L) index, but I've never taken the time to dig a little deeper to understand more until recently. In this post we'll be taking a look at SQL indexes from a high level, as well as how they can be used effectively (and not so effectively) to impact the performance of SQL operations.]]></description>
+            <description
+      ><![CDATA[For most of my career I've known the general purpose of an SQL (read S-Q-L) index, but I've never taken the time to dig a little deeper to understand more until recently. In this post we'll be taking a look at SQL indexes from a high level, as well as how they can be used effectively (and not so effectively) to impact the performance of SQL operations.]]></description>
             <link>https://aaronbos.dev/posts/sql-index-introduction</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/sql-index-introduction</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/sql-index-introduction</guid>
             <category><![CDATA[introduction]]></category>
             <category><![CDATA[sql]]></category>
             <category><![CDATA[database]]></category>
@@ -281,10 +379,14 @@
             <pubDate>Mon, 19 Jul 2021 01:49:29 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[How Podcasts Helped Me Grow as a Developer]]></title>
-            <description><![CDATA[Podcasts have become very popular over the years and you can almost guarantee that there is a podcast available for any of your personal interests. In this post, I'll describe how I believe podcasts have helped me grow as a developer. We'll also take a look at some of my favorite podcasts and discuss a little bit of what they're about and why I enjoy them so much.]]></description>
+            <title
+      ><![CDATA[How Podcasts Helped Me Grow as a Developer]]></title>
+            <description
+      ><![CDATA[Podcasts have become very popular over the years and you can almost guarantee that there is a podcast available for any of your personal interests. In this post, I'll describe how I believe podcasts have helped me grow as a developer. We'll also take a look at some of my favorite podcasts and discuss a little bit of what they're about and why I enjoy them so much.]]></description>
             <link>https://aaronbos.dev/posts/software-podcast-dev-growth</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/software-podcast-dev-growth</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/software-podcast-dev-growth</guid>
             <category><![CDATA[growth]]></category>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
@@ -293,9 +395,12 @@
         </item>
         <item>
             <title><![CDATA[Asynchronous C#: Below the Surface]]></title>
-            <description><![CDATA[In my last two posts, we've covered C#'s async programming model and also using async/await for asynchronous execution. In the final post of this series on async programming in C#, we're going to take a look behind the scenes at all the work the compiler does for us to make code execute asynchronously. Let's dive in!]]></description>
+            <description
+      ><![CDATA[In my last two posts, we've covered C#'s async programming model and also using async/await for asynchronous execution. In the final post of this series on async programming in C#, we're going to take a look behind the scenes at all the work the compiler does for us to make code execute asynchronously. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/async-csharp-below-surface</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/async-csharp-below-surface</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/async-csharp-below-surface</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[csharp]]></category>
@@ -304,9 +409,12 @@
         </item>
         <item>
             <title><![CDATA[Using Async and Await in C#]]></title>
-            <description><![CDATA[Async and Await are important keywords in C#. In this post, we'll be looking into how we can use `async` and `await` to write asynchronous code in the same manner that we write synchronous code. For a higher-level look at asynchronous programming in C# check out my previous post where we discussed the Task-based Asynchronous Programming pattern and more!]]></description>
+            <description
+      ><![CDATA[Async and Await are important keywords in C#. In this post, we'll be looking into how we can use `async` and `await` to write asynchronous code in the same manner that we write synchronous code. For a higher-level look at asynchronous programming in C# check out my previous post where we discussed the Task-based Asynchronous Programming pattern and more!]]></description>
             <link>https://aaronbos.dev/posts/async-await-csharp</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/async-await-csharp</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/async-await-csharp</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[csharp]]></category>
@@ -315,9 +423,12 @@
         </item>
         <item>
             <title><![CDATA[Asynchronous Programming in C# - Part 1]]></title>
-            <description><![CDATA[Writing code is hard. Writing asynchronous code is even harder. Luckily C# provides us with the `async` and `await` keywords to make asynchronous programming a little easier. This is the first of a series of posts in which I'll be going over writing asynchronous code in C# as well as a bit into the internals of how it works under the hood.]]></description>
+            <description
+      ><![CDATA[Writing code is hard. Writing asynchronous code is even harder. Luckily C# provides us with the `async` and `await` keywords to make asynchronous programming a little easier. This is the first of a series of posts in which I'll be going over writing asynchronous code in C# as well as a bit into the internals of how it works under the hood.]]></description>
             <link>https://aaronbos.dev/posts/async-csharp-pt1</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/async-csharp-pt1</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/async-csharp-pt1</guid>
             <category><![CDATA[csharp]]></category>
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[introduction]]></category>
@@ -327,9 +438,12 @@
         </item>
         <item>
             <title><![CDATA[Creating Your Own Framework for Learning]]></title>
-            <description><![CDATA[As software engineers, we are constantly learning in order to grow and stay relevant. I've found that trying to learn something new without a plan is difficult. This is why I created a framework for learning, which is what I'll be covering in this post.]]></description>
+            <description
+      ><![CDATA[As software engineers, we are constantly learning in order to grow and stay relevant. I've found that trying to learn something new without a plan is difficult. This is why I created a framework for learning, which is what I'll be covering in this post.]]></description>
             <link>https://aaronbos.dev/posts/learning-framework</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/learning-framework</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/learning-framework</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[learning]]></category>
             <category><![CDATA[growth]]></category>
@@ -337,19 +451,26 @@
             <pubDate>Fri, 16 Apr 2021 03:47:51 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Selenian. A Minimal Dark Theme for Visual Studio Code. ]]></title>
-            <description><![CDATA[There are many great themes available for Visual Studio Code, but I'm definitely the type of person who enjoys tailoring my development environment to my specific needs. So I created my own theme called Selenian.]]></description>
+            <title
+      ><![CDATA[Selenian. A Minimal Dark Theme for Visual Studio Code. ]]></title>
+            <description
+      ><![CDATA[There are many great themes available for Visual Studio Code, but I'm definitely the type of person who enjoys tailoring my development environment to my specific needs. So I created my own theme called Selenian.]]></description>
             <link>https://aaronbos.dev/posts/selenian-vs-code-theme</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/selenian-vs-code-theme</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/selenian-vs-code-theme</guid>
             <category><![CDATA[dev]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
             <pubDate>Tue, 06 Apr 2021 01:39:32 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Updating JSON Data in PostgreSQL]]></title>
-            <description><![CDATA[If you're storing JSON data in Postgres, you'll eventually need to update it. In this post, we'll talk about a couple of functions that can be used to update JSON data.]]></description>
+            <description
+      ><![CDATA[If you're storing JSON data in Postgres, you'll eventually need to update it. In this post, we'll talk about a couple of functions that can be used to update JSON data.]]></description>
             <link>https://aaronbos.dev/posts/update-json-postgresql</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/update-json-postgresql</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/update-json-postgresql</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[postgres]]></category>
             <category><![CDATA[database]]></category>
@@ -358,9 +479,12 @@
         </item>
         <item>
             <title><![CDATA[EF Core and Client Evaluation]]></title>
-            <description><![CDATA[Entity Framework Core is an amazing tool for interacting with databases of all kinds, but it doesn't come without potential pitfalls that can impact performance if you're not careful.]]></description>
+            <description
+      ><![CDATA[Entity Framework Core is an amazing tool for interacting with databases of all kinds, but it doesn't come without potential pitfalls that can impact performance if you're not careful.]]></description>
             <link>https://aaronbos.dev/posts/efcore-client-evaluation</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/efcore-client-evaluation</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/efcore-client-evaluation</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[database]]></category>
             <category><![CDATA[dotnet]]></category>
@@ -370,9 +494,12 @@
         </item>
         <item>
             <title><![CDATA[Querying JSON Data in PostgreSQL]]></title>
-            <description><![CDATA[Storing JSON provides flexibility, but can add complexity. Let's take a look at how we can store and query this data in PostgreSQL.]]></description>
+            <description
+      ><![CDATA[Storing JSON provides flexibility, but can add complexity. Let's take a look at how we can store and query this data in PostgreSQL.]]></description>
             <link>https://aaronbos.dev/posts/query-postgresql-json</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/query-postgresql-json</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/query-postgresql-json</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[json]]></category>
             <category><![CDATA[postgres]]></category>
@@ -382,9 +509,12 @@
         </item>
         <item>
             <title><![CDATA[Behind the Scenes of Making my Blog]]></title>
-            <description><![CDATA[The number of options for setting up a blog can be overwhelming. Let's take a look at what worked well for my goals and expectations. ]]></description>
+            <description
+      ><![CDATA[The number of options for setting up a blog can be overwhelming. Let's take a look at what worked well for my goals and expectations. ]]></description>
             <link>https://aaronbos.dev/posts/blog-behind-the-scenes</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/blog-behind-the-scenes</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/blog-behind-the-scenes</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[web]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
@@ -392,9 +522,12 @@
         </item>
         <item>
             <title><![CDATA[JWTs: A Peek Under the Hood]]></title>
-            <description><![CDATA[JWTs are used heavily in front and back end development. Let's open the hood to see how they're put together.]]></description>
+            <description
+      ><![CDATA[JWTs are used heavily in front and back end development. Let's open the hood to see how they're put together.]]></description>
             <link>https://aaronbos.dev/posts/jwt-under-the-hood</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/jwt-under-the-hood</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/jwt-under-the-hood</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[web]]></category>
             <category><![CDATA[json]]></category>
@@ -404,9 +537,12 @@
         </item>
         <item>
             <title><![CDATA[Hello, World!]]></title>
-            <description><![CDATA[The proverbial "hello, world" blog post introducing myself to the interwebs.]]></description>
+            <description
+      ><![CDATA[The proverbial "hello, world" blog post introducing myself to the interwebs.]]></description>
             <link>https://aaronbos.dev/posts/hello-world</link>
-            <guid isPermaLink="true">https://aaronbos.dev/posts/hello-world</guid>
+            <guid
+        isPermaLink="true"
+      >https://aaronbos.dev/posts/hello-world</guid>
             <category><![CDATA[dev]]></category>
             <category><![CDATA[beginnings]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
