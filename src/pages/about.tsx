@@ -36,7 +36,7 @@ export default function About() {
           responsibilities of a Product Manager. In 2016 I decided to make the
           transition to software engineering by heading back to school. I was
           able to begin working as a full-time engineer while still attending
-          school in 2017 and I haven&apos;t looked back.
+          school in 2017 and I haven’t looked back.
         </p>
         <p className="my-4">
           Since beginning my career in software my roles have gone from focusing
