@@ -25,7 +25,7 @@ export default function About() {
           I am a <span className="font-semibold">software engineer</span> from
           the midwest United States. While in college I met my wife Lauren.
           We’ve been married since 2015 and have three amazing young children
-          and two Yorkies. I'm currently working at a company called Opendorse
+          and two Yorkies. I’m currently working at a company called Opendorse
           that focuses on building software to help athletes monetize, protect,
           and build their Name, Image and, Likeness (NIL).
         </p>
@@ -36,7 +36,7 @@ export default function About() {
           responsibilities of a Product Manager. In 2016 I decided to make the
           transition to software engineering by heading back to school. I was
           able to begin working as a full-time engineer while still attending
-          school in 2017 and I haven’t looked back.
+          school in 2017 and I haven&apos;t looked back.
         </p>
         <p className="my-4">
           Since beginning my career in software my roles have gone from focusing
@@ -58,7 +58,7 @@ export default function About() {
           <span className="font-semibold">Web API, MVC</span>, and yes, even Web
           Forms. I’ve worked with{" "}
           <span className="font-semibold">MS SQL, Postgres</span>, and even a
-          bit with mainframes. Recently I've enjoyed working on teams making the
+          bit with mainframes. Recently I’ve enjoyed working on teams making the
           transition from full .NET Framework to the green fields of{" "}
           <span className="font-semibold">
             .NET Core (soon .NET 5, 6 and beyond)

@@ -54,6 +54,7 @@ export default function Footer() {
               className="dark:text-blue-300 dark:hover:text-blue-500 text-blue-500 hover:text-blue-700 m-3 text-2xl md:m-5"
               href={icon.url}
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 key={icon.url}
