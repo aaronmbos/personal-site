@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Working with Related Data in EF Core 6](https://aaronbos.dev/posts/ef-core-6-related-data)
 - [Writing C# in Neovim](https://aaronbos.dev/posts/csharp-dotnet-neovim)
 - [Function Overloading in TypeScript](https://aaronbos.dev/posts/function-overload-typescript)
 - [When to Use React.useRef](https://aaronbos.dev/posts/using-react-useref-hook)
