@@ -1,0 +1,11 @@
+{
+  "defaultEnv": "local",
+  "local": {
+    "driver": "pg",
+    "user": { "ENV": "MIGRATION_USERNAME" },
+    "password": { "ENV": "MIGRATION_PASSWORD" },
+    "host": { "ENV": "MIGRATION_HOST" },
+    "port": { "ENV": "MIGRATION_PORT" },
+    "database": "personal_site"
+  }
+}
