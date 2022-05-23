@@ -16,7 +16,7 @@ export default function PostFooter({ url }: Props) {
       >
         Twitter
       </a>
-      . Interested in staying up to date on my posts as they’re publised? Feel
+      . Interested in staying up to date on my posts as they’re published? Feel
       free to subscribe to the RSS feed&nbsp;
       <a
         className="dark:text-white text-black underline"
