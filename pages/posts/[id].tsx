@@ -10,7 +10,7 @@ import MetaSocial from "../../components/meta-social";
 import { GetStaticProps } from "next";
 
 interface Props {
-  post: BlogPost
+  post: BlogPost;
 }
 
 function getPostUrl(slug: string) {
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getStaticProps : GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await getPostByUrlId(params?.id as string);
   const parsedContent = await parseMarkdownToHtml(post.content);
   post.content = parsedContent;
@@ -59,4 +59,4 @@ export const getStaticProps : GetStaticProps = async ({ params }) => {
       post,
     },
   };
-}
+};
