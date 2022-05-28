@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Scaffolding XML Comments with Extended Properties in EF Core 6](https://aaronbos.dev/posts/ef-core-6-extended-property-comments)
 - [Creating a Daily Init Script](https://aaronbos.dev/posts/daily-init-script)
 - [Working with Related Data in EF Core 6](https://aaronbos.dev/posts/ef-core-6-related-data)
 - [Writing C# in Neovim](https://aaronbos.dev/posts/csharp-dotnet-neovim)
