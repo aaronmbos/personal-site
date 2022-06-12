@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Merging Objects in TypeScript (and JavaScript)](https://aaronbos.dev/posts/merge-objects-typescript-javascript)
 - [Scaffolding XML Comments with Extended Properties in EF Core 6](https://aaronbos.dev/posts/ef-core-6-extended-property-comments)
 - [Creating a Daily Init Script](https://aaronbos.dev/posts/daily-init-script)
 - [Working with Related Data in EF Core 6](https://aaronbos.dev/posts/ef-core-6-related-data)

@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 May 2022 12:07:33 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Jun 2022 00:02:52 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Merging Objects in TypeScript (and JavaScript)]]></title>
+            <description><![CDATA[Merging two objects seems like it should be a trivial problem to solve at face value. Unfortunately, as we'll see in this post, the problem isn't as straightforward as some may think. In this post, we'll be looking at the options available for merging objects in TypeScript (the options discussed will work just as well with JavaScript).]]></description>
+            <link>https://aaronbos.dev/posts/merge-objects-typescript-javascript</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/merge-objects-typescript-javascript</guid>
+            <category><![CDATA[javascript]]></category>
+            <category><![CDATA[typescript]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sun, 12 Jun 2022 00:02:31 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Scaffolding XML Comments with Extended Properties in EF Core 6]]></title>
             <description><![CDATA[SQL Server has a feature called extended properties which can be used to add metadata to databases, schemas, tables, and columns. In this post, we are going to see how to use the extended property metadata to automatically generate corresponding XML comments on our scaffolded entities in EF Core 6.]]></description>
@@ -20,6 +31,7 @@
             <category><![CDATA[dotnet]]></category>
             <category><![CDATA[efcore]]></category>
             <category><![CDATA[sql]]></category>
+            <category><![CDATA[csharp]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
             <pubDate>Sat, 28 May 2022 12:07:29 GMT</pubDate>
         </item>
