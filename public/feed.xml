@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 12 Jun 2022 00:02:52 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Jun 2022 02:44:53 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Representing Logic Gates as Boolean Functions]]></title>
+            <description><![CDATA[Boolean functions and logic gates are at the heart of everything we do as software engineers. While it may not always be obvious or apparent, boolean expressions or the result of combining them form the building blocks for much of what we see and use today in technology. In this post, we'll be looking at how we can go from elementary logic gate definitions to boolean functions based on a few principles.]]></description>
+            <link>https://aaronbos.dev/posts/logic-gates-boolean-functions</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/logic-gates-boolean-functions</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 23 Jun 2022 02:44:14 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Merging Objects in TypeScript (and JavaScript)]]></title>
             <description><![CDATA[Merging two objects seems like it should be a trivial problem to solve at face value. Unfortunately, as we'll see in this post, the problem isn't as straightforward as some may think. In this post, we'll be looking at the options available for merging objects in TypeScript (the options discussed will work just as well with JavaScript).]]></description>
