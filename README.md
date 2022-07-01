@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Reflections on Time Management](https://aaronbos.dev/posts/time-management-reflections)
 - [Representing Logic Gates as Boolean Functions](https://aaronbos.dev/posts/logic-gates-boolean-functions)
 - [Merging Objects in TypeScript (and JavaScript)](https://aaronbos.dev/posts/merge-objects-typescript-javascript)
 - [Scaffolding XML Comments with Extended Properties in EF Core 6](https://aaronbos.dev/posts/ef-core-6-extended-property-comments)
