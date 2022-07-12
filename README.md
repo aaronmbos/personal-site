@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Effective Data Fetching with React and SWR](https://aaronbos.dev/posts/swr-nextjs-react)
 - [Reflections on Time Management](https://aaronbos.dev/posts/time-management-reflections)
 - [Representing Logic Gates as Boolean Functions](https://aaronbos.dev/posts/logic-gates-boolean-functions)
 - [Merging Objects in TypeScript (and JavaScript)](https://aaronbos.dev/posts/merge-objects-typescript-javascript)
