@@ -5,11 +5,19 @@ export type ReactionType = "like";
 export interface Reaction {
   type: ReactionType;
   count: number;
+  hasReacted: boolean;
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
-    const reactions: Reaction[] = [{ type: "like", count: 100 }];
+    const reactions: Reaction[] = [
+      { type: "like", count: 100, hasReacted: false },
+    ];
+    return res.status(200).json(JSON.stringify(reactions));
+  } else if (req.method === "POST") {
+    const reactions: Reaction[] = [
+      { type: "like", count: 101, hasReacted: true },
+    ];
     return res.status(200).json(JSON.stringify(reactions));
   }
 }
