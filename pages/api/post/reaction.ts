@@ -1,8 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+export type ReactionType = "like";
+
+export interface Reaction {
+  type: ReactionType;
+  count: number;
+}
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
-    return res.status(200).json(`${req.query["slug"]}: ${getClientIp(req)}`);
+    const reactions: Reaction[] = [{ type: "like", count: 100 }];
+    return res.status(200).json(JSON.stringify(reactions));
   }
 }
 

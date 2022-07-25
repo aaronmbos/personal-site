@@ -1,17 +1,23 @@
 import useSWR, { useSWRConfig } from "swr";
+import { Reaction } from "../pages/api/post/reaction";
 
 interface Props {
   postSlug: string;
 }
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+async function getReactions(url: string): Promise<Reaction[]> {
+  const res = await fetch(url).then((r) => r.json());
+  return JSON.parse(res) as Reaction[];
+}
+
+//const fetcher = (url: string) => fetch(url).then((r) => JSON.parse(r.json()));
 
 export default function ReactionRow({ postSlug }: Props) {
   const { mutate } = useSWRConfig();
 
-  const { data, error } = useSWR(
+  const { data, error } = useSWR<Reaction[]>(
     `/api/post/reaction?slug=${postSlug}`,
-    fetcher
+    getReactions
   );
 
   if (error) {
@@ -25,13 +31,15 @@ export default function ReactionRow({ postSlug }: Props) {
 
   return (
     <>
-      <div>{data}</div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
-        onClick={() => mutate(`/api/post/reaction?slug=${postSlug}`)}
-      >
-        Mutate
-      </button>
+      <hr />
+      <div className="my-3">
+        <button
+          className="py-1 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all"
+          onClick={() => mutate(`/api/post/reaction?slug=${postSlug}`)}
+        >
+          👍 <span className="text-sm ml-1">{data[0].count}</span>
+        </button>
+      </div>
     </>
   );
 }
