@@ -9,12 +9,7 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-<<<<<<< Updated upstream
-        <lastBuildDate>Tue, 12 Jul 2022 03:50:47 GMT</lastBuildDate>
-        <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
-        <item>
-=======
-        <lastBuildDate>Sun, 24 Jul 2022 02:22:43 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Jul 2022 01:31:03 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[My Software Development Podcast Lineup (2022)]]></title>
@@ -28,7 +23,6 @@
             <pubDate>Sun, 24 Jul 2022 02:21:54 GMT</pubDate>
         </item>
         <item>
->>>>>>> Stashed changes
             <title><![CDATA[Effective Data Fetching with React and SWR]]></title>
             <description><![CDATA[Retrieving data is typically a straightforward task. Retrieving data in the most efficient manner can be more complex. This post will dive into how SWR can simplify the process of fetching data while also solving potentially complex problems like performance, caching, data store mutation, and more. Let's dive in!
 ]]></description>
