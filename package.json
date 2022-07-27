@@ -26,6 +26,8 @@
     "@types/node-fetch": "^2.6.1",
     "@types/react": "^17.0.41",
     "autoprefixer": "^10.4.1",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.5",
