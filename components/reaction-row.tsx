@@ -15,8 +15,6 @@ async function sendReaction(
   slug: string,
   type: ReactionType
 ): Promise<Reaction[]> {
-  `${process.env.NEXT_PUBLIC_ORIGIN}/posts/${slug}`;
-
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
 ?type=${type}`,
@@ -25,12 +23,27 @@ async function sendReaction(
   return JSON.parse(res) as Reaction[];
 }
 
-export default function ReactionRow({ postSlug, url }: Props) {
-  const { mutate } = useSWRConfig();
+async function deleteReaction(
+  slug: string,
+  type: ReactionType
+): Promise<Reaction[]> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
+?type=${type}`,
+    { method: "DELETE" }
+  ).then((r) => r.json());
+  return JSON.parse(res) as Reaction[];
+}
 
-  const { data, error } = useSWR<Reaction[]>(
+export default function ReactionRow({ postSlug, url }: Props) {
+  const { data, mutate, error } = useSWR<Reaction[]>(
     `/api/post/reaction?slug=${postSlug}`,
-    getReactions
+    getReactions,
+    {
+      revalidateIfStale: true,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    }
   );
 
   if (error) {
@@ -49,12 +62,16 @@ export default function ReactionRow({ postSlug, url }: Props) {
         <button
           type="button"
           className={`text-sm mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
-            data[0].hasReacted ? "opacity-60 cursor-not-allowed" : ""
+            data[0].hasReacted ? "opacity-60 ring-2" : ""
           }`}
           onClick={() =>
             mutate(
-              `/api/post/reaction?slug=${postSlug}`,
-              sendReaction(postSlug, "like")
+              data[0].hasReacted
+                ? deleteReaction(postSlug, "like")
+                : sendReaction(postSlug, "like"),
+              {
+                revalidate: false,
+              }
             )
           }
         >

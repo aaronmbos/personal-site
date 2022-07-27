@@ -19,6 +19,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       { type: "like", count: 101, hasReacted: true },
     ];
     return res.status(200).json(JSON.stringify(reactions));
+  } else if (req.method === "DELETE") {
+    const reactions: Reaction[] = [
+      { type: "like", count: 100, hasReacted: false },
+    ];
+    return res.status(200).json(JSON.stringify(reactions));
   }
 }
 
