@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
+import query from "../../../database/index.js";
 export type ReactionType = "like";
 
 export interface Reaction {
@@ -8,10 +8,14 @@ export interface Reaction {
   hasReacted: boolean;
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "GET") {
+    const dbRes = await query("select 50 as fifty");
     const reactions: Reaction[] = [
-      { type: "like", count: 100, hasReacted: false },
+      { type: "like", count: dbRes.rows[0].fifty, hasReacted: false },
     ];
     return res.status(200).json(JSON.stringify(reactions));
   } else if (req.method === "POST") {
