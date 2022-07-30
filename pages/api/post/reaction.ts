@@ -13,9 +13,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const dbRes = await query("select 50 as fifty");
+    const dbRes = await query(
+      "select count(*) as count from post.reaction where slug='test-time' and reaction_type='like'"
+    );
     const reactions: Reaction[] = [
-      { type: "like", count: dbRes.rows[0].fifty, hasReacted: false },
+      { type: "like", count: dbRes.rows[0].count, hasReacted: false },
     ];
     return res.status(200).json(JSON.stringify(reactions));
   } else if (req.method === "POST") {
