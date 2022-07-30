@@ -1,5 +1,5 @@
 import useSWR, { useSWRConfig } from "swr";
-import { Reaction, ReactionType } from "../pages/api/post/reaction";
+import { Reaction, ReactionType } from "../types/api/types";
 
 interface Props {
   postSlug: string;
@@ -13,11 +13,12 @@ async function getReactions(url: string): Promise<Reaction[]> {
 
 async function sendReaction(
   slug: string,
-  type: ReactionType
+  type: ReactionType,
+  count: number
 ): Promise<Reaction[]> {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
-?type=${type}`,
+&type=${type}&count=${count}`,
     { method: "POST" }
   ).then((r) => r.json());
   return JSON.parse(res) as Reaction[];
@@ -25,11 +26,12 @@ async function sendReaction(
 
 async function deleteReaction(
   slug: string,
-  type: ReactionType
+  type: ReactionType,
+  count: number
 ): Promise<Reaction[]> {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
-?type=${type}`,
+&type=${type}&count=${count}`,
     { method: "DELETE" }
   ).then((r) => r.json());
   return JSON.parse(res) as Reaction[];
@@ -67,8 +69,8 @@ export default function ReactionRow({ postSlug, url }: Props) {
           onClick={() =>
             mutate(
               data[0].hasReacted
-                ? deleteReaction(postSlug, "like")
-                : sendReaction(postSlug, "like"),
+                ? deleteReaction(postSlug, "like", data[0].count)
+                : sendReaction(postSlug, "like", data[0].count),
               {
                 revalidate: false,
               }

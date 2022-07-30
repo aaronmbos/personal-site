@@ -1,39 +1,69 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import query from "../../../database/index.js";
-export type ReactionType = "like";
-
-export interface Reaction {
-  type: ReactionType;
-  count: number;
-  hasReacted: boolean;
-}
+import {
+  handleDelete,
+  handleGet,
+  handlePost,
+} from "../../../lib/request-handlers/reaction-request";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const params = parseRequestParams(req);
+  const clientIp = getClientIp(req);
+
   if (req.method === "GET") {
-    const dbRes = await query(
-      "select count(*) as count from post.reaction where slug='test-time' and reaction_type='like'"
-    );
-    const reactions: Reaction[] = [
-      { type: "like", count: dbRes.rows[0].count, hasReacted: false },
-    ];
-    return res.status(200).json(JSON.stringify(reactions));
+    return res
+      .status(200)
+      .json(JSON.stringify(await handleGet(params.slug, clientIp)));
   } else if (req.method === "POST") {
-    const reactions: Reaction[] = [
-      { type: "like", count: 101, hasReacted: true },
-    ];
-    return res.status(200).json(JSON.stringify(reactions));
+    return res
+      .status(200)
+      .json(
+        JSON.stringify(
+          await handlePost(
+            params.slug,
+            clientIp,
+            params.type,
+            params.currentCount
+          )
+        )
+      );
   } else if (req.method === "DELETE") {
-    const reactions: Reaction[] = [
-      { type: "like", count: 100, hasReacted: false },
-    ];
-    return res.status(200).json(JSON.stringify(reactions));
+    return res
+      .status(200)
+      .json(
+        JSON.stringify(
+          await handleDelete(
+            params.slug,
+            clientIp,
+            params.type,
+            params.currentCount
+          )
+        )
+      );
   }
 }
 
-function getClientIp(req: NextApiRequest): string | undefined {
+interface Params {
+  slug: string;
+  type: string;
+  currentCount: number;
+}
+
+function parseRequestParams(req: NextApiRequest): Params {
+  const slug = req.query["slug"] as string;
+  const type = req.query["type"] as string;
+  const currentCount = Number(req.query["count"]);
+
+  return {
+    slug,
+    type,
+    currentCount,
+  };
+}
+
+function getClientIp(req: NextApiRequest): string {
   if (req.headers.forwarded) {
     // Originating IP will be the first entry if multiple
     return req.headers.forwarded!.split(",")[0];
@@ -44,6 +74,6 @@ function getClientIp(req: NextApiRequest): string | undefined {
       return req.headers["x-real-ip"];
     }
   } else {
-    return req.socket.remoteAddress;
+    return req.socket.remoteAddress ?? "";
   }
 }
