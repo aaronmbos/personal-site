@@ -6,11 +6,8 @@
 
 ## Posts
 
-<<<<<<< Updated upstream
-- [Effective Data Fetching with React and SWR](https://aaronbos.dev/posts/swr-nextjs-react)
-=======
 - [My Software Development Podcast Lineup (2022)](https://aaronbos.dev/posts/software-podcasts-2022)
->>>>>>> Stashed changes
+- [Effective Data Fetching with React and SWR](https://aaronbos.dev/posts/swr-nextjs-react)
 - [Reflections on Time Management](https://aaronbos.dev/posts/time-management-reflections)
 - [Representing Logic Gates as Boolean Functions](https://aaronbos.dev/posts/logic-gates-boolean-functions)
 - [Merging Objects in TypeScript (and JavaScript)](https://aaronbos.dev/posts/merge-objects-typescript-javascript)
