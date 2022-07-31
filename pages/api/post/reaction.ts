@@ -47,7 +47,7 @@ export default async function handler(
     }
   } catch (error) {
     if (error instanceof Error) {
-      if (!process.env.NODE_ENV.includes("production")) {
+      if (!process.env.VERCEL_ENV?.includes("production")) {
         return res.status(500).json(error.message);
       }
 

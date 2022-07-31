@@ -48,6 +48,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
       revalidateIfStale: true,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     }
   );
 
