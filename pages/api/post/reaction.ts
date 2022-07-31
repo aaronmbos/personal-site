@@ -51,7 +51,9 @@ export default async function handler(
         return res.status(500).json(error.message);
       }
 
-      return res.status(500).json(`An error occurred. ${process.env.NODE_ENV}`);
+      return res
+        .status(500)
+        .json(`An error occurred. ${process.env.VERCEL_ENV}`);
     }
   }
 }
