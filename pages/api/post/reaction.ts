@@ -10,7 +10,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    throw Error("Oops");
     const params = parseRequestParams(req);
     const clientIp = getClientIp(req);
 
@@ -51,9 +50,7 @@ export default async function handler(
         return res.status(500).json(error.message);
       }
 
-      return res
-        .status(500)
-        .json(`An error occurred. ${process.env.VERCEL_ENV}`);
+      return res.status(500).json("An error occurred.");
     }
   }
 }
