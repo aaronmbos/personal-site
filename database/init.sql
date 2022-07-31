@@ -23,3 +23,8 @@ create table if not exists post.reaction (
 alter table post.reaction
   add constraint PK_post_reaction
     primary key (slug, ip_address, reaction_type);
+
+alter table post.reaction 
+  add column created_at TIMESTAMP;
+alter table post.reaction
+  alter column created_at set default now();
