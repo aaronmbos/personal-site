@@ -8,6 +8,7 @@ import Head from "next/head";
 import AllPostsLink from "../../components/all-posts-link";
 import MetaSocial from "../../components/meta-social";
 import { GetStaticProps } from "next";
+import ReactionRow from "../../components/reaction-row";
 
 interface Props {
   post: BlogPost;
@@ -35,7 +36,8 @@ export default function Post({ post }: Props) {
         date={post.date}
       />
       <PostBody content={post.content} />
-      <PostFooter url={getPostUrl(post.slug)} />
+      <ReactionRow postSlug={post.slug} url={getPostUrl(post.slug)} />
+      <PostFooter />
       <AllPostsLink text="See More Posts" />
     </Layout>
   );
