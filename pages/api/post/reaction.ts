@@ -9,39 +9,45 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const params = parseRequestParams(req);
-  const clientIp = getClientIp(req);
+  try {
+    const params = parseRequestParams(req);
+    const clientIp = getClientIp(req);
 
-  if (req.method === "GET") {
-    return res
-      .status(200)
-      .json(JSON.stringify(await handleGet(params.slug, clientIp)));
-  } else if (req.method === "POST") {
-    return res
-      .status(200)
-      .json(
-        JSON.stringify(
-          await handlePost(
-            params.slug,
-            clientIp,
-            params.type,
-            params.currentCount
+    if (req.method === "GET") {
+      return res
+        .status(200)
+        .json(JSON.stringify(await handleGet(params.slug, clientIp)));
+    } else if (req.method === "POST") {
+      return res
+        .status(200)
+        .json(
+          JSON.stringify(
+            await handlePost(
+              params.slug,
+              clientIp,
+              params.type,
+              params.currentCount
+            )
           )
-        )
-      );
-  } else if (req.method === "DELETE") {
-    return res
-      .status(200)
-      .json(
-        JSON.stringify(
-          await handleDelete(
-            params.slug,
-            clientIp,
-            params.type,
-            params.currentCount
+        );
+    } else if (req.method === "DELETE") {
+      return res
+        .status(200)
+        .json(
+          JSON.stringify(
+            await handleDelete(
+              params.slug,
+              clientIp,
+              params.type,
+              params.currentCount
+            )
           )
-        )
-      );
+        );
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      return res.status(500).json(error.message);
+    }
   }
 }
 
