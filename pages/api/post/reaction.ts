@@ -10,6 +10,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
+    throw Error("Oops");
     const params = parseRequestParams(req);
     const clientIp = getClientIp(req);
 
@@ -46,7 +47,11 @@ export default async function handler(
     }
   } catch (error) {
     if (error instanceof Error) {
-      return res.status(500).json(`${error.message}: ip: ${getClientIp(req)}`);
+      if (!process.env.NODE_ENV.includes("production")) {
+        return res.status(500).json(error.message);
+      }
+
+      return res.status(500).json("An error occurred.");
     }
   }
 }
