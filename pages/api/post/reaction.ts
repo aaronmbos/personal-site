@@ -70,7 +70,7 @@ function parseRequestParams(req: NextApiRequest): Params {
 }
 
 function getClientIp(req: NextApiRequest): string {
-  if (req.headers.forwarded) {
+  if (req.headers["X-Forwarded-For"]) {
     // Originating IP will be the first entry if multiple
     return req.headers.forwarded!.split(",")[0];
   } else if (req.headers["x-real-ip"]) {
