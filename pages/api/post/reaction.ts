@@ -46,7 +46,7 @@ export default async function handler(
     }
   } catch (error) {
     if (error instanceof Error) {
-      return res.status(500).json(error.message);
+      return res.status(500).json(`${error.message}: ip: ${getClientIp(req)}`);
     }
   }
 }
