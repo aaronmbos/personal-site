@@ -54,12 +54,12 @@ export default function ReactionRow({ postSlug, url }: Props) {
 
   return (
     <>
-      <hr />
-      <div className="my-3 pt-2">
+      <hr className="mt-6" />
+      <div className="my-3 pt-2 flex flex-wrap">
         {!error && (
           <button
             type="button"
-            className={`text-sm mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
+            className={`text-sm mb-1 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
               data && data[0].hasReacted ? "opacity-60 ring-2" : ""
             }`}
             onClick={() =>
