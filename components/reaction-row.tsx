@@ -20,7 +20,7 @@ async function sendReaction(
   count: number
 ): Promise<Reaction[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
+    `/api/post/reaction?slug=${slug}
 &type=${type}&count=${count}`,
     { method: "POST" }
   ).then((r) => r.json());
@@ -33,7 +33,7 @@ async function deleteReaction(
   count: number
 ): Promise<Reaction[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_ORIGIN}/api/post/reaction?slug=${slug}
+    `/api/post/reaction?slug=${slug}
 &type=${type}&count=${count}`,
     { method: "DELETE" }
   ).then((r) => r.json());
