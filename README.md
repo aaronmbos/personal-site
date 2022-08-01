@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Announcing the Ability to Like Posts](https://aaronbos.dev/posts/announce-like-post)
 - [My Software Development Podcast Lineup (2022)](https://aaronbos.dev/posts/software-podcasts-2022)
 - [Effective Data Fetching with React and SWR](https://aaronbos.dev/posts/swr-nextjs-react)
 - [Reflections on Time Management](https://aaronbos.dev/posts/time-management-reflections)
