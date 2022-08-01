@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 25 Jul 2022 01:31:03 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Aug 2022 02:36:19 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Announcing the Ability to Like Posts]]></title>
+            <description><![CDATA[Up to this point, there has been no way to interact with the posts that I publish on this blog. The most recent release changes that. Readers can now like posts after reading them. In this post, we'll be discussing the feature, the high-level implementation, and how it could evolve in the future. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/announce-like-post</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/announce-like-post</guid>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[learning]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 01 Aug 2022 02:35:07 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[My Software Development Podcast Lineup (2022)]]></title>
             <description><![CDATA[Over the years podcasts have become integral to my daily routine. In this post, I'll provide an update on my current (2022) podcast lineup along with some details about why I find each podcast interesting or useful. Let's dive in!]]></description>
