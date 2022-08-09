@@ -23,11 +23,9 @@ export default function About() {
         </div>
         <p className="my-4">
           I am a <span className="font-semibold">software engineer</span> from
-          the midwest United States. While in college I met my wife Lauren.
-          We’ve been married since 2015 and have three amazing young children
-          and two Yorkies. I’m currently working at a company called Opendorse
-          that focuses on building software to help athletes monetize, protect,
-          and build their Name, Image and, Likeness (NIL).
+          the midwest United States. I am currently working as a Senior 
+          Engineer at Hudl, a sports technology company that focuses 
+          on empowering teams and athletes with video and data.
         </p>
         <p className="my-4">
           I’ve been a part of software teams since my first job as an intern
