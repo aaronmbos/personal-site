@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Aug 2022 02:36:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Aug 2022 01:51:55 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Introduction to Cancellation in .NET]]></title>
+            <description><![CDATA[As software development evolves and adopts asynchronous paradigms, the need for cancellation support in applications has become more prevalent. In this post, we will learn about the core concepts in regards to cancellation in .NET code. This post will be light on code examples (those will come in a follow-up post), but it will provide a solid foundation for continued learning on the concept of cancellation. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/cancellation-csharp-dotnet</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/cancellation-csharp-dotnet</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 11 Aug 2022 01:30:59 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Announcing the Ability to Like Posts]]></title>
             <description><![CDATA[Up to this point, there has been no way to interact with the posts that I publish on this blog. The most recent release changes that. Readers can now like posts after reading them. In this post, we'll be discussing the feature, the high-level implementation, and how it could evolve in the future. Let's dive in!]]></description>
