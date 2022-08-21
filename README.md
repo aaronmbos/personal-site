@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [VS Code Setup for .NET Development](https://aaronbos.dev/posts/vs-code-dotnet-setup)
 - [Introduction to Cancellation in .NET](https://aaronbos.dev/posts/cancellation-csharp-dotnet)
 - [Announcing the Ability to Like Posts](https://aaronbos.dev/posts/announce-like-post)
 - [My Software Development Podcast Lineup (2022)](https://aaronbos.dev/posts/software-podcasts-2022)
