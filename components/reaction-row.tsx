@@ -40,6 +40,21 @@ async function deleteReaction(
   return JSON.parse(res) as Reaction[];
 }
 
+function copyToClipboard(url: string) {
+  navigator.clipboard.writeText(url);
+  window.setTimeout(() => {
+    toggleClipboard("Copy link");
+  }, 1000);
+
+  toggleClipboard("Copied!");
+}
+
+function toggleClipboard(text: string) {
+  (document.getElementById("clip-text") as HTMLSpanElement).innerText = text;
+  document.getElementById("clip")?.classList.toggle("hidden");
+  document.getElementById("clipped")?.classList.toggle("hidden");
+}
+
 export default function ReactionRow({ postSlug, url }: Props) {
   const { data, mutate, error } = useSWR<Reaction[]>(
     `/api/post/reaction?slug=${postSlug}`,
@@ -59,7 +74,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
         {!error && (
           <button
             type="button"
-            className={`text-sm mb-1 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
+            className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
               data && data[0].hasReacted ? "opacity-60 ring-2" : ""
             }`}
             onClick={() =>
@@ -86,6 +101,26 @@ export default function ReactionRow({ postSlug, url }: Props) {
           <ButtonIcon fill="currentColor" path={icons.bell} />
           <span className="text-sm ml-2">Subscribe</span>
         </AnchorButton>
+        <button
+          type="button"
+          className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all`}
+          onClick={() => copyToClipboard(url)}
+        >
+          <ButtonIcon
+            id="clip"
+            fill="currentColor"
+            path={icons.emptyClipboard}
+          />
+          <ButtonIcon
+            id="clipped"
+            fill="currentColor"
+            path={icons.copiedClipboard}
+            classList={["hidden"]}
+          />{" "}
+          <span id="clip-text" className="text-sm ml-1">
+            Copy link
+          </span>
+        </button>
       </div>
     </>
   );
