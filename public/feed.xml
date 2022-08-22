@@ -12,7 +12,7 @@
         <lastBuildDate>Sun, 21 Aug 2022 23:50:56 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[[VS Code Setup for .NET Development]]></title>
+            <title><![CDATA[VS Code Setup for .NET Development]]></title>
             <description><![CDATA[Visual Studio is and probably always will be the defacto IDE for .NET development, but that doesn't mean there aren't other options out there. In this post, we're going to learn about several extensions available for VS Code that make writing .NET a productive and enjoyable experience. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/vs-code-dotnet-setup</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/vs-code-dotnet-setup</guid>
