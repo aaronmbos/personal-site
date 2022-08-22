@@ -41,6 +41,9 @@ async function deleteReaction(
 }
 
 function copyToClipboard(url: string) {
+  if (document.getElementById("clip")?.classList.contains("hidden")) {
+    return;
+  }
   navigator.clipboard.writeText(url);
   window.setTimeout(() => {
     toggleClipboard("Copy link");
@@ -102,6 +105,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
           <span className="text-sm ml-2">Subscribe</span>
         </AnchorButton>
         <button
+          id="clip-btn"
           type="button"
           className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all`}
           onClick={() => copyToClipboard(url)}
