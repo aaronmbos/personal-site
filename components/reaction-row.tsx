@@ -112,7 +112,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
             path={icons.emptyClipboard}
           />
           <ButtonIcon
-            id="clip"
+            id="clipped"
             fill="currentColor"
             path={icons.copiedClipboard}
             classList={["hidden"]}
