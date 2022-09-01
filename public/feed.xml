@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Aug 2022 23:50:56 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 Sep 2022 00:53:41 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Debugging .NET in VS Code]]></title>
+            <description><![CDATA[Debugging is a vital aspect of most developer workflows. An easy-to-use debugger within an editor can speed up development by providing immediate feedback on a running application. In this post, we will be covering the debugging functionality in VS Code in the context of .NET applications. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/debug-dotnet-vs-code</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/debug-dotnet-vs-code</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[tools]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 01 Sep 2022 00:53:11 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[VS Code Setup for .NET Development]]></title>
             <description><![CDATA[Visual Studio is and probably always will be the defacto IDE for .NET development, but that doesn't mean there aren't other options out there. In this post, we're going to learn about several extensions available for VS Code that make writing .NET a productive and enjoyable experience. Let's dive in!]]></description>
