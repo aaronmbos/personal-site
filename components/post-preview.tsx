@@ -1,13 +1,12 @@
 import TagHolder from "./tag-holder";
 import Link from "next/link";
-import { PostMetadata } from "../lib/posts";
 
 interface Props {
   slug: string;
   title: string;
   description: string;
   date: string;
-  metadata: PostMetadata[];
+  metadata: string[];
 }
 
 export default function PostPreview({

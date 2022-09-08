@@ -9,7 +9,7 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 01 Sep 2022 00:53:41 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Sep 2022 02:43:25 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Debugging .NET in VS Code]]></title>
@@ -70,8 +70,7 @@
         </item>
         <item>
             <title><![CDATA[Effective Data Fetching with React and SWR]]></title>
-            <description><![CDATA[Retrieving data is typically a straightforward task. Retrieving data in the most efficient manner can be more complex. This post will dive into how SWR can simplify the process of fetching data while also solving potentially complex problems like performance, caching, data store mutation, and more. Let's dive in!
-]]></description>
+            <description><![CDATA[Retrieving data is typically a straightforward task. Retrieving data in the most efficient manner can be more complex. This post will dive into how SWR can simplify the process of fetching data while also solving potentially complex problems like performance, caching, data store mutation, and more. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/swr-nextjs-react</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/swr-nextjs-react</guid>
             <category><![CDATA[web]]></category>
@@ -137,8 +136,7 @@
         </item>
         <item>
             <title><![CDATA[Working with Related Data in EF Core 6]]></title>
-            <description><![CDATA[I think that one of the most convenient features of ORMs like Entity Framework is the ability to reference related data via properties on an object or entity. In this post, we'll be looking at a few different ways to load related data in EF Core 6.
-]]></description>
+            <description><![CDATA[I think that one of the most convenient features of ORMs like Entity Framework is the ability to reference related data via properties on an object or entity. In this post, we'll be looking at a few different ways to load related data in EF Core 6.]]></description>
             <link>https://aaronbos.dev/posts/ef-core-6-related-data</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/ef-core-6-related-data</guid>
             <category><![CDATA[csharp]]></category>
@@ -197,8 +195,7 @@
         </item>
         <item>
             <title><![CDATA[Learning TypeScript: Literal Types]]></title>
-            <description><![CDATA[In this post, we'll be looking at literal types, what they are, and how we can potentially use them in our code day to day. Coming from a language like C# where there isn't really an equivalent to literal types I find them to be quite interesting and I hope you will too. Let's dive in!
-]]></description>
+            <description><![CDATA[In this post, we'll be looking at literal types, what they are, and how we can potentially use them in our code day to day. Coming from a language like C# where there isn't really an equivalent to literal types I find them to be quite interesting and I hope you will too. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/typescript-literal-types</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/typescript-literal-types</guid>
             <category><![CDATA[learning]]></category>
@@ -209,8 +206,7 @@
         </item>
         <item>
             <title><![CDATA[Reasons to Use C# Record Types]]></title>
-            <description><![CDATA[Prior to C# 9 classes were the defacto option for creating reference types in C#, but now we have records. In this post, we'll be going over a few details about C# records and also the benefits that I believe they can provide over using classes (in some scenarios).
-]]></description>
+            <description><![CDATA[Prior to C# 9 classes were the defacto option for creating reference types in C#, but now we have records. In this post, we'll be going over a few details about C# records and also the benefits that I believe they can provide over using classes (in some scenarios).]]></description>
             <link>https://aaronbos.dev/posts/csharp-record-types</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/csharp-record-types</guid>
             <category><![CDATA[dev]]></category>
@@ -531,7 +527,7 @@
         </item>
         <item>
             <title><![CDATA[Behind the Scenes of Making my Blog]]></title>
-            <description><![CDATA[The number of options for setting up a blog can be overwhelming. Let's take a look at what worked well for my goals and expectations. ]]></description>
+            <description><![CDATA[The number of options for setting up a blog can be overwhelming. Let's take a look at what worked well for my goals and expectations.]]></description>
             <link>https://aaronbos.dev/posts/blog-behind-the-scenes</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/blog-behind-the-scenes</guid>
             <category><![CDATA[dev]]></category>
