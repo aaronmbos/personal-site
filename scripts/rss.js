@@ -1,10 +1,10 @@
-const { promises: fs } = require("fs");
-const fetch = require("node-fetch");
 const RSS = require("rss");
 const dotenv = require("dotenv");
+const matter = require("gray-matter");
+const path = require("path");
+const fs = require("fs/promises");
 
 dotenv.config();
-const postsUri = `${process.env.STRAPI_BASE_URI_RSS}/posts`;
 
 async function generateRssFeed() {
   const feed = new RSS({
@@ -14,16 +14,33 @@ async function generateRssFeed() {
     image_url: `${process.env.NEXT_PUBLIC_ORIGIN_RSS}/static/card-logo.png`,
   });
 
-  const res = await fetch(`${postsUri}?_limit=-1&_sort=published_at:desc`);
-  const rawPosts = await res.json();
+  const postsDir = path.join(process.cwd(), "_posts");
+  const posts = await fs.readdir(postsDir);
+
+  const rawPosts = posts
+    .map((post) => {
+      const matterPost = matter.read(`${postsDir}/${post}`);
+      return {
+        id: matterPost.data.id,
+        title: matterPost.data.title,
+        content: matterPost.content,
+        slug: matterPost.data.slug,
+        description: matterPost.data.description,
+        metadata: matterPost.data.metadata.split(","),
+        date: matterPost.data.publishedAt,
+      };
+    })
+    .sort((post1, post2) =>
+      new Date(post1.date) > new Date(post2.date) ? -1 : 1
+    );
 
   rawPosts.map((post) => {
     feed.item({
       title: post.title,
       url: `${process.env.NEXT_PUBLIC_ORIGIN_RSS}/posts/${post.slug}`,
-      date: post.published_at,
+      date: post.date,
       description: post.description,
-      categories: post.metadata.map((tag) => tag.tag),
+      categories: post.metadata,
       author: "Aaron Bos",
     });
   });

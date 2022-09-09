@@ -1,35 +1,41 @@
-import fetch from "node-fetch";
-const postsUri = `${process.env.STRAPI_BASE_URI}/posts`;
-
-export interface PostMetadata {
-  id: number;
-  tag: string;
-}
+import fs from "fs/promises";
+import matter from "gray-matter";
+import path from "path";
 
 export interface BlogPost {
   id: number;
   title: string;
   content: string;
   slug: string;
-  published_at: string;
   date: string;
   description: string;
-  metadata: PostMetadata[];
+  metadata: string[];
 }
 
 export async function getRecentPosts(): Promise<BlogPost[]> {
-  const res = await fetch(`${postsUri}?_sort=published_at:desc&_limit=5`);
-  const rawPosts = await res.json();
-
-  return convertRawPosts(rawPosts);
+  return (await getAllPosts()).slice(0, 5);
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  // limit=-1 will always return all posts
-  const res = await fetch(`${postsUri}?_limit=-1&_sort=published_at:desc`);
-  const rawPosts: BlogPost[] = await res.json();
+  const postsDir = path.join(process.cwd(), "_posts");
+  const posts = await fs.readdir(postsDir);
 
-  return convertRawPosts(rawPosts);
+  return posts
+    .map((post: string) => {
+      const matterPost = matter.read(`${postsDir}/${post}`) as any;
+      return {
+        id: matterPost.data.id as number,
+        title: matterPost.data.title as string,
+        content: matterPost.content as string,
+        slug: matterPost.data.slug as string,
+        description: matterPost.data.description as string,
+        metadata: matterPost.data.metadata.split(",") as string[],
+        date: formatDate(matterPost.data.publishedAt as string),
+      };
+    })
+    .sort((post1, post2) =>
+      new Date(post1.date) > new Date(post2.date) ? -1 : 1
+    );
 }
 
 export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
@@ -41,13 +47,6 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
   }
 
   return post;
-}
-
-function convertRawPosts(rawPosts: Array<BlogPost>) {
-  return rawPosts.map((post: BlogPost) => {
-    post.date = formatDate(post.published_at);
-    return post;
-  });
 }
 
 function formatDate(rawDate: string): string {
