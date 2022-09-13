@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 08 Sep 2022 02:43:25 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Sep 2022 00:57:58 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Generating Random Quotes via CLI]]></title>
+            <description><![CDATA[Ever needed a bit of inspiration to get your day started? In this post we'll be looking at how we can generate a random quote and easily format and print it in our terminal. While this may seem silly, I think some of this post will be relevant and applicable to other CLI based needs. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/quote-api-terminal</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/quote-api-terminal</guid>
+            <category><![CDATA[cli]]></category>
+            <category><![CDATA[introduction]]></category>
+            <category><![CDATA[tools]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 13 Sep 2022 00:55:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Debugging .NET in VS Code]]></title>
             <description><![CDATA[Debugging is a vital aspect of most developer workflows. An easy-to-use debugger within an editor can speed up development by providing immediate feedback on a running application. In this post, we will be covering the debugging functionality in VS Code in the context of .NET applications. Let's dive in!]]></description>
