@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Generating Random Quotes via CLI](https://aaronbos.dev/posts/quote-api-terminal)
 - [Debugging .NET in VS Code](https://aaronbos.dev/posts/debug-dotnet-vs-code)
 - [VS Code Setup for .NET Development](https://aaronbos.dev/posts/vs-code-dotnet-setup)
 - [Introduction to Cancellation in .NET](https://aaronbos.dev/posts/cancellation-csharp-dotnet)

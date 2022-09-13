@@ -7,6 +7,7 @@ publishedAt: 2022-09-01T00:53:11.126Z
 updatedAt: 2022-09-01T00:53:11.142Z
 metadata: dev,dotnet,introduction,tools
 ---
+
 ## Getting Started
 
 Before we get started I highly recommend reading my previous post on configuring your VS Code environment for .NET development [here](https://aaronbos.dev/posts/vs-code-dotnet-setup). That post will give you everything you need (and more) to hit the ground running with debugging in VS Code. If you don't want to read that post, just make sure you have the C# [extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) installed before continuing. That extension provides a lot of the .NET-specific debugging experience that we'll cover in this post.
