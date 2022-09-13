@@ -53,7 +53,7 @@ This is the quoted content.
  - Author's Name
 ```
 
-To do this we'll need to utilize jq's string interpolation functionality. Our command will mostly be the same, but we'll just have to update how we access the JSON fields to format them. The nice thing about jq is that it contains types like string, number, boolean, array, objects, and functions. So we can output a string and interpolate the JSON values inside of it. Like many other programming languages, we denote a string with a pair of quotes `""`. The interpolation syntax involves surrounding the JSON field with `\()`. So in our case we'll be using `"(.content)"\n - \(.author)"`. We need to insert a line feed (`\n`) into the screen to put the author on the second line. Here's an example.
+To do this we'll need to utilize jq's string interpolation functionality. Our command will mostly be the same, but we'll just have to update how we access the JSON fields to format them. The nice thing about jq is that it contains types like string, number, boolean, array, objects, and functions. So we can output a string and interpolate the JSON values inside of it. Like many other programming languages, we denote a string with a pair of quotes `""`. The interpolation syntax involves surrounding the JSON field with `\()`. So in our case we'll be using `"(.content)"\n - \(.author)"`. We need to insert a line feed (`\n`) into the string to put the author on the second line. Here's an example.
 
 ```shell
 curl https://api.quotable.io/random -s | jq -r '"\(.content)\n - \(.author)"'
