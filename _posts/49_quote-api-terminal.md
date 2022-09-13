@@ -3,8 +3,8 @@ id: 49
 slug: quote-api-terminal
 title: "Generating Random Quotes via CLI"
 description: Ever needed a bit of inspiration to get your day started? In this post we'll be looking at how we can generate a random quote and easily format and print it in our terminal. While this may seem silly, I think some of this post will be relevant and applicable to other CLI based needs. Let's dive in!
-publishedAt: 2022-09-12:53:11.126Z
-updatedAt: 2022-09-12:53:11.126Z
+publishedAt: 2022-09-13T00:55:00.000Z
+updatedAt: 2022-09-13T00:55:00.000Z
 metadata: cli,introduction,tools
 ---
 
