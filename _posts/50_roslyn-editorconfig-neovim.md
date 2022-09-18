@@ -40,3 +40,17 @@ With `omnisharp.json` created we're now ready to add the following JSON object.
 As you can see we have added two boolean fields to the `omnisharp.json` and both are required to allow for the Omnisharp server to start providing editor suggestions based on the rules specified in a `.editorconfig` file. The `"RoslynExtensionsOptions"` field is responsible for eefining behavior for features like refactorings and code actions. The `"FormattingOptions"` field is pretty self-explanatory in that its fields define rules for formatting C# code. These rules can be supplied in the `omnisharp.json` or in a separate `.editorconfig`, which is what our example above does. For more information about the `omnisharp.json` file check out the documentation [here](https://github.com/OmniSharp/omnisharp-roslyn/wiki/Configuration-Options).
 
 ## Code Examples
+
+At this point you have everything needed to get Roslyn code analysis working with EditorConfig rules. I wanted to show a quick example of what this looks like in Neovim. I've set up a basic .editorconfig in an example project that has rules for the following.
+
+- Private and internal field names being previxed with `_`
+- If statements should containt braces
+- Variables should be implicitly typed with `var`
+
+### Example with EditorConfig-based Roslyn Suggestions
+
+[]()
+
+**Now following the EditorConfig rules**
+
+[]()
