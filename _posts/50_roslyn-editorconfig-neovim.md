@@ -85,4 +85,4 @@ For EditorConfig files relating to C#, we may have rules with the following seve
 - suggestion - I (information)
 - silent - H (hint)
 
-At this point, we should have code analysis support in Neovim that is on par with other editors like VS Code and Rider. If you enjoyed this post, stay tuned for more like it in the future. I have a personal goal of making Neovim my daily driver for .NET development. I have a few more things to work out like debugging and test running, so more to come!
+At this point, we should have code analysis support in Neovim that is on par with other editors like VS Code and Rider. If you enjoyed this post, stay tuned for more like it in the future. I have a personal goal of making Neovim my daily driver for .NET development. There are a few more things to work out like debugging and test running, so more to come!
