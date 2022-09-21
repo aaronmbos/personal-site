@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 13 Sep 2022 00:57:58 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Sep 2022 01:51:40 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Enabling Roslyn EditorConfig Support in Neovim]]></title>
+            <description><![CDATA[In many editors and languages code analysis is a feature that is nearly expected to be available out of the box. With C# and .NET, the Roslyn API and Omnisharp language server are tools that make code analysis possible. In this post, we're going to look at how we can put these tools to use in Neovim resulting in a better development experience. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/dotnet-roslyn-editorconfig-neovim</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/dotnet-roslyn-editorconfig-neovim</guid>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[neovim]]></category>
+            <category><![CDATA[tools]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 20 Sep 2022 00:45:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Generating Random Quotes via CLI]]></title>
             <description><![CDATA[Ever needed a bit of inspiration to get your day started? In this post we'll be looking at how we can generate a random quote and easily format and print it in our terminal. While this may seem silly, I think some of this post will be relevant and applicable to other CLI based needs. Let's dive in!]]></description>
