@@ -16,4 +16,18 @@ The power of Vim comes from the keyboard. The navigation and editing experience 
 
 ## Keycode Reference
 
-## Keycode Examples in Lua
+In this section we're going to go through several keycodes that aren't immediately obvious (at least to me). Some of the keycodes are pretty self-explanatory, like `<Esc>` represents the escape key and `<Space>` represents the space bar. In the examples you may see characters followed by `...`, which means that the keycode can be combined with other keys to perform an action. For example, we might see something like `<Space>-...` which means that the combination of the space bar and some undetermine subsequent key(s) will define the action.
+
+- <Leader>: The leader key isn't exactly a keycode, but it is often referred to as documentation and provides a lot of flexibility for creating very custom keymap shortcuts.
+  - By defaut the leader key is mapped to `\`
+- `<CR>`, `<Enter>`, `<Return>`: The enter key (`CR` stands for carriage return)
+- `<S-...>`: The shift key
+- `<C-...>`: The control key
+- `<M-...>`, `<A-...>`: The meta or alt key. On Windows this is alt and macOS this is option.
+- `<D-...>`: The command key (macOS only)
+
+This list may seem small and pretty meaningless, but I can assure you that you will come across these keycodes in Vim and Vim plugin documentation. The power of Vim lies in the use of keymaps and shortcuts, so if you can master the fundamentals and understand how to learn from the documentation Vim will be a joy to use.
+
+In the next section we'll take a look at some examples of these keycodes as they are used with certain keymaps and plugins. Since I use Neovim, I'll be providing the examples in both Vimscript and Lua. If you're not familiar with Lua, it is a great scripting language and also the default plugin language for Neovim. Neovim still supports Vimscript, but I've seen more and more plugins created using Lua lately.
+
+## Keycode Examples
