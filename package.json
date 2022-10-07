@@ -11,6 +11,7 @@
     "import": "node ./scripts/import-posts.js"
   },
   "dependencies": {
+    "algoliasearch": "^4.14.2",
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.3",
     "next": "^12.1.6",
