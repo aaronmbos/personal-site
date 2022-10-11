@@ -3,8 +3,8 @@ id: 52
 slug: comfortable-being-uncomfortable
 title: "Get Comfortable Being Uncomfortable"
 description: In my opinion, the ability to learn and to continue to learn is one of the most important skills for software engineers to have. In this post, we're going to talk about the value of living outside of our comfort zone to positively impact growth and learning. Let's dive in!
-publishedAt: 2022-09-30T01:20:00.000Z
-updatedAt: 2022-09-30T01:20:00.000Z
+publishedAt: 2022-10-11T01:20:00.000Z
+updatedAt: 2022-10-11T01:20:00.000Z
 metadata: learning, development, career
 ---
 
