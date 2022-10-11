@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 01 Oct 2022 01:21:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 Oct 2022 23:56:52 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Get Comfortable Being Uncomfortable]]></title>
+            <description><![CDATA[In my opinion, the ability to learn and to continue to learn is one of the most important skills for software engineers to have. In this post, we're going to talk about the value of living outside of our comfort zone to positively impact growth and learning. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/comfortable-being-uncomfortable</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/comfortable-being-uncomfortable</guid>
+            <category><![CDATA[learning]]></category>
+            <category><![CDATA[ development]]></category>
+            <category><![CDATA[ career]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 11 Oct 2022 01:20:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Learning Vim Keycode Concepts]]></title>
             <description><![CDATA[Since diving into the world of Vim and Neovim, I've felt myself become more comfortable with the tool and its idiosyncrasies. One of the hurdles I faced early on was understanding the documentation for different keycodes. In this post, we're going to cover the common keycodes and the concepts around them. Let's dive in!]]></description>
