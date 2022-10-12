@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Get Comfortable Being Uncomfortable](https://aaronbos.dev/posts/comfortable-being-uncomfortable)
 - [Learning Vim Keycode Concepts](https://aaronbos.dev/posts/vim-keycode-concepts)
 - [Enabling Roslyn EditorConfig Support in Neovim](https://aaronbos.dev/posts/dotnet-roslyn-editorconfig-neovim)
 - [Generating Random Quotes via CLI](https://aaronbos.dev/posts/quote-api-terminal)
