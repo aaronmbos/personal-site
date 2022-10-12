@@ -1,26 +1,40 @@
 import dotenv from "dotenv";
-import { algoliasearch } from "algoliasearch";
-import { AlgoliaAppId, BlogIndex } from "../constants";
+import algoliasearch from "algoliasearch";
+import path from "path";
+import fs from "fs/promises";
+import matter from "gray-matter";
+import remark from "remark";
+import strip from "strip-markdown";
 
 export async function run() {
   dotenv.config();
-  const client = algoliasearch(AlgoliaAppId, process.env.ALGOLIA_ADMIN_API_KEY);
+  const client = algoliasearch(
+    process.env.ALGOLIA_APP_ID,
+    process.env.ALGOLIA_ADMIN_API_KEY
+  );
 
-  //const index = client.initIndex(BlogIndex);
+  const index = client.initIndex("aaronbos_blog_index");
 
   const postsDir = path.join(process.cwd(), "_posts");
   const posts = await fs.readdir(postsDir);
 
-  const rawPosts = posts.map((post) => {
-    const matterPost = matter.read(`${postsDir}/${post}`);
-    return {
-      id: matterPost.data.id,
-      title: matterPost.data.title,
-      content: matterPost.content,
-      slug: matterPost.data.slug,
-      description: matterPost.data.description,
-      metadata: matterPost.data.metadata.split(","),
-      date: matterPost.data.publishedAt,
-    };
-  });
+  const rawPosts = await Promise.all(
+    posts.map(async (post) => {
+      const matterPost = matter.read(`${postsDir}/${post}`);
+      let rawContent = await remark().use(strip).process(matterPost.content);
+      return {
+        objectID: matterPost.data.id,
+        title: matterPost.data.title,
+        content: String(rawContent),
+        slug: matterPost.data.slug,
+        description: matterPost.data.description,
+        metadata: matterPost.data.metadata.split(","),
+        date: matterPost.data.publishedAt,
+      };
+    })
+  );
+
+  await index.saveObjects(rawPosts);
 }
+
+await run();
