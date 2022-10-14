@@ -4,7 +4,6 @@ import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
 import algoliasearch from "algoliasearch";
-import { InstantSearch, SearchBox, Hits } from "react-instantsearch-hooks-web";
 import { BlogIndex } from "../constants";
 
 export interface NavigationLink {
@@ -23,16 +22,6 @@ const client = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
 );
 
-function Hit({ hit }: any) {
-  return (
-    <article>
-      <p>{hit.title}</p>
-      <h1>{hit.description}</h1>
-      <p>{`${process.env.NEXT_PUBLIC_ORIGIN}/posts/${hit.slug}`}</p>
-    </article>
-  );
-}
-
 export default function Nav() {
   const [menuState, setMenuState] = useState(false);
 
@@ -50,10 +39,6 @@ export default function Nav() {
           </div>
         </div>
       </div>
-      <InstantSearch searchClient={client} indexName={BlogIndex}>
-        <SearchBox />
-        <Hits hitComponent={Hit} />
-      </InstantSearch>
       <NavMobileMenu isMenuOpen={menuState} navLinks={navLinks} />
     </nav>
   );
