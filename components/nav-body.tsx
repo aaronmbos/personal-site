@@ -19,7 +19,7 @@ export default function NavBody({ navLinks }: Props) {
           })}
         </div>
       </div>
-      <div className="flex-1 grow flex sm:justify-center justify-end px-4">
+      <div className="flex-1 grow md:flex hidden md:justify-end px-4">
         <NavSearch />
       </div>
       <div className="mt-1 mr-5 flex flex-0">

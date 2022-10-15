@@ -5,7 +5,7 @@ interface Props {
 
 export default function NavHamburger({ isMenuOpen, handleClick }: Props) {
   return (
-    <div className="flex items-center sm:hidden">
+    <div className="flex items-center md:hidden">
       <button
         onClick={handleClick}
         className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset dark:focus:ring-stone-800 focus:ring-white"
