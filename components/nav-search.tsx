@@ -15,9 +15,9 @@ export default function NavSearch() {
           router.push({
             pathname: "/search",
             query: {
-              q: encodeURIComponent(query)           
-            }
-          })
+              q: encodeURIComponent(query),
+            },
+          });
           console.log(query);
         }
       }}
