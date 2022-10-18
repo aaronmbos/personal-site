@@ -3,11 +3,18 @@ import Layout from "../components/layout";
 import { useRouter } from "next/router";
 import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../constants";
-import {useState } from "react";
+import {ChangeEvent, useState, useEffect } from "react";
 
 export default function Search() {
-  const [results, setResults] = useState<Array<any>>([]);
   const {q}= useRouter().query;
+  const [results, setResults] = useState<Array<any>>([]);
+  const [query, setInput] = useState<string | string[] | undefined>(q);
+  
+  //useEffect(() => {
+  //  console.log("useEffect");
+  //  setInput(q);
+  //  console.log(input);
+  //}, []);
   
   const client = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
@@ -17,16 +24,18 @@ export default function Search() {
   const index = client.initIndex(BlogIndex);
 
   const handleClick = () => {
-    const q = document.getElementById("q") as HTMLInputElement;
-
-    if (q.value.length === 0) {
+    if (query && query.length === 0 || typeof(query) !== "string") {
       return
     }
 
-    index.search(q.value).then(({hits}) => {
+    index.search(query).then(({hits}) => {
       console.log(hits);
       setResults(hits);
     });
+  }
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInput(event.target.value);
   }
 
   return (
@@ -37,7 +46,7 @@ export default function Search() {
       <div className="container">
         <h2 className="text-2xl font-bold text-center my-2">{q ?? "Search blog posts"}</h2>
         <div className="text-center align-bottom flex">
-          <input id="q" className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md" type="search" value={q} />
+          <input id="q" value={query} onChange={handleChange} className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md" type="search" />
           <button 
             onClick={handleClick}
             className="flex shrink ml-2 items-center justify-center dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-slate-500 w-11 h-11 my-5 hover:border-0 hover:ring-2 dark:ring-stone-400">
@@ -53,7 +62,7 @@ export default function Search() {
           </h3>
           <div>
             {results.map((result) => {
-              return <div>{result.title}</div>
+              return <div key={result.objectID}>{result.title}</div>
             })}
           </div>
         </div>}
