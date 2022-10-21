@@ -3,18 +3,12 @@ import Layout from "../components/layout";
 import { useRouter } from "next/router";
 import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../constants";
-import { ChangeEvent, useState, useEffect } from "react";
+import { FocusEvent, useState, useEffect } from "react";
 
 export default function Search() {
-  const { q } = useRouter().query;
+  const q = useRouter().query["q"] as string | undefined;
   const [results, setResults] = useState<Array<any>>([]);
-  const [query, setInput] = useState<string | string[] | undefined>(q);
-
-  //useEffect(() => {
-  //  console.log("useEffect");
-  //  setInput(q);
-  //  console.log(input);
-  //}, []);
+  const [query, setInput] = useState<string>("");
 
   const client = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
@@ -29,12 +23,12 @@ export default function Search() {
     }
 
     index.search(query).then(({ hits }) => {
-      console.log(hits);
       setResults(hits);
     });
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: FocusEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
     setInput(event.target.value);
   };
 
@@ -45,12 +39,12 @@ export default function Search() {
       </Head>
       <div className="container">
         <h2 className="text-2xl font-bold text-center my-2">
-          {q ?? "Search blog posts"}
+          Search{q && `: "${q}"`}
         </h2>
         <div className="text-center align-bottom flex">
           <input
             id="q"
-            value={query}
+            defaultValue={q}
             onChange={handleChange}
             className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
             type="search"
