@@ -15,7 +15,7 @@ export default function About() {
         <div className="mt-4 text-center">
           <Image
             className="rounded-full"
-            src="/static/headshot.jpg"
+            src="/v1666052817/20221017_HudlHeadshots_AaronBos-5_iggfs3.jpg"
             alt="Aaron's picture"
             height="200"
             width="200"
@@ -23,7 +23,7 @@ export default function About() {
         </div>
         <p className="my-4">
           I am a <span className="font-semibold">software engineer</span> from
-          the midwest United States. I am currently working as a Senior 
+          the midwest United States currently working as a Senior 
           Engineer at Hudl, a sports technology company that focuses 
           on empowering teams and athletes with video and data.
         </p>
