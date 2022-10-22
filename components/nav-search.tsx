@@ -18,7 +18,6 @@ export default function NavSearch() {
               q: encodeURIComponent(query),
             },
           });
-          console.log(query);
         }
       }}
     />

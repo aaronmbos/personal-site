@@ -6,30 +6,37 @@ import { BlogIndex } from "../constants";
 import { FocusEvent, useState, useEffect } from "react";
 
 export default function Search() {
-  const q = useRouter().query["q"] as string | undefined;
+  const router = useRouter();
+  const q = router.query["q"] as string | undefined;
   const [results, setResults] = useState<Array<any>>([]);
-  const [query, setInput] = useState<string>("");
 
-  const client = algoliasearch(
-    process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-    process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
-  );
+  useEffect(() => {
+    const client = algoliasearch(
+      process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
+      process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
+    );
 
-  const index = client.initIndex(BlogIndex);
+    const index = client.initIndex(BlogIndex);
+
+    if (q && q.length > 0 && typeof q === "string") {
+      index.search(q).then(({ hits }) => {
+        setResults(hits);
+      });
+    }
+  }, [q]);
 
   const handleClick = () => {
+    const query = (document.getElementById("q") as HTMLInputElement).value;
     if ((query && query.length === 0) || typeof query !== "string") {
       return;
     }
 
-    index.search(query).then(({ hits }) => {
-      setResults(hits);
+    router.push({
+      pathname: "/search",
+      query: {
+        q: encodeURIComponent(query),
+      },
     });
-  };
-
-  const handleChange = (event: FocusEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-    setInput(event.target.value);
   };
 
   return (
@@ -45,7 +52,6 @@ export default function Search() {
           <input
             id="q"
             defaultValue={q}
-            onChange={handleChange}
             className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
             type="search"
           />
