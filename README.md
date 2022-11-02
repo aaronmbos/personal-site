@@ -6,6 +6,7 @@
 
 ## Posts
 
+- [Debugging C# in Neovim with nvim-dap](https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap)
 - [GitHub Has Our Back With Token Security](https://aaronbos.dev/posts/github-revoke-token-on-push)
 - [Get Comfortable Being Uncomfortable](https://aaronbos.dev/posts/comfortable-being-uncomfortable)
 - [Learning Vim Keycode Concepts](https://aaronbos.dev/posts/vim-keycode-concepts)
