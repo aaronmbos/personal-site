@@ -9,18 +9,30 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 21 Oct 2022 01:01:40 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 02 Nov 2022 02:57:05 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Debugging C# in Neovim with nvim-dap]]></title>
+            <description><![CDATA[As a software developer debugging skills are invaluable. Over the years debugging tools have evolved to become an integral part of the development toolbox. In this post, we are going to look at how we can configure a debugging experience for .NET code in Neovim. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap</guid>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[neovim]]></category>
+            <category><![CDATA[tools]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 31 Oct 2022 01:10:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[GitHub Has Our Back With Token Security]]></title>
             <description><![CDATA[I recently stumbled across some behavior by GitHub that was surprising at first, then reassuring once I understood the root cause. In this post, we are going to discuss a particular aspect of GitHub's security around keeping GitHub API tokens out of public repositories. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/github-revoke-token-on-push</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/github-revoke-token-on-push</guid>
             <category><![CDATA[learning]]></category>
-            <category><![CDATA[ security]]></category>
-            <category><![CDATA[ github]]></category>
+            <category><![CDATA[security]]></category>
+            <category><![CDATA[github]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
-            <pubDate>Thu, 20 Oct 2022 01:10:00 GMT</pubDate>
+            <pubDate>Fri, 21 Oct 2022 01:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Get Comfortable Being Uncomfortable]]></title>
@@ -28,8 +40,8 @@
             <link>https://aaronbos.dev/posts/comfortable-being-uncomfortable</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/comfortable-being-uncomfortable</guid>
             <category><![CDATA[learning]]></category>
-            <category><![CDATA[ development]]></category>
-            <category><![CDATA[ career]]></category>
+            <category><![CDATA[development]]></category>
+            <category><![CDATA[career]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
             <pubDate>Tue, 11 Oct 2022 01:20:00 GMT</pubDate>
         </item>

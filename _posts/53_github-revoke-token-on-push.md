@@ -3,9 +3,9 @@ id: 53
 slug: github-revoke-token-on-push
 title: "GitHub Has Our Back With Token Security"
 description: I recently stumbled across some behavior by GitHub that was surprising at first, then reassuring once I understood the root cause. In this post, we are going to discuss a particular aspect of GitHub's security around keeping GitHub API tokens out of public repositories. Let's dive in!
-publishedAt: 2022-10-20T01:10:00.000Z
-updatedAt: 2022-10-20T01:10:00.000Z
-metadata: learning, security, github
+publishedAt: 2022-10-21T01:10:00.000Z
+updatedAt: 2022-10-21T01:10:00.000Z
+metadata: learning,security,github
 ---
 
 ## How GitHub keeps tokens safe
