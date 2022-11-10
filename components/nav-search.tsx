@@ -9,7 +9,7 @@ export default function NavSearch() {
       maxLength={MaxSearchLength}
       className="lg:w-1/2 md:w-3/4 dark:bg-stone-800 dark:text-white rounded-md dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0"
       type="search"
-      placeholder="Search"
+      placeholder="Search posts"
       onKeyUp={(e) => {
         if (e.key === "Enter") {
           const query = (e.target as HTMLInputElement).value;
@@ -17,7 +17,9 @@ export default function NavSearch() {
           router.push({
             pathname: "/search",
             query: {
-              q: encodeURIComponent(query.substring(0, MaxSearchLength - 1)),
+              q: encodeURIComponent(
+                query.trim().substring(0, MaxSearchLength - 1)
+              ),
             },
           });
         }

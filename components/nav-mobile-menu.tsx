@@ -30,7 +30,7 @@ export default function NavMobileMenu({ isMenuOpen, navLinks }: Props) {
           maxLength={MaxSearchLength}
           className="block mx-auto w-full dark:bg-stone-800 dark:text-white rounded-md dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0"
           type="search"
-          placeholder="Search"
+          placeholder="Search posts"
           onKeyUp={(e) => {
             if (e.key === "Enter") {
               const query = (e.target as HTMLInputElement).value;

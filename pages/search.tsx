@@ -4,12 +4,24 @@ import { useRouter } from "next/router";
 import algoliasearch from "algoliasearch";
 import { BlogIndex, MaxSearchLength } from "../constants";
 import { FocusEvent, useState, useEffect } from "react";
+import ButtonIcon from "../components/button-icon";
+import { icons } from "../types/icons";
+import PostPreview from "../components/post-preview";
+
+interface SearchHit {
+  objectID: string;
+  title: string;
+  description: string;
+  date: string;
+  metadata: string[];
+  slug: string;
+}
 
 export default function Search() {
   const router = useRouter();
   const q = router.query["q"] as string | undefined;
   const decodedQuery = decodeURIComponent(q ?? "");
-  const [results, setResults] = useState<Array<any>>([]);
+  const [results, setResults] = useState<Array<SearchHit>>([]);
 
   useEffect(() => {
     const client = algoliasearch(
@@ -21,7 +33,9 @@ export default function Search() {
 
     if (q && q.length > 0 && typeof q === "string") {
       index
-        .search(decodeURIComponent(q.substring(0, MaxSearchLength - 1)))
+        .search<SearchHit>(
+          decodeURIComponent(q.substring(0, MaxSearchLength - 1))
+        )
         .then(({ hits }) => {
           setResults(hits);
         });
@@ -39,7 +53,7 @@ export default function Search() {
     router.push({
       pathname: "/search",
       query: {
-        q: encodeURIComponent(query),
+        q: encodeURIComponent(query.trim()),
       },
     });
   };
@@ -57,6 +71,7 @@ export default function Search() {
           </h2>
           <div className="text-center align-bottom flex">
             <input
+              placeholder="Search posts"
               maxLength={MaxSearchLength}
               id="q"
               defaultValue={decodedQuery}
@@ -70,18 +85,14 @@ export default function Search() {
             />
             <button
               onClick={handleClick}
-              className="flex shrink ml-2 items-center justify-center dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-slate-500 w-11 h-11 my-5 hover:border-0 hover:ring-2 dark:ring-stone-400"
+              className="flex shrink ml-2 items-center justify-center dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 w-11 h-11 my-5 hover:border-0 hover:ring-2 dark:ring-stone-400"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
+              <ButtonIcon
                 fill="currentColor"
-                className="w-5 h-5 fill-white"
-                viewBox="0 0 16 16"
-              >
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-              </svg>
+                classList={["w-5", "h-5", "fill-white"]}
+                dimensions={[15, 15]}
+                path={icons.search}
+              />
             </button>
           </div>
           {results.length > 0 && (
@@ -89,7 +100,22 @@ export default function Search() {
               <h3 className="text-xl font-bold my-2">Search results</h3>
               <div>
                 {results.map((result) => {
-                  return <div key={result.objectID}>{result.title}</div>;
+                  return (
+                    <PostPreview
+                      key={result.objectID}
+                      slug={result.slug}
+                      title={result.title}
+                      description={result.description}
+                      date={new Date(result.date).toLocaleDateString("en-US", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        timeZone: "America/Chicago",
+                      })}
+                      metadata={result.metadata}
+                    />
+                  );
                 })}
               </div>
             </div>
