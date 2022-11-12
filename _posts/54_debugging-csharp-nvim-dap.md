@@ -3,8 +3,8 @@ id: 54
 slug: debugging-csharp-neovim-nvim-dap
 title: "Debugging C# in Neovim with nvim-dap"
 description: "As a software developer debugging skills are invaluable. Over the years debugging tools have evolved to become an integral part of the development toolbox. In this post, we are going to look at how we can configure a debugging experience for .NET code in Neovim. Let's dive in!"
-publishedAt: 2022-11-2T02:10:00.000Z
-updatedAt: 2022-11-2T02:10:00.000Z
+publishedAt: 2022-11-11T02:10:00.000Z
+updatedAt: 2022-11-1102:10:00.000Z
 metadata: dotnet,csharp,neovim,tools
 ---
 
