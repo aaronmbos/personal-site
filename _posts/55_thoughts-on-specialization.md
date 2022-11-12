@@ -3,8 +3,8 @@ id: 55
 slug: thoughts-on-specialization
 title: "Some Thoughts on Specialization"
 description: "These days software developers are categorized into two common buckets, generalists and specialists. Neither category has an inherent advantage over the other and often times the pros and cons of a categories are contextual. In this post, I'm going to share my current thoughts on these categories and how floating between them has impacted my career."
-publishedAt: 2022-11-11T02:10:00.000Z
-updatedAt: 2022-11-11T02:10:00.000Z
+publishedAt: 2022-11-12T02:10:00.000Z
+updatedAt: 2022-11-12T02:10:00.000Z
 metadata: dev,career,opinion
 ---
 
