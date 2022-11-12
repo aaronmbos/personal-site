@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 02 Nov 2022 02:57:05 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 12 Nov 2022 01:48:52 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Some Thoughts on Specialization]]></title>
+            <description><![CDATA[These days software developers are categorized into two common buckets, generalists and specialists. Neither category has an inherent advantage over the other and often times the pros and cons of a categories are contextual. In this post, I'm going to share my current thoughts on these categories and how floating between them has impacted my career.]]></description>
+            <link>https://aaronbos.dev/posts/thoughts-on-specialization</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/thoughts-on-specialization</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[career]]></category>
+            <category><![CDATA[opinion]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 10 Nov 2022 02:10:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Debugging C# in Neovim with nvim-dap]]></title>
             <description><![CDATA[As a software developer debugging skills are invaluable. Over the years debugging tools have evolved to become an integral part of the development toolbox. In this post, we are going to look at how we can configure a debugging experience for .NET code in Neovim. Let's dive in!]]></description>
@@ -21,7 +32,7 @@
             <category><![CDATA[neovim]]></category>
             <category><![CDATA[tools]]></category>
             <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
-            <pubDate>Mon, 31 Oct 2022 01:10:00 GMT</pubDate>
+            <pubDate>Wed, 02 Nov 2022 02:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[GitHub Has Our Back With Token Security]]></title>
