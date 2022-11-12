@@ -5,6 +5,7 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import remark from "remark";
 import strip from "strip-markdown";
+import { v4 as uuidv4 } from "uuid";
 
 export async function run() {
   dotenv.config();
@@ -23,7 +24,7 @@ export async function run() {
       const matterPost = matter.read(`${postsDir}/${post}`);
       let rawContent = await remark().use(strip).process(matterPost.content);
       return {
-        objectID: matterPost.data.id,
+        objectID: uuidv4(),
         title: matterPost.data.title,
         content: String(rawContent),
         slug: matterPost.data.slug,
