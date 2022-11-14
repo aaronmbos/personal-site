@@ -7,15 +7,7 @@ import { FocusEvent, useState, useEffect } from "react";
 import ButtonIcon from "../components/button-icon";
 import { icons } from "../types/icons";
 import PostPreview from "../components/post-preview";
-
-interface SearchHit {
-  objectID: string;
-  title: string;
-  description: string;
-  date: string;
-  metadata: string[];
-  slug: string;
-}
+import { SearchHit } from "../types/api/types";
 
 export default function Search() {
   const router = useRouter();
@@ -24,21 +16,27 @@ export default function Search() {
   const [results, setResults] = useState<Array<SearchHit>>([]);
 
   useEffect(() => {
-    const client = algoliasearch(
-      process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-      process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
-    );
-
-    const index = client.initIndex(BlogIndex);
-
     if (q && q.length > 0 && typeof q === "string") {
-      index
-        .search<SearchHit>(
-          decodeURIComponent(q.substring(0, MaxSearchLength - 1))
-        )
-        .then(({ hits }) => {
-          setResults(hits);
+      const sanitizedQuery = decodeURIComponent(
+        q.trim().substring(0, MaxSearchLength - 1)
+      );
+
+      const search = async (query: string) => {
+        const response = await fetch(`/api/post/search`, {
+          method: "POST",
+          body: JSON.stringify({
+            query: query,
+          }),
+          headers: new Headers({
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          }),
         });
+        const results = await response.json();
+        setResults(results);
+      };
+
+      search(sanitizedQuery);
     }
   }, [q]);
 

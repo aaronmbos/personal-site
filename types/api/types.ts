@@ -5,3 +5,12 @@ export interface Reaction {
   count: number;
   hasReacted: boolean;
 }
+
+export interface SearchHit {
+  objectID: string;
+  title: string;
+  description: string;
+  date: string;
+  metadata: string[];
+  slug: string;
+}
