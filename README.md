@@ -4,6 +4,18 @@
 
 [https://aaronbos.dev](https://aaronbos.dev)
 
+## Feature Roadmap
+
+### 2022
+
+| Quarter | Feature                                             | Status                                                          |
+| ------- | --------------------------------------------------- | --------------------------------------------------------------- |
+| Q1      | Implement dark mode.                                | Done ([PR](https://github.com/aaronmbos/personal-site/pull/1))  |
+| Q2      | Share directly to Twitter from a blog post.         | Done ([PR](https://github.com/aaronmbos/personal-site/pull/2))  |
+| Q2      | TypeScript Migration                                | Done ([PR](https://github.com/aaronmbos/personal-site/pull/3))  |
+| Q3      | React to posts with emojis.                         | Done ([PR](https://github.com/aaronmbos/personal-site/pull/4))  |
+| Q4      | Search blog posts based on tag, title, and content. | Done ([PR](https://github.com/aaronmbos/personal-site/pull/14)) |
+
 ## Posts
 
 - [Some Thoughts on Specialization](https://aaronbos.dev/posts/thoughts-on-specialization)
@@ -61,15 +73,3 @@
 - [Behind the Scenes of Making my Blog](https://aaronbos.dev/posts/blog-behind-the-scenes)
 - [JWTs: A Peek Under the Hood](https://aaronbos.dev/posts/jwt-under-the-hood)
 - [Hello World](https://aaronbos.dev/posts/hello-world)
-
-## Feature Roadmap
-
-### 2022
-
-| Quarter | Feature                                             | Status                                                         |
-| ------- | --------------------------------------------------- | -------------------------------------------------------------- |
-| Q1      | Implement dark mode.                                | Done ([PR](https://github.com/aaronmbos/personal-site/pull/1)) |
-| Q2      | Share directly to Twitter from a blog post.         | Done ([PR](https://github.com/aaronmbos/personal-site/pull/2)) |
-| Q2      | TypeScript Migration                                | Done ([PR](https://github.com/aaronmbos/personal-site/pull/3)) |
-| Q3      | React to posts with emojis.                         | Done ([PR](https://github.com/aaronmbos/personal-site/pull/4)) |
-| Q4      | Search blog posts based on tag, title, and content. | Not Started                                                    |
