@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
-import algoliasearch from "algoliasearch";
-import { BlogIndex, MaxSearchLength } from "../constants";
-import { FocusEvent, useState, useEffect } from "react";
+import { MaxSearchLength } from "../constants";
+import { useState, useEffect } from "react";
 import ButtonIcon from "../components/button-icon";
 import { icons } from "../types/icons";
 import PostPreview from "../components/post-preview";

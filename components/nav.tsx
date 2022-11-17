@@ -3,7 +3,6 @@ import NavMobileMenu from "./nav-mobile-menu";
 import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
-import { BlogIndex } from "../constants";
 
 export interface NavigationLink {
   text: string;

@@ -1,7 +1,6 @@
 import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../../constants";
 import { ApiResponse, SearchHit } from "../../types/api/types";
-import { handleDelete } from "./reaction-request";
 
 export async function handleGet(
   query: string

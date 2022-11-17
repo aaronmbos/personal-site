@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleGet } from "../../../lib/request-handlers/search-request";
-import { ApiResponse, SearchHit } from "../../../types/api/types";
 
 export default async function handler(
   req: NextApiRequest,
