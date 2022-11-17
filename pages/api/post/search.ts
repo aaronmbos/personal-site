@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleGet } from "../../../lib/request-handlers/search-request";
+import { ApiResponse, SearchHit } from "../../../types/api/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,10 +14,16 @@ export default async function handler(
   } catch (error) {
     if (error instanceof Error) {
       if (!process.env.VERCEL_ENV?.includes("production")) {
-        return res.status(500).json(error.message);
+        return res
+          .status(500)
+          .json({ isSuccess: false, message: error.message });
       }
 
-      return res.status(500).json("An error occurred.");
+      return res.status(500).json({
+        isSuccess: false,
+        message:
+          "An error occurred performing your search. Please try again later.",
+      });
     }
   }
 }

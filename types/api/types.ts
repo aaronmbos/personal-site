@@ -14,3 +14,9 @@ export interface SearchHit {
   metadata: string[];
   slug: string;
 }
+
+export interface ApiResponse<T> {
+  data: T;
+  isSuccess: boolean;
+  message: string;
+}

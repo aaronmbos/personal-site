@@ -3,7 +3,6 @@ import NavMobileMenu from "./nav-mobile-menu";
 import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
-import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../constants";
 
 export interface NavigationLink {
@@ -17,14 +16,9 @@ const navLinks: NavigationLink[] = [
   { text: "About", route: "/about" },
 ];
 
-const client = algoliasearch(
-  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
-);
-
 export default function Nav() {
   const [menuState, setMenuState] = useState(false);
-  
+
   return (
     <nav className="border-b border-b-gray-200 dark:border-b-zinc-700">
       <div className="max-w-6xl mx-auto px-2 sm:px-6 md:px-8">

@@ -7,13 +7,14 @@ import { FocusEvent, useState, useEffect } from "react";
 import ButtonIcon from "../components/button-icon";
 import { icons } from "../types/icons";
 import PostPreview from "../components/post-preview";
-import { SearchHit } from "../types/api/types";
+import { ApiResponse, SearchHit } from "../types/api/types";
 
 export default function Search() {
   const router = useRouter();
   const q = router.query["q"] as string | undefined;
   const decodedQuery = decodeURIComponent(q ?? "");
   const [results, setResults] = useState<Array<SearchHit>>([]);
+  const [searchError, setSearchError] = useState<string>("");
 
   useEffect(() => {
     if (q && q.length > 0 && typeof q === "string") {
@@ -32,8 +33,13 @@ export default function Search() {
             Accept: "application/json",
           }),
         });
-        const results = await response.json();
-        setResults(results);
+        const results = (await response.json()) as ApiResponse<SearchHit[]>;
+
+        if (results.isSuccess) {
+          setResults(results.data);
+        } else {
+          setSearchError(results.message);
+        }
       };
 
       search(sanitizedQuery);
@@ -93,7 +99,7 @@ export default function Search() {
               />
             </button>
           </div>
-          {results.length > 0 && (
+          {results.length > 0 ? (
             <div>
               <h3 className="text-xl font-bold my-2">Search results</h3>
               <div>
@@ -117,6 +123,12 @@ export default function Search() {
                 })}
               </div>
             </div>
+          ) : (
+            searchError.length > 0 && (
+              <div className="text-center my-2 text-red-500 dark:text-red-300">
+                {searchError}
+              </div>
+            )
           )}
         </div>
       </Layout>
