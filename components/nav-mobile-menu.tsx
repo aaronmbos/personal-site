@@ -14,7 +14,7 @@ export default function NavMobileMenu({ isMenuOpen, navLinks }: Props) {
   return (
     <div
       id="mobileMenu"
-      className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}
+      className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}
     >
       <div className="px-2 pt-2 pb-3 space-y-1">
         {navLinks.map((link) => {
