@@ -97,11 +97,19 @@ export default function ReactionRow({ postSlug, url }: Props) {
         <AnchorButton
           href={`https://twitter.com/intent/tweet?url=${encodeURI(url)}`}
         >
-          <ButtonIcon fill="rgb(29,155,240)" path={icons.twitter} />
+          <ButtonIcon
+            fill="rgb(29,155,240)"
+            path={icons.twitter}
+            dimensions={[17, 17]}
+          />
           <span className="text-sm ml-2">Share</span>
         </AnchorButton>
         <AnchorButton href="https://aaronbos.dev/feed.xml">
-          <ButtonIcon fill="currentColor" path={icons.bell} />
+          <ButtonIcon
+            fill="currentColor"
+            path={icons.bell}
+            dimensions={[17, 17]}
+          />
           <span className="text-sm ml-2">Subscribe</span>
         </AnchorButton>
         <button
@@ -114,12 +122,14 @@ export default function ReactionRow({ postSlug, url }: Props) {
             id="clip"
             fill="currentColor"
             path={icons.emptyClipboard}
+            dimensions={[17, 17]}
           />
           <ButtonIcon
             id="clipped"
             fill="currentColor"
             path={icons.copiedClipboard}
             classList={["hidden"]}
+            dimensions={[17, 17]}
           />{" "}
           <span id="clip-text" className="text-sm ml-1">
             Copy link

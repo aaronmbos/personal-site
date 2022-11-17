@@ -20,14 +20,16 @@ export default function Nav() {
 
   return (
     <nav className="border-b border-b-gray-200 dark:border-b-zinc-700">
-      <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-2 sm:px-6 md:px-8">
         <div className="relative flex items-center justify-between h-16">
           <NavHamburger
             isMenuOpen={menuState}
             handleClick={() => setMenuState(!menuState)}
           />
-          <div className="flex-1 flex justify-end sm:items-stretch sm:justify-start">
+          <div className="flex md:justify-center md:items-stretch">
             <NavLogo />
+          </div>
+          <div className="md:flex-1 flex justify-end md:justify-start">
             <NavBody navLinks={navLinks} />
           </div>
         </div>
