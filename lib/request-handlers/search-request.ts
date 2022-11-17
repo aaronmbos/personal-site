@@ -1,6 +1,7 @@
 import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../../constants";
 import { ApiResponse, SearchHit } from "../../types/api/types";
+import { handleDelete } from "./reaction-request";
 
 export async function handleGet(
   query: string
@@ -11,9 +12,19 @@ export async function handleGet(
   );
 
   const index = client.initIndex(BlogIndex);
-
+  const rawResults = (await index.search<SearchHit>(query)).hits;
   return {
-    data: (await index.search<SearchHit>(query)).hits,
+    // Unfortunately need to map here to make sure the entire content isn't sent in the response
+    data: rawResults.map((h) => {
+      return {
+        objectID: h.objectID,
+        title: h.title,
+        description: h.description,
+        date: h.date,
+        metadata: h.metadata,
+        slug: h.slug,
+      };
+    }),
     isSuccess: true,
     message: "",
   };
