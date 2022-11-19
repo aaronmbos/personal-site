@@ -1,3 +1,5 @@
+// Example command: npm run create-post "name-of-file"
+
 import { readdir, writeFile } from "fs/promises";
 import path from "path";
 
