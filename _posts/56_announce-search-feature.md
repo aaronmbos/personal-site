@@ -29,7 +29,23 @@ The option that I ultimately decided to go with was Algolia, which is at the opp
 
 ### Searchable Content
 
+In terms of the content from my blog that is searchable I wanted to find a solution that would index multiple components from each post. For example, if a visitor were to search for "C#" I want search results for any title, description, post, or tag that contains the queried value. Algolia provided this functionality in its search index by supporting objects to be indexed. The ability to index an object allowed for me to upload all of the components of each blog post to make search effective. Below is an example of the object that I send to Algolia when adding to or updating the search index.
+
+```
+{
+  objectID
+  title
+  content
+  slug
+  description
+  metadata
+  date
+}
+```
+
 ### Developer-friendly API
+
+With my blog I've always approached features as an opportunity to learn something versus grabbing an off-the-shelf solution. I think that Algolia provides a nice in-between where the nitty-gritty search details are encapsulated by a well-documented and easy to use API. Algolia has SDKs for several languages, most importantly for me TypeScript, which makes it a great solution for any project or team. From everything that I've seen so far Algolia's API is fully-featured allowing users to do just about anything. From searching to managing indeces Algolia has developers covered with their API.
 
 ### Analytics
 

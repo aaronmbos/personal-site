@@ -5,10 +5,10 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 
 interface Props {
-  posts: BlogPost[]
+  posts: BlogPost[];
 }
 
-export default function Posts({ posts } : Props) {
+export default function Posts({ posts }: Props) {
   return (
     <>
       <Head>
@@ -27,11 +27,11 @@ export default function Posts({ posts } : Props) {
   );
 }
 
-export const getStaticProps : GetStaticProps = async () =>  {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
   return {
     props: {
       posts,
     },
   };
-}
+};
