@@ -8,7 +8,8 @@
     "start": "next start",
     "rss": "node ./scripts/rss.js",
     "lint": "next lint",
-    "import": "node ./scripts/import-posts.js"
+    "import": "node ./scripts/import-posts.js",
+    "create-post": "node ./scripts/new-post.mjs"
   },
   "dependencies": {
     "algoliasearch": "^4.14.2",
