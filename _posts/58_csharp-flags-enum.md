@@ -12,8 +12,38 @@ I've been using enumerations (enums) in C# since my earliest days learning the l
 
 ## Using the Flags Attribute
 
-Relatively short section explaining the Flags attribute and the functionality it provides enums when applied.
-[docs](https://learn.microsoft.com/en-us/dotnet/api/system.flagsattribute)
+The first step to defining an enum as a bit flag is to add the `Flags` attribute to the enum type. In practice this looks like the example below. It is a common [convention](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations) in .NET to use a plural name for enums that are defined as flags.
+
+```csharp
+[Flags]
+public enum BurgerToppings
+{
+    // Enum members
+}
+```
+
+By adding the `Flags` attribute the enum will now be treated as a set of bit flags instead of a standard enum. If you're unfamiliar with the concept of a bit flag, you can imagine each member representing one bit. The members should be defined to represent single bits or we can also define members as a combination of multiple bits. Let's expand on our previous example by adding some members to the `BurgerToppings` enum.
+
+```csharp
+[Flags]
+public enum BurgerToppings
+{
+    None = 0,
+    Ketchup = 1,
+    Mustard = 2,
+    KetchupAndMustard = Ketchup | Mustard,
+    Lettuce = 4,
+    Tomato = 8,
+    Cheese = 16,
+    Pickle = 32,
+}
+```
+
+In the `BurgerToppings` example we now have seven individual bit flags defined along with a flag that specifies a combination of ketchup and mustard flags. Since enum members are simply named constants backed by their integral numeric value, we could also use `3` instead of `Ketchup | Mustard`. We'll cover a bit more about different ways to set these values in the following sections.
+
+In order for the enum members to be clearly defined and work as expected it is best to explicitly provide the bit values for each member. Without explicitly providing values the enum will implicitly set the value based on enum definition order starting at 0.
+
+The documentation for the Flags attribute is pretty comprehensive and contains solid documentation. I highly recommend checking it out [here](https://learn.microsoft.com/en-us/dotnet/api/system.flagsattribute) to learn more.
 
 ## Defining Enum Members and Values
 
