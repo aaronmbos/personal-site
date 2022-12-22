@@ -47,11 +47,47 @@ The documentation for the Flags attribute is pretty comprehensive and contains s
 
 ## Defining Enum Members and Values
 
-Defining member values with numeric integral type literals
-Defining member values with binary literals
-Defining member values with bit shifting
+Enum member values can be set in a number of ways and it was actually a personal encounter with one of the ways that led me to writing this post. In my experience I've mostly seen enums, both flag and non-flag, with values defined explicitly as numeric literals (like 0, 1, 2, 3, etc.) which I'll cover first. I'm also going to cover a couple more methods of setting flag enum member values. Flag enum values can also be set using binary literals as well as using the bit shift operator to manipulate values when being set. Each of the examples below will demonstrate a different way of defining flag enum member values. I'll also include a short description to provide any helpful context around each method.
 
-### Quick Detour on Bit Shifting
+### Using Numeric Type Literals
+
+```csharp
+[Flags]
+public enum BurgerToppings
+{
+    None = 0,
+    Ketchup = 1,
+    Mustard = 2,
+    Lettuce = 4,
+    Tomato = 8,
+    Cheese = 16,
+    Pickle = 32
+}
+```
+
+In my experience using numeric type literals is the most common method of defining enum member values. I would consider this method to be my preferred method. The numeric literals are simple and easy to understand for someone experienced in a codebase as well as for someone just learning their way around.
+
+### Using Binary Literals
+
+```csharp
+[Flags]
+public enum BurgerToppings
+{
+    None = 0b_0000_0000,    // 0
+    Ketchup = 0b_0000_0001, // 1
+    Mustard = 0b_0000_0010, // 2
+    Lettuce = 0b_0000_0100, // 4
+    Tomato = 0b_0000_1000,  // 8
+    Cheese = 0b_0001_0000,  // 16
+    Pickle = 0b_0010_0000   // 32
+}
+```
+
+This method of defining the values on the `BurgerToppings` enum has the same result as the previous, but instead of integers we are using binary literal values. If you're unfamiliar with this syntax, the `0b` prefix is used to denote a binary value. The underscore is referred to as a _digit separator_ and isn't required, but it can be used to improve the readability. In my opinion this method doesn't have any real advantage over using integer literals, so personally I would still opt for the previous method for the readability improvement.
+
+### Using Bit Shift Operator
+
+#### Quick Detour on Bit Shifting
 
 [docs](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators#left-shift-operator-)
 
