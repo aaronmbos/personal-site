@@ -87,11 +87,88 @@ This method of defining the values on the `BurgerToppings` enum has the same res
 
 ### Using Bit Shift Operator
 
-#### Quick Detour on Bit Shifting
+```csharp
+[Flags]
+public enum BurgerToppings
+{
+    None = 0,
+    Ketchup = 1,
+    Mustard = 1 << 1,
+    Lettuce = 1 << 2,
+    Tomato = 1 << 3,
+    Cheese = 1 << 4,
+    Pickle = 1 << 5
+}
+```
 
-[docs](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators#left-shift-operator-)
+In this example we use the left-shift operator to set the value of each enum member. The value of each member is the same as the previous two examples. The left-shift operator `x << count` will shift the value `x` left the number of bits defined by `count`. Let's take `Lettuce = 1 << 2` as an example. I find it helpful to think about these values as powers of two. So when we shift the value 1 left 2 bits we can think of this as `2^2`. Let `1 << 3` can be thought of as `2^3` and that pattern continues for each member in the enum.
+
+I also find it helpful to visualize the shifting by thinking about binary literals. So we start with the value 1 as `0001` and we need to shift it left 2 bits, which results in `0100` or 4. Bit shifting is a very interesting topic that has many use cases beyond flag enums. There is actually a relatively famous "fast inverse square root" from the Quake III source code that utilizes bit shifting in a very clever manner. Below is the snippet with original comments.
+
+```c
+float Q_rsqrt( float number )
+{
+	long i;
+	float x2, y;
+	const float threehalfs = 1.5F;
+
+	x2 = number * 0.5F;
+	y  = number;
+	i  = * ( long * ) &y;                       // evil floating point bit level hacking
+	i  = 0x5f3759df - ( i >> 1 );               // what the fuck?
+	y  = * ( float * ) &i;
+	y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+
+	return y;
+}
+```
+
+While this method of defining enum member values is effective and is synonymous with the previous examples, I find it a little less intuitive than using integer or binary literals.
 
 ## Logical Bitwise Operations
 
-A slightly detailed section on bitwise operations and their utility with flag enums
-[docs](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators#logical-and-operator-)
+Earlier in this post I briefly mentioned that flag enums have the ability to represent a combination of members using a single value. This functionality is made possible by using logical bitwise operations. The bitwise operations that we are going to be concerned with are the logical AND `&` and OR `|` operations because they are commonly used with flag enums. There are other operations like exclusive OR and bitwise complement, but in my experience they are used much less frequently with flag enums.
+
+I've already mentioned the logical OR operation in the first example when I listed `KetchupAndMustard = Ketchup | Mustard` so we'll start with that. The logical OR operation with return `true` if either of its operands are true. So when thinking about this in the context of flag enums `BurgerToppings.Ketchup` has a value of 1 or `0001` and `BurgerToppings.Mustard` has a value of 2 or `0010`. When we perform a logical OR on these two values we end up with 3 or `0011`. This can be particularly useful if you want to combine multiple enum values as a single value.
+
+```shell
+0001
+ OR
+0010
+----
+0011
+```
+
+The other operation that we will cover is the logical AND which returns true when **both** of its operands return true. I think that the logical AND is most useful with flag enums for determining if a value is contained in a combination of enum values. Let's expand our example of burger toppings and say that we track the toppings that each customer orders as a bitwise flag. One day our manager says that we need to start cutting costs and need to know how many orders include Ketchup. This problem is made easy with the logical AND operator. Let's take a single order as an example (this could be applied to any order that was placed) where the customer ordered Ketchup, Mustard, Lettuce, and Tomato.
+
+```csharp
+var orderToppings = BurgerToppings.Ketchup |
+    BurgerToppings.Mustard |
+    BurgerToppings.Lettuce |
+    BurgerToppings.Tomato;
+```
+
+We can use `BurgerToppings.Ketchup` as the left operand of the logical AND to determine if Ketchup was in this order. If the result is true, then it should return `BurgerToppings.Ketchup` (it does).
+
+```csharp
+var orderToppings = BurgerToppings.Ketchup |
+    BurgerToppings.Mustard |
+    BurgerToppings.Lettuce |
+    BurgerToppings.Tomato;
+
+// Writes Ketchup
+Console.WriteLine(BurgerToppings.Ketchup & orderToppings);
+```
+
+If we look at the logical AND from the perspective of raw values, `orderToppings` has a value of 15 or `1111` and Ketchup has the value of 1 or `0010`. When the logical AND operation is applied to these values the result is 1.
+
+```shell
+0010
+AND
+1111
+----
+0010
+```
+
+Flag enums have come up quite frequently in my career thus far for a multitude of reasons. They can be a powerful tool when used for the right problems. I hope this post provides a bit of insight into how they can be used effectively in day-to-day work.
