@@ -3,8 +3,8 @@ id: 58
 slug: csharp-flags-enum
 title: "Defining and Using Enums as Bit Flags in C#"
 description: "I've been using enums in C# since the beginning of my development career. In this post, we are going to dive into how the Flags attribute can be applied to enums and also the different kinds of operations that come into play when an enum is defined as a bit flag. Let's dive in!"
-publishedAt: YYYY-MM-DDTHH:MM:SS.000Z
-updatedAt: YYYY-MM-DDTHH:MM:SS.000Z
+publishedAt: 2022-12-23T03:00:00.000Z
+updatedAt: 2022-12-23T03:00:00.000Z
 metadata: csharp,dotnet,dev,fundamentals
 ---
 

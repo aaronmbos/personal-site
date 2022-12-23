@@ -18,6 +18,7 @@
 
 ## Posts
 
+- [Defining and Using Enums as Bit Flags in C#](https://aaronbos.dev/posts/csharp-flags-enum)
 - [Rest is Best When Done Intentionally](https://aaronbos.dev/posts/intentional-rest)
 - [Some Thoughts on Specialization](https://aaronbos.dev/posts/thoughts-on-specialization)
 - [Debugging C# in Neovim with nvim-dap](https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap)
