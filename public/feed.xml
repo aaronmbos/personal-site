@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 15 Dec 2022 01:45:11 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Dec 2022 02:54:56 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Defining and Using Enums as Bit Flags in C#]]></title>
+            <description><![CDATA[I've been using enums in C# since the beginning of my development career. In this post, we are going to dive into how the Flags attribute can be applied to enums and also the different kinds of operations that come into play when an enum is defined as a bit flag. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/csharp-flags-enum</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/csharp-flags-enum</guid>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[fundamentals]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 23 Dec 2022 03:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Rest is Best When Done Intentionally]]></title>
             <description><![CDATA[Rest is great, but it's not always easy. In this post, I'm going to share some of my thoughts on the benefits of being intentional with taking a break. Let's dive in!]]></description>
