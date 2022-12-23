@@ -2,17 +2,17 @@
 id: 58
 slug: csharp-flags-enum
 title: "Defining and Using Enums as Bit Flags in C#"
-description: "I've been using enums in C# since the beginning of my development career. In this post, we are going to dive into how the Flags attribute can be applied to enums and also the different kinds of operations that come into play we an enum is defined as a bit flag. Let's dive in!"
+description: "I've been using enums in C# since the beginning of my development career. In this post, we are going to dive into how the Flags attribute can be applied to enums and also the different kinds of operations that come into play when an enum is defined as a bit flag. Let's dive in!"
 publishedAt: YYYY-MM-DDTHH:MM:SS.000Z
 updatedAt: YYYY-MM-DDTHH:MM:SS.000Z
 metadata: csharp,dotnet,dev,fundamentals
 ---
 
-I've been using enumerations (enums) in C# since my earliest days learning the language. In that time I've seen them used for many purposes, some fitting and some not so fitting. I've found that one of the more common use cases for enums is for them to be treated as bit flags. If you're not familiar with the concept of bit flags, don't worry I'll cover that in this post along with some additional information surrounding bit flag enums. I'll be the first to admit that using enums as bit flags can be a bit confusing, but their ability to represent combinations of values with a single named constant can be useful in a number of scenarios.
+I've been using enumerations (enums) in C# since my earliest days learning the language. In that time I've seen them used for many purposes, some fitting and some not so fitting. I've found that one of the more common use cases for enums is for them to be treated as bit flags. If you're not familiar with the concept of bit flags, don't worry I'll cover that in this post along with some additional information surrounding bit flag enums. I'll be the first to admit that using enums as bit flags can be a bit confusing, but their ability to represent combinations of values with a single named constant can be useful in several scenarios.
 
 ## Using the Flags Attribute
 
-The first step to defining an enum as a bit flag is to add the `Flags` attribute to the enum type. In practice this looks like the example below. It is a common [convention](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations) in .NET to use a plural name for enums that are defined as flags.
+The first step to defining an enum as a bit flag is to add the `Flags` attribute to the enum type. In practice, this looks like the example below. It is a common [convention](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations) in .NET to use a plural name for enums that are defined as flags.
 
 ```csharp
 [Flags]
@@ -39,15 +39,15 @@ public enum BurgerToppings
 }
 ```
 
-In the `BurgerToppings` example we now have seven individual bit flags defined along with a flag that specifies a combination of ketchup and mustard flags. Since enum members are simply named constants backed by their integral numeric value, we could also use `3` instead of `Ketchup | Mustard`. We'll cover a bit more about different ways to set these values in the following sections.
+In the `BurgerToppings` example, we now have seven individual bit flags defined along with a flag that specifies a combination of ketchup and mustard flags. Since enum members are simply named constants backed by their integral numeric value, we could also use `3` instead of `Ketchup | Mustard`. We'll cover a bit more about different ways to set these values in the following sections.
 
-In order for the enum members to be clearly defined and work as expected it is best to explicitly provide the bit values for each member. Without explicitly providing values the enum will implicitly set the value based on enum definition order starting at 0.
+For the enum members to be clearly defined and work as expected it is best to explicitly provide the bit values for each member. Without explicitly providing values the enum will implicitly set the value based on the enum definition order starting at 0.
 
 The documentation for the Flags attribute is pretty comprehensive and contains solid documentation. I highly recommend checking it out [here](https://learn.microsoft.com/en-us/dotnet/api/system.flagsattribute) to learn more.
 
 ## Defining Enum Members and Values
 
-Enum member values can be set in a number of ways and it was actually a personal encounter with one of the ways that led me to writing this post. In my experience I've mostly seen enums, both flag and non-flag, with values defined explicitly as numeric literals (like 0, 1, 2, 3, etc.) which I'll cover first. I'm also going to cover a couple more methods of setting flag enum member values. Flag enum values can also be set using binary literals as well as using the bit shift operator to manipulate values when being set. Each of the examples below will demonstrate a different way of defining flag enum member values. I'll also include a short description to provide any helpful context around each method.
+Enum member values can be set in many ways and it was a personal encounter with one of the ways that led me to write this post. In my experience, I've mostly seen enums, both flag and non-flag, with values defined explicitly as numeric literals (like 0, 1, 2, 3, etc.) which I'll cover first. I'm also going to cover a couple more methods of setting flag enum member values. Flag enum values can also be set using binary literals as well as using the bit shift operator to manipulate values when being set. Each of the examples below will demonstrate a different way of defining flag enum member values. I'll also include a short description to provide additional context around each method.
 
 ### Using Numeric Type Literals
 
@@ -83,7 +83,7 @@ public enum BurgerToppings
 }
 ```
 
-This method of defining the values on the `BurgerToppings` enum has the same result as the previous, but instead of integers we are using binary literal values. If you're unfamiliar with this syntax, the `0b` prefix is used to denote a binary value. The underscore is referred to as a _digit separator_ and isn't required, but it can be used to improve the readability. In my opinion this method doesn't have any real advantage over using integer literals, so personally I would still opt for the previous method for the readability improvement.
+This method of defining the values on the `BurgerToppings` enum has the same result as the previous one, but instead of integers, we are using binary literal values. If you're unfamiliar with this syntax, the `0b` prefix is used to denote a binary value. The underscore is referred to as a _digit separator_ and isn't required, but it can be used to improve readability. In my opinion, this method doesn't have any real advantage over using integer literals, so I would still opt for the previous method for the readability improvement.
 
 ### Using Bit Shift Operator
 
@@ -101,9 +101,9 @@ public enum BurgerToppings
 }
 ```
 
-In this example we use the left-shift operator to set the value of each enum member. The value of each member is the same as the previous two examples. The left-shift operator `x << count` will shift the value `x` left the number of bits defined by `count`. Let's take `Lettuce = 1 << 2` as an example. I find it helpful to think about these values as powers of two. So when we shift the value 1 left 2 bits we can think of this as `2^2`. Let `1 << 3` can be thought of as `2^3` and that pattern continues for each member in the enum.
+In this example, we use the left-shift operator to set the value of each enum member. The value of each member is the same as in the previous two examples. The left-shift operator `x << count` will shift the value `x` left the number of bits defined by `count`. Let's take `Lettuce = 1 << 2` as an example. I find it helpful to think about these values as powers of two. So when we shift the value 1 left 2 bits we can think of this as `2^2`. Let `1 << 3` can be thought of as `2^3` and that pattern continues for each member in the enum.
 
-I also find it helpful to visualize the shifting by thinking about binary literals. So we start with the value 1 as `0001` and we need to shift it left 2 bits, which results in `0100` or 4. Bit shifting is a very interesting topic that has many use cases beyond flag enums. There is actually a relatively famous "fast inverse square root" from the Quake III source code that utilizes bit shifting in a very clever manner. Below is the snippet with original comments.
+I also find it helpful to visualize the shifting by thinking about binary literals. So we start with the value 1 as `0001` and we need to shift it left 2 bits, which results in `0100` or 4. Bit shifting is a very interesting topic that has many use cases beyond flag enums. There is a relatively famous "fast inverse square root" from the Quake III source code that utilizes bit shifting in a very clever manner. Below is the snippet with the original comments.
 
 ```c
 float Q_rsqrt( float number )
@@ -128,9 +128,9 @@ While this method of defining enum member values is effective and is synonymous 
 
 ## Logical Bitwise Operations
 
-Earlier in this post I briefly mentioned that flag enums have the ability to represent a combination of members using a single value. This functionality is made possible by using logical bitwise operations. The bitwise operations that we are going to be concerned with are the logical AND `&` and OR `|` operations because they are commonly used with flag enums. There are other operations like exclusive OR and bitwise complement, but in my experience they are used much less frequently with flag enums.
+Earlier in this post, I briefly mentioned that flag enums can represent a combination of members using a single value. This functionality is made possible by using logical bitwise operations. The bitwise operations that we are going to be concerned with are the logical AND `&` and OR `|` operations because they are commonly used with flag enums. There are other operations like exclusive OR and bitwise complement, but in my experience, they are used much less frequently with flag enums.
 
-I've already mentioned the logical OR operation in the first example when I listed `KetchupAndMustard = Ketchup | Mustard` so we'll start with that. The logical OR operation with return `true` if either of its operands are true. So when thinking about this in the context of flag enums `BurgerToppings.Ketchup` has a value of 1 or `0001` and `BurgerToppings.Mustard` has a value of 2 or `0010`. When we perform a logical OR on these two values we end up with 3 or `0011`. This can be particularly useful if you want to combine multiple enum values as a single value.
+I've already mentioned the logical OR operation in the first example when I listed `KetchupAndMustard = Ketchup | Mustard` so we'll start with that. The logical OR operation will return `true` if either of its operands is true. So when thinking about this in the context of flag enums `BurgerToppings.Ketchup` has a value of 1 or `0001` and `BurgerToppings.Mustard` has a value of 2 or `0010`. When we perform a logical OR on these two values we end up with 3 or `0011`. This can be particularly useful if you want to combine multiple enum values as a single value.
 
 ```shell
 0001
@@ -161,7 +161,7 @@ var orderToppings = BurgerToppings.Ketchup |
 Console.WriteLine(BurgerToppings.Ketchup & orderToppings);
 ```
 
-If we look at the logical AND from the perspective of raw values, `orderToppings` has a value of 15 or `1111` and Ketchup has the value of 1 or `0010`. When the logical AND operation is applied to these values the result is 1.
+If we look at the logical AND from the perspective of raw values, `orderToppings` has a value of 15 or `1111` and Ketchup has a value of 1 or `0010`. When the logical AND operation is applied to these values the result is 1.
 
 ```shell
 0010
