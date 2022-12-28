@@ -18,6 +18,7 @@
 
 ## Posts
 
+- [Why I Decided to Give Up Social Media](https://aaronbos.dev/posts/quit-social-media)
 - [Defining and Using Enums as Bit Flags in C#](https://aaronbos.dev/posts/csharp-flags-enum)
 - [Rest is Best When Done Intentionally](https://aaronbos.dev/posts/intentional-rest)
 - [Some Thoughts on Specialization](https://aaronbos.dev/posts/thoughts-on-specialization)

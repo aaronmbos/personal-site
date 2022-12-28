@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Dec 2022 02:54:56 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Dec 2022 12:31:06 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Why I Decided to Give Up Social Media]]></title>
+            <description><![CDATA[In this post, I'll share why I recently decided to step away from a handful of social media platforms. I'll also touch on how I plan to replace the value that social media provided me with other alternatives. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/quit-social-media</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/quit-social-media</guid>
+            <category><![CDATA[personal]]></category>
+            <category><![CDATA[life]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 28 Dec 2022 12:29:56 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Defining and Using Enums as Bit Flags in C#]]></title>
             <description><![CDATA[I've been using enums in C# since the beginning of my development career. In this post, we are going to dive into how the Flags attribute can be applied to enums and also the different kinds of operations that come into play when an enum is defined as a bit flag. Let's dive in!]]></description>
