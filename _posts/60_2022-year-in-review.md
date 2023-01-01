@@ -34,8 +34,36 @@ Beyond the goals that I set for myself last year, I also planned to make a numbe
 - React to posts with emojis | **Q3** | [PR](https://github.com/aaronmbos/personal-site/pull/4)
 - Search blog posts | **Q4** | [PR](https://github.com/aaronmbos/personal-site/pull/14)
 
-I'm happy to say that I accomplished each of these milestones on time. A big contributor to my success on accomplishing these features was using the mini-roadmap as a guideline for me to stay focused throughout the year. I didn't want to fall into the trap of tinkering with my blog site, while not actually producing content. At the same time, the features that I included in the roadmap were valuable enough for me to prioritize over the course of the year. I'm going to continue to remain focused on generating quality content, while also not losing site that this blog is a project for me to improve my software development skills, which does involve making incremental improvements to the site itself.
+I'm happy to say that I accomplished each of these milestones on time. A big contributor to my success on accomplishing these features was using the mini-roadmap as a guideline for me to stay focused throughout the year. I didn't want to fall into the trap of tinkering with my blog site while not actually producing content. At the same time, the features that I included in the roadmap were valuable enough for me to prioritize over the course of the year. I'm going to continue to remain focused on generating quality content, while also not losing site that this blog is a project for me to improve my software development skills, which does involve making incremental improvements to the site itself.
+
+Overall I'm generally happy about the way 2022 transpired in the context of both blog posts and site improvements. The whole point of this blog is to continuously learn new things and challenge myself regularly, which I think I accomplished this year.
 
 ## Goals for 2023
 
+With 2022 just about in the rear-view mirror it's time to take a look ahead at 2023 to share my goals and expectations in regards to my blog and learning throughout the year. Ultimately I don't expect too many things to change from the previous two years since I'm overall happy with my progress so far. In terms of changes for this blog specifically I will be doing a couple things differently.
+
+1. Post cadence with go from three to **two posts per month**
+1. Incorporate book reviews as regular or additional posts
+
+In 2021 I completed two posts per month, which felt like a reasonable pace for my first year of blogging. As I mentioned previously my goal for 2022 was three posts per month, which I accomplished. I've decided to drop the cadence back down to two posts per month for a few reasons. First, I feel like two posts per month allows me a bit more time to research and go into a bit more depth on topics that I'm interested in. Secondly, posting once every ten days may not seem like a lot, but it doesn't leave much room for working on other things throughout the month. Finally, I don't want to feel rush or pressured to get to the next post. I'd like to move at a more comfortable and sustainable pace. With all of this being said, if I find myself with additional things to blog about I won't hesitate to throw in an extra post during a month.
+
+With a more comfortable posting cadence I plan to do a bit more reading this year. My book reviews will all be focused on software related topics like computer science, software architecture, career advancement, etc. I enjoy reading about all of these topics, but have failed to get my thoughts and opinions into the blog over the last two years. These book review posts my be part of the regular two post per month cadence or they may be additional. It will most likely be handled on a case by case basis depending on what I have in the hopper each point in time.
+
 ## 2023 Feature Roadmap
+
+Like 2022, I plan to follow a quarterly roadmap for site improvements this year. I'm won't be implementing any earth shattering updates this year, but I'm excited to polish up a few aspects of the site that have been in need of some attention as the number of posts on the site has grown.
+
+- Framework upgrades | **Q1**
+- Migrate posts from markdown files to database | **Q2**
+- Improve search experience | **Q3**
+- Add pagination to posts page | **Q4**
+
+In quarter one I'm going to be updating the frameworks and dependencies that my blog uses to their latest versions. I'm currently using NextJS 12 and React 16, but I'd like to get on the latest versions for all of my dependencies so that I can take advantage of any new feature available.
+
+In quarter two I'm going to migrate my posts from markdown files to a database. This could be a bit of a lift considering that I'll need to set up some tooling for CRUD operations and site builds. I previously had my posts and backend CMS running in Heroku, but when they removed their free tier I decided to pull the posts into the git repo temporarily. I never viewed this as a long term solution, but more so to make sure I didn't lose any data when free Heroku dynos were spun down in November of 2022.
+
+In quarter three I'll be working on the search experience. Currently search is functional, but not polished. I'll be implementing a few features that improve search like autocompletion and result pagination. This features could have been added at the time of release, but I didn't think they were necessary to get the bits deployed and in use.
+
+Finally, in quarter four I'll be adding pagination to the posts page. This should be relatively straight forward. NextJS has support for SSR (Server Side Rendering), which will be key in setting up the pagination. My hope is that I will be able to reuse some of the pagination work from search result pagination in this as well.
+
+All in all 2023 is shaping up to be an exciting year. If you're a regular visitor to my blog or just happened to land on this post, I just want to say thanks for the support and I look forward to providing another year of interesting and valuable conent. Cheers 🍻!
