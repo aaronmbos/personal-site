@@ -6,6 +6,15 @@
 
 ## Feature Roadmap
 
+### 2023
+
+| Quarter | Feature                                       | Status      |
+| ------- | --------------------------------------------- | ----------- |
+| Q1      | Framework and dependency upgrades             | Not started |
+| Q2      | Migrate posts from markdown files to database | Not started |
+| Q3      | Improve post search experience                | Not started |
+| Q4      | Add pagination to posts page                  | Not started |
+
 ### 2022
 
 | Quarter | Feature                                             | Status                                                          |
@@ -18,6 +27,7 @@
 
 ## Posts
 
+- [Looking Back at 2022 and Ahead to 2023](https://aaronbos.dev/posts/2022-year-in-review)
 - [Why I Decided to Give Up Social Media](https://aaronbos.dev/posts/quit-social-media)
 - [Defining and Using Enums as Bit Flags in C#](https://aaronbos.dev/posts/csharp-flags-enum)
 - [Rest is Best When Done Intentionally](https://aaronbos.dev/posts/intentional-rest)
