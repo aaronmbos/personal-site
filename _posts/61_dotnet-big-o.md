@@ -7,3 +7,7 @@ publishedAt: 2023-01-DDTHH:MM:SS.000Z
 updatedAt: 2023-01-DDTHH:MM:SS.000Z
 metadata: dotnet,csharp,dev,fundamentals
 ---
+
+- Lists
+- Maps
+- Sorted collections
