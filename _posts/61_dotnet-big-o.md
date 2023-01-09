@@ -25,6 +25,10 @@ I would consider `List<T>` to be the most commonly used collection type in the .
 
 ### Manipulating lists
 
+We're going to be focusing on adding to and removing from lists. Typically the add and remove functionality runs at O(n). Below is a screenshot of benchmark results adding a random number to a `List<T>` at increasing sizes. As the size of the of the list grows, the mean runtime also grows _near linearly_.
+
+![List<int>.Add benchmark](https://res.cloudinary.com/aaron-bos/image/upload/v1673232012/list-add_sel3i6.png)
+
 ### Searching lists
 
 - When adding to lists we should keep in mind capacity of the interal array. If the number of existing items in the list is less than the capacity, then adding to the list is O(1) otherwise this results in an O(n) operation [source](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.add?view=net-7.0#remarks)
