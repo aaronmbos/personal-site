@@ -21,19 +21,23 @@ There are many other collection types that could be covered, but I wanted to foc
 
 ## `List<T>`
 
-I would consider `List<T>` to be the most commonly used collection type in the .NET ecosystem. That means we should understand how we can use it effectively and its performance when carrying out certain tasks. In terms of Big O notation, I'd say that most `List<T>` operations can be expected to be linear or **O(n)**. Linear operation runtime is directly affected by the size of the input being processed. As the input size grows the runtime should grow linearly proportional to the input growth. There are some exceptions to this, which we'll look at next.
+I would consider `List<T>` to be the most commonly used collection type in the .NET ecosystem. That means we should understand how we can use it effectively and its performance when carrying out certain tasks. In terms of Big O notation, I'd say that most `List<T>` operations can be expected to be linear or **O(n)**. Linear operation runtime is directly affected by the size of the input being processed. As the input size grows the runtime should grow linearly proportional to the input growth.
 
 ### Manipulating lists
 
-We're going to be focusing on adding to and removing from lists. Typically the add and remove functionality runs at O(n). Below is a screenshot of benchmark results adding a random number to a `List<T>` at increasing sizes. As the size of the of the list grows, the mean runtime also grows _near linearly_.
+Manipulating a collection is a common operation and typically involves adding or removing items from the collection. Normally the add and remove functionality runs at O(n). Below is a screenshot of benchmark results adding a random number to a `List<T>` at increasing sizes. As the size of the of the list grows, the mean runtime also grows _near linearly_.
 
 ![List<int>.Add benchmark](https://res.cloudinary.com/aaron-bos/image/upload/v1673232012/list-add_sel3i6.png)
 
+While typically list manipulation runtimes are linear, there is an exception when adding to lists. When a list is created, there is an overloaded constructor that accepts an integer to indicate the `Capacity` of the list. If we create a list with a defined capacity and the `Count` property at the time of adding is **less than** the `Capacity` property, then adding to a list is **O(1)** or constant time. This means that the speed of the operation is not affected by the size of the input (in this case the size of the collection). We can see this in action in the benchmarks below. As the input size grows linearly, the runtime of adding an element to the list remains constant.
+
+![capacity-list-add-constant](https://res.cloudinary.com/aaron-bos/image/upload/v1673316371/capacity-list-add-constant_avjwfy.png)
+
 ### Searching lists
 
-- When adding to lists we should keep in mind capacity of the interal array. If the number of existing items in the list is less than the capacity, then adding to the list is O(1) otherwise this results in an O(n) operation [source](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.add?view=net-7.0#remarks)
-- When removing from lists a linear search is performed which results in O(n) performance, with n being the size of the collection.
-- What looking for or access specific items in a list, the performance is always O(n) where n is the size of the collection. This involves methods like `Contains`, `IndexOf`, `Find`, etc.
+When working with collections we often need to search the collection for a particular element. This could be with `.Find`, `.Contains`, `.IndexOf`, `.Where`, and other methods that look for a particular element in a collection. For this reason its important to understand that the runtime of searching for an element in list is also O(n) or linear. The algorithm to find an element most likely needs to iterate through each element to find the one that it is looking for. In the worst case scenario the item isn't in the list and we've had to look at every element. This results in the linear runtime. We can see this in the benchmarks below using the `.Find` method to find a specific element in a list.
+
+![list-find-linear](https://res.cloudinary.com/aaron-bos/image/upload/v1673316371/list-find-linear_lbf5yz.png)
 
 ## `Dictionary<Tkey, TValue>`
 
