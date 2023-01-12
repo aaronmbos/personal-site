@@ -29,7 +29,7 @@ Manipulating a collection is a common operation and typically involves adding or
 
 ![List<int>.Add benchmark](https://res.cloudinary.com/aaron-bos/image/upload/v1673232012/list-add_sel3i6.png)
 
-While typically list manipulation runtimes are linear, there is an exception when adding to lists. When a list is created, there is an overloaded constructor that accepts an integer to indicate the `Capacity` of the list. If we create a list with a defined capacity and the `Count` property at the time of adding is **less than** the `Capacity` property, then adding to a list is **O(1)** or constant time. This means that the speed of the operation is not affected by the size of the input (in this case the size of the collection). We can see this in action in the benchmarks below. As the input size grows linearly, the runtime of adding an element to the list remains constant.
+While typically list manipulation runtimes are linear, there is an exception when adding to lists. When a list is created, there is an overloaded constructor that accepts an integer to indicate the `Capacity` of the list. If we create a list with a defined capacity and the `Count` property at the time of adding is **less than** the `Capacity` property, then adding to a list is **O(1)** or constant time. The reason for this is that the underlying array does not need to be expanded to accomodate the new element. This means that the speed of the operation is not affected by the size of the input (in this case the size of the collection). We can see this in action in the benchmarks below. As the input size grows linearly, the runtime of adding an element to the list remains constant.
 
 ![capacity-list-add-constant](https://res.cloudinary.com/aaron-bos/image/upload/v1673316371/capacity-list-add-constant_avjwfy.png)
 
@@ -39,8 +39,16 @@ When working with collections we often need to search the collection for a parti
 
 ![list-find-linear](https://res.cloudinary.com/aaron-bos/image/upload/v1673316371/list-find-linear_lbf5yz.png)
 
-## `Dictionary<Tkey, TValue>`
+## `Dictionary<Tkey, TValue>` and `HastSet<T>`
 
-## `HastSet<T>`
+In this section we are going to focus on a couple of hash-based collection types, which are `Dictionary<TKey, TValue>` and `HashSet<T>`. While these are different types they both rely on hashing algorithms to store and keep track of the elements that are contained inside of their collections. As we look at manipulation and searching operations we'll see some similarities with `List<T>`, but there are also some key differences that make these hash-based types appealing in certain scenarios.
+
+### Manipulating hash-based collections
+
+Both `Dictionary<Tkey, TValue>` and `HashSet<T>` are unsorted collection types, just like `List<T>`. We can also expect these hash-based collections to perform similarly to that of lists when it comes to manipulating elements. When adding items from a dictionary or hash set without a defined `Capacity`, the operation will have a linear, or **O(n)**, runtime. If we have defined a value for `Capacity` and the `Count` value is less then the capacity when adding, the operation will be performed in constant time or **O(1)**. Interestingly enough when I performed benchmarks of this data, I noticed that the `Add` method performed almost identically when explicitly setting the capacity and when not. I took at look at the source code for the `Dictionary` class [here](https://github.com/dotnet/runtime/blob/6aaaaaa5c7b1160a237bb381074e707c3ea1e9b4/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs#L473), which was quite interesting but a little challenging to follow without a little context. Ultimately it appears that adding to a dictionary always occurs in nearly constant time.
+
+When it comes to removing elements from a dictionary or hash set, the operation is **always** performed in constant time. The reason for this being that the stored hashed values can be easily found in the underlying hash table for each of these collection types. Let's take a look at some benchmarks that confirm these behaviors and their runtimes. The example below shows the benchmark results for removing elements from `HashSet<T>`.
+
+### Searching hash-based collections
 
 ## Sorted Collections
