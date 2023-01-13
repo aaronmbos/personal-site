@@ -57,6 +57,14 @@ When it comes to removing elements from a dictionary or hash set, the operation 
 
 ### Searching hash-based collections
 
-We've seen some of the efficiences that we can gain from using hash-based collections when manipulating data. Now we're going to look at their performance when searching for specific elements. There was one operation that we discussed previously that may provide a tip as to what the search performance might be...and that was the `Remove` operation. If we think about what needs to happen to remove an element from a hash-based collection, we first need **find the element**, then we need to remove it. Searching is essentially the same operation without the removal, so if you remember that removal is performed in constant time we should be able to assume that searching is also performed in constant time or **O(1)**. Fortunately that's a correct assumption. Let's look at examples for the `Dictionary.TryGet` and also indexing into a `HashSet<T>`.
+We've seen some of the efficiences that we can gain from using hash-based collections when manipulating data. Now we're going to look at their performance when searching for specific elements. There was one operation that we discussed previously that may provide a tip as to what the search performance might be...and that was the `Remove` operation. If we think about what needs to happen to remove an element from a hash-based collection, we first need **find the element**, then we need to remove it. Searching is essentially the same operation without the removal, so if you remember that removal is performed in constant time we should be able to assume that searching is also performed in constant time or **O(1)**. Fortunately that's a correct assumption as we'll see the runtimes approaching constant time in the following examples. The examples will show indexing into a dictionary and also calling `HashSet<T>.TryGetValue`.
+
+![dict-index](https://res.cloudinary.com/aaron-bos/image/upload/v1673581722/dict-index_czkosn.png)
+
+![hashset-trygetvalue](https://res.cloudinary.com/aaron-bos/image/upload/v1673581700/hash-set-trygetvalue_dvphan.png)
 
 ## Sorted Collections
+
+So far we've looked at `List<T>`, `Dictionary<TKey, TValue>`, and `HashSet<T>` and how they perform different actions through the lense of big O notation. I wanted to take a quick look generally at sorted collections and their runtimes for the operations we've examined in previous types. The operations being adding, removing, and searching each of the collections. One similarity between sorted collections and the ones discussed already is that the runtime is still O(n) when the internal capacity of the underlying data structure needs to change due to the operation.
+
+In most circumstances we can expect sorted collections to perform operations in logarithmic time or **O(log n)**. This means that the runtime does change as the input size grows, but less drastically as the input size continues to grow.
