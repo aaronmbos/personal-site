@@ -65,6 +65,16 @@ We've seen some of the efficiences that we can gain from using hash-based collec
 
 ## Sorted Collections
 
-So far we've looked at `List<T>`, `Dictionary<TKey, TValue>`, and `HashSet<T>` and how they perform different actions through the lense of big O notation. I wanted to take a quick look generally at sorted collections and their runtimes for the operations we've examined in previous types. The operations being adding, removing, and searching each of the collections. One similarity between sorted collections and the ones discussed already is that the runtime is still O(n) when the internal capacity of the underlying data structure needs to change due to the operation.
+So far we've looked at `List<T>`, `Dictionary<TKey, TValue>`, and `HashSet<T>` and how they perform different actions through the lense of big O notation. I wanted to take a quick look generally at sorted collections and their runtimes for the operations we've examined for previous types. Those operations being adding, removing, and searching each of the collections. One similarity between sorted collections and the ones discussed already is that the runtime is still O(n) when the internal capacity of the underlying data structure needs to grow due to the operation.
 
 In most circumstances we can expect sorted collections to perform operations in logarithmic time or **O(log n)**. This means that the runtime does change as the input size grows, but less drastically as the input size continues to grow.
+
+![ologn](https://res.cloudinary.com/aaron-bos/image/upload/v1673664700/ologn_a8jdrn.png)
+
+Although I haven't used sorted collections often in my day-to-day, I think it's useful to examine at least one benchmark to confirm their behavior, but also to be aware of their performance features. If there is a data set that we know will always be sorted, maybe it makes sense to use a `SortedList<TKey, TValue>` instead of a `List<T>`. Decisions always come with tradeoffs and being fully aware of the options and their implications is key to making the most correct decision. Let's take a look at the performance benchmarks for adding to and searching a `SortedList<TKey, TValue>` and confirm that we see close to logarithmic runtimes.
+
+![sorted-list-add-get](https://res.cloudinary.com/aaron-bos/image/upload/v1673664773/sorted-list-add-get_cwxlfs.png)
+
+The goal of this post wasn't necessarily to share the runtimes for each of these operations on the different collection types. That can be found easily in the documentation. The main goal was to present this information in a way that highlights the performance features of each operation and type in given scenarios. With this information we should be prepared to choose the correct collection for any problem that is thrown our way.
+
+If you'd like to checkout any of the benchmark code, head over to this [repo](https://github.com/aaronmbos/dotnet-collections-big-o). If I'm being honest this was my first introduction into [BenchmarkDotnet](https://benchmarkdotnet.org/) and it was a great learning experience. While the benchmarks mostly represent the runtimes as expected, there may be some margin of error due to the way that the benchmarks had to be set up. Unfortunately performing very fast mutations isn't super simple to benchmark, so some of the setup for each benchmark run may be included in the executed times.
