@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Jan 2023 02:37:15 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 15 Jan 2023 19:04:47 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Collections in .NET Through the Lens of Big O Notation]]></title>
+            <description><![CDATA[We use collections in our code daily, but do we ever step back and consider how they perform in the context of Big O Notation benchmarks? In this post, we'll examine the different collection types in .NET to see how their behaviors relate to well-known Big O notation functions. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/dotnet-collections-big-o</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/dotnet-collections-big-o</guid>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[fundamentals]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sun, 15 Jan 2023 19:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Looking Back at 2022 and Ahead to 2023]]></title>
             <description><![CDATA[As the calendar year comes to a close, I'll take a moment to reflect on the posts and site improvements this year and also provide a sneak peek at what will be coming in 2023. Let's dive in!]]></description>
