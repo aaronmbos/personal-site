@@ -3,8 +3,8 @@ id: 61
 slug: dotnet-collections-big-o
 title: "Collections in .NET Through the Lens of Big O Notation"
 description: "We use collections in our code daily, but do we ever step back and consider how they perform in the context of Big O Notation benchmarks? In this post, we'll examine the different collection types in .NET to see how their behaviors relate to well-known Big O notation functions. Let's dive in!"
-publishedAt: 2023-01-DDTHH:MM:SS.000Z
-updatedAt: 2023-01-DDTHH:MM:SS.000Z
+publishedAt: 2023-01-15T19:00:00.000Z
+updatedAt: 2023-01-15T19:00:00.000Z
 metadata: dotnet,csharp,dev,fundamentals
 ---
 
