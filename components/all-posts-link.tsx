@@ -7,8 +7,8 @@ interface Props {
 export default function AllPostsLink({ text }: Props) {
   return (
     <div className="mb-10">
-      <Link href="/posts">
-        <a className="underline dark:text-white text-black">{text}</a>
+      <Link className="underline dark:text-white text-black" href="/posts">
+        {text}
       </Link>
     </div>
   );

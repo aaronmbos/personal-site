@@ -19,10 +19,11 @@ export default function PostPreview({
   return (
     <>
       <div className="py-6 px-3">
-        <Link href={`/posts/${slug}`}>
-          <a className="dark:text-blue-400 text-blue-600 cursor-pointer hover:underline font-semibold text-lg">
-            {title}
-          </a>
+        <Link
+          className="dark:text-blue-400 text-blue-600 cursor-pointer hover:underline font-semibold text-lg"
+          href={`/posts/${slug}`}
+        >
+          {title}
         </Link>
         <div className="my-2 italic dark:text-gray-300 text-gray-600">
           {description}
