@@ -2,7 +2,7 @@
 id: 62
 slug: case-for-conventional-comments
 title: "My Case for Conventional Comments"
-description: "In this post, I'll be presenting my case for the use of conventional comments in code review. I've been an advocate for conventional comments for about a year and my hope is to share the benefits so that others can adopt their own standards for code review. Let's dive in!"
+description: "In this post, I'll present my case for using conventional comments in code reviews. I've used and been an advocate of conventional comments for about a year. I hope to share the benefits so others can adopt their own standards for code review. Let's dive in!"
 publishedAt: 2023-01-DDTHH:MM:SS.000Z
 updatedAt: 2023-01-DDTHH:MM:SS.000Z
 metadata: dev,practices,musings
