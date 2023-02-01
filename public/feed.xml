@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 15 Jan 2023 19:04:47 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Feb 2023 01:02:15 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[My Case for Conventional Comments]]></title>
+            <description><![CDATA[In this post, I'll present my case for using conventional comments in code reviews. I've used and been an advocate of conventional comments for about a year. I hope to share the benefits so others can adopt their own standards for code review. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/case-for-conventional-comments</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/case-for-conventional-comments</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[practices]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 31 Jan 2023 08:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Collections in .NET Through the Lens of Big O Notation]]></title>
             <description><![CDATA[We use collections in our code daily, but do we ever step back and consider how they perform in the context of Big O Notation benchmarks? In this post, we'll examine the different collection types in .NET to see how their behaviors relate to well-known Big O notation functions. Let's dive in!]]></description>

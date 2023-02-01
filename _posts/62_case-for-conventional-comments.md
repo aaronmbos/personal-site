@@ -3,8 +3,8 @@ id: 62
 slug: case-for-conventional-comments
 title: "My Case for Conventional Comments"
 description: "In this post, I'll present my case for using conventional comments in code reviews. I've used and been an advocate of conventional comments for about a year. I hope to share the benefits so others can adopt their own standards for code review. Let's dive in!"
-publishedAt: 2023-01-31T08:00:00.000Z
-updatedAt: 2023-01-31T08:00:00.000Z
+publishedAt: 2023-01-31T19:00:00.000Z
+updatedAt: 2023-01-31T19:00:00.000Z
 metadata: dev,practices,musings
 ---
 
@@ -54,7 +54,7 @@ Analyzing PR comments with GitHub API
 
 To demonstrate the value behind the parsability aspect of conventional comments I'd like to share a simple example using the GitHub API to request PR comments on a repo. This example is pretty basic, but I think it shows the potential for understanding the nature of comments being submitted by reviewers in a repo.
 
-I can think of a use case where a report is generate to understand the number of nitpicks, suggestions, issues, etc have been made on PRs for a given repo over a period of time. This can all be done easily with a standardized format.
+I can think of a use case where a report is generated to understand the number of nitpicks, suggestions, issues, etc have been made on PRs for a given repo over a period of time. This can all be done easily with a standardized format.
 
 The script below is written in Ruby and is pretty straightforward. It does require a valid token for GitHub authorization which I've omitted from the example.
 
