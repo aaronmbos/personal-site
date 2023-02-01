@@ -36,9 +36,9 @@ While this list it thorough, it is not exhaustive. The great thing about this fo
 
 ## Why are conventional comments helpful?
 
-If you've never experience bad code reviews or never considered ways to improve the code review process, you may be wondering why conventional comments are beneficial? In my opinion conventional comments benefit both the submitter of the code review and also the individual reviewing the code.
+If you've never experienced bad code reviews or never considered ways to improve the code review process, you may be wondering why conventional comments are beneficial? In my opinion conventional comments benefit both the submitter of the code review and also the individual reviewing the code.
 
-From the **reviewer** side of the coin conventional comments allow for clear expression of intention and tone in each comment. This reduces any possible friction or confusion that could result from an unclear or ill-thought-out comment. In this same vein I think conventional comments force commenters to put a litte extra thought and care into the comments that are left, which leads to higher quality reviews.
+From the **reviewer** side of the coin conventional comments allow for clear expression of intention and tone in each comment. This reduces the chance for friction or confusion that could result from an unclear or ill-thought-out comment. In this same vein I think conventional comments force commenters to put a litte extra thought and care into the comments that are left, which leads to higher quality reviews.
 
 Since conventional comments reduce confusion and friction, this results in a quicker code review process with potentially less back and forth. The submitter should understand the action that needs to happen when responding to a conventional comment. For example, the change requested in this comment needs to be addressed before approval.
 
@@ -46,7 +46,7 @@ Since conventional comments reduce confusion and friction, this results in a qui
 
 From the perspective of the code review **submitter**, the fact that the the "gray area" is removed with the use of conventional comments is key. There shouldn't be any ambiguity as to what should happen as the result of a comment.
 
-The final benefit of using a conventional comment format is parasability. We can easily request and parse PR comments to understand what kind of review is taking place. Are we most leaving "nitpick" comments? Maybe we need to tweak the linter or format tool during development time. Are there a lot of "issue" comments? Maybe engineers need to be more better about understanding requirements before and throughout development.
+The final benefit of using a conventional comment format is parasability. We can easily request and parse PR comments to understand what kind of review is taking place. Are we most leaving "nitpick" comments? Maybe we need to adjust the linter or format tool settings to catch some of these issues during development. Are there a lot of "issue" comments? Maybe engineers need to be more better about understanding requirements before and throughout development.
 
 These are all reasons why conventional comments can benefit code reviews for any team, even if the team doesn't think code review is an immediate concern.
 
