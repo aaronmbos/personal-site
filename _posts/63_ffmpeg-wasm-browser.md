@@ -3,8 +3,8 @@ id: 63
 slug: ffmpeg-wasm-browser
 title: "Running FFmpeg in the Browser with Wasm"
 description: "The introduction of WebAssembly (Wasm) has enabled developers to create experiences on the web that rival native performance. In this post, I'll provide an introduction to WebAssembly and also share an example of how it is leveraged to run FFmpeg directly in the browser."
-publishedAt: 2023-02-DDTHH:MM:SS.000Z
-updatedAt: 2023-02-DDTHH:MM:SS.000Z
+publishedAt: 2023-02-15T02:00:00.000Z
+updatedAt: 2023-02-15T02:00:00.000Z
 metadata: dev,web,wasm,video
 ---
 
