@@ -27,6 +27,8 @@
 
 ## Posts
 
+- [Running FFmpeg in the Browser with Wasm](https://aaronbos.dev/posts/ffmpeg-wasm-browser)
+- [My Case for Conventional Comments](https://aaronbos.dev/posts/case-for-conventional-comments)
 - [Collections in .NET Through the Lens of Big O Notation](https://aaronbos.dev/posts/dotnet-collections-big-o)
 - [Looking Back at 2022 and Ahead to 2023](https://aaronbos.dev/posts/2022-year-in-review)
 - [Why I Decided to Give Up Social Media](https://aaronbos.dev/posts/quit-social-media)

@@ -38,7 +38,7 @@ When working with collections we often need to search the collection for a parti
 
 ![list-find-linear](https://res.cloudinary.com/aaron-bos/image/upload/v1673574868/list-find-linear_vtswgr.png)
 
-## `Dictionary<Tkey, TValue>` and `HastSet<T>`
+## `Dictionary<Tkey, TValue>` and `HashSet<T>`
 
 In this section, we are going to focus on a couple of hash-based collection types, which are `Dictionary<TKey, TValue>` and `HashSet<T>`. While these are different types they both rely on hashing algorithms to store and keep track of the elements that are contained inside their collections. As we look at manipulation and searching operations we'll see some similarities with `List<T>`, but there are also some key differences that make these hash-based types appealing in certain scenarios.
 
