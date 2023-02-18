@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      mono: ["var(--font-scp)", ...fontFamily.mono],
+      mono: ["var(--font-ibm-plex-mono)", ...fontFamily.mono],
     },
   },
   plugins: [typography, form],
