@@ -2,7 +2,13 @@ module.exports = {
   reactStrictMode: true, // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
   swcMinify: true,
   images: {
-    loader: "cloudinary",
-    path: "https://res.cloudinary.com/aaron-bos/image/upload"
-  }
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/aaron-bos/image/upload/**",
+      },
+    ],
+  },
 };
