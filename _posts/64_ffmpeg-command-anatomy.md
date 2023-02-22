@@ -11,3 +11,11 @@ metadata: dev,tools,video,ffmpeg
 When it comes to comprehensive command-line tools, FFmpeg definitely ranks among the top in terms of popularity and usage. FFmpeg was released in 2000 and has since become a household name in the video and audio processing industries. If you've had any experience with FFmpeg, you'll most likely know that as a tool it is both broad and deep. The breadth of functionality ranging from video to audio along with the depth of being able to decode, encode, transcode, mux, demux, stream, and filter media makes it a powerful, but potentially daunting tool. The good thing for users is that the documentation is comprehensive and complete, but due to the sheer magnitude of functionality it may be difficult for newcomers to digest. That's why I'd like to take a step back and see if we can break down this complex tool into some core fundamentals that provide a platform for learning more in the future. Let's start with the command specification.
 
 ## The FFmpeg Command
+
+If you've worked with command-line applications before then the FFmpeg command structure may not be too surprising. With that being said FFmpeg comes with a long list of possible options and flags that can be quite challenging to understand. For this reason I think it's best to start with the general structure of an FFmpeg command.
+
+```
+ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
+```
+
+The first piece of the command `ffmpeg` is the entry point to the FFmpeg executable. Unless you've modified the name of the executable or have an alias set up to call the FFmpeg executable this value will be consistent no matter where you're running the command.
