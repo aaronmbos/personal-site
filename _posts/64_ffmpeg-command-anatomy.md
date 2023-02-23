@@ -19,3 +19,11 @@ ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_op
 ```
 
 The first piece of the command `ffmpeg` is the entry point to the FFmpeg executable. Unless you've modified the name of the executable or have an alias set up to call the FFmpeg executable this value will be consistent no matter where you're running the command.
+
+### Global Options
+
+The next group of options to cover are the **optional** `global_options`. The global options are meant to be applied to the command as a whole, rather than targeting specific streams and input or output files. The global options should be the first set of options included in the command before defining any input/output files and options. I won't define a comprehensive list of all the global command options available, but I think a great example of a global option is `-filter_complex`, which defines a complex filter graph (we'll touch on this briefly in a later section) that is applied globally to all streams/files that it is intended to process. 
+
+If you'd like to see more examples of global command options head over to the [documentation](https://ffmpeg.org/ffmpeg-all.html) and search for "(global)". This search results should include most global options as they are denoted with "(global)" in their definitions.
+
+
