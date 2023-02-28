@@ -2,13 +2,13 @@
 id: 64
 slug: ffmpeg-command-anatomy
 title: "The Anatomy of an FFmpeg Command"
-description: "FFmpeg can do just about anything a user tells it to when it comes to video and audio processing as long as they know what to ask. In this post, we're going to break down the different aspects of an FFmpeg command in an effort to better understand how FFmpeg processes them."
-publishedAt: YYYY-MM-DDTHH:MM:SS.000Z
-updatedAt: YYYY-MM-DDTHH:MM:SS.000Z
+description: "FFmpeg can do just about anything when it comes to video and audio processing as long as you know what to ask. In this post, I'm going to break down the different aspects of an FFmpeg command in an effort to better understand how FFmpeg processes them."
+publishedAt: 2023-02-28T23:59:59.000Z
+updatedAt: 2023-02-28T23:59:59.000Z
 metadata: dev,tools,video,ffmpeg
 ---
 
-When it comes to comprehensive command-line tools, FFmpeg definitely ranks among the top in terms of popularity and usage. FFmpeg was released in 2000 and has since become a household name in the video and audio processing industries. If you've had any experience with FFmpeg, you'll most likely know that as a tool it is both broad and deep. The breadth of functionality ranging from video to audio along with the depth of being able to decode, encode, transcode, mux, demux, stream, and filter media makes it a powerful, but potentially daunting tool. The good thing for users is that the documentation is comprehensive and complete, but due to the sheer magnitude of functionality it may be difficult for newcomers to digest. That's why I'd like to take a step back and see if we can break down this complex tool into some core fundamentals that provide a platform for learning more in the future. Let's start with the command specification.
+When it comes to comprehensive command-line tools, FFmpeg definitely ranks among the top in terms of popularity and usage. FFmpeg was released in 2000 and has since become a household name in the video and audio processing industry. If you've had any experience with FFmpeg, you'll most likely know that as a tool it is both broad and deep. The breadth of functionality ranging from video to audio along with the depth of being able to decode, encode, transcode, mux, demux, stream, and filter media makes it a powerful, but potentially daunting tool. The good thing for users is that the documentation is comprehensive and complete, although due to the sheer magnitude of functionality it may be difficult for newcomers to digest. That's why I'd like to take a step back and break down this complex tool into some core fundamentals that provide a platform for learning more in the future. Let's start with the command specification.
 
 ## The FFmpeg Command
 
@@ -18,7 +18,7 @@ If you've worked with command-line applications before then the FFmpeg command s
 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
 ```
 
-The first piece of the command `ffmpeg` is the entry point to the FFmpeg executable. Unless you've modified the name of the executable or have an alias set up to call, the FFmpeg executable this value will be consistent no matter where you're running the command. In its simplest form, FFmpeg is a program that accepts one or more inputs, processes those inputs, and produces one or more output files. I found the FFmpeg "API" to be quite composable once I was able to understand the high-level structure of commands.
+The first piece of the command `ffmpeg` is the entry point to the FFmpeg executable. Unless you've modified the name of the executable or have configured an alias to call it, invoking the FFmpeg executable will be consistent no matter where you're running the command. In its simplest form, FFmpeg is a program that accepts one or more inputs, processes those inputs, and produces one or more outputs. I found the FFmpeg "API" to be quite composable once I was able to grasp the high-level command structure.
 
 ### Global Options
 
@@ -34,7 +34,7 @@ As I mentioned before, FFmpeg accepts **one or more** input files as part of a c
 ffmpeg -i input.mp4 -r 30 output.mp4
 ```
 
-When dealing with input (and output for this matter) options order is important because by default the options will be applied to the next file in the command. For example, the command below accepts two input files. The `-ss` option seeks to the input file at the specified position, which is included twice in the example to seek to different times in each input file. The command itself will result in two gifs being created with the specified length of 5 seconds (`-to 5`) a framerate of 10 fps (`-r 10`) and resize the output (`-vf scale=200:-1`).
+When dealing with input (and output for this matter) options order is important because by default the options will be applied to the next file in the command. For example, the command below accepts two input files. The `-ss` option seeks to the input file at the specified position, which is included twice in the example to seek to different times in each input file. The command itself will result in two gifs being created with the specified length of 5 seconds (`-to 5`) a framerate of 10 fps (`-r 10`) and resized output (`-vf scale=200:-1`).
 
 ```shell
 ffmpeg -ss 00:00:05 -i input1.mp4 -ss 00:00:01 -i input2.mp4 
@@ -65,7 +65,7 @@ Many output options are quite specific to the task at hand. For example, transco
 
 ## FFmpeg Command Workflow
 
-So far this post has mostly been about the format and structure of FFmpeg commands. Before we wrap I did want to touch on the general transcoding pipeline that FFmpeg uses. I'll be upfront in saying that this isn't anything unique or hard to find as there are quite useful diagrams in the FFmpeg documentation. With that being said I'd like to touch on the phases of the pipeline and give a little bit of context on what each is responsible for.
+So far this post has mostly been about the format and structure of FFmpeg commands. Before wrapping up I did want to touch on the general transcoding pipeline that FFmpeg uses. I'll be upfront in saying that this isn't anything unique or hard to find as there are quite useful diagrams in the FFmpeg documentation. With that being said I'd like to touch on the phases of the pipeline and give a little bit of context on what each is responsible for.
 
 1. Demux the input into encoded data packets
 1. The decoder decodes each packet into frames
@@ -77,8 +77,12 @@ Each stage of the pipeline has a responsibility in the transcoding process.
 1. Demultiplex (demux)
   - Responsible for separating the input file(s) into packets
 1. Decode
-  - 
+  - Converts the demuxed packets into the raw media (video, audio, subtitles) format
 1. Encode
-  - 
+  - Convert the raw media that was decoded into the format required by the output format
 1. Multiplex (mux)
-  - 
+  - Package up all of the encoded packets into the necessary output file(s)
+
+While this is a simplistic and reduced example, I think it covers the general process pretty well. There are obviously more complex workflows that involve filter graphs or other operations, but those are much more nuanced and specific to the type of work being done.
+
+In this post, we've covered FFmpeg command structure and general processing workflow. With all of this information in hand you should be ready to take on more complex scenarios with confidence.
