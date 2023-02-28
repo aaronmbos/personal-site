@@ -22,13 +22,13 @@ The first piece of the command `ffmpeg` is the entry point to the FFmpeg executa
 
 ### Global Options
 
-The next group of options to cover are the **optional** `global_options`. The global options are meant to be applied to the command as a whole, rather than targeting specific streams or input/output files. For this reason global options can only be included in a command once. The global options should be the first set of options included in the command before defining any input/output files and options. I won't define a comprehensive list of all the global command options available, but I think a great example of a global option is `-filter_complex`, which defines a complex filter graph (we'll touch on this briefly in a later section) that is applied globally to all streams/files that it is intended to process. 
+The next group of options to cover are the **optional** `global_options`. The global options are meant to be applied to the command as a whole, rather than targeting specific streams or input/output files. For this reason global options can only be included in a command once. The global options should be the first set of options included in the command before defining any input/output files and options. I won't define a comprehensive list of all the global command options available, but I think a great example of a global option is `-y`, which indicates that output files should automatically overwrite existing files if they exist.
 
 If you'd like to see more examples of global command options head over to the [documentation](https://ffmpeg.org/ffmpeg-all.html) and search for "(global)". The search results should include most global options as they are denoted with "(global)" in their definitions. Now we'll move on to the input file and its options.
 
 ### Input Options
 
-As I mentioned before, FFmpeg accepts **one or more** input files as part of a command. The input file is denoted with the `-i` flag.
+As I mentioned before, FFmpeg accepts **one or more** input files as part of a command. The input file is denoted with the `-i` flag. It is best to include all input files immediately after global options before any output options or files are included.
 
 ```shell
 ffmpeg -i input.mp4 -r 30 output.mp4
@@ -37,13 +37,48 @@ ffmpeg -i input.mp4 -r 30 output.mp4
 When dealing with input (and output for this matter) options order is important because by default the options will be applied to the next file in the command. For example, the command below accepts two input files. The `-ss` option seeks to the input file at the specified position, which is included twice in the example to seek to different times in each input file. The command itself will result in two gifs being created with the specified length of 5 seconds (`-to 5`) a framerate of 10 fps (`-r 10`) and resize the output (`-vf scale=200:-1`).
 
 ```shell
-ffmpeg -ss 00:00:05 -i input1.mp4 -ss 00:00:01 -i input2.mp4 -to 5 -r 10 -vf scale=200:-1 -map 0 output1.gif -to 5 -r 10 -vf scale=200:-1 -map 1 output2.gif
+ffmpeg -ss 00:00:05 -i input1.mp4 -ss 00:00:01 -i input2.mp4 
+
+# The rest of the command is related to the output
+-to 5 -r 10 -vf scale=200:-1 -map 0 output1.gif -to 5 -r 10 -vf scale=200:-1 -map 1 output2.gif
 ```
 
 Input options are a little less common than output options because typically the goal is to process the unmodified input, but understanding how to setup input files and options will be helpful for the next topic of output files and their options.
 
 ### Output Options
 
+The output file url and its options are structured similarly to their input counterparts with the difference being that they affect the result of the command instead of the input. It is important to remember that order matters in respect to options as they relate to multiple files. Options will only apply to the next file that is listed in the command.
+
+If we continue to look at our example from the input commands, we'll notice that we have to specify the output options twice, once for each output file. Command options can be used twice in the same command as long as they are not used twice on the same file. We also include the `-map` option using the zero-based index of the input files to select which input the output options should be applied to.
+
+```shell
+ffmpeg -ss 00:00:05 -i soccer.mp4 -ss 00:00:01 -i soccer.mp4 
+
+# Output options for the first output file (and first input file)
+-to 5 -r 10 -vf scale=200:-1 -map 0 output1.gif 
+
+# Output options for the second output file (and second input file)
+-to 5 -r 10 -vf scale=200:-1 -map 1 output2.gif
+```
+
+Many output options are quite specific to the task at hand. For example, transcoding to fmp4 will require a set of output options completely different than transcoding to DASH. For that reason I want to avoid going into too much detail about specific options. If you are needing information about a certain task I highly recommend checking out the official documentation.
 
 ## FFmpeg Command Workflow
 
+So far this post has mostly been about the format and structure of FFmpeg commands. Before we wrap I did want to touch on the general transcoding pipeline that FFmpeg uses. I'll be upfront in saying that this isn't anything unique or hard to find as there are quite useful diagrams in the FFmpeg documentation. With that being said I'd like to touch on the phases of the pipeline and give a little bit of context on what each is responsible for.
+
+1. Demux the input into encoded data packets
+1. The decoder decodes each packet into frames
+1. The encode encodes each frames into the encoded data packets
+1. Mux the encoded data packets into the necessary format specified by the output file
+
+Each stage of the pipeline has a responsibility in the transcoding process.
+
+1. Demultiplex (demux)
+  - Responsible for separating the input file(s) into packets
+1. Decode
+  - 
+1. Encode
+  - 
+1. Multiplex (mux)
+  - 
