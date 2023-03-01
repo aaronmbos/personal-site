@@ -75,13 +75,13 @@ So far this post has mostly been about the format and structure of FFmpeg comman
 Each stage of the pipeline has a responsibility in the transcoding process.
 
 1. Demultiplex (demux)
-  - Responsible for separating the input file(s) into packets
-1. Decode
-  - Converts the demuxed packets into the raw media (video, audio, subtitles) format
-1. Encode
-  - Convert the raw media that was decoded into the format required by the output format
-1. Multiplex (mux)
-  - Package up all of the encoded packets into the necessary output file(s)
+    - Responsible for separating the input file(s) into packets
+2. Decode
+    - Converts the demuxed packets into the raw media (video, audio, subtitles) format
+3. Encode
+    - Convert the raw media that was decoded into the format required by the output format
+4. Multiplex (mux)
+    - Package up all of the encoded packets into the necessary output file(s)
 
 While this is a simplistic and reduced example, I think it covers the general process pretty well. There are obviously more complex workflows that involve filter graphs or other operations, but those are much more nuanced and specific to the type of work being done.
 
