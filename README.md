@@ -27,6 +27,7 @@
 
 ## Posts
 
+- [The Anatomy of an FFmpeg Command](https://aaronbos.dev/posts/ffmpeg-command-anatomy)
 - [Running FFmpeg in the Browser with Wasm](https://aaronbos.dev/posts/ffmpeg-wasm-browser)
 - [My Case for Conventional Comments](https://aaronbos.dev/posts/case-for-conventional-comments)
 - [Collections in .NET Through the Lens of Big O Notation](https://aaronbos.dev/posts/dotnet-collections-big-o)

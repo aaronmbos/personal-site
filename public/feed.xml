@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 16 Feb 2023 12:28:22 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Mar 2023 00:31:00 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The Anatomy of an FFmpeg Command]]></title>
+            <description><![CDATA[FFmpeg can do just about anything with video and audio processing as long as you know what to ask. In this post, I will break down the different aspects of an FFmpeg command to better understand how FFmpeg processes them.]]></description>
+            <link>https://aaronbos.dev/posts/ffmpeg-command-anatomy</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/ffmpeg-command-anatomy</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[tools]]></category>
+            <category><![CDATA[video]]></category>
+            <category><![CDATA[ffmpeg]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 28 Feb 2023 23:59:59 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Running FFmpeg in the Browser with Wasm]]></title>
             <description><![CDATA[The introduction of WebAssembly (Wasm) has enabled developers to create experiences on the web that rival native performance. In this post, I'll provide an introduction to WebAssembly and also share an example of how it is leveraged to run FFmpeg directly in the browser.]]></description>
