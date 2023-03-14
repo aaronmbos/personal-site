@@ -24,7 +24,7 @@ Node.js will default to CommonJS unless otherwise specified by file type or an i
 - Set the `"type"` field to `"commonjs"` in the `package.json`
 - Including `--input-type=commonjs` when invoking Node from the command-line
 
-Another aspect of CommonJS that differs from ES Modules is the method of exporting members. Node wraps the module in a function wrapper which can be used to access some global-like objects. For example, the module wrapper provides an `exports` object that the module author can use to export members from a module. The module wrapping occurs before any module code is executed.
+Another aspect of CommonJS that differs from ES Modules is the method of exporting members. Node wraps the module in a function wrapper which can be used to access some global-like objects. For example, the module wrapper provides a `module` object that the module author can use to export members from a module by setting the `exports` property. The module wrapping occurs before any module code is executed.
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
