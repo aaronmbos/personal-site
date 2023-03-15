@@ -1,7 +1,7 @@
 ---
 id: 65
 slug: commonjs-vs-es-module
-title: "Exploring Differences Between CommonJS and ES Modules"
+title: "Exploring CommonJS and ES Modules"
 description: "I was recently working on a project involving quite a bit of JavaScript. I always knew about ES Modules and CommonJS, but I never knew much about their differences. This post is a result of my exploration of CommonJS and ES Modules to learn more about their history and use cases."
 publishedAt: 2023-03-15T12:00:00.000Z
 updatedAt: 2023-03-15T12:00:00.000Z
