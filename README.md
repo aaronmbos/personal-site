@@ -27,6 +27,7 @@
 
 ## Posts
 
+- [Exploring Differences Between CommonJS and ES Modules](https://aaronbos.dev/posts/commonjs-vs-es-module)
 - [The Anatomy of an FFmpeg Command](https://aaronbos.dev/posts/ffmpeg-command-anatomy)
 - [Running FFmpeg in the Browser with Wasm](https://aaronbos.dev/posts/ffmpeg-wasm-browser)
 - [My Case for Conventional Comments](https://aaronbos.dev/posts/case-for-conventional-comments)
