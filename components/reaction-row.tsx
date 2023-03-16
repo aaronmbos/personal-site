@@ -1,4 +1,4 @@
-import useSWR, { useSWRConfig } from "swr";
+import useSWR from "swr";
 import { Reaction, ReactionType } from "../types/api/types";
 import AnchorButton from "./anchor-button";
 import ButtonIcon from "./button-icon";
@@ -63,7 +63,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
     `/api/post/reaction?slug=${postSlug}`,
     getReactions,
     {
-      revalidateIfStale: true,
+      revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
       shouldRetryOnError: false,
@@ -77,7 +77,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
         {!error && (
           <button
             type="button"
-            className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
+            className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
               data && data[0].hasReacted ? "opacity-60 ring-2" : ""
             }`}
             onClick={() =>
@@ -86,6 +86,9 @@ export default function ReactionRow({ postSlug, url }: Props) {
                   ? deleteReaction(postSlug, "like", data[0].count)
                   : data && sendReaction(postSlug, "like", data[0].count),
                 {
+                  populateCache: (updatedReaction, current) => {
+                    return updatedReaction;
+                  },
                   revalidate: false,
                 }
               )
@@ -115,7 +118,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
         <button
           id="clip-btn"
           type="button"
-          className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-800 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all`}
+          className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all`}
           onClick={() => copyToClipboard(url)}
         >
           <ButtonIcon
