@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { Reaction, ReactionType } from "../types/api/types";
 import AnchorButton from "./anchor-button";
@@ -12,6 +13,12 @@ interface Props {
 async function getReactions(url: string): Promise<Reaction[]> {
   const res = await fetch(url).then((r) => r.json());
   return JSON.parse(res) as Reaction[];
+}
+
+async function getReact(slug: string): Promise<Reaction[]> {
+  return JSON.parse(
+    await (await fetch(`/api/post/reaction?slug=${slug}`)).json()
+  ) as Reaction[];
 }
 
 async function sendReaction(
@@ -59,44 +66,81 @@ function toggleClipboard(text: string) {
 }
 
 export default function ReactionRow({ postSlug, url }: Props) {
-  const { data, mutate, error } = useSWR<Reaction[]>(
-    `/api/post/reaction?slug=${postSlug}`,
-    getReactions,
-    {
-      revalidateIfStale: false,
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
-      shouldRetryOnError: false,
-    }
-  );
+  const [reactions, setReactions] = useState<Reaction[] | null>(null);
+
+  useEffect(() => {
+    let ignore = false;
+
+    const getReactions = async () => {
+      console.log("requesting");
+      const reactions = await getReact(postSlug);
+
+      if (!ignore) {
+        setReactions(reactions);
+      }
+    };
+
+    getReactions();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  //const { data, mutate, error } = useSWR<Reaction[]>(
+  //  `/api/post/reaction?slug=${postSlug}`,
+  //  getReactions,
+  //  {
+  //    revalidateIfStale: false,
+  //    revalidateOnFocus: false,
+  //    revalidateOnReconnect: false,
+  //    shouldRetryOnError: false,
+  //  }
+  //);
 
   return (
     <>
       <hr className="mt-6" />
       <div className="my-3 pt-2 flex flex-wrap">
-        {!error && (
-          <button
-            type="button"
-            className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
-              data && data[0].hasReacted ? "opacity-60 ring-2" : ""
-            }`}
-            onClick={() =>
-              mutate(
-                data && data[0].hasReacted
-                  ? deleteReaction(postSlug, "like", data[0].count)
-                  : data && sendReaction(postSlug, "like", data[0].count),
-                {
-                  populateCache: (updatedReaction, current) => {
-                    return updatedReaction;
-                  },
-                  revalidate: false,
-                }
-              )
-            }
-          >
-            👍{data && <span className="text-sm ml-1">{data[0].count}</span>}
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={() => console.log("clicked")}
+          className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
+            true ? "opacity-60 ring-2" : ""
+          }`}
+        >
+          👍
+          {
+            <span className="text-sm ml-1">
+              {reactions && reactions[0].count}
+            </span>
+          }
+        </button>
+        {
+          //</div>!error && (
+          //</div> <button
+          //</div>   type="button"
+          //</div>   className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
+          //</div>     data && data[0].hasReacted ? "opacity-60 ring-2" : ""
+          //</div>   }`}
+          //</div>   onClick={() =>
+          //</div>     mutate(
+          //</div>       data && data[0].hasReacted
+          //</div>         ? deleteReaction(postSlug, "like", data[0].count)
+          //</div>         : data && sendReaction(postSlug, "like", data[0].count),
+          //</div>       {
+          //</div>         populateCache: (updatedReaction, current) => {
+          //</div>           return updatedReaction;
+          //</div>         },
+          //</div>         revalidate: false,
+          //</div>       }
+          //</div>     )
+          //</div>   }
+          //</div> >
+          //</div>   👍{data && <span className="text-sm ml-1">{data[0].count}</span>}
+          //</div> </button>
+          //)</div>
+        }
         <AnchorButton
           href={`https://twitter.com/intent/tweet?url=${encodeURI(url)}`}
         >
