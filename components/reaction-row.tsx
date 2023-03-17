@@ -66,7 +66,7 @@ function toggleClipboard(text: string) {
 }
 
 export default function ReactionRow({ postSlug, url }: Props) {
-  const [reactions, setReactions] = useState<Reaction[] | null>(null);
+  const [reactions, setReactions] = useState<Reaction[]>();
 
   useEffect(() => {
     let ignore = false;
@@ -104,9 +104,16 @@ export default function ReactionRow({ postSlug, url }: Props) {
       <div className="my-3 pt-2 flex flex-wrap">
         <button
           type="button"
-          onClick={() => console.log("clicked")}
+          onClick={async () => {
+            if (reactions) {
+              const result = reactions[0].hasReacted
+                ? await deleteReaction(postSlug, "like", reactions[0].count)
+                : await sendReaction(postSlug, "like", reactions[0].count);
+              setReactions(result);
+            }
+          }}
           className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all ${
-            true ? "opacity-60 ring-2" : ""
+            reactions && reactions[0].hasReacted ? "opacity-60 ring-2" : ""
           }`}
         >
           👍
