@@ -1,5 +1,12 @@
 import Head from "next/head";
+import { FormEvent } from "react";
 import Layout from "../../components/layout";
+
+async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault;
+
+  console.log(event.currentTarget);
+}
 
 export default function Login() {
   return (
@@ -9,7 +16,7 @@ export default function Login() {
       </Head>
       <Layout>
         <div className="w-1/2 mx-auto">
-          <form method="post" action="/api/login">
+          <form onSubmit={async () => handleSubmit}>
             <div>
               <label htmlFor="username" className="block">
                 Username

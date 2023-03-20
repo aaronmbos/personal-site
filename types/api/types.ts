@@ -20,3 +20,13 @@ export interface ApiResponse<T> {
   isSuccess: boolean;
   message: string;
 }
+
+export interface LoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface User {
+  username: string;
+  isLoggedIn: boolean;
+}
