@@ -7,6 +7,7 @@ export function handleError(
 ): void {
   if (err instanceof Error && !process.env.VERCEL_ENV?.includes("production")) {
     res.status(500).json({ isSuccess: false, message: err.message });
+    return;
   }
   res.status(500).json({
     data: null,
