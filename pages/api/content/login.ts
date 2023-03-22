@@ -1,11 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { withIronSessionApiRoute } from "iron-session/next";
 import { handlePost } from "../../../lib/request-handlers/login-request";
 import { handleError } from "../errorHandler";
+import { sessionOptions } from "../../../lib/session";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default withIronSessionApiRoute(handler, sessionOptions);
+
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const params = parseRequestBody(req.body);
     if (req.method === "POST") {
@@ -13,15 +14,18 @@ export default async function handler(
         username: params.username,
         password: params.password,
       });
+
+      req.session.user = user;
+      await req.session.save();
+
       res.status(200).json({
         data: user,
         isSuccess: true,
       });
-      return res;
     }
     res.status(405);
   } catch (error) {
-    return handleError(res, error, "An error occurred during login.");
+    handleError(res, error, "An error occurred during login.");
   }
 }
 

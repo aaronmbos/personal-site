@@ -9,10 +9,10 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const params = parseRequestBody(req.body);
-      return res.status(200).json(await handleGet(params.query));
+      res.status(200).json(await handleGet(params.query));
     }
   } catch (error) {
-    return handleError(
+    handleError(
       res,
       error,
       "An error occurred performing your search. Please try again later."
