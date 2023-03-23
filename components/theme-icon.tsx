@@ -13,7 +13,7 @@ export default function ThemeIcon() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle Dark Mode"
       type="button"
-      className="w-9 h-9 rounded-lg dark:bg-stone-800 dark:bg-stone-900 flex items-center justify-center hover:ring-2 ring-stone-400 transition-all"
+      className="w-9 h-9 rounded-lg dark:bg-stone-800 flex items-center justify-center hover:ring-2 ring-stone-400 transition-all"
     >
       {mounted && (
         <svg

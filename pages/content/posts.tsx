@@ -11,7 +11,7 @@ export default function Posts({
   return (
     <>
       <Head>Manage Posts</Head>
-      <Layout>
+      <Layout user={user}>
         <div>{user?.username}</div>
       </Layout>
     </>
