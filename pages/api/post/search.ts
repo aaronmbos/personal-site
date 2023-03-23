@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleGet } from "../../../lib/request-handlers/search-request";
+import { handleError } from "../errorHandler";
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,22 +9,14 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const params = parseRequestBody(req.body);
-      return res.status(200).json(await handleGet(params.query));
+      res.status(200).json(await handleGet(params.query));
     }
   } catch (error) {
-    if (error instanceof Error) {
-      if (!process.env.VERCEL_ENV?.includes("production")) {
-        return res
-          .status(500)
-          .json({ isSuccess: false, message: error.message });
-      }
-
-      return res.status(500).json({
-        isSuccess: false,
-        message:
-          "An error occurred performing your search. Please try again later.",
-      });
-    }
+    handleError(
+      res,
+      error,
+      "An error occurred performing your search. Please try again later."
+    );
   }
 }
 

@@ -3,6 +3,11 @@ import NavMobileMenu from "./nav-mobile-menu";
 import NavLogo from "./nav-logo";
 import NavBody from "./nav-body";
 import { useState } from "react";
+import { User } from "../types/api/types";
+
+interface Props {
+  user?: User;
+}
 
 export interface NavigationLink {
   text: string;
@@ -15,7 +20,7 @@ const navLinks: NavigationLink[] = [
   { text: "About", route: "/about" },
 ];
 
-export default function Nav() {
+export default function Nav({ user }: Props) {
   const [menuState, setMenuState] = useState(false);
 
   return (
@@ -30,7 +35,7 @@ export default function Nav() {
             <NavLogo />
           </div>
           <div className="md:flex-1 flex justify-end md:justify-start">
-            <NavBody navLinks={navLinks} />
+            <NavBody user={user} navLinks={navLinks} />
           </div>
         </div>
       </div>
