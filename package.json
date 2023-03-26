@@ -22,6 +22,7 @@
     "next-themes": "^0.2.1",
     "node-fetch": "^2.6.1",
     "pg": "^8.7.3",
+    "postgres": "^3.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-instantsearch-hooks-web": "^6.36.0",

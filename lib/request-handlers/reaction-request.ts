@@ -1,20 +1,19 @@
 import { Reaction } from "../../types/api/types";
-import query from "../../database/index.js";
+import sql from "../../database/db.mjs";
 
 export async function handleGet(
   slug: string,
   clientIpAddress: string
 ): Promise<Reaction[]> {
-  const text =
-    "select count(*) as count, (select 1 from post.reaction where ip_address=$1 and reaction_type='like' and slug=$2) as has_reacted from post.reaction where slug=$2 and reaction_type='like'";
-  const values = [clientIpAddress, slug];
+  const dbResponse = (
+    await sql`select count(*) as count, (select 1 from post.reaction where ip_address=${clientIpAddress} and reaction_type='like' and slug=${slug}) as has_reacted from post.reaction where slug=${slug} and reaction_type='like'`
+  )[0];
 
-  const dbRes = await query(text, values);
   return [
     {
       type: "like",
-      count: dbRes.rows[0].count,
-      hasReacted: dbRes.rows[0].has_reacted === "1",
+      count: dbResponse.count,
+      hasReacted: dbResponse.has_reacted === "1",
     },
   ];
 }
@@ -25,15 +24,13 @@ export async function handlePost(
   type: string,
   currentCount: number
 ): Promise<Reaction[]> {
-  const text =
-    "insert into post.reaction (slug, ip_address, reaction_type) values ($1, $2, $3)";
-  const values = [slug, clientIpAddress, type];
+  const dbResponse =
+    await sql`insert into post.reaction (slug, ip_address, reaction_type) values (${slug}, ${clientIpAddress}, ${type})`;
 
-  const dbResult = await query(text, values);
   return [
     {
       type: "like",
-      count: currentCount + dbResult.rowCount,
+      count: currentCount + dbResponse.count,
       hasReacted: true,
     },
   ];
@@ -45,15 +42,13 @@ export async function handleDelete(
   type: string,
   currentCount: number
 ): Promise<Reaction[]> {
-  const text =
-    "delete from post.reaction where ip_address=$1 and slug=$2 and reaction_type=$3";
-  const values = [clientIpAddress, slug, type];
+  const dbResponse =
+    await sql`delete from post.reaction where ip_address=${clientIpAddress} and slug=${slug} and reaction_type=${type}`;
 
-  const dbResult = await query(text, values);
   return [
     {
       type: "like",
-      count: currentCount - dbResult.rowCount,
+      count: currentCount - dbResponse.count,
       hasReacted: false,
     },
   ];
