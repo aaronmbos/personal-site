@@ -1,9 +1,8 @@
-import fs from "fs/promises";
-import matter from "gray-matter";
-import path from "path";
+import postgres from "postgres";
+import sql from "../database/db.mjs";
 
 export interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   content: string;
   slug: string;
@@ -13,40 +12,28 @@ export interface BlogPost {
 }
 
 export async function getRecentPosts(): Promise<BlogPost[]> {
-  return (await getAllPosts()).slice(0, 5);
+  const posts =
+    await sql`select id, title, content, slug, description, tags, published_at from post.post order by published_at desc limit 5`;
+  return posts.map(toBlogPost);
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const postsDir = path.join(process.cwd(), "_posts");
-  const posts = await fs.readdir(postsDir);
+  const posts =
+    await sql`select id, title, content, slug, description, tags, published_at from post.post order by published_at desc`;
 
-  return posts
-    .map((post: string) => {
-      const matterPost = matter.read(`${postsDir}/${post}`) as any;
-      return {
-        id: matterPost.data.id as number,
-        title: matterPost.data.title as string,
-        content: matterPost.content as string,
-        slug: matterPost.data.slug as string,
-        description: matterPost.data.description as string,
-        metadata: matterPost.data.metadata.split(",") as string[],
-        date: formatDate(matterPost.data.publishedAt as string),
-      };
-    })
-    .sort((post1, post2) =>
-      new Date(post1.date) > new Date(post2.date) ? -1 : 1
-    );
+  return posts.map(toBlogPost);
 }
 
 export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
-  const posts = await getAllPosts();
-  const post = posts.find((post: BlogPost) => post.slug === urlId);
+  const post = (
+    await sql`select id, title, content, slug, description, tags, published_at from post.post where slug = ${urlId}`
+  )[0];
 
   if (!post) {
     throw new Error("No post found with given urlId");
   }
 
-  return post;
+  return toBlogPost(post);
 }
 
 function formatDate(rawDate: string): string {
@@ -59,4 +46,16 @@ function formatDate(rawDate: string): string {
   };
   const date = new Date(rawDate);
   return date.toLocaleDateString("en-US", options);
+}
+
+function toBlogPost(post: postgres.Row): BlogPost {
+  return {
+    id: post.id as string,
+    title: post.title as string,
+    content: post.content as string,
+    slug: post.slug as string,
+    description: post.description as string,
+    metadata: post.tags as string[],
+    date: formatDate(post.published_at as string),
+  };
 }
