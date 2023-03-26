@@ -42,12 +42,10 @@ function formatDate(rawDate: string): string {
     day: "numeric",
     timeZone: "America/Chicago",
   };
-  const date = new Date(rawDate);
-  return date.toLocaleDateString("en-US", options);
+  return new Date(rawDate).toLocaleDateString("en-US", options);
 }
 
 function toBlogPost(post: postgres.Row): BlogPost {
-  console.log(post.published_at);
   return {
     id: post.id as string,
     title: post.title as string,
