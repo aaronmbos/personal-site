@@ -11,23 +11,21 @@ export interface BlogPost {
   metadata: string[];
 }
 
+const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at from post.post`;
+
 export async function getRecentPosts(): Promise<BlogPost[]> {
-  const posts =
-    await sql`select id, title, content, slug, description, tags, published_at from post.post order by published_at desc limit 5`;
+  const posts = await sql`${baseQuery} order by published_at desc limit 5`;
   return posts.map(toBlogPost);
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const posts =
-    await sql`select id, title, content, slug, description, tags, published_at from post.post order by published_at desc`;
+  const posts = await sql`${baseQuery} order by published_at desc`;
 
   return posts.map(toBlogPost);
 }
 
 export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
-  const post = (
-    await sql`select id, title, content, slug, description, tags, published_at from post.post where slug = ${urlId}`
-  )[0];
+  const post = (await sql`${baseQuery} where slug = ${urlId}`)[0];
 
   if (!post) {
     throw new Error("No post found with given urlId");
@@ -49,6 +47,7 @@ function formatDate(rawDate: string): string {
 }
 
 function toBlogPost(post: postgres.Row): BlogPost {
+  console.log(post.published_at);
   return {
     id: post.id as string,
     title: post.title as string,
