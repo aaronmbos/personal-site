@@ -18,14 +18,22 @@ export default function Posts({
         <table>
           <thead>
             <tr>
+              <th>Slug</th>
               <th>Title</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+              <th>Published</th>
             </tr>
           </thead>
           <tbody>
             {posts.map((post) => {
               return (
                 <tr key={post.id}>
+                  <td>{post.slug}</td>
                   <td>{post.title}</td>
+                  <td>{post.createdAt}</td>
+                  <td>{post.updatedAt}</td>
+                  <td>{post.publishedAt ?? "Draft"}</td>
                 </tr>
               );
             })}
