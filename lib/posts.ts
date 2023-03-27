@@ -1,5 +1,6 @@
 import postgres from "postgres";
 import sql from "../database/db.mjs";
+import { Post } from "../types/database/types.js";
 
 export interface BlogPost {
   id: string;
@@ -11,21 +12,23 @@ export interface BlogPost {
   metadata: string[];
 }
 
-const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at from post.post`;
+const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at from post.post where published_at is not null`;
 
 export async function getRecentPosts(): Promise<BlogPost[]> {
-  const posts = await sql`${baseQuery} order by published_at desc limit 5`;
+  const posts = await sql<
+    Post[]
+  >`${baseQuery} order by published_at desc limit 5`;
   return posts.map(toBlogPost);
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const posts = await sql`${baseQuery} order by published_at desc`;
+  const posts = await sql<Post[]>`${baseQuery} order by published_at desc`;
 
   return posts.map(toBlogPost);
 }
 
 export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
-  const post = (await sql`${baseQuery} where slug = ${urlId}`)[0];
+  const post = (await sql<Post[]>`${baseQuery} where slug = ${urlId}`)[0];
 
   if (!post) {
     throw new Error("No post found with given urlId");
@@ -34,7 +37,7 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
   return toBlogPost(post);
 }
 
-function formatDate(rawDate: string): string {
+function formatDate(date: Date): string {
   var options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     year: "numeric",
@@ -42,17 +45,17 @@ function formatDate(rawDate: string): string {
     day: "numeric",
     timeZone: "America/Chicago",
   };
-  return new Date(rawDate).toLocaleDateString("en-US", options);
+  return date.toLocaleDateString("en-US", options);
 }
 
-function toBlogPost(post: postgres.Row): BlogPost {
+function toBlogPost(post: Post): BlogPost {
   return {
-    id: post.id as string,
+    id: post.id,
     title: post.title as string,
     content: post.content as string,
     slug: post.slug as string,
     description: post.description as string,
     metadata: post.tags as string[],
-    date: formatDate(post.published_at as string),
+    date: formatDate(post.published_at!),
   };
 }
