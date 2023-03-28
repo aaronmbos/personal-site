@@ -28,7 +28,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
 }
 
 export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
-  const post = (await sql<Post[]>`${baseQuery} where slug = ${urlId}`)[0];
+  const post = (await sql<Post[]>`${baseQuery} and slug = ${urlId}`)[0];
 
   if (!post) {
     throw new Error("No post found with given urlId");
