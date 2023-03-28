@@ -5,6 +5,7 @@ import { sessionOptions } from "../../lib/session";
 import { InferGetServerSidePropsType } from "next";
 import { User } from "../../types/api/types";
 import { getPostTable, PostTableRow } from "../../lib/content";
+import Link from "next/link";
 
 export default function Posts({
   user,
@@ -30,7 +31,14 @@ export default function Posts({
               return (
                 <tr key={post.id}>
                   <td>{post.slug}</td>
-                  <td>{post.title}</td>
+                  <td>
+                    <Link
+                      className="dark:text-blue-400 text-blue-600 cursor-pointer hover:underline"
+                      href={`/content/${post.id}`}
+                    >
+                      {post.title}
+                    </Link>
+                  </td>
                   <td>{post.createdAt}</td>
                   <td>{post.updatedAt}</td>
                   <td>{post.publishedAt ?? "Draft"}</td>

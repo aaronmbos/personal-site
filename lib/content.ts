@@ -1,10 +1,18 @@
 import sql from "../database/db.mjs";
 import { Post } from "../types/database/types";
 
-export interface PostTableRow {
+export type PostTableRow = Pick<
+  PostContent,
+  "id" | "title" | "slug" | "createdAt" | "updatedAt" | "publishedAt"
+>;
+
+export interface PostContent {
   id: string;
   title: string;
   slug: string;
+  content: string;
+  description: string;
+  tags?: string[];
   createdAt: string;
   updatedAt: string;
   publishedAt?: string;
@@ -13,9 +21,23 @@ export interface PostTableRow {
 export async function getPostTable(): Promise<PostTableRow[]> {
   const rows = await sql<
     Post[]
-  >`select id, title, slug, (created_at at time zone 'utc') as created_at, (updated_at at time zone 'utc') as updated_at, (published_at at time zone 'utc') published_at from post.post`;
+  >`select id, title, slug, (created_at at time zone 'utc') as created_at, (updated_at at time zone 'utc') as updated_at, (published_at at time zone 'utc') published_at
+  from post.post`;
 
   return rows.map(toPostTableRow);
+}
+
+export async function getPostById(id: string): Promise<PostContent> {
+  const post = await sql<
+    Post[]
+  >`select id, title, slug, content, description, tags, (created_at at time zone 'utc') as created_at, (updated_at at time zone 'utc') as updated_at, (published_at at time zone 'utc') published_at
+  from post.post
+  where id = ${id}`;
+
+  if (post) {
+    return toPostContent(post[0]);
+  }
+  throw new Error(`No posts found with provided id ${id}`);
 }
 
 function toPostTableRow(post: Post): PostTableRow {
@@ -23,6 +45,20 @@ function toPostTableRow(post: Post): PostTableRow {
     id: post.id,
     title: post.title,
     slug: post.slug,
+    createdAt: post.created_at.toString(),
+    updatedAt: post.updated_at.toString(),
+    publishedAt: post.published_at?.toString(),
+  };
+}
+
+function toPostContent(post: Post): PostContent {
+  return {
+    id: post.id,
+    title: post.title,
+    slug: post.slug,
+    content: post.content,
+    description: post.description,
+    tags: post.tags,
     createdAt: post.created_at.toString(),
     updatedAt: post.updated_at.toString(),
     publishedAt: post.published_at?.toString(),
