@@ -30,3 +30,14 @@ export interface User {
   username: string;
   isLoggedIn: boolean;
 }
+
+export interface PostsRequest {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  content: string;
+  tags?: string[];
+}
+
+export const parseJsonRequest = <T>(req: string): T => JSON.parse(req) as T;
