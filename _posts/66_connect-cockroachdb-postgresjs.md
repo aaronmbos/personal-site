@@ -44,23 +44,3 @@ export default sql;
 ```
 
 So far this is standard code for connecting to databases, the aspect that I stumbled on initially was the `sslmode=verify-full` option that requires a signed SSL certificate to connect. This SSL mode isn't "required", but it is strongly recommended for production clusters. I needed a way to provide the certificate to CockroachDB through this `postgres` method, but wasn't sure how.
-
-```js
-// db.js
-
-import postgres from "postgres";
-
-// Always get sensitive information from the environment variables or secrets
-const connectionString =
-  "postgresql://user:password@db_server_url?sslmode=verify-full";
-
-const cert = "The certificate in PEM format";
-
-const sql = postgres(connectionString, {
-  ssl: {
-    caCerts: [cert],
-  },
-});
-
-export default sql;
-```
