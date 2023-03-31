@@ -27,18 +27,40 @@ import postgres from "postgres";
 // connection details to come
 ```
 
-At the heart of the database connection is the `postgres` method, which provides parameters to define the information required to connect to a database. In my case I'll be using a connection string URL, but the option is available to provide individual connection values as part of the object passed to the `postgres` method.
+At the heart of the database connection is the `postgres([url], [options])` method, which provides parameters to define the information required to connect to a database. In my case I'll be using a connection string URL, but the option is available to provide individual connection values as part of the object passed to the `postgres` method. The options provided will override any values that are in the connection string URL.
 
 ```js
 // db.js
 
 import postgres from "postgres";
 
-// NEVER do this. Always get sensitive information from the environment variables or secrets
+// Always get sensitive information from the environment variables or secrets
 const connectionString =
   "postgresql://user:password@db_server_url?sslmode=verify-full";
 
 const sql = postgres(connectionString);
+
+export default sql;
+```
+
+So far this is standard code for connecting to databases, the aspect that I stumbled on initially was the `sslmode=verify-full` option that requires a signed SSL certificate to connect. This SSL mode isn't "required", but it is strongly recommended for production clusters. I needed a way to provide the certificate to CockroachDB through this `postgres` method, but wasn't sure how.
+
+```js
+// db.js
+
+import postgres from "postgres";
+
+// Always get sensitive information from the environment variables or secrets
+const connectionString =
+  "postgresql://user:password@db_server_url?sslmode=verify-full";
+
+const cert = "The certificate in PEM format";
+
+const sql = postgres(connectionString, {
+  ssl: {
+    caCerts: [cert],
+  },
+});
 
 export default sql;
 ```
