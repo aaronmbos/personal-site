@@ -3,8 +3,8 @@ id: 66
 slug: "connect-cockroachdb-postgresjs"
 title: "Connecting to CockroachDB with Postgres.js"
 description: "I've been using CockroachDB on this blog for some time and I've recently transitioned to using the Postgres.js library for interacting with the database. In this post, I'm going to share how to connect to CockroachDB from a Node app using Postgres.js."
-publishedAt: YYYY-MM-DDTHH:MM:SS.000Z
-updatedAt: YYYY-MM-DDTHH:MM:SS.000Z
+publishedAt: 2023-03-31T12:00:00.000Z
+updatedAt: 2023-03-31T12:00:00.000Z
 metadata: cockroachdb,postgres,node
 ---
 

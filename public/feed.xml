@@ -9,10 +9,21 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 15 Mar 2023 02:41:26 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Apr 2023 01:05:38 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Exploring Differences Between CommonJS and ES Modules]]></title>
+            <title><![CDATA[Connecting to CockroachDB with Postgres.js]]></title>
+            <description><![CDATA[I've been using CockroachDB on this blog for some time and I've recently transitioned to using the Postgres.js library for interacting with the database. In this post, I'm going to share how to connect to CockroachDB from a Node app using Postgres.js.]]></description>
+            <link>https://aaronbos.dev/posts/connect-cockroachdb-postgresjs</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/connect-cockroachdb-postgresjs</guid>
+            <category><![CDATA[cockroachdb]]></category>
+            <category><![CDATA[postgres]]></category>
+            <category><![CDATA[node]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 31 Mar 2023 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Exploring CommonJS and ES Modules]]></title>
             <description><![CDATA[I was recently working on a project involving quite a bit of JavaScript. I always knew about ES Modules and CommonJS, but I never knew much about their differences. This post is a result of my exploration of CommonJS and ES Modules to learn more about their history and use cases.]]></description>
             <link>https://aaronbos.dev/posts/commonjs-vs-es-module</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/commonjs-vs-es-module</guid>
