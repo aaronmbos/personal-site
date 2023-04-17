@@ -27,6 +27,7 @@
 
 ## Posts
 
+- [Is it Time to Lean into AI?](https://aaronbos.dev/posts/lean-into-ai)
 - [Connecting to CockroachDB with Postgres.js](https://aaronbos.dev/posts/connect-cockroachdb-postgresjs)
 - [Exploring Differences Between CommonJS and ES Modules](https://aaronbos.dev/posts/commonjs-vs-es-module)
 - [The Anatomy of an FFmpeg Command](https://aaronbos.dev/posts/ffmpeg-command-anatomy)

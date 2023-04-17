@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 01 Apr 2023 01:05:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Apr 2023 03:37:34 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Is it Time to Lean into AI]]></title>
+            <description><![CDATA[As developers, we are constantly exposed to new tools and technologies, but the most recent wave of AI advancements feels different. In this post, I'm going to share my thoughts on whether or not the hype around generative AI is real.]]></description>
+            <link>https://aaronbos.dev/posts/lean-into-ai</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/lean-into-ai</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[thoughts]]></category>
+            <category><![CDATA[ai]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sun, 16 Apr 2023 22:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Connecting to CockroachDB with Postgres.js]]></title>
             <description><![CDATA[I've been using CockroachDB on this blog for some time and I've recently transitioned to using the Postgres.js library for interacting with the database. In this post, I'm going to share how to connect to CockroachDB from a Node app using Postgres.js.]]></description>
