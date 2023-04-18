@@ -13,7 +13,17 @@ export default function Posts({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("submitted dawg");
+    await fetch(`/api/content/posts`, {
+      method: "PUT",
+      body: JSON.stringify({
+        title: event.currentTarget.postTitle.value,
+        id: post.id,
+        slug: event.currentTarget.slug.value,
+        description: event.currentTarget.description.value,
+        content: event.currentTarget.content.value,
+        tags: event.currentTarget.tags.value.split(","),
+      }),
+    });
   }
 
   return (
@@ -23,13 +33,13 @@ export default function Posts({
         <form onSubmit={handleSubmit}>
           <div className="flex justify-between flex-wrap">
             <div className="flex-1">
-              <label htmlFor="title" className="block">
+              <label htmlFor="postTitle" className="block">
                 Title
               </label>
               <input
                 className="my-3 w-5/6 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
-                name="title"
-                id="title"
+                name="postTitle"
+                id="postTitle"
                 type="text"
                 defaultValue={post.title}
               />
@@ -47,6 +57,16 @@ export default function Posts({
               />
             </div>
           </div>
+          <label htmlFor="tags" className="block">
+            Tags
+          </label>
+          <input
+            className="my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+            name="tags"
+            id="tags"
+            type="text"
+            defaultValue={post.tags?.join(",")}
+          />
           <label htmlFor="description" className="block">
             Description
           </label>

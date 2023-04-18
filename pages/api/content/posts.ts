@@ -3,8 +3,12 @@ import { handleError } from "../errorHandler";
 import { parseJsonRequest, PostsRequest } from "../../../types/api/types";
 import { handlePut } from "../../../lib/request-handlers/posts-request";
 
-export async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
+    console.log(req.body);
     const postsReq = parseJsonRequest<PostsRequest>(req.body);
     if (req.method === "POST") {
     } else if (req.method === "PUT") {
