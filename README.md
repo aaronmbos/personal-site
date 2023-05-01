@@ -27,6 +27,7 @@
 
 ## Posts
 
+- [Using Binaural Beats to Improve Focus](https://aaronbos.dev/posts/binaural-beats-focus)
 - [Is it Time to Lean into AI?](https://aaronbos.dev/posts/lean-into-ai)
 - [Connecting to CockroachDB with Postgres.js](https://aaronbos.dev/posts/connect-cockroachdb-postgresjs)
 - [Exploring Differences Between CommonJS and ES Modules](https://aaronbos.dev/posts/commonjs-vs-es-module)
