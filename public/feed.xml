@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 May 2023 11:07:27 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 19 May 2023 01:12:23 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Monocode: A font for code]]></title>
+            <description><![CDATA[Over the past ten months I've been working on a custom font for me to use in programming environments. The font is called Monocode and in this post I'm going to talk about how I created it, why I created it, and what makes it unique. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/monocode-font</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/monocode-font</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[tools]]></category>
+            <category><![CDATA[fonts]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 18 May 2023 07:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Using Binaural Beats to Improve Focus]]></title>
             <description><![CDATA[Over the years I've found it helpful to listen to music while doing work that requires some amount of focus or concentration. Recently I've started to listen to binaural beats during these periods of work and have found them to be very helpful. In this post, I'm going to share some of the benefits I've found from listening to binaural beats and also how I listen to them. Let's dive in!]]></description>
