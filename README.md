@@ -27,6 +27,10 @@
 
 ## Posts
 
+### 2023
+
+- [Monocode: A font for code](https://aaronbos.dev/posts/monocode-font)
+- [Using Binaural Beats to Improve Focus](https://aaronbos.dev/posts/binaural-beats-focus)
 - [Is it Time to Lean into AI?](https://aaronbos.dev/posts/lean-into-ai)
 - [Connecting to CockroachDB with Postgres.js](https://aaronbos.dev/posts/connect-cockroachdb-postgresjs)
 - [Exploring Differences Between CommonJS and ES Modules](https://aaronbos.dev/posts/commonjs-vs-es-module)
@@ -34,6 +38,9 @@
 - [Running FFmpeg in the Browser with Wasm](https://aaronbos.dev/posts/ffmpeg-wasm-browser)
 - [My Case for Conventional Comments](https://aaronbos.dev/posts/case-for-conventional-comments)
 - [Collections in .NET Through the Lens of Big O Notation](https://aaronbos.dev/posts/dotnet-collections-big-o)
+
+### 2022
+
 - [Looking Back at 2022 and Ahead to 2023](https://aaronbos.dev/posts/2022-year-in-review)
 - [Why I Decided to Give Up Social Media](https://aaronbos.dev/posts/quit-social-media)
 - [Defining and Using Enums as Bit Flags in C#](https://aaronbos.dev/posts/csharp-flags-enum)
@@ -69,6 +76,9 @@
 - [Working With JSON in Postgres 14](https://aaronbos.dev/posts/postgres-14-json)
 - [Learning T-SQL Window Functions](https://aaronbos.dev/posts/learn-tsql-window-functions)
 - [Know Your Tools: Oh My Zsh and Git](https://aaronbos.dev/posts/ohmyzsh-git)
+
+### 2021
+
 - [What I've Learned in a Year of Blogging](https://aaronbos.dev/posts/2021-year-review)
 - [Learning When to Cut the Thread](https://aaronbos.dev/posts/learn-to-cut-thread)
 - [Working With Null in C#](https://aaronbos.dev/posts/handling-null-references)
