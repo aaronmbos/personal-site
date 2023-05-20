@@ -8,7 +8,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    console.log(req.body);
     const postsReq = parseJsonRequest<PostsRequest>(req.body);
     if (req.method === "POST") {
     } else if (req.method === "PUT") {
