@@ -22,7 +22,7 @@ export async function getPostTable(): Promise<PostTableRow[]> {
   const rows = await sql<
     Post[]
   >`select id, title, slug, (created_at at time zone 'utc') as created_at, (updated_at at time zone 'utc') as updated_at, (published_at at time zone 'utc') published_at
-  from post.post`;
+  from post.post order by published_at desc, created_at desc`;
 
   return rows.map(toPostTableRow);
 }

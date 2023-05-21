@@ -14,15 +14,26 @@ export default function Posts({
   return (
     <>
       <Head>Manage Posts</Head>
-      <Layout user={user}>
-        <h1>Manage Posts</h1>
+      <Layout user={user} isWide={true}>
+        <h1 className="text-2xl">Manage Posts</h1>
+        <div className="flex justify-end">
+          <button
+            onClick={() => {
+              console.log("New Post");
+            }}
+            type="button"
+            className="px-4 py-1 mb-2 flex items-center justify-center text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
+          >
+            New Post
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
               <th>Slug</th>
               <th>Title</th>
-              <th>Created At</th>
-              <th>Updated At</th>
+              <th>Created</th>
+              <th>Updated</th>
               <th>Published</th>
             </tr>
           </thead>
@@ -39,9 +50,23 @@ export default function Posts({
                       {post.title}
                     </Link>
                   </td>
-                  <td>{post.createdAt}</td>
-                  <td>{post.updatedAt}</td>
-                  <td>{post.publishedAt ?? "Draft"}</td>
+                  <td>
+                    {new Intl.DateTimeFormat("en-US").format(
+                      new Date(post.createdAt)
+                    )}
+                  </td>
+                  <td>
+                    {new Intl.DateTimeFormat("en-US").format(
+                      new Date(post.updatedAt)
+                    )}
+                  </td>
+                  <td>
+                    {post.publishedAt
+                      ? new Intl.DateTimeFormat("en-US").format(
+                          new Date(post.publishedAt)
+                        )
+                      : "Draft"}
+                  </td>
                 </tr>
               );
             })}
