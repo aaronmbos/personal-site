@@ -6,11 +6,16 @@ import { InferGetServerSidePropsType } from "next";
 import { User } from "../../types/api/types";
 import { getPostTable, PostTableRow } from "../../lib/content";
 import Link from "next/link";
+import Router from "next/router";
 
 export default function Posts({
   user,
   posts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  function handleSubmit() {
+    Router.push("/content/new-post");
+  }
+
   return (
     <>
       <Head>Manage Posts</Head>
@@ -18,9 +23,7 @@ export default function Posts({
         <h1 className="text-2xl">Manage Posts</h1>
         <div className="flex justify-end">
           <button
-            onClick={() => {
-              console.log("New Post");
-            }}
+            onClick={handleSubmit}
             type="button"
             className="px-4 py-1 mb-2 flex items-center justify-center text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
           >
