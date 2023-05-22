@@ -51,7 +51,7 @@ export default function PostForm({ onSubmit, post }: Props) {
         className="h-40 my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
         name="description"
         id="description"
-        defaultValue={post?.description}
+        defaultValue={post?.description ?? undefined}
       />
       <label htmlFor="Content" className="block">
         Content
@@ -60,7 +60,7 @@ export default function PostForm({ onSubmit, post }: Props) {
         className="h-screen my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
         name="content"
         id="content"
-        defaultValue={post?.content}
+        defaultValue={post?.content ?? undefined}
       />
       <button
         className="px-10 flex shrink items-center justify-center text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 w-11 h-11 my-5 hover:border-0 hover:ring-2 dark:ring-stone-400"

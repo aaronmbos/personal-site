@@ -1,7 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleError } from "../errorHandler";
 import { parseJsonRequest, PostsRequest } from "../../../types/api/types";
-import { handlePut } from "../../../lib/request-handlers/posts-request";
+import {
+  handlePost,
+  handlePut,
+} from "../../../lib/request-handlers/posts-request";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,6 +13,7 @@ export default async function handler(
   try {
     const postsReq = parseJsonRequest<PostsRequest>(req.body);
     if (req.method === "POST") {
+      res.status(200).json(await handlePost(postsReq));
     } else if (req.method === "PUT") {
       res.status(200).json(await handlePut(postsReq));
     }

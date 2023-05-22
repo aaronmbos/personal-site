@@ -5,19 +5,39 @@ import PostForm from "../../components/post-form";
 import { sessionOptions } from "../../lib/session";
 import { InferGetServerSidePropsType } from "next";
 import { withIronSessionSsr } from "iron-session/next";
+import { FormEvent } from "react";
+import Router from "next/router";
 
 export default function NewPost({
   user,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const res = await (
+      await fetch(`/api/content/posts`, {
+        method: "POST",
+        body: JSON.stringify({
+          title: event.currentTarget.postTitle.value,
+          slug: event.currentTarget.slug.value,
+          description: event.currentTarget.description.value,
+          content: event.currentTarget.content.value,
+          tags: event.currentTarget.tags.value.split(","),
+        }),
+      })
+    ).json();
+
+    if (res.isSuccess) {
+      Router.push(`/content/${res.data}`);
+    } else {
+      console.log(res.message);
+    }
+  }
+
   return (
     <>
       <Head>Create New Post</Head>
       <Layout user={user} isWide={true}>
-        <PostForm
-          onSubmit={() => {
-            "new post";
-          }}
-        />
+        <PostForm onSubmit={handleSubmit} />
       </Layout>
     </>
   );

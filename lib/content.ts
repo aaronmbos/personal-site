@@ -10,19 +10,19 @@ export interface PostContent {
   id: string;
   title: string;
   slug: string;
-  content: string;
-  description: string;
-  tags?: string[];
+  content?: string | null;
+  description?: string | null;
+  tags?: string[] | null;
   createdAt: string;
   updatedAt: string;
-  publishedAt?: string;
+  publishedAt?: string | null;
 }
 
 export async function getPostTable(): Promise<PostTableRow[]> {
   const rows = await sql<
     Post[]
   >`select id, title, slug, (created_at at time zone 'utc') as created_at, (updated_at at time zone 'utc') as updated_at, (published_at at time zone 'utc') published_at
-  from post.post order by published_at desc, created_at desc`;
+  from post.post order by published_at desc NULLS FIRST, created_at desc, updated_at desc`;
 
   return rows.map(toPostTableRow);
 }
@@ -47,7 +47,7 @@ function toPostTableRow(post: Post): PostTableRow {
     slug: post.slug,
     createdAt: post.created_at.toString(),
     updatedAt: post.updated_at.toString(),
-    publishedAt: post.published_at?.toString(),
+    publishedAt: post.published_at?.toString() ?? null,
   };
 }
 
@@ -56,11 +56,11 @@ function toPostContent(post: Post): PostContent {
     id: post.id,
     title: post.title,
     slug: post.slug,
-    content: post.content,
-    description: post.description,
+    content: post.content ?? null,
+    description: post.description ?? null,
     tags: post.tags,
     createdAt: post.created_at.toString(),
     updatedAt: post.updated_at.toString(),
-    publishedAt: post.published_at?.toString(),
+    publishedAt: post.published_at?.toString() ?? null,
   };
 }
