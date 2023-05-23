@@ -5,12 +5,14 @@ import PostForm from "../../components/post-form";
 import { sessionOptions } from "../../lib/session";
 import { InferGetServerSidePropsType } from "next";
 import { withIronSessionSsr } from "iron-session/next";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Router from "next/router";
 
 export default function NewPost({
   user,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [postError, setPostError] = useState<string | undefined>(undefined);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const res = await (
@@ -29,7 +31,7 @@ export default function NewPost({
     if (res.isSuccess) {
       Router.push(`/content/${res.data}`);
     } else {
-      console.log(res.message);
+      setPostError(res.message);
     }
   }
 
@@ -37,7 +39,7 @@ export default function NewPost({
     <>
       <Head>Create New Post</Head>
       <Layout user={user} isWide={true}>
-        <PostForm onSubmit={handleSubmit} />
+        <PostForm submitError={postError} onSubmit={handleSubmit} />
       </Layout>
     </>
   );

@@ -20,8 +20,10 @@ export default function Posts({
     <>
       <Head>Manage Posts</Head>
       <Layout user={user} isWide={true}>
-        <h1 className="text-2xl">Manage Posts</h1>
-        <div className="flex justify-end">
+        <div className="flex justify-between mb-6 pb-4 border-b-2 dark:border-stone-600 border-stone-800">
+          <h1 className="mb-2 font-semibold text-3xl inline-block">
+            Manage Posts
+          </h1>
           <button
             onClick={handleSubmit}
             type="button"
@@ -30,7 +32,7 @@ export default function Posts({
             New Post
           </button>
         </div>
-        <table>
+        <table className="border-collapse table-auto">
           <thead>
             <tr>
               <th>Slug</th>
@@ -44,8 +46,10 @@ export default function Posts({
             {posts.map((post) => {
               return (
                 <tr key={post.id}>
-                  <td>{post.slug}</td>
-                  <td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
+                    {post.slug}
+                  </td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
                     <Link
                       className="dark:text-blue-400 text-blue-600 cursor-pointer hover:underline"
                       href={`/content/${post.id}`}
@@ -53,17 +57,17 @@ export default function Posts({
                       {post.title}
                     </Link>
                   </td>
-                  <td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
                     {new Intl.DateTimeFormat("en-US").format(
                       new Date(post.createdAt)
                     )}
                   </td>
-                  <td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
                     {new Intl.DateTimeFormat("en-US").format(
                       new Date(post.updatedAt)
                     )}
                   </td>
-                  <td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
                     {post.publishedAt
                       ? new Intl.DateTimeFormat("en-US").format(
                           new Date(post.publishedAt)
