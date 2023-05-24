@@ -16,6 +16,7 @@ export default async function handler(
       res.status(200).json(await handlePost(postsReq));
     } else if (req.method === "PUT") {
       res.status(200).json(await handlePut(postsReq));
+    } else if (req.method === "PATCH") {
     }
 
     res.status(405);

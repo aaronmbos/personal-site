@@ -57,6 +57,14 @@ export async function handlePost(
   };
 }
 
+export async function handlePatch(req: {}): Promise<ApiResponse<null>> {
+  return {
+    isSuccess: false,
+    message: "Not implemented",
+    data: null,
+  };
+}
+
 function isRequestValid(req: PostsRequest): [boolean, string] {
   if (!req.slug || req.slug.length < 1 || req.slug.length > 128) {
     return [false, "Slug is invalid"];

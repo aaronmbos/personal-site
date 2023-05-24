@@ -27,7 +27,7 @@ export default function Posts({
           <button
             onClick={handleSubmit}
             type="button"
-            className="px-4 py-1 mb-2 flex items-center justify-center text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
+            className="px-4 py-2 mb-2 flex items-center justify-center text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
           >
             New Post
           </button>

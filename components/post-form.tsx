@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import { PostContent } from "../lib/content";
 
 interface Props {
@@ -7,19 +8,46 @@ interface Props {
 }
 
 export default function PostForm({ onSubmit, post, submitError }: Props) {
+  async function handlePublish() {
+    const res = await (
+      await fetch(`/api/content/posts/${post?.id}/publish`, {
+        method: "PATCH",
+      })
+    ).json();
+  }
+
   return (
     <>
-      {post ? (
-        <h1 className="mb-6 font-semibold text-3xl">Edit Post</h1>
-      ) : (
-        <h1 className="mb-6 font-semibold text-3xl">Create New Post</h1>
-      )}
-      {submitError && (
-        <div className="text-center my-2 text-red-500 dark:text-red-300">
-          {submitError}
-        </div>
-      )}
       <form onSubmit={onSubmit}>
+        <div className="mb-6 py-4 sticky top-0 bg-gray-50 dark:bg-stone-800 dark:text-white border-b-2 dark:border-stone-600 border-stone-800">
+          {submitError && (
+            <div className="text-center my-2 text-red-500 dark:text-red-300">
+              {submitError}
+            </div>
+          )}
+          <div className="flex justify-between">
+            <h1 className="font-semibold text-3xl inline-block">
+              {post ? "Edit Post" : "Create New Post"}
+            </h1>
+            <div className="">
+              {post && !post?.publishedAt && (
+                <button
+                  onClick={handlePublish}
+                  type="button"
+                  className="inline px-4 py-2 mb-1 mr-4 text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
+                >
+                  Publish
+                </button>
+              )}
+              <button
+                type="submit"
+                className="inline px-4 py-2 mb-1 text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="">
           <div className="w-full md:w-2/5 inline-block">
             <label htmlFor="postTitle" className="block">
@@ -74,12 +102,6 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
           id="content"
           defaultValue={post?.content ?? undefined}
         />
-        <button
-          className="px-10 flex shrink items-center justify-center text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 w-11 h-11 my-5 hover:border-0 hover:ring-2 dark:ring-stone-400"
-          type="submit"
-        >
-          Save
-        </button>
       </form>
     </>
   );

@@ -29,6 +29,9 @@ export default function NewPost({
     ).json();
 
     if (res.isSuccess) {
+      if (postError) {
+        setPostError(undefined);
+      }
       Router.push(`/content/${res.data}`);
     } else {
       setPostError(res.message);
