@@ -70,13 +70,13 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="w-full sm:w-5/6 mx-auto">
           <div className="w-full md:w-2/5 inline-block">
             <label htmlFor="postTitle" className="block">
               Title
             </label>
             <input
-              className="my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+              className="font-mono text-sm my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
               name="postTitle"
               id="postTitle"
               type="text"
@@ -88,42 +88,42 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
               Slug
             </label>
             <input
-              className="my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+              className="font-mono text-sm my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
               name="slug"
               id="slug"
               type="text"
               defaultValue={post?.slug}
             />
           </div>
+          <label htmlFor="tags" className="block">
+            Tags
+          </label>
+          <input
+            className="font-mono text-sm my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+            name="tags"
+            id="tags"
+            type="text"
+            defaultValue={post?.tags?.join(",")}
+          />
+          <label htmlFor="description" className="block">
+            Description
+          </label>
+          <textarea
+            className="font-mono text-sm h-40 my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+            name="description"
+            id="description"
+            defaultValue={post?.description ?? undefined}
+          />
+          <label htmlFor="Content" className="block">
+            Content
+          </label>
+          <textarea
+            className="font-mono text-sm h-screen my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
+            name="content"
+            id="content"
+            defaultValue={post?.content ?? undefined}
+          />
         </div>
-        <label htmlFor="tags" className="block">
-          Tags
-        </label>
-        <input
-          className="my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
-          name="tags"
-          id="tags"
-          type="text"
-          defaultValue={post?.tags?.join(",")}
-        />
-        <label htmlFor="description" className="block">
-          Description
-        </label>
-        <textarea
-          className="h-40 my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
-          name="description"
-          id="description"
-          defaultValue={post?.description ?? undefined}
-        />
-        <label htmlFor="Content" className="block">
-          Content
-        </label>
-        <textarea
-          className="h-screen my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
-          name="content"
-          id="content"
-          defaultValue={post?.content ?? undefined}
-        />
       </form>
     </>
   );
