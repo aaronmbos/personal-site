@@ -40,4 +40,17 @@ export interface PostsRequest {
   tags?: string[];
 }
 
+export interface PostsPatchRequest {
+  id: string;
+  fields: Record<PostPatchFields, any>;
+}
+
+export type PostPatchFields =
+  | "title"
+  | "slug"
+  | "description"
+  | "content"
+  | "tags"
+  | "publishedAt";
+
 export const parseJsonRequest = <T>(req: string): T => JSON.parse(req) as T;

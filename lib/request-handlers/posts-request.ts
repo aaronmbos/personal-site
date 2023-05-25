@@ -1,4 +1,8 @@
-import { ApiResponse, PostsRequest } from "../../types/api/types";
+import {
+  ApiResponse,
+  PostsPatchRequest,
+  PostsRequest,
+} from "../../types/api/types";
 import sql from "../../database/db.mjs";
 
 export async function handlePut(req: PostsRequest): Promise<ApiResponse<null>> {
@@ -19,6 +23,7 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<null>> {
       description = ${req.description ?? null},
       tags = ${req?.tags ?? null},
       slug = ${req.slug}
+      updated_at = now()
     where id = ${req.id}`;
 
   return {
@@ -57,10 +62,37 @@ export async function handlePost(
   };
 }
 
-export async function handlePatch(req: {}): Promise<ApiResponse<null>> {
+export async function handlePatch(
+  req: PostsPatchRequest
+): Promise<ApiResponse<null>> {
+  const dbPost = (
+    await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`
+  )[0];
+
+  if (!dbPost) {
+    return {
+      isSuccess: false,
+      message: "Not implemented",
+      data: null,
+    };
+  }
+
+  var updatedPost = { ...dbPost, ...req.fields, id: dbPost.id };
+
+  await sql`
+    update post.post
+      set title = ${updatedPost.title},
+      content = ${updatedPost.content ?? null},
+      description = ${updatedPost.description ?? null},
+      tags = ${updatedPost?.tags ?? null},
+      slug = ${updatedPost.slug},
+      updated_at = now(),
+      published_at = ${updatedPost.publishedAt ?? null}
+    where id = ${updatedPost.id}`;
+
   return {
-    isSuccess: false,
-    message: "Not implemented",
+    isSuccess: true,
+    message: "",
     data: null,
   };
 }

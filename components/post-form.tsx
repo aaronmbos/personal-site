@@ -1,5 +1,6 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useState } from "react";
 import { PostContent } from "../lib/content";
+import Router from "next/router";
 
 interface Props {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
@@ -8,12 +9,28 @@ interface Props {
 }
 
 export default function PostForm({ onSubmit, post, submitError }: Props) {
+  const [publishError, setPublishError] = useState<string | undefined>(
+    undefined
+  );
+
   async function handlePublish() {
     const res = await (
-      await fetch(`/api/content/posts/${post?.id}/publish`, {
+      await fetch(`/api/content/posts`, {
         method: "PATCH",
+        body: JSON.stringify({
+          id: post?.id,
+          fields: {
+            publishedAt: new Date().toISOString(),
+          },
+        }),
       })
     ).json();
+
+    if (res.isSuccess) {
+      Router.push(`/content/${post?.id}`);
+    } else {
+      setPublishError(res.message);
+    }
   }
 
   return (
@@ -23,6 +40,11 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
           {submitError && (
             <div className="text-center my-2 text-red-500 dark:text-red-300">
               {submitError}
+            </div>
+          )}
+          {publishError && (
+            <div className="text-center my-2 text-red-500 dark:text-red-300">
+              {publishError}
             </div>
           )}
           <div className="flex justify-between">

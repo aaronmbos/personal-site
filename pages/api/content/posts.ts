@@ -1,7 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleError } from "../errorHandler";
-import { parseJsonRequest, PostsRequest } from "../../../types/api/types";
 import {
+  parseJsonRequest,
+  PostsPatchRequest,
+  PostsRequest,
+} from "../../../types/api/types";
+import {
+  handlePatch,
   handlePost,
   handlePut,
 } from "../../../lib/request-handlers/posts-request";
@@ -17,6 +22,9 @@ export default async function handler(
     } else if (req.method === "PUT") {
       res.status(200).json(await handlePut(postsReq));
     } else if (req.method === "PATCH") {
+      res
+        .status(200)
+        .json(await handlePatch(parseJsonRequest<PostsPatchRequest>(req.body)));
     }
 
     res.status(405);
