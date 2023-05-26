@@ -35,10 +35,10 @@ export default function Posts({
         <table className="border-collapse table-auto">
           <thead>
             <tr>
-              <th>Slug</th>
               <th>Title</th>
-              <th>Created</th>
-              <th>Updated</th>
+              <th className="hidden md:table-cell">Slug</th>
+              <th className="hidden md:table-cell">Created</th>
+              <th className="hidden md:table-cell">Updated</th>
               <th>Published</th>
             </tr>
           </thead>
@@ -47,9 +47,6 @@ export default function Posts({
               return (
                 <tr key={post.id}>
                   <td className="border-b border-slate-100 dark:border-stone-600 p-3">
-                    {post.slug}
-                  </td>
-                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
                     <Link
                       className="dark:text-blue-400 text-blue-600 cursor-pointer hover:underline"
                       href={`/content/${post.id}`}
@@ -57,12 +54,15 @@ export default function Posts({
                       {post.title}
                     </Link>
                   </td>
-                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3 hidden md:table-cell">
+                    {post.slug}
+                  </td>
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3 hidden md:table-cell">
                     {new Intl.DateTimeFormat("en-US").format(
                       new Date(post.createdAt)
                     )}
                   </td>
-                  <td className="border-b border-slate-100 dark:border-stone-600 p-3">
+                  <td className="border-b border-slate-100 dark:border-stone-600 p-3 hidden md:table-cell">
                     {new Intl.DateTimeFormat("en-US").format(
                       new Date(post.updatedAt)
                     )}

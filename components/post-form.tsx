@@ -13,14 +13,17 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
     undefined
   );
 
-  async function handlePublish() {
+  async function handlePublish(event: React.MouseEvent<HTMLButtonElement>) {
     const res = await (
       await fetch(`/api/content/posts`, {
         method: "PATCH",
         body: JSON.stringify({
           id: post?.id,
           fields: {
-            publishedAt: new Date().toISOString(),
+            publishedAt:
+              event.currentTarget.id === "publish"
+                ? new Date().toISOString()
+                : undefined,
           },
         }),
       })
@@ -52,14 +55,27 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
               {post ? "Edit Post" : "Create New Post"}
             </h1>
             <div className="">
-              {post && !post?.publishedAt && (
+              {post && !post?.publishedAt ? (
                 <button
+                  id="publish"
                   onClick={handlePublish}
                   type="button"
                   className="inline px-4 py-2 mb-1 mr-4 text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
                 >
                   Publish
                 </button>
+              ) : (
+                post &&
+                post.publishedAt && (
+                  <button
+                    id="unpublish"
+                    onClick={handlePublish}
+                    type="button"
+                    className="inline px-4 py-2 mb-1 mr-4 text-sm text-white dark:bg-stone-900 bg-blue-500 hover:bg-blue-700 rounded-lg dark:border dark:border-gray-500 hover:border-0 hover:ring-2 dark:ring-stone-400"
+                  >
+                    Unpublish
+                  </button>
+                )
               )}
               <button
                 type="submit"

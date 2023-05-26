@@ -22,7 +22,7 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<null>> {
       content = ${req.content ?? null},
       description = ${req.description ?? null},
       tags = ${req?.tags ?? null},
-      slug = ${req.slug}
+      slug = ${req.slug},
       updated_at = now()
     where id = ${req.id}`;
 
@@ -72,7 +72,7 @@ export async function handlePatch(
   if (!dbPost) {
     return {
       isSuccess: false,
-      message: "Not implemented",
+      message: "The post cannot be published.",
       data: null,
     };
   }

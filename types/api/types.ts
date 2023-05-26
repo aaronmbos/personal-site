@@ -38,6 +38,7 @@ export interface PostsRequest {
   description?: string;
   content?: string;
   tags?: string[];
+  publishedAt?: Date;
 }
 
 export interface PostsPatchRequest {
