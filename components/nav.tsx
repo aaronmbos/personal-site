@@ -39,7 +39,7 @@ export default function Nav({ user }: Props) {
           </div>
         </div>
       </div>
-      <NavMobileMenu isMenuOpen={menuState} navLinks={navLinks} />
+      <NavMobileMenu user={user} isMenuOpen={menuState} navLinks={navLinks} />
     </nav>
   );
 }

@@ -1,13 +1,11 @@
 import { LoginRequest, User } from "../../types/api/types";
-import query from "../../database/index.js";
 import { compare } from "bcrypt";
+import sql from "../../database/db.mjs";
 
 export async function handlePost(req: LoginRequest): Promise<User> {
-  const dbQuery =
-    "select username, password from site.user where username = $1";
-
-  const dbRes = await query(dbQuery, [req.username]);
-  const user = dbRes.rows[0];
+  const user = (
+    await sql`select username, password from site.user where username = ${req.username}`
+  )[0];
 
   if (user) {
     if (await compare(req.password, user.password)) {

@@ -10,7 +10,7 @@ interface Props {
   user?: User;
 }
 
-async function handleClick() {
+async function handleLogout() {
   const res = (await (
     await fetch("/api/content/logout", {
       method: "POST",
@@ -23,6 +23,7 @@ async function handleClick() {
     console.error("Logout failed.");
   }
 }
+
 export default function NavBody({ navLinks, user }: Props) {
   return (
     <>
@@ -42,14 +43,25 @@ export default function NavBody({ navLinks, user }: Props) {
         <ThemeIcon />
       </div>
       {user && (
-        <div className="mt-1 flex flex-0">
-          <button
-            onClick={handleClick}
-            type="button"
-            className="hover:ring-2 ring-stone-400 dark:bg-stone-800 dark:hover:bg-stone-900 text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-100 px-3 py-2 mt-1 rounded-md text-sm font-medium"
-          >
-            Logout
-          </button>
+        <div className="hidden md:flex">
+          <div className="mt-1 flex flex-0">
+            <button
+              onClick={() => Router.push("/content/posts")}
+              type="button"
+              className="mr-1 hover:ring-2 ring-stone-400 dark:bg-stone-800 dark:hover:bg-stone-900 text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-100 px-3 py-2 mt-1 rounded-md text-sm font-medium"
+            >
+              Content
+            </button>
+          </div>
+          <div className="mt-1 flex flex-0">
+            <button
+              onClick={handleLogout}
+              type="button"
+              className="hover:ring-2 ring-stone-400 dark:bg-stone-800 dark:hover:bg-stone-900 text-blue-500 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-100 px-3 py-2 mt-1 rounded-md text-sm font-medium"
+            >
+              Logout
+            </button>
+          </div>
         </div>
       )}
     </>

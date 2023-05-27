@@ -20,6 +20,22 @@ create table if not exists post.reaction (
   reaction_type varchar(64) not null
 )
 
+create table if not exists post.post (
+  id uuid not null default gen_random_uuid(),
+  slug varchar(128) not null unique,
+  title varchar(256) not null,
+  description text null,
+  content text null,
+  tags jsonb null,
+  created_at timestamp not null default now(),
+  updated_at timestamp not null default now(),
+  published_at timestamp null,
+)
+
+alter table post.post
+  add constraint PK_post_post
+    primary key (id);
+
 alter table post.reaction
   add constraint PK_post_reaction
     primary key (slug, ip_address, reaction_type);
@@ -38,6 +54,6 @@ create table if not exists user.user (
   created_at timestamp not null default now()
 );
 
-alter table user.user
+alter table site.user
   add constraint PK_user_user
     primary key (id);
