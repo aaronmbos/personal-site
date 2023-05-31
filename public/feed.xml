@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 19 May 2023 01:12:23 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 May 2023 01:33:03 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[How to Use SemaphoreSlim in C#]]></title>
+            <description><![CDATA[Historically I've held an opinion that reaching for more uncommon parts of a programming language to solve a problem meant that there was likely a better, less complicated solution. I'd put the use of semaphores in this category, but I recently had to reach for SemaphoreSlim to solve a problem. In this post, I'll discuss the concept of semaphores in general, their implementation in C#, and an example use case.]]></description>
+            <link>https://aaronbos.dev/posts/how-to-use-semaphoreslim-csharp</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/how-to-use-semaphoreslim-csharp</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 31 May 2023 01:17:11 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Monocode: A font for code]]></title>
             <description><![CDATA[Over the past ten months I've been working on a custom font for me to use in programming environments. The font is called Monocode and in this post I'm going to talk about how I created it, why I created it, and what makes it unique. Let's dive in!]]></description>

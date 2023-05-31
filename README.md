@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [How to Use SemaphoreSlim in C#](https://aaronbos.dev/posts/how-to-use-semaphoreslim-csharp)
 - [Monocode: A font for code](https://aaronbos.dev/posts/monocode-font)
 - [Using Binaural Beats to Improve Focus](https://aaronbos.dev/posts/binaural-beats-focus)
 - [Is it Time to Lean into AI?](https://aaronbos.dev/posts/lean-into-ai)
