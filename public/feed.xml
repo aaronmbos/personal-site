@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 31 May 2023 01:33:03 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Jun 2023 01:26:58 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Podcasts Lineup 2023]]></title>
+            <description><![CDATA[For the past several years podcasts have been an integral part of my personal development process. Each year I like to share the podcasts that I'm subscribed to with the goal of spreading the word and explaining why I find them worth listening to. Here's my list for 2023!]]></description>
+            <link>https://aaronbos.dev/posts/podcast-lineup-2023</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/podcast-lineup-2023</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[podcasts]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 16 Jun 2023 01:25:06 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[How to Use SemaphoreSlim in C#]]></title>
             <description><![CDATA[Historically I've held an opinion that reaching for more uncommon parts of a programming language to solve a problem meant that there was likely a better, less complicated solution. I'd put the use of semaphores in this category, but I recently had to reach for SemaphoreSlim to solve a problem. In this post, I'll discuss the concept of semaphores in general, their implementation in C#, and an example use case.]]></description>
