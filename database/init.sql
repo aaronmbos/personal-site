@@ -36,6 +36,9 @@ alter table post.post
   add constraint PK_post_post
     primary key (id);
 
+alter table post.post
+  add column if not exists is_indexed boolean not null default false;
+
 alter table post.reaction
   add constraint PK_post_reaction
     primary key (slug, ip_address, reaction_type);
