@@ -9,10 +9,21 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 16 Jun 2023 01:26:58 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Jul 2023 00:52:30 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Podcasts Lineup 2023]]></title>
+            <title><![CDATA[Managing "Dark Matter Time"]]></title>
+            <description><![CDATA[As I've grown in my software engineering career I've learned that time isn't always easy to manage. Learning to deal with writing code, context shifting, collaborating, and all of the other aspects that go into being an effective engineer can be challenging. In this post, I'm going to try to flesh out the idea of "dark matter time" and how we can learn to use it effectively. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/manage-dark-matter-time</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/manage-dark-matter-time</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[tips]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Sat, 01 Jul 2023 00:50:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Podcast Lineup 2023]]></title>
             <description><![CDATA[For the past several years podcasts have been an integral part of my personal development process. Each year I like to share the podcasts that I'm subscribed to with the goal of spreading the word and explaining why I find them worth listening to. Here's my list for 2023!]]></description>
             <link>https://aaronbos.dev/posts/podcast-lineup-2023</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/podcast-lineup-2023</guid>
