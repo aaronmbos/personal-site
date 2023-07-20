@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [A Closer Look at C# Extension Methods](https://aaronbos.dev/posts/closer-look-csharp-extension-methods)
 - [Managing "Dark Matter Time"](https://aaronbos.dev/posts/manage-dark-matter-time)
 - [Podcasts Lineup 2023](https://aaronbos.dev/posts/podcast-lineup-2023)
 - [How to Use SemaphoreSlim in C#](https://aaronbos.dev/posts/how-to-use-semaphoreslim-csharp)

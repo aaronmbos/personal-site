@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 01 Jul 2023 00:52:30 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jul 2023 02:54:00 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[A Closer Look at C# Extension Methods]]></title>
+            <description><![CDATA[Extension methods have been around in .NET for a long time and most developers use them daily without even realizing it. In this post, we're going to take a closer look at extension methods and how they work. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/closer-look-csharp-extension-methods</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/closer-look-csharp-extension-methods</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 20 Jul 2023 02:52:50 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Managing "Dark Matter Time"]]></title>
             <description><![CDATA[As I've grown in my software engineering career I've learned that time isn't always easy to manage. Learning to deal with writing code, context shifting, collaborating, and all of the other aspects that go into being an effective engineer can be challenging. In this post, I'm going to try to flesh out the idea of "dark matter time" and how we can learn to use it effectively. Let's dive in!]]></description>
