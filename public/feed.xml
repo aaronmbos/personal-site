@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 20 Jul 2023 02:54:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Aug 2023 01:59:32 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Developing A Growth Mindset]]></title>
+            <description><![CDATA[Life can be challenging. We are put into situations that challenge us mentally and physically all of the time. The mindset that we have going into these situations can significantly affect the outcome positively or negatively. In this post, I'll share my takeaways from the book Mindset by Carol Dweck which focuses on using a growth mindset to navigate difficult situations.]]></description>
+            <link>https://aaronbos.dev/posts/devloping-growth-mindset</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/devloping-growth-mindset</guid>
+            <category><![CDATA[personal]]></category>
+            <category><![CDATA[growth]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 01 Aug 2023 01:58:32 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[A Closer Look at C# Extension Methods]]></title>
             <description><![CDATA[Extension methods have been around in .NET for a long time and most developers use them daily without even realizing it. In this post, we're going to take a closer look at extension methods and how they work. Let's dive in!]]></description>

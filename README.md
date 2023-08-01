@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Developing A Growth Mindset](https://aaronbos.dev/posts/devloping-growth-mindset)
 - [A Closer Look at C# Extension Methods](https://aaronbos.dev/posts/closer-look-csharp-extension-methods)
 - [Managing "Dark Matter Time"](https://aaronbos.dev/posts/manage-dark-matter-time)
 - [Podcasts Lineup 2023](https://aaronbos.dev/posts/podcast-lineup-2023)
