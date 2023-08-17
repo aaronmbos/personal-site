@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 01 Aug 2023 01:59:32 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 17 Aug 2023 03:37:29 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Engineer to Manager: Initial Thoughts]]></title>
+            <description><![CDATA[I recently made the switch from Senior Engineering to Engineering Manager 😱. In this post, I'll share some general thoughts on the experience so far. While everyone's experience and situation is different, I think it's helpful to share my initial thoughts about making the transition a successful one for everyone.]]></description>
+            <link>https://aaronbos.dev/posts/engineer-to-manager-initial-thoughts</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/engineer-to-manager-initial-thoughts</guid>
+            <category><![CDATA[engineering]]></category>
+            <category><![CDATA[management]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 17 Aug 2023 03:36:16 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Developing A Growth Mindset]]></title>
             <description><![CDATA[Life can be challenging. We are put into situations that challenge us mentally and physically all of the time. The mindset that we have going into these situations can significantly affect the outcome positively or negatively. In this post, I'll share my takeaways from the book Mindset by Carol Dweck which focuses on using a growth mindset to navigate difficult situations.]]></description>
