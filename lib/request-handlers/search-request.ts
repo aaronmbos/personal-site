@@ -3,7 +3,8 @@ import { BlogIndex } from "../../constants";
 import { ApiResponse, SearchHit } from "../../types/api/types";
 
 export async function handleGet(
-  query: string
+  query: string,
+  attribute?: "metadata"
 ): Promise<ApiResponse<SearchHit[]>> {
   const client = algoliasearch(
     process.env.ALGOLIA_APP_ID!,
@@ -11,6 +12,14 @@ export async function handleGet(
   );
 
   const index = client.initIndex(BlogIndex);
+  let algoliaResults;
+  if (!attribute) {
+    algoliaResults = (await index.search<SearchHit>(query)).hits;
+  } else {
+    algoliaResults = (
+      await index.search<SearchHit>("", { filters: `${attribute}:${query}` })
+    ).hits;
+  }
   const rawResults = (await index.search<SearchHit>(query)).hits;
   return {
     // Unfortunately need to map here to make sure the entire content isn't sent in the response

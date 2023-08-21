@@ -11,6 +11,7 @@ import { ApiResponse, SearchHit } from "../types/api/types";
 export default function Search() {
   const router = useRouter();
   const q = router.query["q"] as string | undefined;
+  const attr = router.query["a"] as string | undefined;
   const decodedQuery = decodeURIComponent(q ?? "");
   const [results, setResults] = useState<Array<SearchHit>>([]);
   const [searchError, setSearchError] = useState<string>("");
@@ -26,6 +27,7 @@ export default function Search() {
           method: "POST",
           body: JSON.stringify({
             query: query,
+            attribute: attr,
           }),
           headers: new Headers({
             "Content-Type": "application/json",

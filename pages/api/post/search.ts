@@ -22,8 +22,9 @@ export default async function handler(
 
 interface Params {
   query: string;
+  attribute?: "metadata";
 }
 
 function parseRequestBody(body: any): Params {
-  return { query: body["query"] };
+  return { query: body["query"], attribute: body["attribute"] };
 }
