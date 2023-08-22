@@ -77,7 +77,7 @@ export default function Search() {
               placeholder="Search posts"
               maxLength={MaxSearchLength}
               id="q"
-              defaultValue={decodedQuery}
+              defaultValue={q && decodedQuery}
               className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
               type="search"
               onKeyUp={(e) => {

@@ -9,7 +9,6 @@ export async function handleGet(
   query: string
 ): Promise<ApiResponse<SearchHit[]>> {
   const rawResults = await search(parseQuery(query));
-  console.log(rawResults);
 
   return {
     // Unfortunately need to map here to make sure the entire content isn't sent in the response
@@ -34,17 +33,15 @@ type AlgoliaQuery = {
 };
 
 function parseQuery(query: string): AlgoliaQuery {
-  console.log(query);
   // Currently this only supports a single tag, but could be expanded if needed
   if (query.toLowerCase().startsWith("tag:")) {
-    return { query: "", filters: `metadata:"${query.substring(4)}"` };
+    return { query: "", filters: `metadata:${query.substring(4)}` };
   }
 
   return { query };
 }
 
 async function search(query: AlgoliaQuery) {
-  console.log(query);
   const client = algoliasearch(
     process.env.ALGOLIA_APP_ID!,
     process.env.ALGOLIA_SEARCH_API_KEY!
@@ -55,6 +52,5 @@ async function search(query: AlgoliaQuery) {
     return (await index.search<SearchHit>(query.query)).hits;
   }
 
-  return (await index.search<SearchHit>("", { filters: 'metadata: "musings"' }))
-    .hits;
+  return (await index.search<SearchHit>("", { filters: query.filters })).hits;
 }
