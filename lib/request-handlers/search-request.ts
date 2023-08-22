@@ -1,7 +1,4 @@
-import algoliasearch, {
-  AlgoliaSearchOptions,
-  SearchIndex,
-} from "algoliasearch";
+import algoliasearch from "algoliasearch";
 import { BlogIndex } from "../../constants";
 import { ApiResponse, SearchHit } from "../../types/api/types";
 
