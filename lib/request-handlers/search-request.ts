@@ -9,16 +9,22 @@ export async function handleGet(
 
   return {
     // Unfortunately need to map here to make sure the entire content isn't sent in the response
-    data: rawResults.map((h) => {
-      return {
-        objectID: h.objectID,
-        title: h.title,
-        description: h.description,
-        date: h.date,
-        metadata: h.metadata,
-        slug: h.slug,
-      };
-    }),
+    data: rawResults
+      .map((h) => {
+        return {
+          objectID: h.objectID,
+          title: h.title,
+          description: h.description,
+          date: h.date,
+          metadata: h.metadata,
+          slug: h.slug,
+        };
+      })
+      .sort(
+        (a, b) =>
+          new Date(b.date).getMilliseconds() -
+          new Date(a.date).getMilliseconds()
+      ),
     isSuccess: true,
     message: "",
   };

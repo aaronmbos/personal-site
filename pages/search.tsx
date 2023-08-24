@@ -12,6 +12,7 @@ export default function Search() {
   const router = useRouter();
   const q = router.query["q"] as string | undefined;
   const decodedQuery = decodeURIComponent(q ?? "");
+  const [input, setInput] = useState(decodedQuery ?? "");
   const [results, setResults] = useState<Array<SearchHit>>([]);
   const [searchError, setSearchError] = useState<string>("");
 
@@ -41,6 +42,7 @@ export default function Search() {
         }
       };
 
+      setInput(decodedQuery);
       search(sanitizedQuery);
     }
   }, [q]);
@@ -48,7 +50,7 @@ export default function Search() {
   const handleClick = () => handleSearch();
 
   const handleSearch = () => {
-    const query = (document.getElementById("q") as HTMLInputElement).value;
+    let query = (document.getElementById("q") as HTMLInputElement).value;
     if ((query && query.length === 0) || typeof query !== "string") {
       return;
     }
@@ -77,7 +79,8 @@ export default function Search() {
               placeholder="Search posts"
               maxLength={MaxSearchLength}
               id="q"
-              defaultValue={q && decodedQuery}
+              onChange={(e) => setInput(e.target.value)}
+              value={input}
               className="my-5 mx-auto w-1/2 flex-1 sm:w-3/4 dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
               type="search"
               onKeyUp={(e) => {
