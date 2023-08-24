@@ -73,7 +73,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
   return (
     <>
       <hr className="mt-6" />
-      <div className="my-3 pt-2 flex flex-wrap">
+      <div className="my-2 pt-2 flex flex-wrap">
         {!error && (
           <button
             type="button"
