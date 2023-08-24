@@ -50,15 +50,14 @@ export default function Search() {
   const handleClick = () => handleSearch();
 
   const handleSearch = () => {
-    let query = (document.getElementById("q") as HTMLInputElement).value;
-    if ((query && query.length === 0) || typeof query !== "string") {
+    if (input && input.length === 0) {
       return;
     }
 
     router.push({
       pathname: "/search",
       query: {
-        q: encodeURIComponent(query.trim()),
+        q: encodeURIComponent(input.trim()),
       },
     });
   };
