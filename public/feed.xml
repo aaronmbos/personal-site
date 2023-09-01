@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 17 Aug 2023 03:37:29 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Sep 2023 04:02:23 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Understanding Thread-Safety in .NET]]></title>
+            <description><![CDATA[Writing code that always behaves as expected when run in parallel is HARD. I'll be the first to admit that I'm NOT an expert in this field, but I do my best to generally understand the principles that make parallel programming possible. This post attempts to unpack the "thread-safe" term for writing .NET code and explain some of the techniques that allow for thread safety to be possible.]]></description>
+            <link>https://aaronbos.dev/posts/understand-thread-safety-dotnet</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/understand-thread-safety-dotnet</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[dotnet]]></category>
+            <category><![CDATA[csharp]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 01 Sep 2023 04:01:43 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Engineer to Manager: Initial Thoughts]]></title>
             <description><![CDATA[I recently made the switch from Senior Engineering to Engineering Manager 😱. In this post, I'll share some general thoughts on the experience so far. While everyone's experience and situation is different, I think it's helpful to share my initial thoughts about making the transition a successful one for everyone.]]></description>

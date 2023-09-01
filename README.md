@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Understanding Thread-Safety in .NET](https://aaronbos.dev/posts/understand-thread-safety-dotnet)
 - [Engineer to Manager: Initial Thoughts](https://aaronbos.dev/posts/engineer-to-manager-initial-thoughts)
 - [Developing A Growth Mindset](https://aaronbos.dev/posts/devloping-growth-mindset)
 - [A Closer Look at C# Extension Methods](https://aaronbos.dev/posts/closer-look-csharp-extension-methods)
