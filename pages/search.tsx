@@ -17,7 +17,6 @@ export default function Search() {
   const [input, setInput] = useState(decodedQuery ?? "");
 
   const searchPosts = async (query: string) => {
-    await new Promise((r) => setTimeout(r, 5000));
     const sanitizedQuery = decodeURIComponent(
       query.trim().substring(0, MaxSearchLength - 1)
     );
