@@ -111,35 +111,32 @@ export default function Search() {
             <div className="text-center my-2 text-red-500 dark:text-red-300">
               {error.message}
             </div>
+          ) : data?.length === 0 ? (
+            <div className="text-center my-2 font-bold">No results found.</div>
           ) : (
-            (data?.length ?? 0 > 0) && (
+            <div>
+              <h3 className="text-xl font-bold my-2">Search results</h3>
               <div>
-                <h3 className="text-xl font-bold my-2">Search results</h3>
-                <div>
-                  {data?.map((result) => {
-                    return (
-                      <PostPreview
-                        key={result.objectID}
-                        slug={result.slug}
-                        title={result.title}
-                        description={result.description}
-                        date={new Date(result.date).toLocaleDateString(
-                          "en-US",
-                          {
-                            weekday: "long",
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                            timeZone: "America/Chicago",
-                          }
-                        )}
-                        metadata={result.metadata}
-                      />
-                    );
-                  })}
-                </div>
+                {data?.map((result) => {
+                  return (
+                    <PostPreview
+                      key={result.objectID}
+                      slug={result.slug}
+                      title={result.title}
+                      description={result.description}
+                      date={new Date(result.date).toLocaleDateString("en-US", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        timeZone: "America/Chicago",
+                      })}
+                      metadata={result.metadata}
+                    />
+                  );
+                })}
               </div>
-            )
+            </div>
           )}
         </div>
       </Layout>
