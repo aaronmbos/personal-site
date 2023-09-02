@@ -112,29 +112,34 @@ export default function Search() {
               {error.message}
             </div>
           ) : (
-            <div>
-              <h3 className="text-xl font-bold my-2">Search results</h3>
+            (data?.length ?? 0 > 0) && (
               <div>
-                {data?.map((result) => {
-                  return (
-                    <PostPreview
-                      key={result.objectID}
-                      slug={result.slug}
-                      title={result.title}
-                      description={result.description}
-                      date={new Date(result.date).toLocaleDateString("en-US", {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        timeZone: "America/Chicago",
-                      })}
-                      metadata={result.metadata}
-                    />
-                  );
-                })}
+                <h3 className="text-xl font-bold my-2">Search results</h3>
+                <div>
+                  {data?.map((result) => {
+                    return (
+                      <PostPreview
+                        key={result.objectID}
+                        slug={result.slug}
+                        title={result.title}
+                        description={result.description}
+                        date={new Date(result.date).toLocaleDateString(
+                          "en-US",
+                          {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            timeZone: "America/Chicago",
+                          }
+                        )}
+                        metadata={result.metadata}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )
           )}
         </div>
       </Layout>
