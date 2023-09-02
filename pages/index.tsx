@@ -7,7 +7,7 @@ import AllPostsLink from "../components/all-posts-link";
 import { GetStaticProps } from "next";
 
 interface Props {
-  recentPosts: BlogPost[]
+  recentPosts: BlogPost[];
 }
 
 export default function Home({ recentPosts }: Props) {
@@ -21,15 +21,15 @@ export default function Home({ recentPosts }: Props) {
           <Intro />
           <RecentPosts recentPosts={recentPosts} />
         </section>
-        <AllPostsLink text="See All Posts" />
+        <AllPostsLink text="See all posts" />
       </Layout>
     </>
   );
 }
 
-export const getStaticProps : GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const recentPosts = await getRecentPosts();
   return {
-    props: { recentPosts }
+    props: { recentPosts },
   };
-}
+};

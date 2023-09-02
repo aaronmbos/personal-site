@@ -72,7 +72,7 @@ export default function About() {
           the bottom of the page. I’d love to hear from you!
         </p>
         <p className="my-4">Happy reading!</p>
-        <AllPostsLink text="See My Blog Posts" />
+        <AllPostsLink text="See all my posts" />
       </section>
     </Layout>
   );
