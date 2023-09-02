@@ -7,45 +7,47 @@ import ButtonIcon from "../components/button-icon";
 import { icons } from "../types/icons";
 import PostPreview from "../components/post-preview";
 import { ApiResponse, SearchHit } from "../types/api/types";
+import useSWR from "swr";
+import LoadingSpinner from "../components/loading-spinner";
 
 export default function Search() {
   const router = useRouter();
   const q = router.query["q"] as string | undefined;
   const decodedQuery = decodeURIComponent(q ?? "");
   const [input, setInput] = useState(decodedQuery ?? "");
-  const [results, setResults] = useState<Array<SearchHit>>([]);
-  const [searchError, setSearchError] = useState<string>("");
 
+  const searchPosts = async (query: string) => {
+    const sanitizedQuery = decodeURIComponent(
+      query.trim().substring(0, MaxSearchLength - 1)
+    );
+
+    const response = await fetch(`/api/post/search`, {
+      method: "POST",
+      body: JSON.stringify({
+        query: sanitizedQuery,
+      }),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }),
+    });
+    const results = (await response.json()) as ApiResponse<SearchHit[]>;
+
+    if (results?.isSuccess) {
+      return results.data;
+    } else {
+      throw new Error(results?.message ?? "An error occurred during search.");
+    }
+  };
+
+  const shouldQuery = q && q.length > 0 && typeof q === "string";
   useEffect(() => {
-    if (q && q.length > 0 && typeof q === "string") {
-      const sanitizedQuery = decodeURIComponent(
-        q.trim().substring(0, MaxSearchLength - 1)
-      );
-
-      const search = async (query: string) => {
-        const response = await fetch(`/api/post/search`, {
-          method: "POST",
-          body: JSON.stringify({
-            query: query,
-          }),
-          headers: new Headers({
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          }),
-        });
-        const results = (await response.json()) as ApiResponse<SearchHit[]>;
-
-        if (results.isSuccess) {
-          setResults(results.data);
-        } else {
-          setSearchError(results.message);
-        }
-      };
-
+    if (shouldQuery) {
       setInput(decodedQuery);
-      search(sanitizedQuery);
     }
   }, [q]);
+
+  const { data, error, isLoading } = useSWR(q, searchPosts);
 
   const handleClick = () => handleSearch();
 
@@ -65,13 +67,13 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>Search{q && ` - ${decodedQuery}`}</title>
+        <title>{q ? `Search - ${decodedQuery}` : "Search"}</title>
       </Head>
 
       <Layout>
         <div className="container">
           <h2 className="text-2xl font-bold text-center my-2 break-words">
-            Search{q && `: "${decodedQuery}"`}
+            {q ? `Search: ${decodedQuery}` : "Search"}
           </h2>
           <div className="text-center align-bottom flex">
             <input
@@ -100,34 +102,44 @@ export default function Search() {
               />
             </button>
           </div>
-          {results.length > 0 ? (
-            <div>
-              <h3 className="text-xl font-bold my-2">Search results</h3>
-              <div>
-                {results.map((result) => {
-                  return (
-                    <PostPreview
-                      key={result.objectID}
-                      slug={result.slug}
-                      title={result.title}
-                      description={result.description}
-                      date={new Date(result.date).toLocaleDateString("en-US", {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        timeZone: "America/Chicago",
-                      })}
-                      metadata={result.metadata}
-                    />
-                  );
-                })}
-              </div>
+          {isLoading ? (
+            <div className="text-center font-bold my-2">
+              Searching for posts
+              <LoadingSpinner />
             </div>
+          ) : error ? (
+            <div className="text-center my-2 text-red-500 dark:text-red-300">
+              {error.message}
+            </div>
+          ) : data?.length === 0 ? (
+            <div className="text-center my-2 font-bold">No results found.</div>
           ) : (
-            searchError.length > 0 && (
-              <div className="text-center my-2 text-red-500 dark:text-red-300">
-                {searchError}
+            q && (
+              <div>
+                <h3 className="text-xl font-bold my-2">Search results</h3>
+                <div>
+                  {data?.map((result) => {
+                    return (
+                      <PostPreview
+                        key={result.objectID}
+                        slug={result.slug}
+                        title={result.title}
+                        description={result.description}
+                        date={new Date(result.date).toLocaleDateString(
+                          "en-US",
+                          {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            timeZone: "America/Chicago",
+                          }
+                        )}
+                        metadata={result.metadata}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             )
           )}
