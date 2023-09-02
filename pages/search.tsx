@@ -107,7 +107,11 @@ export default function Search() {
               Searching for posts
               <LoadingSpinner />
             </div>
-          ) : data?.length ?? 0 > 0 ? (
+          ) : error ? (
+            <div className="text-center my-2 text-red-500 dark:text-red-300">
+              {error.message}
+            </div>
+          ) : (
             <div>
               <h3 className="text-xl font-bold my-2">Search results</h3>
               <div>
@@ -131,12 +135,6 @@ export default function Search() {
                 })}
               </div>
             </div>
-          ) : (
-            (error?.length ?? 0) > 0 && (
-              <div className="text-center my-2 text-red-500 dark:text-red-300">
-                {error.message}
-              </div>
-            )
           )}
         </div>
       </Layout>
