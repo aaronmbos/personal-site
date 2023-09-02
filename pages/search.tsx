@@ -8,6 +8,7 @@ import { icons } from "../types/icons";
 import PostPreview from "../components/post-preview";
 import { ApiResponse, SearchHit } from "../types/api/types";
 import useSWR from "swr";
+import LoadingSpinner from "../components/loading-spinner";
 
 export default function Search() {
   const router = useRouter();
@@ -15,7 +16,8 @@ export default function Search() {
   const decodedQuery = decodeURIComponent(q ?? "");
   const [input, setInput] = useState(decodedQuery ?? "");
 
-  const fetcher = async (query: string) => {
+  const searchPosts = async (query: string) => {
+    await new Promise((r) => setTimeout(r, 5000));
     const sanitizedQuery = decodeURIComponent(
       query.trim().substring(0, MaxSearchLength - 1)
     );
@@ -46,7 +48,7 @@ export default function Search() {
     }
   }, [q]);
 
-  const { data, error, isLoading } = useSWR(q, fetcher);
+  const { data, error, isLoading } = useSWR(q, searchPosts);
 
   const handleClick = () => handleSearch();
 
@@ -102,8 +104,10 @@ export default function Search() {
             </button>
           </div>
           {isLoading ? (
-            // TODO: Implementing loading state
-            <div>Loading</div>
+            <div className="text-center font-bold my-2">
+              Searching for posts
+              <LoadingSpinner />
+            </div>
           ) : data?.length ?? 0 > 0 ? (
             <div>
               <h3 className="text-xl font-bold my-2">Search results</h3>
