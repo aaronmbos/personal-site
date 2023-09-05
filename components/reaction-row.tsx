@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { Reaction, ReactionType } from "../types/api/types";
 import AnchorButton from "./anchor-button";
+import ClipboardButton from "./clipboard-button";
 import ButtonIcon from "./button-icon";
 import { icons } from "../types/icons";
 
@@ -38,24 +39,6 @@ async function deleteReaction(
     { method: "DELETE" }
   ).then((r) => r.json());
   return JSON.parse(res) as Reaction[];
-}
-
-function copyToClipboard(url: string) {
-  if (document.getElementById("clip")?.classList.contains("hidden")) {
-    return;
-  }
-  navigator.clipboard.writeText(url);
-  window.setTimeout(() => {
-    toggleClipboard("Copy link");
-  }, 1000);
-
-  toggleClipboard("Copied!");
-}
-
-function toggleClipboard(text: string) {
-  (document.getElementById("clip-text") as HTMLSpanElement).innerText = text;
-  document.getElementById("clip")?.classList.toggle("hidden");
-  document.getElementById("clipped")?.classList.toggle("hidden");
 }
 
 export default function ReactionRow({ postSlug, url }: Props) {
@@ -115,29 +98,7 @@ export default function ReactionRow({ postSlug, url }: Props) {
           />
           <span className="text-sm ml-2">Subscribe</span>
         </AnchorButton>
-        <button
-          id="clip-btn"
-          type="button"
-          className={`text-sm mb-3 mr-2 py-2 px-3 rounded-lg bg-gray-100 dark:bg-stone-900 hover:ring-2 ring-stone-400 transition-all`}
-          onClick={() => copyToClipboard(url)}
-        >
-          <ButtonIcon
-            id="clip"
-            fill="currentColor"
-            path={icons.emptyClipboard}
-            dimensions={[17, 17]}
-          />
-          <ButtonIcon
-            id="clipped"
-            fill="currentColor"
-            path={icons.copiedClipboard}
-            classList={["hidden"]}
-            dimensions={[17, 17]}
-          />{" "}
-          <span id="clip-text" className="text-sm ml-1">
-            Copy link
-          </span>
-        </button>
+        <ClipboardButton url={url} />
       </div>
     </>
   );
