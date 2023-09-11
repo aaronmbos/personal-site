@@ -23,5 +23,4 @@ jobs:
           node-version: 18.x
           cache: "npm"
       - run: npm install
-      - run: echo ${{secrets.DATABASE_URL}}
       - run: cd ./scripts && node ./update-algolia.mjs
