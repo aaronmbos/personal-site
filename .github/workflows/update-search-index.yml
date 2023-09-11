@@ -16,6 +16,7 @@ jobs:
           DATABASE_URL: ${{secrets.DATABASE_URL}}
           ALGOLIA_APP_ID: ${{secrets.ALGOLIA_APP_ID}}
           ALGOLIA_SEARCH_API_KEY: ${{secrets.ALGOLIA_SEARCH_API_KEY}}
+          CERT: ${{secrets.CERT}}
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
