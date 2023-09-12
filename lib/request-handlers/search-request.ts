@@ -30,9 +30,19 @@ type AlgoliaQuery = {
 };
 
 function parseQuery(query: string): AlgoliaQuery {
-  // Currently this only supports a single tag, but could be expanded if needed
+  // Support multiple tags formatted as "tag:tag1,tag2,tag3"
   if (query.toLowerCase().startsWith("tag:")) {
-    return { query: "", filters: `metadata:${query.substring(4)}` };
+    var filters = query
+      .replace(/,\s*$/, "") // Remove trailing commas
+      .substring(4)
+      .split(",")
+      .map((f) => {
+        if (f.length > 0) {
+          return `metadata:${f.trim()}`;
+        }
+      })
+      .join(" OR ");
+    return { query: "", filters: filters };
   }
 
   return { query };
