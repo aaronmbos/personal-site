@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Sep 2023 04:02:23 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Sep 2023 01:41:19 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Q3 Roadmap Feature: Search Improvements]]></title>
+            <description><![CDATA[At the beginning of the year, I created a roadmap to plan the development of my blog itself. In this post, I'll talk through the improvements for this quarter that involved the blog post search experience. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/q3-feature-improved-search</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/q3-feature-improved-search</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[blog]]></category>
+            <category><![CDATA[roadmap]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 15 Sep 2023 01:40:28 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Understanding Thread-Safety in .NET]]></title>
             <description><![CDATA[Writing code that always behaves as expected when run in parallel is HARD. I'll be the first to admit that I'm NOT an expert in this field, but I do my best to generally understand the principles that make parallel programming possible. This post attempts to unpack the "thread-safe" term for writing .NET code and explain some of the techniques that allow for thread safety to be possible.]]></description>
