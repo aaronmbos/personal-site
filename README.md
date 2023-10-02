@@ -28,6 +28,8 @@
 ## Posts
 
 ### 2023
+
+- [Leading with Trust](https://aaronbos.dev/posts/leading-with-trust)
 - [Q3 Roadmap Feature: Search Improvements](https://aaronbos.dev/posts/q3-feature-improved-search)
 - [Understanding Thread-Safety in .NET](https://aaronbos.dev/posts/understand-thread-safety-dotnet)
 - [Engineer to Manager: Initial Thoughts](https://aaronbos.dev/posts/engineer-to-manager-initial-thoughts)

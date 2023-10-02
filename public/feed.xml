@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 15 Sep 2023 01:41:19 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Oct 2023 02:35:12 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Leading with Trust]]></title>
+            <description><![CDATA[Trust is a foundational piece of most relationships and it's no different with technical leadership. In this post, I'll share my thoughts on the benefits of building trust with teammates to become an effective leader.]]></description>
+            <link>https://aaronbos.dev/posts/leading-with-trust</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/leading-with-trust</guid>
+            <category><![CDATA[management]]></category>
+            <category><![CDATA[leadership]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 02 Oct 2023 02:34:06 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Q3 Roadmap Feature: Search Improvements]]></title>
             <description><![CDATA[At the beginning of the year, I created a roadmap to plan the development of my blog itself. In this post, I'll talk through the improvements for this quarter that involved the blog post search experience. Let's dive in!]]></description>
