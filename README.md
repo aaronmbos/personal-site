@@ -13,7 +13,7 @@
 | Q1      | Framework and dependency upgrades             | Done ([PR](https://github.com/aaronmbos/personal-site/pull/24))                                                                                                                                                                           |
 | Q2      | Migrate posts from markdown files to database | Done ([PR](https://github.com/aaronmbos/personal-site/pull/33))                                                                                                                                                                           |
 | Q3      | Improve post search experience                | Done ([1](https://github.com/aaronmbos/personal-site/pull/40), [2](https://github.com/aaronmbos/personal-site/pull/42), [3](https://github.com/aaronmbos/personal-site/pull/43), [4](https://github.com/aaronmbos/personal-site/pull/46)) |
-| Q4      | Add pagination to posts page                  | Not started                                                                                                                                                                                                                               |
+| Q4      | Add pagination to posts page                  | In progress ([Branch](https://github.com/aaronmbos/personal-site/tree/feat/q4-post-pagination))                                                                                                                                           |
 
 ### 2022
 
