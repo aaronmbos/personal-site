@@ -37,6 +37,8 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
   return toBlogPost(post);
 }
 
+export async function getPaginatedPosts(page: number, pageSize: number) {}
+
 function formatDate(date: Date): string {
   var options: Intl.DateTimeFormatOptions = {
     weekday: "long",
