@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Battling Burnout](https://aaronbos.dev/posts/battling-burnout)
 - [Book Review: Engineering Management for the Rest of Us](https://aaronbos.dev/posts/engineering-management-for-the-rest-of-us-review)
 - [Leading with Trust](https://aaronbos.dev/posts/leading-with-trust)
 - [Q3 Roadmap Feature: Search Improvements](https://aaronbos.dev/posts/q3-feature-improved-search)
