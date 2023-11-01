@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 23 Oct 2023 00:36:36 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Nov 2023 02:26:25 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Battling Burnout]]></title>
+            <description><![CDATA[I’ve heard of others experiencing feelings of burnout in relation to free time or side projects, but I had never experienced it for myself. While I’m sure it’s different for everyone, I recently started to feel burned out with the time I spent outside of work on things that felt like work. In this post, I’ll share how I’ve dealt with and moved on from those feelings. Let’s dive in!]]></description>
+            <link>https://aaronbos.dev/posts/battling-burnout</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/battling-burnout</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 01 Nov 2023 02:25:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Book Review: Engineering Management for the Rest of Us]]></title>
             <description><![CDATA[In this post, I'll share a short review of "Engineering Management for the Rest of Us" by Sarah Drasner. I heard about this book in a podcast a while back and I was excited to give it a read since I've recently transitioned into an engineering management role. Let's dive in!]]></description>
