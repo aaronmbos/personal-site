@@ -37,7 +37,17 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
   return toBlogPost(post);
 }
 
-export async function getPaginatedPosts(page: number, pageSize: number) {}
+export async function getPaginatedPosts(
+  page: number,
+  pageSize: number
+): Promise<BlogPost[]> {
+  const offset = page * pageSize;
+  const posts = await sql<
+    Post[]
+  >`${baseQuery} order by published_at desc limit ${pageSize} offset ${offset}`;
+
+  return posts.map(toBlogPost);
+}
 
 function formatDate(date: Date): string {
   var options: Intl.DateTimeFormatOptions = {
