@@ -22,11 +22,13 @@ export default function Posts({ posts }: Props) {
             return <PostPreview key={post.id} {...post} />;
           })}
         </section>
+        {/* TODO: Add paging component */}
       </Layout>
     </>
   );
 }
 
+// TODO: Convert to getServerSideProps using paginated request
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts();
   return {
