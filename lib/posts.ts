@@ -41,7 +41,7 @@ export async function getPaginatedPosts(
   page: number,
   pageSize: number
 ): Promise<BlogPost[]> {
-  const offset = page * pageSize;
+  const offset = (page - 1) * pageSize;
   const posts = await sql<
     Post[]
   >`${baseQuery} order by published_at desc limit ${pageSize} offset ${offset}`;
