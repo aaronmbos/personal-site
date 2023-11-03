@@ -1,16 +1,17 @@
 import Layout from "../components/layout";
 import PostPreview from "../components/post-preview";
-import { getAllPosts, getPaginatedPosts, BlogPost } from "../lib/posts";
+import { getPaginatedPosts, BlogPost } from "../lib/posts";
 import Head from "next/head";
-import { GetStaticProps } from "next";
-import { useState } from "react";
+import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 
 interface Props {
   posts: BlogPost[];
+  page: number;
 }
 
-export default function Posts({ posts }: Props) {
-  const [page, setPage] = useState(1);
+export default function Posts({ posts, page }: Props) {
+  const router = useRouter();
 
   return (
     <>
@@ -28,14 +29,20 @@ export default function Posts({ posts }: Props) {
         {/* TODO: Add paging component */}
         <button
           onClick={() => {
-            setPage(page + 1);
+            router.push({
+              pathname: "/posts",
+              query: { page: page + 1 },
+            });
           }}
         >
           Forward
         </button>
         <button
           onClick={() => {
-            setPage(page - 1);
+            router.push({
+              pathname: "/posts",
+              query: { page: page - 1 },
+            });
           }}
         >
           Back
@@ -45,11 +52,13 @@ export default function Posts({ posts }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getPaginatedPosts(1, 15);
+export const getServerSideProps = (async ({ res, query }) => {
+  const page = parseInt(query["page"] as string) || 1;
+  const posts = await getPaginatedPosts(page, 15);
   return {
     props: {
       posts,
+      page,
     },
   };
-};
+}) satisfies GetServerSideProps<Props>;
