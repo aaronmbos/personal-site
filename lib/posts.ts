@@ -1,6 +1,7 @@
 import postgres from "postgres";
 import sql from "../database/db.mjs";
-import { Post } from "../types/database/types.js";
+import { PagedPost, Post } from "../types/database/types.js";
+import { Paged } from "../types/api/types.js";
 
 export interface BlogPost {
   id: string;
@@ -40,13 +41,23 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
 export async function getPaginatedPosts(
   page: number,
   pageSize: number
-): Promise<BlogPost[]> {
+): Promise<Paged<BlogPost>> {
   const offset = (page - 1) * pageSize;
   const posts = await sql<
-    Post[]
-  >`${baseQuery} order by published_at desc limit ${pageSize} offset ${offset}`;
-
-  return posts.map(toBlogPost);
+    PagedPost[]
+  >`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at, count from post.post
+    cross join (select count(*) from post.post where published_at is not null) as count
+    where published_at is not null
+    order by published_at desc
+    limit ${pageSize}
+    offset ${offset}`;
+  const count = posts[0].count;
+  return {
+    page: page,
+    data: posts.map((p) => toBlogPost(p)),
+    total: count,
+    limit: Math.ceil(count / pageSize),
+  };
 }
 
 function formatDate(date: Date): string {

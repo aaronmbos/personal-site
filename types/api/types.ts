@@ -55,3 +55,10 @@ export type PostPatchFields =
   | "publishedAt";
 
 export const parseJsonRequest = <T>(req: string): T => JSON.parse(req) as T;
+
+export interface Paged<T> {
+  data: T[];
+  page: number;
+  limit: number;
+  total: number;
+}

@@ -2,15 +2,17 @@ import Layout from "../components/layout";
 import PostPreview from "../components/post-preview";
 import { getPaginatedPosts, BlogPost } from "../lib/posts";
 import Head from "next/head";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
+import PaginationRow from "../components/pagination-row";
 
 interface Props {
   posts: BlogPost[];
   page: number;
+  limit: number;
 }
 
-export default function Posts({ posts, page }: Props) {
+export default function Posts({ posts, page, limit }: Props) {
   const router = useRouter();
 
   return (
@@ -26,39 +28,19 @@ export default function Posts({ posts, page }: Props) {
             return <PostPreview key={post.id} {...post} />;
           })}
         </section>
-        {/* TODO: Add paging component */}
-        <button
-          onClick={() => {
-            router.push({
-              pathname: "/posts",
-              query: { page: page + 1 },
-            });
-          }}
-        >
-          Forward
-        </button>
-        <button
-          onClick={() => {
-            router.push({
-              pathname: "/posts",
-              query: { page: page - 1 },
-            });
-          }}
-        >
-          Back
-        </button>
+        <PaginationRow page={page} limit={limit} />
       </Layout>
     </>
   );
 }
-
-export const getServerSideProps = (async ({ res, query }) => {
-  const page = parseInt(query["page"] as string) || 1;
-  const posts = await getPaginatedPosts(page, 15);
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const page = parseInt(context.query["page"] as string) || 1;
+  const { data, limit } = await getPaginatedPosts(page, 15);
   return {
     props: {
-      posts,
+      posts: data,
       page,
+      limit,
     },
   };
-}) satisfies GetServerSideProps<Props>;
+}
