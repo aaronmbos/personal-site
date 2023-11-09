@@ -1,7 +1,7 @@
 import postgres from "postgres";
 import sql from "../database/db.mjs";
 import { PagedPost, Post } from "../types/database/types.js";
-import { Paged } from "../types/api/types.js";
+import { Paged, SlimPost } from "../types/api/types.js";
 
 export interface BlogPost {
   id: string;
@@ -41,11 +41,11 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
 export async function getPaginatedPosts(
   page: number,
   pageSize: number
-): Promise<Paged<BlogPost>> {
+): Promise<Paged<SlimPost>> {
   const offset = (page - 1) * pageSize;
   const posts = await sql<
-    PagedPost[]
-  >`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at, count from post.post
+    Omit<PagedPost, "content">[]
+  >`select id, title, slug, description, tags, (published_at at time zone 'utc') as published_at, count from post.post
     cross join (select count(*) from post.post where published_at is not null) as count
     where published_at is not null
     order by published_at desc
@@ -54,7 +54,7 @@ export async function getPaginatedPosts(
   const count = posts[0].count;
   return {
     page: page,
-    data: posts.map((p) => toBlogPost(p)),
+    data: posts.map((p) => toPostPreview(p)),
     total: count,
     limit: Math.ceil(count / pageSize),
   };
@@ -76,6 +76,17 @@ function toBlogPost(post: Post): BlogPost {
     id: post.id,
     title: post.title as string,
     content: post.content as string,
+    slug: post.slug as string,
+    description: post.description as string,
+    metadata: post.tags as string[],
+    date: formatDate(post.published_at!),
+  };
+}
+
+function toPostPreview(post: Omit<PagedPost, "content">): SlimPost {
+  return {
+    id: post.id,
+    title: post.title as string,
     slug: post.slug as string,
     description: post.description as string,
     metadata: post.tags as string[],

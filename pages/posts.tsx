@@ -11,6 +11,8 @@ import { useRouter } from "next/router";
 import PaginationRow from "../components/pagination-row";
 import { useEffect } from "react";
 import useSWR from "swr";
+import { ApiResponse, Paged, SlimPost } from "../types/api/types";
+import { Post } from "../types/database/types";
 
 interface Props {
   posts: BlogPost[];
@@ -18,7 +20,7 @@ interface Props {
   limit: number;
 }
 
-export default function Posts({ posts, page, limit }: Props) {
+export default function Posts({ posts, limit }: Props) {
   const router = useRouter();
   const pageParam = router.query.page
     ? parseInt(router.query.page as string) || 1
@@ -26,12 +28,23 @@ export default function Posts({ posts, page, limit }: Props) {
 
   const getPostsForPage = async () => {
     if (pageParam !== 1) {
-      console.log("Fetching posts for page " + pageParam);
+      const response = await fetch(`/api/post/page/${pageParam}`, {
+        headers: new Headers({
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        }),
+      });
+      const results = (await response.json()) as ApiResponse<Paged<SlimPost>>;
+
+      if (results.isSuccess) {
+        console.log("success");
+      }
+      return results.data.data;
     }
   };
 
   const { data, error, isLoading } = useSWR(
-    pageParam === 1 ? null : `/api/posts/page/${pageParam}`,
+    pageParam === 1 ? null : `/api/post?page=${pageParam}`,
     getPostsForPage
   );
 
@@ -44,11 +57,19 @@ export default function Posts({ posts, page, limit }: Props) {
         <section className="mb-10">
           <h1 className="mb-4 font-semibold text-2xl">All Blog Posts</h1>
           <hr />
-          {posts.map((post) => {
-            return <PostPreview key={post.id} {...post} />;
-          })}
+          {isLoading ? (
+            <div>Loading ...</div>
+          ) : data ? (
+            data.map((post) => {
+              return <PostPreview key={post.id} {...post} />;
+            })
+          ) : (
+            posts.map((post) => {
+              return <PostPreview key={post.id} {...post} />;
+            })
+          )}
         </section>
-        <PaginationRow page={page} limit={limit} />
+        <PaginationRow page={pageParam} limit={limit} />
       </Layout>
     </>
   );
@@ -61,7 +82,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       posts: data,
-      page,
       limit,
     },
   };

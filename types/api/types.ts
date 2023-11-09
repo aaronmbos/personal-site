@@ -1,3 +1,5 @@
+import { BlogPost } from "../../lib/posts";
+
 export type ReactionType = "like";
 
 export interface Reaction {
@@ -62,3 +64,8 @@ export interface Paged<T> {
   limit: number;
   total: number;
 }
+
+export type SlimPost = Pick<
+  BlogPost,
+  "id" | "slug" | "description" | "date" | "metadata" | "title"
+>;
