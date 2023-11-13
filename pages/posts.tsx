@@ -2,21 +2,14 @@ import Layout from "../components/layout";
 import PostPreview from "../components/post-preview";
 import { getPaginatedPosts, BlogPost } from "../lib/posts";
 import Head from "next/head";
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetStaticProps,
-} from "next";
+import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import PaginationRow from "../components/pagination-row";
-import { useEffect } from "react";
 import useSWR from "swr";
 import { ApiResponse, Paged, SlimPost } from "../types/api/types";
-import { Post } from "../types/database/types";
 
 interface Props {
   posts: BlogPost[];
-  page: number;
   limit: number;
 }
 
@@ -36,15 +29,14 @@ export default function Posts({ posts, limit }: Props) {
       });
       const results = (await response.json()) as ApiResponse<Paged<SlimPost>>;
 
-      if (results.isSuccess) {
-        console.log("success");
-      }
       return results.data.data;
+    } else {
+      return posts;
     }
   };
 
   const { data, error, isLoading } = useSWR(
-    pageParam === 1 ? null : `/api/post?page=${pageParam}`,
+    `/api/post?page=${pageParam}`,
     getPostsForPage
   );
 
@@ -57,14 +49,11 @@ export default function Posts({ posts, limit }: Props) {
         <section className="mb-10">
           <h1 className="mb-4 font-semibold text-2xl">All Blog Posts</h1>
           <hr />
-          {isLoading ? (
+          {isLoading && pageParam !== 1 ? (
             <div>Loading ...</div>
-          ) : data ? (
-            data.map((post) => {
-              return <PostPreview key={post.id} {...post} />;
-            })
           ) : (
-            posts.map((post) => {
+            data &&
+            data.map((post) => {
               return <PostPreview key={post.id} {...post} />;
             })
           )}
@@ -76,8 +65,7 @@ export default function Posts({ posts, limit }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const page = 1;
-  const { data, limit } = await getPaginatedPosts(page, 15);
+  const { data, limit } = await getPaginatedPosts(1, 15);
 
   return {
     props: {
@@ -86,15 +74,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
-//export async function getServerSideProps(context: GetServerSidePropsContext) {
-//  const page = parseInt(context.query["page"] as string) || 1;
-//  const { data, limit } = await getPaginatedPosts(page, 15);
-//  return {
-//    props: {
-//      posts: data,
-//      page,
-//      limit,
-//    },
-//  };
-//}
