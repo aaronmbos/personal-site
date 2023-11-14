@@ -14,4 +14,4 @@ export interface Paged {
   count: number;
 }
 
-export interface PagedPost extends Post, Paged {}
+export type PagedPost = Omit<Post & Paged, "content">;

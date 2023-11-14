@@ -43,7 +43,7 @@ export async function getPaginatedPosts(
 ): Promise<Paged<SlimPost>> {
   const offset = (page - 1) * pageSize;
   const posts = await sql<
-    Omit<PagedPost, "content">[]
+    PagedPost[]
   >`select id, title, slug, description, tags, (published_at at time zone 'utc') as published_at, count from post.post
     cross join (select count(*) from post.post where published_at is not null) as count
     where published_at is not null
