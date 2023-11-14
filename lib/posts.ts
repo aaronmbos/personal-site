@@ -1,4 +1,3 @@
-import postgres from "postgres";
 import sql from "../database/db.mjs";
 import { PagedPost, Post } from "../types/database/types.js";
 import { Paged, SlimPost } from "../types/api/types.js";
