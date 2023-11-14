@@ -82,7 +82,7 @@ function toBlogPost(post: Post): BlogPost {
   };
 }
 
-function toPostPreview(post: Omit<PagedPost, "content">): SlimPost {
+function toPostPreview(post: PagedPost): SlimPost {
   return {
     id: post.id,
     title: post.title as string,
