@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Looking for Solutions Instead of Problems](https://aaronbos.dev/posts/solutions-over-problems)
 - [Battling Burnout](https://aaronbos.dev/posts/battling-burnout)
 - [Book Review: Engineering Management for the Rest of Us](https://aaronbos.dev/posts/engineering-management-for-the-rest-of-us-review)
 - [Leading with Trust](https://aaronbos.dev/posts/leading-with-trust)

@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 01 Nov 2023 02:26:25 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 17 Nov 2023 02:34:45 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Looking for Solutions Instead of Problems]]></title>
+            <description><![CDATA[Working in a field that is constantly changing can be challenging for a multitude of reasons. Our mindset for approaching the constant barrage of challenges can make a world of difference in both outcome and attitude. In this quick post, I'm going to share my thoughts on approaching problems with a solution-oriented mindset. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/solutions-over-problems</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/solutions-over-problems</guid>
+            <category><![CDATA[opinion]]></category>
+            <category><![CDATA[career]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 17 Nov 2023 02:34:07 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Battling Burnout]]></title>
             <description><![CDATA[I’ve heard of others experiencing feelings of burnout in relation to free time or side projects, but I had never experienced it for myself. While I’m sure it’s different for everyone, I recently started to feel burned out with the time I spent outside of work on things that felt like work. In this post, I’ll share how I’ve dealt with and moved on from those feelings. Let’s dive in!]]></description>
