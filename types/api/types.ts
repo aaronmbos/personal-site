@@ -1,3 +1,5 @@
+import { BlogPost } from "../../lib/posts";
+
 export type ReactionType = "like";
 
 export interface Reaction {
@@ -55,3 +57,15 @@ export type PostPatchFields =
   | "publishedAt";
 
 export const parseJsonRequest = <T>(req: string): T => JSON.parse(req) as T;
+
+export interface Paged<T> {
+  data: T[];
+  page: number;
+  limit: number;
+  total: number;
+}
+
+export type SlimPost = Pick<
+  BlogPost,
+  "id" | "slug" | "description" | "date" | "metadata" | "title"
+>;
