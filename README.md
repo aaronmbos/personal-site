@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Using Git's Reflog to Recover Data](https://aaronbos.dev/posts/recover-data-with-git-reflog)
 - [Looking for Solutions Instead of Problems](https://aaronbos.dev/posts/solutions-over-problems)
 - [Battling Burnout](https://aaronbos.dev/posts/battling-burnout)
 - [Book Review: Engineering Management for the Rest of Us](https://aaronbos.dev/posts/engineering-management-for-the-rest-of-us-review)
