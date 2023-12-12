@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 17 Nov 2023 02:34:45 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Nov 2023 04:29:34 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Using Git's Reflog to Recover Data]]></title>
+            <description><![CDATA[Git is a nearly ubiquitous tool for version control these days and it serves its purpose dutifully. As great as Git is, there are still sharp edges and chances for mistakes to happen. In this post, I'll be sharing information about a lesser-known feature in Git that can fix those mistakes and help with data recovery. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/recover-data-with-git-reflog</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/recover-data-with-git-reflog</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[git]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 30 Nov 2023 04:28:50 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Looking for Solutions Instead of Problems]]></title>
             <description><![CDATA[Working in a field that is constantly changing can be challenging for a multitude of reasons. Our mindset for approaching the constant barrage of challenges can make a world of difference in both outcome and attitude. In this quick post, I'm going to share my thoughts on approaching problems with a solution-oriented mindset. Let's dive in!]]></description>
