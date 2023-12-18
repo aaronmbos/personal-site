@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 30 Nov 2023 04:29:34 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Dec 2023 02:43:31 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Introduction to HTTP Live Streaming]]></title>
+            <description><![CDATA[Video has become an integral part of our digital lives. We rely on video streaming services like YouTube, Netflix, and Hulu to consume all kinds of content from sports to Movies and TV. If you've ever wondered what kind of technology might be powering these streaming services, you've landed in the right place. In this post, I'm going to share some info about HTTP Live Streaming and how it is used to provide smooth video playback experiences.]]></description>
+            <link>https://aaronbos.dev/posts/http-live-streaming-hls-introduction</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/http-live-streaming-hls-introduction</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[web]]></category>
+            <category><![CDATA[video]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 18 Dec 2023 02:41:50 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Using Git's Reflog to Recover Data]]></title>
             <description><![CDATA[Git is a nearly ubiquitous tool for version control these days and it serves its purpose dutifully. As great as Git is, there are still sharp edges and chances for mistakes to happen. In this post, I'll be sharing information about a lesser-known feature in Git that can fix those mistakes and help with data recovery. Let's dive in!]]></description>
