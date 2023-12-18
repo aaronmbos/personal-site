@@ -29,6 +29,7 @@
 
 ### 2023
 
+- [Introduction to HTTP Live Streaming](https://aaronbos.dev/posts/http-live-streaming-hls-introduction)
 - [Using Git's Reflog to Recover Data](https://aaronbos.dev/posts/recover-data-with-git-reflog)
 - [Looking for Solutions Instead of Problems](https://aaronbos.dev/posts/solutions-over-problems)
 - [Battling Burnout](https://aaronbos.dev/posts/battling-burnout)
