@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 18 Dec 2023 02:43:31 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jan 2024 12:21:10 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Reviewing 2023 and Previewing 2024]]></title>
+            <description><![CDATA[This time of year (holidays and New Year's) means something different for everyone, but for me, they are always a time to reflect on what has been and look ahead at what could be. As I've done in previous years I'm going to review the previous year in terms of this blog and my career as well as look ahead to the next year in the context of what to expect. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/2023-review-2024-preview</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/2023-review-2024-preview</guid>
+            <category><![CDATA[reflection]]></category>
+            <category><![CDATA[growth]]></category>
+            <category><![CDATA[musings]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 01 Jan 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Introduction to HTTP Live Streaming]]></title>
             <description><![CDATA[Video has become an integral part of our digital lives. We rely on video streaming services like YouTube, Netflix, and Hulu to consume all kinds of content from sports to Movies and TV. If you've ever wondered what kind of technology might be powering these streaming services, you've landed in the right place. In this post, I'm going to share some info about HTTP Live Streaming and how it is used to provide smooth video playback experiences.]]></description>

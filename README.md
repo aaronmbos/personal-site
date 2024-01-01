@@ -6,6 +6,15 @@
 
 ## Feature Roadmap
 
+### 2024
+
+| Quarter | Feature                                                     | Status      |
+| ------- | ----------------------------------------------------------- | ----------- |
+| Q1      | Dependency upgrades, code cleanup, rework, and refactoring  | Not started |
+| Q2      | Create the new "book note" section                          | Not started |
+| Q3      | Automatically generate OG images for posts                  | Not started |
+| Q4      | Content management features (ie markdown editing shortcuts) | Not started |
+
 ### 2023
 
 | Quarter | Feature                                       | Status                                                                                                                                                                                                                                    |
@@ -29,6 +38,7 @@
 
 ### 2023
 
+- [Reviewing 2023 and Previewing 2024](https://aaronbos.dev/posts/2023-review-2024-preview)
 - [Introduction to HTTP Live Streaming](https://aaronbos.dev/posts/http-live-streaming-hls-introduction)
 - [Using Git's Reflog to Recover Data](https://aaronbos.dev/posts/recover-data-with-git-reflog)
 - [Looking for Solutions Instead of Problems](https://aaronbos.dev/posts/solutions-over-problems)
