@@ -45,7 +45,7 @@ export default function Search() {
     if (shouldQuery) {
       setInput(decodedQuery);
     }
-  }, [q]);
+  }, [q, shouldQuery, decodedQuery]);
 
   const { data, error, isLoading } = useSWR(q, searchPosts);
 
@@ -77,6 +77,7 @@ export default function Search() {
           </h2>
           <div className="text-center align-bottom flex">
             <input
+              name="main-search"
               placeholder="Search posts"
               maxLength={MaxSearchLength}
               id="q"
