@@ -1,20 +1,22 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { withIronSessionApiRoute } from "iron-session/next";
 import { handlePost } from "../../../lib/request-handlers/login-request";
 import { handleError } from "../errorHandler";
-import { sessionOptions } from "../../../lib/session";
+import { sessionOptions, SessionData } from "../../../lib/session";
 import { LoginRequest, parseJsonRequest } from "../../../types/api/types";
+import { getIronSession } from "iron-session";
 
-export default withIronSessionApiRoute(handler, sessionOptions);
-
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
+    const session = await getIronSession<SessionData>(req, res, sessionOptions);
     const loginReq = parseJsonRequest<LoginRequest>(req.body);
     if (req.method === "POST") {
       const user = await handlePost(loginReq);
 
-      req.session.user = user;
-      await req.session.save();
+      session.user = user;
+      await session.save();
 
       res.status(200).json({
         data: user,

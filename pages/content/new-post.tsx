@@ -2,11 +2,11 @@ import Head from "next/head";
 import { User } from "../../types/api/types";
 import Layout from "../../components/layout";
 import PostForm from "../../components/post-form";
-import { sessionOptions } from "../../lib/session";
-import { InferGetServerSidePropsType } from "next";
-import { withIronSessionSsr } from "iron-session/next";
+import { SessionData, sessionOptions } from "../../lib/session";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { FormEvent, useState } from "react";
 import Router from "next/router";
+import { getIronSession } from "iron-session";
 
 export default function NewPost({
   user,
@@ -47,13 +47,11 @@ export default function NewPost({
     </>
   );
 }
-
-export const getServerSideProps = withIronSessionSsr(async function ({
-  params,
+export const getServerSideProps = async ({
   req,
   res,
-}) {
-  const user = req.session.user;
+}: GetServerSidePropsContext) => {
+  const { user } = await getIronSession<SessionData>(req, res, sessionOptions);
 
   if (user === undefined) {
     res.setHeader("location", "/content/login");
@@ -69,8 +67,7 @@ export const getServerSideProps = withIronSessionSsr(async function ({
 
   return {
     props: {
-      user: req.session.user,
+      user: user,
     },
   };
-},
-sessionOptions);
+};

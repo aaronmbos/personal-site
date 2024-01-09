@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
-import { withIronSessionSsr } from "iron-session/next";
-import { sessionOptions } from "../../lib/session";
-import { InferGetServerSidePropsType } from "next";
+import { SessionData, sessionOptions } from "../../lib/session";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { User } from "../../types/api/types";
 import { getPostTable, PostTableRow } from "../../lib/content";
 import Link from "next/link";
 import Router from "next/router";
+import { getIronSession } from "iron-session";
 
 export default function Posts({
   user,
@@ -84,11 +84,11 @@ export default function Posts({
   );
 }
 
-export const getServerSideProps = withIronSessionSsr(async function ({
+export const getServerSideProps = async ({
   req,
   res,
-}) {
-  const user = req.session.user;
+}: GetServerSidePropsContext) => {
+  const { user } = await getIronSession<SessionData>(req, res, sessionOptions);
 
   if (user === undefined) {
     res.setHeader("location", "/content/login");
@@ -104,7 +104,6 @@ export const getServerSideProps = withIronSessionSsr(async function ({
   }
 
   return {
-    props: { user: req.session.user, posts: await getPostTable() },
+    props: { user: user, posts: await getPostTable() },
   };
-},
-sessionOptions);
+};

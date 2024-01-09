@@ -1,14 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { withIronSessionApiRoute } from "iron-session/next";
+import { getIronSession } from "iron-session";
 import { handleError } from "../errorHandler";
-import { sessionOptions } from "../../../lib/session";
-
-export default withIronSessionApiRoute(handler, sessionOptions);
+import { SessionData, sessionOptions } from "../../../lib/session";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
+    const session = await getIronSession<SessionData>(req, res, sessionOptions);
     if (req.method === "POST") {
-      req.session.destroy();
+      session.destroy();
 
       res.status(200).json({
         isSuccess: true,

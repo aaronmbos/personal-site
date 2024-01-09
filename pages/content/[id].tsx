@@ -1,12 +1,16 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
-import { withIronSessionSsr } from "iron-session/next";
-import { sessionOptions } from "../../lib/session";
-import { InferGetServerSidePropsType } from "next";
+import { SessionData, sessionOptions } from "../../lib/session";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+} from "next";
 import { User } from "../../types/api/types";
 import { getPostById, PostContent } from "../../lib/content";
 import { FormEvent, useState } from "react";
 import PostForm from "../../components/post-form";
+import { getIronSession } from "iron-session";
 
 export default function Posts({
   user,
@@ -49,12 +53,12 @@ export default function Posts({
   );
 }
 
-export const getServerSideProps = withIronSessionSsr(async function ({
-  params,
+export const getServerSideProps = (async ({
   req,
   res,
-}) {
-  const user = req.session.user;
+  params,
+}: GetServerSidePropsContext) => {
+  const { user } = await getIronSession<SessionData>(req, res, sessionOptions);
 
   if (user === undefined) {
     res.setHeader("location", "/content/login");
@@ -71,9 +75,11 @@ export const getServerSideProps = withIronSessionSsr(async function ({
 
   return {
     props: {
-      user: req.session.user,
+      user: user,
       post: await getPostById(params!.id as string),
     },
   };
-},
-sessionOptions);
+}) satisfies GetServerSideProps<{
+  user: User;
+  post: PostContent;
+}>;

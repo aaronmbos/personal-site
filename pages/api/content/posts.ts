@@ -10,12 +10,20 @@ import {
   handlePost,
   handlePut,
 } from "../../../lib/request-handlers/posts-request";
+import { SessionData, sessionOptions } from "../../../lib/session";
+import { getIronSession } from "iron-session";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
+    const session = await getIronSession<SessionData>(req, res, sessionOptions);
+
+    if (!session.user) {
+      throw new Error("Unauthorized: No user logged in");
+    }
+
     const postsReq = parseJsonRequest<PostsRequest>(req.body);
     if (req.method === "POST") {
       res.status(200).json(await handlePost(postsReq));

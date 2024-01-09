@@ -1,7 +1,7 @@
-import type { IronSessionOptions } from "iron-session";
+import type { SessionOptions } from "iron-session";
 import type { User } from "../types/api/types";
 
-export const sessionOptions: IronSessionOptions = {
+export const sessionOptions: SessionOptions = {
   password: process.env.COOKIE_SECRET as string,
   cookieName: `aaronmbos-${process.env.NODE_ENV}`,
   cookieOptions: {
@@ -9,9 +9,6 @@ export const sessionOptions: IronSessionOptions = {
   },
 };
 
-// This is where we specify the typings of req.session.*
-declare module "iron-session" {
-  interface IronSessionData {
-    user?: User;
-  }
+export interface SessionData {
+  user?: User;
 }
