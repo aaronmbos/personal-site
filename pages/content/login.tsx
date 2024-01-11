@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import { ApiResponse, User } from "../../types/api/types";
 
 export default function Login() {
-  const [loginError, setLoginError] = useState<string | null>(null);
+  const [loginError, setLoginError] = useState<string | undefined>();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
