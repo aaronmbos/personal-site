@@ -18,9 +18,9 @@ export interface SearchHit {
 }
 
 export interface ApiResponse<T> {
-  data: T;
+  data?: T;
   isSuccess: boolean;
-  message: string;
+  message?: string;
 }
 
 export interface LoginRequest {

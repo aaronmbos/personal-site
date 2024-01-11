@@ -7,9 +7,12 @@ export default function NavSearch() {
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
+      var inputs = ["input", "select", "button", "textarea"];
+
       if (
         event.key === "/" &&
-        document.activeElement !== searchInputRef.current
+        document.activeElement !== searchInputRef.current &&
+        !inputs.includes(document?.activeElement?.tagName.toLowerCase() ?? "")
       ) {
         event.preventDefault();
 

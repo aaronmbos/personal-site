@@ -5,14 +5,13 @@ import {
 } from "../../types/api/types";
 import sql from "../../database/db.mjs";
 
-export async function handlePut(req: PostsRequest): Promise<ApiResponse<null>> {
+export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
   const [isValid, message] = isRequestValid(req);
 
   if (!isValid) {
     return {
       isSuccess: false,
       message: `No changes saved. ${message}`,
-      data: null,
     };
   }
 
@@ -29,20 +28,18 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<null>> {
   return {
     isSuccess: isValid,
     message: message,
-    data: null,
   };
 }
 
 export async function handlePost(
   req: PostsRequest
-): Promise<ApiResponse<string | null>> {
+): Promise<ApiResponse<string | void>> {
   const [isValid, message] = isRequestValid(req);
 
   if (!isValid) {
     return {
       isSuccess: false,
       message: `No changes saved. ${message}`,
-      data: null,
     };
   }
 
@@ -64,7 +61,7 @@ export async function handlePost(
 
 export async function handlePatch(
   req: PostsPatchRequest
-): Promise<ApiResponse<null>> {
+): Promise<ApiResponse<void>> {
   const dbPost = (
     await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`
   )[0];
@@ -73,7 +70,6 @@ export async function handlePatch(
     return {
       isSuccess: false,
       message: "The post cannot be published.",
-      data: null,
     };
   }
 
@@ -92,12 +88,10 @@ export async function handlePatch(
 
   return {
     isSuccess: true,
-    message: "",
-    data: null,
   };
 }
 
-function isRequestValid(req: PostsRequest): [boolean, string] {
+function isRequestValid(req: PostsRequest): [boolean, string?] {
   if (!req.slug || req.slug.length < 1 || req.slug.length > 128) {
     return [false, "Slug is invalid"];
   }
@@ -106,5 +100,5 @@ function isRequestValid(req: PostsRequest): [boolean, string] {
     return [false, "Title is invalid"];
   }
 
-  return [true, ""];
+  return [true];
 }

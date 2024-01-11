@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { PostContent } from "../lib/content";
 import Router from "next/router";
 
