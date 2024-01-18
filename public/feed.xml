@@ -9,8 +9,20 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Jan 2024 12:21:10 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 18 Jan 2024 02:45:24 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[npm and Semantic Versioning]]></title>
+            <description><![CDATA[If you've been a developer for any amount of time you've undoubtedly reached for external dependencies to solve specific problems. Whether the problem is as small as padding the left side of a string or as large as a component library external packages are inevitable. In this post, I'll be going into the nuances of how npm leverages semantic versioning as well as some information that will be useful as npm package consumers. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/npm-and-semantic-versioning</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/npm-and-semantic-versioning</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[javascript]]></category>
+            <category><![CDATA[node]]></category>
+            <category><![CDATA[npm]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Thu, 18 Jan 2024 02:43:37 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Reviewing 2023 and Previewing 2024]]></title>
             <description><![CDATA[This time of year (holidays and New Year's) means something different for everyone, but for me, they are always a time to reflect on what has been and look ahead at what could be. As I've done in previous years I'm going to review the previous year in terms of this blog and my career as well as look ahead to the next year in the context of what to expect. Let's dive in!]]></description>
