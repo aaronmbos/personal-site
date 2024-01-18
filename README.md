@@ -36,6 +36,10 @@
 
 ## Posts
 
+### 2024
+
+- [npm and Semantic Versioning](https://aaronbos.dev/posts/npm-and-semantic-versioning)
+
 ### 2023
 
 - [Reviewing 2023 and Previewing 2024](https://aaronbos.dev/posts/2023-review-2024-preview)

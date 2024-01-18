@@ -3,7 +3,7 @@
 import algoliasearch from "algoliasearch";
 import { v4 as uuidv4 } from "uuid";
 import sql from "../database/db.mjs";
-import remark from "remark";
+import { remark } from "remark";
 import strip from "strip-markdown";
 
 async function updateAlgoliaIndex() {
