@@ -3,7 +3,10 @@ import { getIronSession } from "iron-session";
 import { handleError } from "../errorHandler";
 import { SessionData, sessionOptions } from "../../../lib/session";
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
     const session = await getIronSession<SessionData>(req, res, sessionOptions);
     if (req.method === "POST") {
