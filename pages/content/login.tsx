@@ -45,6 +45,8 @@ export default function Login() {
                 Username
               </label>
               <input
+                id="username"
+                autoComplete="username"
                 required={true}
                 name="username"
                 className="my-3 w-full dark:focus:ring-stone-400 dark:focus:ring-2 dark:focus:border-0 dark:bg-stone-800 dark:text-white rounded-md"
@@ -56,6 +58,8 @@ export default function Login() {
                 Password
               </label>
               <input
+                autoComplete="current-password"
+                id="password"
                 required={true}
                 type="password"
                 name="password"

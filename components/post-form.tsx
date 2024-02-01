@@ -130,7 +130,7 @@ export default function PostForm({ onSubmit, post, submitError }: Props) {
             id="description"
             defaultValue={post?.description ?? undefined}
           />
-          <label htmlFor="Content" className="block">
+          <label htmlFor="content" className="block">
             Content
           </label>
           <textarea
