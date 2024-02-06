@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getPaginatedPosts } from "../../../../lib/posts";
 import { handleError } from "../../errorHandler";
+import { PostPageRequest } from "../../../../types/api/types";
 
 const defaultPageSize = 15;
 
@@ -23,11 +24,7 @@ export default async function handler(
   }
 }
 
-interface Params {
-  page: number;
-}
-
-function parseRequestParams(req: NextApiRequest): Params {
+function parseRequestParams(req: NextApiRequest): PostPageRequest {
   const { page } = req.query;
 
   if (!page || typeof page !== "string") {

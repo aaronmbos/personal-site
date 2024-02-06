@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import PaginationRow from "../components/pagination-row";
 import useSWR from "swr";
-import { ApiResponse, Paged, SlimPost } from "../types/api/types";
+import { ApiResponse, Paged, PostSummary } from "../types/api/types";
 import LoadingSpinner from "../components/loading-spinner";
 
 export default function Posts() {
@@ -20,7 +20,7 @@ export default function Posts() {
         Accept: "application/json",
       }),
     });
-    const results = (await response.json()) as ApiResponse<Paged<SlimPost>>;
+    const results = (await response.json()) as ApiResponse<Paged<PostSummary>>;
 
     if (results?.isSuccess) {
       return results.data;

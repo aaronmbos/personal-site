@@ -38,7 +38,7 @@ export default function Post({ post }: Props) {
       />
       <PostBody content={post.content} />
       <ReactionRow postSlug={post.slug} url={getPostUrl(post.slug)} />
-      <TagHolder tags={post.metadata} />
+      <TagHolder tags={post.tags} />
       <PostFooter />
       <AllPostsLink text="See More Posts" />
     </Layout>

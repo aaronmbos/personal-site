@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { handleGet } from "../../../lib/request-handlers/search-request";
 import { handleError } from "../errorHandler";
+import { SearchRequest } from "../../../types/api/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,10 +21,6 @@ export default async function handler(
   }
 }
 
-interface Params {
-  query: string;
-}
-
-function parseRequestBody(body: any): Params {
+function parseRequestBody(body: any): SearchRequest {
   return { query: body["query"] };
 }

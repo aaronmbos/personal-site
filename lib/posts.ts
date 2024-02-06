@@ -1,6 +1,6 @@
 import sql from "../database/db.mjs";
 import { PagedPost, Post } from "../types/database/types.js";
-import { Paged, SlimPost } from "../types/api/types.js";
+import { Paged, PostSummary } from "../types/api/types.js";
 
 export interface BlogPost {
   id: string;
@@ -9,7 +9,7 @@ export interface BlogPost {
   slug: string;
   date: string;
   description: string;
-  metadata: string[];
+  tags: string[];
 }
 
 const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at from post.post where published_at is not null`;
@@ -40,7 +40,7 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
 export async function getPaginatedPosts(
   page: number,
   pageSize: number
-): Promise<Paged<SlimPost>> {
+): Promise<Paged<PostSummary>> {
   const offset = (page - 1) * pageSize;
   const posts = await sql<
     PagedPost[]
@@ -77,18 +77,18 @@ function toBlogPost(post: Post): BlogPost {
     content: post.content as string,
     slug: post.slug as string,
     description: post.description as string,
-    metadata: post.tags as string[],
+    tags: post.tags as string[],
     date: formatDate(post.published_at!),
   };
 }
 
-function toPostPreview(post: PagedPost): SlimPost {
+function toPostPreview(post: PagedPost): PostSummary {
   return {
     id: post.id,
     title: post.title as string,
     slug: post.slug as string,
     description: post.description as string,
-    metadata: post.tags as string[],
+    tags: post.tags as string[],
     date: formatDate(post.published_at!),
   };
 }
