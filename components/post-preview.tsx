@@ -6,7 +6,7 @@ interface Props {
   title: string;
   description: string;
   date: string;
-  metadata: string[];
+  tags: string[];
 }
 
 export default function PostPreview({
@@ -14,7 +14,7 @@ export default function PostPreview({
   title,
   description,
   date,
-  metadata,
+  tags,
 }: Props) {
   return (
     <>
@@ -29,7 +29,7 @@ export default function PostPreview({
           {description}
         </div>
         <div className="mb-2 text-gray-500 dark:text-gray-100">{date}</div>
-        {metadata.length > 0 && <TagHolder tags={metadata} />}
+        {tags.length > 0 && <TagHolder tags={tags} />}
       </div>
       <hr />
     </>

@@ -4,6 +4,7 @@ import {
   handleGet,
   handlePost,
 } from "../../../lib/request-handlers/reaction-request";
+import { ReactionRequest } from "../../../types/api/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -55,13 +56,7 @@ export default async function handler(
   }
 }
 
-interface Params {
-  slug: string;
-  type: string;
-  currentCount: number;
-}
-
-function parseRequestParams(req: NextApiRequest): Params {
+function parseRequestParams(req: NextApiRequest): ReactionRequest {
   const slug = req.query["slug"] as string;
   const type = req.query["type"] as string;
   const currentCount = Number(req.query["count"]);

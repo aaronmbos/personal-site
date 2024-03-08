@@ -9,11 +9,21 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 18 Jan 2024 02:45:24 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 08 Mar 2024 01:49:56 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[A Reminder of Why I Started This Blog]]></title>
+            <description><![CDATA[In the rush of everyday life, it's easy to lose sight of your "North Star". For me and this blog, my North Star is learning. If I'm not learning, then chances are I'm not feeling energized. It's time to get back to what I have enjoyed so much with this blog over the last three years. Sharing what I'm learning through interesting and valuable blog posts.]]></description>
+            <link>https://aaronbos.dev/posts/reminder-of-why-i-blog</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/reminder-of-why-i-blog</guid>
+            <category><![CDATA[musings]]></category>
+            <category><![CDATA[notes]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 08 Mar 2024 01:49:45 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[npm and Semantic Versioning]]></title>
-            <description><![CDATA[If you've been a developer for any amount of time you've undoubtedly reached for external dependencies to solve specific problems. Whether the problem is as small as padding the left side of a string or as large as a component library external packages are inevitable. In this post, I'll be going into the nuances of how npm leverages semantic versioning as well as some information that will be useful as npm package consumers. Let's dive in!]]></description>
+            <description><![CDATA[If you've been a developer for any amount of time you've undoubtedly reached for external dependencies to solve specific problems. Whether the problem is as small as padding the left side of a string or as large as a component library, external packages are inevitable. In this post, I'll be going into the nuances of how npm leverages semantic versioning and some information that will be useful as npm package consumers. Let's dive in!]]></description>
             <link>https://aaronbos.dev/posts/npm-and-semantic-versioning</link>
             <guid isPermaLink="true">https://aaronbos.dev/posts/npm-and-semantic-versioning</guid>
             <category><![CDATA[dev]]></category>

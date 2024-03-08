@@ -136,7 +136,7 @@ export default function Search() {
                             timeZone: "America/Chicago",
                           }
                         )}
-                        metadata={result.metadata}
+                        tags={result.metadata}
                       />
                     );
                   })}

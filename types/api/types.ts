@@ -65,7 +65,21 @@ export interface Paged<T> {
   total: number;
 }
 
-export type SlimPost = Pick<
+export type PostSummary = Pick<
   BlogPost,
-  "id" | "slug" | "description" | "date" | "metadata" | "title"
+  "id" | "slug" | "description" | "date" | "tags" | "title"
 >;
+
+export interface ReactionRequest {
+  slug: string;
+  type: string;
+  currentCount: number;
+}
+
+export interface SearchRequest {
+  query: string;
+}
+
+export interface PostPageRequest {
+  page: number;
+}

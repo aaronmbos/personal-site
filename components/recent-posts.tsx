@@ -4,7 +4,7 @@ import { BlogPost } from "../lib/posts";
 interface Props {
   recentPosts: Pick<
     BlogPost,
-    "id" | "slug" | "description" | "date" | "metadata" | "title"
+    "id" | "slug" | "description" | "date" | "tags" | "title"
   >[];
 }
 
