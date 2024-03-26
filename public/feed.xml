@@ -9,8 +9,19 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 08 Mar 2024 01:49:56 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Mar 2024 02:27:52 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Find and Replace in Neovim]]></title>
+            <description><![CDATA[While Neovim may not be my daily editor, I still prefer it to modify files quickly. Often I find myself in Neovim when I need to make small changes to JSON or YAML files. A common action that I perform is a simple "find and replace" which is supported by most editors. As with most things, the method to do this in Vim is powerful, but not necessarily straightforward unless you know the right commands and flags. In this post, I'll go into some detail about substituting characters in Vim and Neovim.]]></description>
+            <link>https://aaronbos.dev/posts/find-and-replace-neovim</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/find-and-replace-neovim</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[tools]]></category>
+            <category><![CDATA[neovim]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Tue, 26 Mar 2024 02:26:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[A Reminder of Why I Started This Blog]]></title>
             <description><![CDATA[In the rush of everyday life, it's easy to lose sight of your "North Star". For me and this blog, my North Star is learning. If I'm not learning, then chances are I'm not feeling energized. It's time to get back to what I have enjoyed so much with this blog over the last three years. Sharing what I'm learning through interesting and valuable blog posts.]]></description>

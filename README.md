@@ -38,8 +38,9 @@
 
 ### 2024
 
-- [npm and Semantic Versioning](https://aaronbos.dev/posts/npm-and-semantic-versioning)
+- [Find and Replace in Neovim](https://aaronbos.dev/posts/find-and-replace-neovim)
 - [A Reminder of Why I Started This Blog](https://aaronbos.dev/posts/reminder-of-why-i-blog)
+- [npm and Semantic Versioning](https://aaronbos.dev/posts/npm-and-semantic-versioning)
 
 ### 2023
 
