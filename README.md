@@ -10,7 +10,7 @@
 
 | Quarter | Feature                                                     | Status                                                                                                           |
 | ------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Q1      | Dependency upgrades, code cleanup, rework, and refactoring  | [In Progress](https://github.com/aaronmbos/personal-site/compare/main..d5e27d22f85705df7856cafc58d2e04ae1645957) |
+| Q1      | Dependency upgrades, code cleanup, rework, and refactoring  | [Done](https://github.com/aaronmbos/personal-site/compare/d5e27d22f85705df7856cafc58d2e04ae1645957...9039e6b88e77026692decc57ede8a19d1ea9b04a) |
 | Q2      | Create the new "book note" section                          | Not started                                                                                                      |
 | Q3      | Automatically generate OG images for posts                  | Not started                                                                                                      |
 | Q4      | Content management features (ie markdown editing shortcuts) | Not started                                                                                                      |
