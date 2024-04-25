@@ -17,6 +17,7 @@ export interface NavigationLink {
 const navLinks: NavigationLink[] = [
   { text: "Home", route: "/" },
   { text: "Posts", route: "/posts" },
+  { text: "Notes", route: "/notes" },
   { text: "About", route: "/about" },
 ];
 
