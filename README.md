@@ -38,6 +38,7 @@
 
 ### 2024
 
+- [Staying Productive with a Work Log](https://aaronbos.dev/posts/daily-work-log-productivity)
 - [Trimming Video with FFmpeg](https://aaronbos.dev/posts/trim-video-ffmpeg)
 - [Find and Replace in Neovim](https://aaronbos.dev/posts/find-and-replace-neovim)
 - [A Reminder of Why I Started This Blog](https://aaronbos.dev/posts/reminder-of-why-i-blog)
