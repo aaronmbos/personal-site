@@ -15,6 +15,10 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
     };
   }
 
+  const existingPost = (
+    await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`
+  )[0];
+
   await sql`
     update post.post
       set title = ${req.title},
@@ -24,6 +28,10 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
       slug = ${req.slug},
       updated_at = now()
     where id = ${req.id}`;
+
+  if (existingPost.title !== req.title) {
+    generateImage(req.title);
+  }
 
   return {
     isSuccess: isValid,
@@ -51,6 +59,8 @@ export async function handlePost(
 
   returning id;
   `;
+
+  generateImage(req.title);
 
   return {
     isSuccess: isValid,
@@ -86,9 +96,17 @@ export async function handlePatch(
       published_at = ${updatedPost.publishedAt ?? null}
     where id = ${updatedPost.id}`;
 
+  if (updatedPost.title !== dbPost.title) {
+    generateImage(updatedPost.title);
+  }
+
   return {
     isSuccess: true,
   };
+}
+
+function generateImage(title: string) {
+  console.log("Generating image for post: " + title);
 }
 
 function isRequestValid(req: PostsRequest): [boolean, string?] {
