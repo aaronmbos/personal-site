@@ -107,6 +107,7 @@ export async function handlePatch(
 }
 
 function generateImage(title: string) {
+  // https://cloudinary.com/documentation/node_quickstart
   // Return "https" URLs by setting secure: true
   cloudinary.config({
     secure: true,
