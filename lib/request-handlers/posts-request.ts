@@ -4,6 +4,7 @@ import {
   PostsRequest,
 } from "../../types/api/types";
 import sql from "../../database/db.mjs";
+import Jimp from "jimp";
 const cloudinary = require("cloudinary").v2;
 
 export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
@@ -31,7 +32,7 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
     where id = ${req.id}`;
 
   if (existingPost.title !== req.title) {
-    generateImage(req.title);
+    await generateImage(req.title);
   }
 
   return {
@@ -61,7 +62,7 @@ export async function handlePost(
   returning id;
   `;
 
-  generateImage(req.title);
+  await generateImage(req.title);
 
   return {
     isSuccess: isValid,
@@ -98,7 +99,7 @@ export async function handlePatch(
     where id = ${updatedPost.id}`;
 
   if (updatedPost.title !== dbPost.title) {
-    generateImage(updatedPost.title);
+    await generateImage(updatedPost.title);
   }
 
   return {
@@ -106,7 +107,7 @@ export async function handlePatch(
   };
 }
 
-function generateImage(title: string) {
+async function generateImage(title: string) {
   // https://cloudinary.com/documentation/node_quickstart
   // Return "https" URLs by setting secure: true
   cloudinary.config({
@@ -114,8 +115,27 @@ function generateImage(title: string) {
   });
 
   // Log the configuration
-  console.log(cloudinary.config());
+  //console.log(cloudinary.config());
   //console.log("Generating image for post: " + title);
+  // Use the uploaded file's name as the asset's public ID and
+  // allow overwriting the asset with new versions
+  const options = {
+    use_filename: true,
+    unique_filename: true,
+    overwrite: false,
+  };
+
+  try {
+    // Upload the image
+    const result = await cloudinary.uploader.upload(
+      "https://res.cloudinary.com/aaron-bos/image/upload/v1724151592/og-bg_ye1eu7.png",
+      options
+    );
+    console.log(result);
+    //return result.public_id;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function isRequestValid(req: PostsRequest): [boolean, string?] {
