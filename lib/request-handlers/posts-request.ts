@@ -4,6 +4,7 @@ import {
   PostsRequest,
 } from "../../types/api/types";
 import sql from "../../database/db.mjs";
+const cloudinary = require("cloudinary").v2;
 
 export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
   const [isValid, message] = isRequestValid(req);
@@ -106,7 +107,14 @@ export async function handlePatch(
 }
 
 function generateImage(title: string) {
-  console.log("Generating image for post: " + title);
+  // Return "https" URLs by setting secure: true
+  cloudinary.config({
+    secure: true,
+  });
+
+  // Log the configuration
+  console.log(cloudinary.config());
+  //console.log("Generating image for post: " + title);
 }
 
 function isRequestValid(req: PostsRequest): [boolean, string?] {
