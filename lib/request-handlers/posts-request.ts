@@ -108,6 +108,35 @@ export async function handlePatch(
 }
 
 async function generateImage(title: string) {
+  const outputPath = process.cwd() + `/${title}.png`;
+  let loadedImage: any;
+  const fileName =
+    "https://res.cloudinary.com/aaron-bos/image/upload/v1724151592/og-bg_ye1eu7.png";
+  Jimp.read(fileName)
+    .then(function (image) {
+      loadedImage = image;
+      return Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+    })
+    .then(function (font) {
+      loadedImage
+        .print(
+          font,
+          10,
+          10,
+          {
+            text: title,
+            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+            alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
+          },
+          1200,
+          630
+        )
+        .write(outputPath);
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+
   // https://cloudinary.com/documentation/node_quickstart
   // Return "https" URLs by setting secure: true
   cloudinary.config({
@@ -125,14 +154,11 @@ async function generateImage(title: string) {
     overwrite: false,
   };
 
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   try {
-    // Upload the image
-    const result = await cloudinary.uploader.upload(
-      "https://res.cloudinary.com/aaron-bos/image/upload/v1724151592/og-bg_ye1eu7.png",
-      options
-    );
+    const result = await cloudinary.uploader.upload(outputPath, options);
     console.log(result);
-    //return result.public_id;
   } catch (error) {
     console.error(error);
   }
