@@ -6,7 +6,6 @@ import {
 import sql from "../../database/db.mjs";
 import Jimp from "jimp";
 const cloudinary = require("cloudinary").v2;
-const plugin = require.resolve("@jimp/plugin-print");
 import path from "path";
 
 export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
@@ -110,6 +109,7 @@ export async function handlePatch(
 }
 
 async function generateImage(title: string) {
+  const plugin = require.resolve("@jimp/plugin-print");
   const jimpFont = path.resolve(
     plugin,
     "../../fonts/open-sans/open-sans-32-black/open-sans-64-black.fnt"
