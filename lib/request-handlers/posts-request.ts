@@ -109,10 +109,6 @@ export async function handlePatch(
 }
 
 async function generateImage(title: string) {
-  const jimpFont = path.resolve(
-    process.cwd() +
-      "/node_modules/@jimp/plugin-print/fonts/open-sans/open-sans-32-black/open-sans-32-black.fnt"
-  );
   const outputPath = process.cwd() + `/${title}.png`;
   let loadedImage: any;
   const fileName =
@@ -120,7 +116,7 @@ async function generateImage(title: string) {
   Jimp.read(fileName)
     .then(function (image) {
       loadedImage = image;
-      return Jimp.loadFont(jimpFont);
+      return Jimp.loadFont("/static/open-sans-32-black.fnt");
     })
     .then(function (font) {
       loadedImage
