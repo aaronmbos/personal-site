@@ -109,10 +109,9 @@ export async function handlePatch(
 }
 
 async function generateImage(title: string) {
-  const plugin = require.resolve("@jimp/plugin-print");
   const jimpFont = path.resolve(
-    plugin,
-    "../../fonts/open-sans/open-sans-32-black/open-sans-64-black.fnt"
+    process.cwd() +
+      "/node_modules/@jimp/plugin-print/fonts/open-sans/open-sans-32-black/open-sans-32-black.fnt"
   );
   const outputPath = process.cwd() + `/${title}.png`;
   let loadedImage: any;
