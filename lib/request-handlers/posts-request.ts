@@ -116,7 +116,9 @@ async function generateImage(title: string) {
   Jimp.read(fileName)
     .then(function (image) {
       loadedImage = image;
-      return Jimp.loadFont("/static/open-sans-32-black.fnt");
+      return Jimp.loadFont(
+        `${process.env.NEXT_PUBLIC_ORIGIN}/static/open-sans-32-black.fnt`
+      );
     })
     .then(function (font) {
       loadedImage
