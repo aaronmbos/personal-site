@@ -9,3 +9,9 @@ jobs:
   build:
     if: contains(github.ref_name, '/post/')
     runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: echo "Testing"
