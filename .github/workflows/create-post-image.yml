@@ -1,0 +1,11 @@
+name: Create post image
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "q2/feat/post-images-gha"]
+
+jobs:
+  build:
+    if: contains(github.ref_name, '/post/')
+    runs-on: ubuntu-latest
