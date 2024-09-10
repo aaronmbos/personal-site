@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Execute create image script
         run: |
           chmod +x ./.github/workflows/create-post-image.sh
           ./.github/workflows/create-post-image.sh
