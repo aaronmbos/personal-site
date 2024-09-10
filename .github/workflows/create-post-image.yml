@@ -15,6 +15,5 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pwd
-          chmod +x ./create-post-image.sh
-          ./create-post-image.sh
+          chmod +x ./.github/workflows/create-post-image.sh
+          ./.github/workflows/create-post-image.sh
