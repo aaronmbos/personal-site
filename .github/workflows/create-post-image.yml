@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: contains(github.ref_name, '/post/')
+    # if: contains(github.ref_name, '/post/')
     runs-on: ubuntu-latest
 
     steps:
