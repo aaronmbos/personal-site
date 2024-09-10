@@ -15,5 +15,6 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pwd
           chmod +x ./create-post-image.sh
           ./create-post-image.sh
