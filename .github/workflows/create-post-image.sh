@@ -1,4 +1,11 @@
-magick convert -size 1200x630 xc:#1e3fae \
-    -font "Helvetica" -pointsize 48 -fill white \
-    -gravity center \
-    -draw "text 0,0 'Your Text Here'" output.png
+magick convert -background '#1e3fae' -size 1200x630 \
+    -font "Intel-One-Mono-Medium" -fill white \
+    -gravity West \
+    caption:"Staying Productive with a Work Log" \
+    -bordercolor '#1e3fae' -border 30x10 \
+    output.png
+
+# magick convert -background lightblue -fill black \
+#     -size 400x200 -gravity center \
+#     caption:"This is a dynamically sized and wrapped text example in ImageMagick." \
+#     output.png
