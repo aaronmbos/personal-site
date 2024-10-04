@@ -1,5 +1,5 @@
 magick convert -background '#1e3fae' -size 1200x630 \
-    -font "Intel-One-Mono-Medium" -fill white \
+    -font "IBM-Plex-Sans-SmBld" -fill white \
     -gravity West \
     caption:"Staying Productive with a Work Log" \
     -bordercolor '#1e3fae' -border 30x10 \
