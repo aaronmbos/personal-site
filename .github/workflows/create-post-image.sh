@@ -1,4 +1,4 @@
-magick convert -background '#1e3fae' -size 1200x630 \
+convert -background '#1e3fae' -size 1200x630 \
     -font "IBM-Plex-Sans-SmBld" -fill white \
     -gravity West \
     caption:"Staying Productive with a Work Log" \
