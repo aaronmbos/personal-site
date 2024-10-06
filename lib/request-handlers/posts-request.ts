@@ -4,6 +4,9 @@ import {
   PostsRequest,
 } from "../../types/api/types";
 import sql from "../../database/db.mjs";
+import Jimp from "jimp";
+const cloudinary = require("cloudinary").v2;
+import path from "path";
 
 export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
   const [isValid, message] = isRequestValid(req);
@@ -15,6 +18,10 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
     };
   }
 
+  const existingPost = (
+    await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`
+  )[0];
+
   await sql`
     update post.post
       set title = ${req.title},
@@ -24,6 +31,10 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
       slug = ${req.slug},
       updated_at = now()
     where id = ${req.id}`;
+
+  if (existingPost.title !== req.title) {
+    await generateImage(req.title);
+  }
 
   return {
     isSuccess: isValid,
@@ -51,6 +62,8 @@ export async function handlePost(
 
   returning id;
   `;
+
+  await generateImage(req.title);
 
   return {
     isSuccess: isValid,
@@ -86,9 +99,72 @@ export async function handlePatch(
       published_at = ${updatedPost.publishedAt ?? null}
     where id = ${updatedPost.id}`;
 
+  if (updatedPost.title !== dbPost.title) {
+    await generateImage(updatedPost.title);
+  }
+
   return {
     isSuccess: true,
   };
+}
+
+async function generateImage(title: string) {
+  const outputPath = process.cwd() + `/${title}.png`;
+  let loadedImage: any;
+  const fileName =
+    "https://res.cloudinary.com/aaron-bos/image/upload/v1724151592/og-bg_ye1eu7.png";
+  Jimp.read(fileName)
+    .then(function (image) {
+      loadedImage = image;
+      return Jimp.loadFont(
+        `${process.env.NEXT_PUBLIC_ORIGIN}/static/open-sans-32-black.fnt`
+      );
+    })
+    .then(function (font) {
+      loadedImage
+        .print(
+          font,
+          10,
+          10,
+          {
+            text: title,
+            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+            alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
+          },
+          1200,
+          630
+        )
+        .write(outputPath);
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+
+  // https://cloudinary.com/documentation/node_quickstart
+  // Return "https" URLs by setting secure: true
+  cloudinary.config({
+    secure: true,
+  });
+
+  // Log the configuration
+  //console.log(cloudinary.config());
+  //console.log("Generating image for post: " + title);
+  // Use the uploaded file's name as the asset's public ID and
+  // allow overwriting the asset with new versions
+  const options = {
+    use_filename: true,
+    unique_filename: true,
+    overwrite: false,
+  };
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  try {
+    const result = await cloudinary.uploader.upload(outputPath, options);
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function isRequestValid(req: PostsRequest): [boolean, string?] {
