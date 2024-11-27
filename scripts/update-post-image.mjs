@@ -1,4 +1,4 @@
-// Example usage: node ./scripts/create-post-image.mjs '"Hello, world!"'
+// Example usage: node ./scripts/update-post-image.mjs '"Hello, world!"'
 
 import sql from "../database/db.mjs";
 import createPostImage from "./create-post-image.mjs";
