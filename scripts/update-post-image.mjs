@@ -8,7 +8,7 @@ const postSlug = process.argv[2];
 
 const post = await getPost(postSlug);
 
-const postUrl = createPostImage(post);
+const postUrl = await createPostImage(post);
 
 await updatePostImageUrl(post.Id, postUrl);
 
