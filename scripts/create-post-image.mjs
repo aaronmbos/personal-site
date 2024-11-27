@@ -1,32 +1,9 @@
-// Example usage: node ./scripts/create-post-image.mjs '"Hello, world!"'
-
 import { spawn } from "child_process";
-import sql from "../database/db.mjs";
 import { resolve } from "path";
 import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
 
-// The post's slug should be passed to the script
-const postSlug = process.argv[2];
-
-const post = await getPost(postSlug);
-
-createPostImage(post);
-
-async function getPost(slug) {
-  if (!postSlug) {
-    console.log("You need to provide a post slug.");
-  }
-
-  const post = (
-    await sql`select id, title, slug from post.post where slug=${postSlug}`
-  )[0];
-
-  if (!post) {
-    console.log(`No post found with the provided slug: "${postSlug}"`);
-  }
-
-  return post;
-}
+dotenv.config();
 
 function createPostImage(post) {
   const scriptPath = resolve("./scripts/create-post-image.sh");
@@ -38,12 +15,11 @@ function createPostImage(post) {
 
   child.stderr.on("data", (data) => {
     console.error(`An error occurred during child process. ${data}`);
-    process.exit(1);
   });
 
   child.on("close", (code) => {
     if (code === 0) {
-      uploadPost(post);
+      return uploadPost(post);
     }
   });
 }
@@ -52,6 +28,9 @@ function uploadPost(post) {
   // Make sure cloudinary returns secure URLs
   cloudinary.config({
     secure: true,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   });
 
   // Use the uploaded file's name as the asset's public ID and
@@ -67,21 +46,12 @@ function uploadPost(post) {
     .upload(`./tmp/${post.slug}.png`, options)
     .then((result) => {
       console.log(result);
-      updatePostImageUrl(post.id, result.secure_url)
-        .then(() => {
-          process.exit(0);
-        })
-        .catch((error) => {
-          console.error(error);
-          process.exit(1);
-        });
+      return result.secure_url;
     })
     .catch((error) => {
       console.error(error);
-      process.exit(1);
+      throw error;
     });
 }
 
-async function updatePostImageUrl(id, url) {
-  await sql`update post.post set image_url = ${url} where id = ${id} `;
-}
+export default createPostImage;
