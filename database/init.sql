@@ -60,3 +60,6 @@ create table if not exists user.user (
 alter table site.user
   add constraint PK_user_user
     primary key (id);
+
+alter table post.post
+  add column if not exists image_url varchar(512) null;
