@@ -29,7 +29,7 @@ export default function Post({ post }: Props) {
         title={post.title}
         url={getPostUrl(post.slug)}
         description={post.description}
-        image={`${post.imageUrl ?? process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
+        image={`${post.imageUrl ?? `${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}`}
       />
       <PostHeader
         title={post.title}
