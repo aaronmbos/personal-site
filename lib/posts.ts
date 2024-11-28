@@ -10,9 +10,10 @@ export interface BlogPost {
   date: string;
   description: string;
   tags: string[];
+  imageUrl: string;
 }
 
-const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at from post.post where published_at is not null`;
+const baseQuery = sql`select id, title, content, slug, description, tags, (published_at at time zone 'utc') as published_at, image_url from post.post where published_at is not null`;
 
 export async function getRecentPosts(): Promise<BlogPost[]> {
   const posts = await sql<
@@ -39,7 +40,7 @@ export async function getPostByUrlId(urlId: string): Promise<BlogPost | never> {
 
 export async function getPaginatedPosts(
   page: number,
-  pageSize: number
+  pageSize: number,
 ): Promise<Paged<PostSummary>> {
   const offset = (page - 1) * pageSize;
   const posts = await sql<
@@ -79,6 +80,7 @@ function toBlogPost(post: Post): BlogPost {
     description: post.description as string,
     tags: post.tags as string[],
     date: formatDate(post.published_at!),
+    imageUrl: post.image_url,
   };
 }
 
