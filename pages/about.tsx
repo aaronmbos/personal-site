@@ -15,7 +15,7 @@ export default function About() {
         <div className="mt-4 text-center">
           <Image
             className="rounded-full m-auto"
-            src="https://res.cloudinary.com/aaron-bos/image/upload/v1666052817/20221017_HudlHeadshots_AaronBos-5_iggfs3.jpg"
+            src="https://res.cloudinary.com/aaron-bos/image/upload/v1732795600/202406_Bos_Aaron-16_iu2uiw.png"
             alt="Aaron's picture"
             height="200"
             width="200"
