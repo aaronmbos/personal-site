@@ -5,6 +5,7 @@ import RecentPosts from "../components/recent-posts";
 import { getRecentPosts, BlogPost } from "../lib/posts";
 import AllPostsLink from "../components/all-posts-link";
 import { GetStaticProps } from "next";
+import MetaSocial from "../components/meta-social";
 
 interface Props {
   recentPosts: BlogPost[];
@@ -15,6 +16,12 @@ export default function Home({ recentPosts }: Props) {
     <>
       <Head>
         <title>Aaron Bos</title>
+        <MetaSocial
+          title="Aaron Bos' Blog"
+          url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
+          description="Blogging about software and technology from a software engineer's perspective."
+          image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
+        />
       </Head>
       <Layout>
         <section>

@@ -13,12 +13,6 @@ interface Props {
 export default function Layout({ children, user, isWide }: Props) {
   return (
     <>
-      <MetaSocial
-        title="Aaron Bos' Blog"
-        url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
-        description="Blogging about software and technology from a software engineer's perspective."
-        image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
-      />
       <div className="flex flex-col min-h-screen w-screen overflow-auto bg-gray-50 dark:bg-stone-800 dark:text-white">
         <Nav user={user} />
         <main
