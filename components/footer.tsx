@@ -1,5 +1,6 @@
 interface SocialLink {
   svgPath: string | string[];
+  svgViewBox?: string;
   url: string;
 }
 
@@ -33,6 +34,12 @@ const socialLinks: SocialLink[] = [
       "M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z",
     url: "https://aaronbos.dev/feed.xml",
   },
+  {
+    svgPath:
+      "M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z",
+    svgViewBox: "0 0 512 512",
+    url: "https://bsky.app/profile/aaronmbos.bsky.social",
+  },
 ];
 
 export default function Footer() {
@@ -58,7 +65,7 @@ export default function Footer() {
                 height="24"
                 fill="currentColor"
                 className="inline"
-                viewBox="0 0 16 16"
+                viewBox={icon.svgViewBox ?? "0 0 16 16"}
               >
                 {Array.isArray(icon.svgPath) ? (
                   icon.svgPath.map((path) => <path key={path} d={path} />)
