@@ -16,13 +16,13 @@ export default function Home({ recentPosts }: Props) {
     <>
       <Head>
         <title>Aaron Bos</title>
-        <MetaSocial
-          title="Aaron Bos' Blog"
-          url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
-          description="Blogging about software and technology from a software engineer's perspective."
-          image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
-        />
       </Head>
+      <MetaSocial
+        title="Aaron Bos' Blog"
+        url={`${process.env.NEXT_PUBLIC_ORIGIN}`}
+        description="Blogging about software and technology from a software engineer's perspective."
+        image={`${process.env.NEXT_PUBLIC_ORIGIN}/static/card-logo.png`}
+      />
       <Layout>
         <section>
           <Intro />
