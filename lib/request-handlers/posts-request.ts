@@ -15,10 +15,6 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
     };
   }
 
-  const existingPost = (
-    await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`
-  )[0];
-
   await sql`
     update post.post
       set title = ${req.title},
