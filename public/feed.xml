@@ -9,8 +9,30 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 26 Mar 2024 02:27:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Jun 2024 01:13:28 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Staying Productive with a Work Log]]></title>
+            <description><![CDATA[Life as a software engineer can sometimes feel hectic, so it's important to have processes that keep us grounded and focused on the things that matter. Recently I've adopted a habit of keeping a work log to do just that. My goal for this post is to share the benefits I've noticed since keeping a daily work log and what I hope to gain from the habit in the long term.]]></description>
+            <link>https://aaronbos.dev/posts/daily-work-log-productivity</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/daily-work-log-productivity</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[career]]></category>
+            <category><![CDATA[productivity]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Fri, 14 Jun 2024 01:09:46 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Trimming Video with FFmpeg]]></title>
+            <description><![CDATA[If you're a developer and work with video, there's a chance that you may need to trim or cut parts of the video for your users. In this post, I'll be going through the commands needed to do this in FFmpeg along with some details to consider when trimming video. Let's dive in!]]></description>
+            <link>https://aaronbos.dev/posts/trim-video-ffmpeg</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/trim-video-ffmpeg</guid>
+            <category><![CDATA[dev]]></category>
+            <category><![CDATA[tools]]></category>
+            <category><![CDATA[video]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Wed, 01 May 2024 01:47:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Find and Replace in Neovim]]></title>
             <description><![CDATA[While Neovim may not be my daily editor, I still prefer it to modify files quickly. Often I find myself in Neovim when I need to make small changes to JSON or YAML files. A common action that I perform is a simple "find and replace" which is supported by most editors. As with most things, the method to do this in Vim is powerful, but not necessarily straightforward unless you know the right commands and flags. In this post, I'll go into some detail about substituting characters in Vim and Neovim.]]></description>

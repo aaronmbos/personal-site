@@ -8,6 +8,7 @@ export interface Post {
   published_at?: Date;
   created_at: Date;
   updated_at: Date;
+  image_url: string;
 }
 
 export interface Paged {

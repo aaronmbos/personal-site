@@ -32,7 +32,7 @@ export async function handlePut(req: PostsRequest): Promise<ApiResponse<void>> {
 }
 
 export async function handlePost(
-  req: PostsRequest
+  req: PostsRequest,
 ): Promise<ApiResponse<string | void>> {
   const [isValid, message] = isRequestValid(req);
 
@@ -46,8 +46,8 @@ export async function handlePost(
   const dbRes = await sql`
     insert into post.post (title, content, description, tags, slug)
     values (${req.title}, ${req.content ?? null}, ${req.description ?? null}, ${
-    req?.tags ?? null
-  }, ${req.slug})
+      req?.tags ?? null
+    }, ${req.slug})
 
   returning id;
   `;
@@ -60,7 +60,7 @@ export async function handlePost(
 }
 
 export async function handlePatch(
-  req: PostsPatchRequest
+  req: PostsPatchRequest,
 ): Promise<ApiResponse<void>> {
   const dbPost = (
     await sql`select id, title, content, description, tags, slug, updated_at, created_at, published_at from post.post where id = ${req.id}`

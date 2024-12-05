@@ -8,12 +8,12 @@
 
 ### 2024
 
-| Quarter | Feature                                                     | Status                                                                                                           |
-| ------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Quarter | Feature                                                     | Status                                                                                                                                         |
+| ------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Q1      | Dependency upgrades, code cleanup, rework, and refactoring  | [Done](https://github.com/aaronmbos/personal-site/compare/d5e27d22f85705df7856cafc58d2e04ae1645957...9039e6b88e77026692decc57ede8a19d1ea9b04a) |
-| Q2      | Create the new "book note" section                          | Not started                                                                                                      |
-| Q3      | Automatically generate OG images for posts                  | Not started                                                                                                      |
-| Q4      | Content management features (ie markdown editing shortcuts) | Not started                                                                                                      |
+| Q2      | Create the new "book note" section                          | [In progress](https://github.com/aaronmbos/personal-site/compare/main...2024/q2/book-notes)                                                    |
+| Q3      | Automatically generate OG images for posts                  | [Done](https://github.com/aaronmbos/personal-site/pull/64)                                                                                     |
+| Q4      | Content management features (ie markdown editing shortcuts) | Not started                                                                                                                                    |
 
 ### 2023
 
@@ -38,6 +38,8 @@
 
 ### 2024
 
+- [Staying Productive with a Work Log](https://aaronbos.dev/posts/daily-work-log-productivity)
+- [Trimming Video with FFmpeg](https://aaronbos.dev/posts/trim-video-ffmpeg)
 - [Find and Replace in Neovim](https://aaronbos.dev/posts/find-and-replace-neovim)
 - [A Reminder of Why I Started This Blog](https://aaronbos.dev/posts/reminder-of-why-i-blog)
 - [npm and Semantic Versioning](https://aaronbos.dev/posts/npm-and-semantic-versioning)

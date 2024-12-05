@@ -15,18 +15,17 @@ export default function About() {
         <div className="mt-4 text-center">
           <Image
             className="rounded-full m-auto"
-            src="https://res.cloudinary.com/aaron-bos/image/upload/v1666052817/20221017_HudlHeadshots_AaronBos-5_iggfs3.jpg"
+            src="https://res.cloudinary.com/aaron-bos/image/upload/v1732795600/202406_Bos_Aaron-16_iu2uiw.png"
             alt="Aaron's picture"
             height="200"
             width="200"
           />
         </div>
         <p className="my-4">
-          I am a{" "}
-          <span className="font-semibold">software engineering manager</span>{" "}
-          from the midwest United States currently working as an Engineering
-          Manager at Hudl, a sports technology company that focuses on
-          empowering teams and athletes with video and data.
+          I am a <span className="font-semibold">software engineer</span> from
+          the midwest United States currently working as a Senior Engineer at
+          Hudl, a sports technology company that focuses on empowering teams and
+          athletes with video and data.
         </p>
         <p className="my-4">
           I’ve been a part of software teams since my first job as an intern
@@ -47,7 +46,11 @@ export default function About() {
             building the software that delights users and provides value to the
             business
           </span>
-          .
+          . Recently I’ve spent time as an engineering manager which provided me
+          with an opportunity to focus on{" "}
+          <span className="font-semibold">growing team members</span> and making
+          sure my team worked on the right projects, at the right time, and at
+          the right pace to make a positive impact on business outcomes.
         </p>
         <p className="my-4">
           I’ve worked on a wide variety of applications and domains, but they’ve
