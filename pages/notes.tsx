@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import AllPostsLink from "../components/all-posts-link";
 import Image from "next/image";
 
-export default function About() {
+export default function Notes() {
   return (
     <Layout>
       <Head>
