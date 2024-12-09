@@ -9,8 +9,18 @@
             <link>https://aaronbos.dev</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 14 Jun 2024 01:13:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Dec 2024 12:09:55 GMT</lastBuildDate>
         <atom:link href="https://aaronbos.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Find Me on Bluesky]]></title>
+            <description><![CDATA[I have mixed feelings about social media and the value it provides, but I've recently joined Bluesky in hopes of regaining the value that I used to get out of Twitter/X from a developer's perspective.]]></description>
+            <link>https://aaronbos.dev/posts/find-me-on-bluesky</link>
+            <guid isPermaLink="true">https://aaronbos.dev/posts/find-me-on-bluesky</guid>
+            <category><![CDATA[social]]></category>
+            <category><![CDATA[dev]]></category>
+            <dc:creator><![CDATA[Aaron Bos]]></dc:creator>
+            <pubDate>Mon, 09 Dec 2024 12:08:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Staying Productive with a Work Log]]></title>
             <description><![CDATA[Life as a software engineer can sometimes feel hectic, so it's important to have processes that keep us grounded and focused on the things that matter. Recently I've adopted a habit of keeping a work log to do just that. My goal for this post is to share the benefits I've noticed since keeping a daily work log and what I hope to gain from the habit in the long term.]]></description>

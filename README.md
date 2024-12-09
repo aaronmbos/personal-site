@@ -38,6 +38,7 @@
 
 ### 2024
 
+- [Find me on Bluesky](https://aaronbos.dev/posts/find-me-on-bluesky)
 - [Staying Productive with a Work Log](https://aaronbos.dev/posts/daily-work-log-productivity)
 - [Trimming Video with FFmpeg](https://aaronbos.dev/posts/trim-video-ffmpeg)
 - [Find and Replace in Neovim](https://aaronbos.dev/posts/find-and-replace-neovim)
