@@ -63,3 +63,18 @@ alter table site.user
 
 alter table post.post
   add column if not exists image_url varchar(512) null;
+
+
+create table if not exists site.note (
+  id uuid not null default gen_random_uuid(),
+  title varchar(256) not null,
+  author varchar(256) not null,
+  url varchar(512) not null,
+  content text not null,
+  created_at timestamp not null default now(),
+  updated_at timestamp not null default now()
+);
+
+alter table site.note
+  add constraint PK_site_note
+    primary key (id);
