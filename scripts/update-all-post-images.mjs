@@ -4,7 +4,6 @@ import sql from "../database/db.mjs";
 const posts = await getAllPosts();
 
 for (const post of posts) {
-  // TODO: This isn't returning the URL as expected
   const url = await createPostImage(post);
   await updatePost(post.id, url);
 }

@@ -8,9 +8,13 @@ const postSlug = process.argv[2];
 
 const post = await getPost(postSlug);
 
+console.log("Post:", post);
+
 const postUrl = await createPostImage(post);
 
-await updatePostImageUrl(post.Id, postUrl);
+console.log("Post URL:", postUrl);
+
+await updatePostImageUrl(post.id, postUrl);
 
 process.exit(0);
 
@@ -33,5 +37,5 @@ async function getPost(slug) {
 }
 
 async function updatePostImageUrl(id, url) {
-  await sql`update post.post set image_url = ${url} where id = ${id} `;
+  await sql`update post.post set image_url = ${url} where id = ${id}`;
 }
